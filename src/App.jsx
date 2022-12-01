@@ -6,6 +6,7 @@ import Tickets from "./Tickets";
 function App() {
   const [count, setCount] = useState(0);
   const [showLineup, setShowLineup] = useState(false);
+  const [showTickets, setShowTickets] = useState(false);
 
   return (
     <>
