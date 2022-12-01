@@ -10,10 +10,10 @@ function App() {
     <>
       <ul>
         <li>
-          <a href={`tickets/TicketLanding`}>Buy the tickets</a>
+          <a href={`tickets`}>Buy the tickets</a>
         </li>
         <li>
-          <a href={`lineup/LineupLanding`}>Check out the app</a>
+          <a href={`lineup`}>Check out the app</a>
         </li>
       </ul>
     </>
