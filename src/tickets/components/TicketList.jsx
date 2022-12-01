@@ -7,21 +7,7 @@ function TicketList(props) {
     const [basket, setBasket] = useState([]);
 
     function addToBasket(data) {
-        // do we have the product?
-        if (cart.find((entry) => entry.id === data.id)) {
-          setCart((oldCart) =>
-            oldCart.map((entry) => {
-              if (entry.id !== data.id) {
-                return entry;
-              }
-              const copy = { ...entry };
-              copy.amount = copy.amount + 1;
-              return copy;
-            })
-          );
-        } else {
           setBasket((oldCart) => oldCart.concat({ ...data, amount: 1 }));
-        }
       }
     
       function removeFromBasket(id) {
