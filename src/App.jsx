@@ -1,7 +1,6 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.scss";
-import Lineup from "./Lineup";
+import LineupApp from "./LineupApp";
 import Tickets from "./Tickets";
 
 function App() {
@@ -10,15 +9,19 @@ function App() {
 
   return (
     <>
-      {/* mainly mobile */}
-      {/* <Lineup /> */}
       {!showLineup && (
         <button onClick={() => setShowLineup(true)}>Check out the app</button>
       )}
-      {showLineup && <Lineup />}
+      {showLineup && <LineupApp />}
       {!showLineup && <Tickets />}
-      {/* mainly desktop */}
-      {/* <Tickets /> */}
+      <ul>
+        <li>
+          <a href={`tickets`}>Your Name</a>
+        </li>
+        <li>
+          <a href={`contacts/2`}>Your Friend</a>
+        </li>
+      </ul>
     </>
   );
 }
