@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./App.scss";
-import LineupApp from "./LineupApp";
-import Tickets from "./Tickets";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,17 +8,12 @@ function App() {
 
   return (
     <>
-      {!showLineup && (
-        <button onClick={() => setShowLineup(true)}>Check out the app</button>
-      )}
-      {showLineup && <LineupApp />}
-      {!showLineup && <Tickets />}
       <ul>
         <li>
-          <a href={`tickets`}>Your Name</a>
+          <a href={`tickets/TicketLanding`}>Buy the tickets</a>
         </li>
         <li>
-          <a href={`contacts/2`}>Your Friend</a>
+          <a href={`lineup/LineupLanding`}>Check out the app</a>
         </li>
       </ul>
     </>

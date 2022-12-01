@@ -1,7 +1,11 @@
 import React from "react";
 
 function Lineup() {
-  return <div>Lineup</div>;
+  return (
+    <>
+      <div>dfgdfg</div>
+    </>
+  );
 }
 
 export default Lineup;
