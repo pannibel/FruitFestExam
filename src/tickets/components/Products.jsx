@@ -1,15 +1,38 @@
 import React from "react";
 import { useRef } from "react";
+import { useState } from "react";
 
 function Products(props) {
   const theForm = useRef(null);
+  // const [amount, setAmount] = useState("");
+  let ticketProcuct = {
+    tickettype: "",
+    amount: "",
+    price: "",
+  }
 
   function addTicket(e) {
     e.preventDefault();
 
-    console.log(e.target.name, "ticket added");
+    if (e.target.name === "cheap") {
+      ticketProcuct = {
+        tickettype: e.target.name,
+        amount: parseInt(theForm.current.elements.cheapamount.value),
+        price: 1111 * parseInt(theForm.current.elements.cheapamount.value)
+      }
+    }
 
-    props.addToBasket();
+    if (e.target.name === "expensive") {
+      ticketProcuct = {
+        tickettype: e.target.name,
+        amount: parseInt(theForm.current.elements.expamount.value),
+        price: 1112 * parseInt(theForm.current.elements.expamount.value)
+      }
+    }
+
+    console.log(ticketProcuct);
+
+    props.addToBasket(ticketProcuct);
   }
 
   function addExtras(e) {
@@ -35,7 +58,7 @@ function Products(props) {
               <h4>Cheap ticket</h4>
               <label htmlFor="ticketamount">Amount</label>
               <input type="number" name="cheapamount"/>
-              <span>Price: 1111,-</span>
+              <span name="cheapprice">Price: 1111,-</span>
               <button onClick={addTicket} name="cheap">
                 Add
               </button>
@@ -45,7 +68,7 @@ function Products(props) {
               <h4>Expensive ticket</h4>
               <label htmlFor="ticketamount">Amount</label>
               <input type="number" name="expamount"/>
-              <span>Price: 1112,-</span>
+              <span name="expprice">Price: 1112,-</span>
               <button onClick={addTicket} name="expensive">
                 Add
               </button>
