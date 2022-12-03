@@ -12,7 +12,7 @@ function Tickets() {
       {/* <TicketHeader /> */}
       <p>hello test</p>
       <main>
-        {!showForm && <TicketList setShowForm={setShowForm} />}
+        {!showForm && <TicketList setShowForm={setShowForm} className={TicketList}/>}
         {showForm && <CheckoutForm showForm={showForm} />}
       </main>
     </div>

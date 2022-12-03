@@ -17,7 +17,8 @@ function Basket(props) {
         <h3>Tickets:</h3>
         <ul>
           {props.basket.map((item) => (
-            <li key={item.name}>{item.name} x {item.amount}, {item.price}</li>
+            <li key={item.name}>{item.name} x {item.amount}, {item.price}
+            <button onClick={() => props.removeFromBasket(item.name)}>X</button></li>
           ))}
         </ul>
         <button onClick={() => props.setShowForm(true)}>Checkout</button>

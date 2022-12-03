@@ -22,7 +22,7 @@ function TicketList(props) {
           setBasket((oldBasket) => oldBasket.concat({ ...data}));
       }}
     
-      function removeFromBasket(id) {
+      function removeFromBasket(name) {
         // find and modify a product
         setBasket(oldBasket => {
           const subtracted = oldBasket.map(item => {
@@ -38,7 +38,7 @@ function TicketList(props) {
       }
 
   return (
-    <div>
+    <div className="ticketlist">
       <Products addToBasket={addToBasket}/>
       <Basket setShowForm={props.setShowForm} basket={basket} removeFromBasket={removeFromBasket}/>
     </div>
