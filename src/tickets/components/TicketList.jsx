@@ -7,14 +7,26 @@ function TicketList(props) {
     const [basket, setBasket] = useState([]);
 
     function addToBasket(data) {
-          setBasket((oldCart) => oldCart.concat({ ...data}));
-      }
+      if (basket.find((entry) => entry.name === data.name)) {
+        setBasket((oldBasket) =>
+          oldBasket.map((entry) => {
+            if (entry.name !== data.name) {
+              return entry;
+            }
+            const copy = { ...entry };
+            copy.amount = copy.amount + 1;
+            return copy;
+          })
+        );
+      } else {
+          setBasket((oldBasket) => oldBasket.concat({ ...data}));
+      }}
     
       function removeFromBasket(id) {
         // find and modify a product
-        setBasket(oldCart => {
-          const subtracted = oldCart.map(item => {
-            if (item.id === id) {
+        setBasket(oldBasket => {
+          const subtracted = oldBasket.map(item => {
+            if (item.name === name) {
               return {...item, amount: item.amount-1}
             }
             return item

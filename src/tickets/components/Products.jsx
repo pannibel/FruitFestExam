@@ -4,6 +4,13 @@ import { useState } from "react";
 
 function Products(props) {
   const theForm = useRef(null);
+  const [currentAmount1, setCurrentAmount1] = useState(1);
+  const [currentAmount2, setCurrentAmount2] = useState(1); 
+
+  const changeAmount1 = (newAmount) => {setCurrentAmount1(newAmount)}
+  const changeAmount2 = (newAmount) => {setCurrentAmount2(newAmount)}
+
+
   // const [amount, setAmount] = useState("");
   const cheapprice = 1111;
   const expprice = 1112;
@@ -15,7 +22,7 @@ function Products(props) {
     type: "",
     amount: "",
     price: "",
-  }
+  };
 
   function addTicket(e) {
     e.preventDefault();
@@ -24,18 +31,19 @@ function Products(props) {
       productData = {
         name: e.target.name,
         type: "ticket",
-        amount: parseInt(theForm.current.elements.cheapamount.value),
-        price: cheapprice * parseInt(theForm.current.elements.cheapamount.value)
-      }
+        amount: parseInt(currentAmount1),
+        price:
+          cheapprice * currentAmount1,
+      };
     }
 
     if (e.target.name === "expensiveticket") {
       productData = {
         name: e.target.name,
         type: "ticket",
-        amount: parseInt(theForm.current.elements.expamount.value),
-        price: expprice * parseInt(theForm.current.elements.expamount.value)
-      }
+        amount: parseInt(currentAmount2),
+        price: expprice * currentAmount2,
+      };
     }
 
     console.log(productData);
@@ -47,24 +55,23 @@ function Products(props) {
     e.preventDefault();
     console.log(e.target.name, "extra added");
 
-    let extraprice; 
+    let extraprice;
 
     if (e.target.name === "extra1") {
-       extraprice = extra1price;
-    } else
-    if (e.target.name === "extra2") {
+      extraprice = extra1price;
+    } else if (e.target.name === "extra2") {
       extraprice = extra2price;
     }
     if (e.target.name === "extra3") {
       extraprice = extra3price;
-    };
+    }
 
     productData = {
       name: e.target.name,
       type: "extra",
       amount: 1,
       price: extraprice,
-    }
+    };
     console.log(productData);
 
     props.addToBasket(productData);
@@ -87,8 +94,17 @@ function Products(props) {
             <div>
               <h4>Cheap ticket</h4>
               <label htmlFor="ticketamount">Amount: </label>
-              <input type="number" name="cheapamount"/>
-              <p>Price: <span>{cheapprice}</span>,-</p>
+              <select
+                onChange={(event) => changeAmount1(event.target.value)}
+                value={currentAmount1}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <p>
+                Price: <span>{cheapprice}</span>,-
+              </p>
               <button onClick={addTicket} name="cheapticket">
                 Add
               </button>
@@ -97,8 +113,17 @@ function Products(props) {
             <div>
               <h4>Expensive ticket</h4>
               <label htmlFor="ticketamount">Amount: </label>
-              <input type="number" name="expamount"/>
-              <p>Price: <span>{expprice}</span>,-</p>
+              <select
+                onChange={(event) => changeAmount2(event.target.value)}
+                value={currentAmount2}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <p>
+                Price: <span>{expprice}</span>,-
+              </p>
               <button onClick={addTicket} name="expensiveticket">
                 Add
               </button>
@@ -109,19 +134,25 @@ function Products(props) {
             <h3>2. Add extras</h3>
 
             <label htmlFor="form-extras">VIP treatment</label>
-            <p>Price: <span>{extra1price}</span>,-</p>
+            <p>
+              Price: <span>{extra1price}</span>,-
+            </p>
             <button onClick={addExtras} name="extra1">
               Add
             </button>
 
             <label htmlFor="form-extras">Better food</label>
-            <p>Price: <span>{extra2price}</span>,-</p>
+            <p>
+              Price: <span>{extra2price}</span>,-
+            </p>
             <button onClick={addExtras} name="extra2">
               Add
             </button>
 
             <label htmlFor="form-extras">No racist comments</label>
-            <p>Price: <span>{extra3price}</span>,-</p>
+            <p>
+              Price: <span>{extra3price}</span>,-
+            </p>
             <button onClick={addExtras} name="extra3">
               Add
             </button>
