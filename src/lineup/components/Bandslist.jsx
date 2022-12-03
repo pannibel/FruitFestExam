@@ -7,8 +7,8 @@ function Bandslist(props) {
       <div>
         {props.bands.map((band) => (
           <SingleBand
-            key={props.bands.index}
             data={band}
+
             // addToCart={props.addToCart}
           />
         ))}
