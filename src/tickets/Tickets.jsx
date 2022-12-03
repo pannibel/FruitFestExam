@@ -10,10 +10,10 @@ function Tickets() {
   return (
     <div>
       {/* <TicketHeader /> */}
-
+      <p>hello test</p>
       <main>
-        {!showForm && <TicketList setShowForm={setShowForm}/>}
-        {showForm && <CheckoutForm showForm={showForm}/>}
+        {!showForm && <TicketList setShowForm={setShowForm} />}
+        {showForm && <CheckoutForm showForm={showForm} />}
       </main>
     </div>
   );
