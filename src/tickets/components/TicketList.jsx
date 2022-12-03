@@ -7,7 +7,7 @@ function TicketList(props) {
     const [basket, setBasket] = useState([]);
 
     function addToBasket(data) {
-          setBasket((oldCart) => oldCart.concat({ ...data, amount: 1 }));
+          setBasket((oldCart) => oldCart.concat({ ...data}));
       }
     
       function removeFromBasket(id) {

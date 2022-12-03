@@ -5,7 +5,9 @@ import { useState } from "react";
 function Products(props) {
   const theForm = useRef(null);
   // const [amount, setAmount] = useState("");
-  let ticketProcuct = {
+  const cheapprice = 1111;
+  const expprice = 1112;
+  let ticketProduct = {
     tickettype: "",
     amount: "",
     price: "",
@@ -15,24 +17,24 @@ function Products(props) {
     e.preventDefault();
 
     if (e.target.name === "cheap") {
-      ticketProcuct = {
+      ticketProduct = {
         tickettype: e.target.name,
         amount: parseInt(theForm.current.elements.cheapamount.value),
-        price: 1111 * parseInt(theForm.current.elements.cheapamount.value)
+        price: cheapprice * parseInt(theForm.current.elements.cheapamount.value)
       }
     }
 
     if (e.target.name === "expensive") {
-      ticketProcuct = {
+      ticketProduct = {
         tickettype: e.target.name,
         amount: parseInt(theForm.current.elements.expamount.value),
-        price: 1112 * parseInt(theForm.current.elements.expamount.value)
+        price: expprice * parseInt(theForm.current.elements.expamount.value)
       }
     }
 
-    console.log(ticketProcuct);
+    console.log(ticketProduct);
 
-    props.addToBasket(ticketProcuct);
+    props.addToBasket(ticketProduct);
   }
 
   function addExtras(e) {
@@ -79,7 +81,7 @@ function Products(props) {
             <h3>2. Add extras</h3>
 
             <label htmlFor="form-extras">VIP treatment</label>
-            <button onClick={addExtras} name="etrxa1">
+            <button onClick={addExtras} name="extra1">
               Add
             </button>
 
