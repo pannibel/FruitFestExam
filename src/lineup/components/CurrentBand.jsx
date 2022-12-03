@@ -6,9 +6,22 @@ function CurrentBand(props) {
   console.log(date);
   const showTime = date.getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2);
-  console.log(hourBasedIndex);
+  // console.log(hourBasedIndex);
   let currentArray = Object.entries(props.currentBand);
-  console.log(currentArray);
+  let currentHour = hourBasedIndex + ":00";
+  console.log(currentHour);
+  // function getOnlyDay() {
+  //   let dayName = JSON.stringify(date);
+  //   console.log(dayName);
+  // }
+  // getOnlyDay();
+  const dayOfWeekDigit = new Date().getDay();
+  console.log(dayOfWeekDigit);
+  const dayOfWeekName = new Date().toLocaleString("default", {
+    weekday: "short",
+  });
+  console.log(dayOfWeekName.toLowerCase()); // 👉️ Sunday
+  // Sat Dec 03 2022 17:39:22 GMT+0100 (Central European Standard Time)
 
   // console.log(props.currentBand.Midgard);
   return (

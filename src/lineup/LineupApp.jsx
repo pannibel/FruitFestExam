@@ -11,7 +11,6 @@ function Lineup() {
       const res = await fetch("http://localhost:8080/schedule");
       const data = await res.json();
       setCurrentBand(data);
-      // console.log(data);
     }
     getData();
   }, []);
@@ -22,13 +21,19 @@ function Lineup() {
       const res = await fetch("http://localhost:8080/bands");
       const data = await res.json();
       setBands(data);
+      let i = 1;
+      data.forEach(function (element) {
+        element.liked = "true";
+        element.key = ++i;
+      });
+      console.log(data);
     }
     getData();
   }, []);
 
   function changePageApp(value) {
     setLineUpPage(value);
-    console.log("change the state to " + lineUpPage);
+    // console.log("change the state to " + lineUpPage);
   }
 
   return (
