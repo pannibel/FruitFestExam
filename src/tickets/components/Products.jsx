@@ -7,15 +7,6 @@ import TicketProduct from "./TicketProduct";
 
 function Products(props) {
   const theForm = useRef(null);
-  const [currentAmount1, setCurrentAmount1] = useState(1);
-  const [currentAmount2, setCurrentAmount2] = useState(1);
-
-  const changeAmount1 = (newAmount) => {
-    setCurrentAmount1(newAmount);
-  };
-  const changeAmount2 = (newAmount) => {
-    setCurrentAmount2(newAmount);
-  };
 
   const cheapprice = 799;
   const expprice = 1299;
@@ -36,8 +27,8 @@ function Products(props) {
       productData = {
         name: e.target.name,
         type: "ticket",
-        amount: parseInt(currentAmount1),
-        price: cheapprice * currentAmount1,
+        amount: parseInt(props.currentAmount1),
+        price: cheapprice * props.currentAmount1,
       };
     }
 
@@ -45,8 +36,8 @@ function Products(props) {
       productData = {
         name: e.target.name,
         type: "ticket",
-        amount: parseInt(currentAmount2),
-        price: expprice * currentAmount2,
+        amount: parseInt(props.currentAmount2),
+        price: expprice * props.currentAmount2,
       };
     }
 
@@ -92,15 +83,12 @@ function Products(props) {
 
       <div>
         <form ref={theForm} className="products">
-          <div className="form-control">
             <TicketProduct
-              currentAmount1={currentAmount1}
-              currentAmount2={currentAmount2}
-              setCurrentAmount1={setCurrentAmount1}
-              setCurrentAmount2={setCurrentAmount2}
+              currentAmount1={props.currentAmount1}
+              currentAmount2={props.currentAmount2}
               addTicket={addTicket}
-              changeAmount1={changeAmount1}
-              changeAmount2={changeAmount2}
+              changeAmount1={props.changeAmount1}
+              changeAmount2={props.changeAmount2}
               cheapprice={cheapprice}
               expprice={expprice}
             />
@@ -111,9 +99,8 @@ function Products(props) {
               extra3price={extra3price}
             />
             <CampingProduct addSpot={addSpot}/>
-          </div>
         </form>
-      </div>
+    </div>
     </div>
   );
 }

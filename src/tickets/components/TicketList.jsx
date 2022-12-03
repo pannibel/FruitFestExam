@@ -5,6 +5,15 @@ import Products from "./Products";
 
 function TicketList(props) {
     const [basket, setBasket] = useState([]);
+    const [currentAmount1, setCurrentAmount1] = useState(1);
+    const [currentAmount2, setCurrentAmount2] = useState(1);
+  
+    const changeAmount1 = (newAmount) => {
+      setCurrentAmount1(newAmount);
+    };
+    const changeAmount2 = (newAmount) => {
+      setCurrentAmount2(newAmount);
+    };
 
     function addToBasket(data) {
       if (basket.find((entry) => entry.name === data.name)) {
@@ -13,8 +22,13 @@ function TicketList(props) {
             if (entry.name !== data.name) {
               return entry;
             }
+            
             const copy = { ...entry };
-            copy.amount = copy.amount + 1;
+            if (entry.name === "Regular ticket") {
+              copy.amount = currentAmount1;
+            } else if (entry.name === "VIP ticket") {
+              copy.amount = currentAmount2;
+            }
             return copy;
           })
         );
@@ -39,7 +53,7 @@ function TicketList(props) {
 
   return (
     <div className="ticketlist">
-      <Products addToBasket={addToBasket}/>
+      <Products addToBasket={addToBasket} currentAmount1={currentAmount1} currentAmount2={currentAmount2} changeAmount1={changeAmount1} changeAmount2={changeAmount2}/>
       <Basket setShowForm={props.setShowForm} basket={basket} removeFromBasket={removeFromBasket}/>
     </div>
   );

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function TicketProduct(props) {
   return (
-    <div>
+      <div className="form-control">
         <h3>1. Choose ticket type</h3>
 
     <div>
@@ -44,7 +44,7 @@ function TicketProduct(props) {
         Add
       </button>
     </div>
-  </div>
+    </div>
   )
 }
 

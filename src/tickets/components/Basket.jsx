@@ -1,29 +1,31 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
 
 function Basket(props) {
-
-// console.log(props.basket)
-// console.log(props.basket.map(obj => obj.type));
-
-/* const ticketInfo = props.basket.map((obj) => {
-  if (obj.type === "ticket") {
-    return obj.name
+  function totalPrice() {
+    let total = 0;
+    props.basket.forEach((item) => {
+      total += item.amount * item.price;
+    });
+    return total;
   }
-}) */
 
   return (
     <div>
-        <h2>Basket</h2>
-        <h3>Tickets:</h3>
-        <ul>
-          {props.basket.map((item) => (
-            <li key={item.name}>{item.name} x {item.amount}, {item.price}
-            <button onClick={() => props.removeFromBasket(item.name)}>X</button></li>
-          ))}
-        </ul>
-        <button onClick={() => props.setShowForm(true)}>Checkout</button>
+      <h2>Basket</h2>
+      <h3>Tickets:</h3>
+      <ul>
+        {props.basket.map((item) => (
+          <li key={item.name}>
+            {item.name} {item.amount}, {item.amount * item.price},-
+            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
+          </li>
+        ))}
+      </ul>
+      <h3>Total: {totalPrice()},-</h3>
+      <button onClick={() => props.setShowForm(true)}>Checkout</button>
     </div>
-  )
+  );
 }
 
-export default Basket
+export default Basket;
