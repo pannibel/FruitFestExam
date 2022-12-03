@@ -1,34 +1,129 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function CurrentBand(props) {
+  const [currentMidgard, setCurrentMidgard] = useState();
+  const [currentVanaheim, setCurrentVanaheim] = useState();
+  const [currentJotunheim, setCurrentJotunheim] = useState();
+  // const [currentVanaheim, setcurrentVanaheim] = useState("");
+
   // chekcing current time
-  const date = new Date();
-  console.log(date);
-  const showTime = date.getHours();
-  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2);
-  // console.log(hourBasedIndex);
-  let currentArray = Object.entries(props.currentBand);
+
+  const showTime = new Date().getHours();
+  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let currentHour = hourBasedIndex + ":00";
-  console.log(currentHour);
-  // function getOnlyDay() {
-  //   let dayName = JSON.stringify(date);
-  //   console.log(dayName);
-  // }
-  // getOnlyDay();
-  const dayOfWeekDigit = new Date().getDay();
-  console.log(dayOfWeekDigit);
+  // console.log(currentHour);
+
+  // chekcing current day of the week
   const dayOfWeekName = new Date().toLocaleString("default", {
     weekday: "short",
   });
-  console.log(dayOfWeekName.toLowerCase()); // 👉️ Sunday
-  // Sat Dec 03 2022 17:39:22 GMT+0100 (Central European Standard Time)
+  // console.log(dayOfWeekName.toLowerCase());
 
+  // let Midgard = "Midgard";
+  // let Vanaheim = "Vanaheim";
   // console.log(props.currentBand.Midgard);
+  // let currentArray = Object.entries(props.currentBand);
+
+  function playingMidgard() {
+    Object.entries(props.currentBand).map((item) => {
+      if (item[0] === "Midgard") {
+        Object.entries(item[1]).map((weekDays) => {
+          if (weekDays[0] === dayOfWeekName.toLowerCase()) {
+            // console.log(weekDays[1]);
+            let currentDay = weekDays[1].find(
+              (day) => day.start === currentHour
+            );
+            // console.log(currentDay.act);
+            let currentAct = currentDay.act;
+
+            // stage.preventDefault();
+            setCurrentMidgard(currentAct);
+            // console.log(currentAct);
+            // return currentAct;
+            // console.log(currentMidgard);
+            // let currentAct = currentDay.act;
+          }
+          // console.log(" these are midgard days", weekDays);
+        });
+      }
+      // console.log(item);
+    });
+  }
+  function playingVanaheim() {
+    Object.entries(props.currentBand).map((item) => {
+      if (item[0] === "Vanaheim") {
+        Object.entries(item[1]).map((weekDays) => {
+          if (weekDays[0] === dayOfWeekName.toLowerCase()) {
+            // console.log(weekDays[1]);
+            let currentDay = weekDays[1].find(
+              (day) => day.start === currentHour
+            );
+            // console.log(currentDay.act);
+            let currentAct = currentDay.act;
+
+            // stage.preventDefault();
+            setCurrentVanaheim(currentAct);
+            // console.log(currentAct);
+            // return currentAct;
+            // console.log(currentMidgard);
+            // let currentAct = currentDay.act;
+          }
+          // console.log(" these are midgard days", weekDays);
+        });
+      }
+      // console.log(item);
+    });
+  }
+  function playingJotunheim() {
+    Object.entries(props.currentBand).map((item) => {
+      if (item[0] === "Jotunheim") {
+        Object.entries(item[1]).map((weekDays) => {
+          if (weekDays[0] === dayOfWeekName.toLowerCase()) {
+            // console.log(weekDays[1]);
+            let currentDay = weekDays[1].find(
+              (day) => day.start === currentHour
+            );
+            // console.log(currentDay.act);
+            let currentAct = currentDay.act;
+
+            // stage.preventDefault();
+            setCurrentJotunheim(currentAct);
+            // console.log(currentAct);
+            // return currentAct;
+            // console.log(currentMidgard);
+            // let currentAct = currentDay.act;
+          }
+          // console.log(" these are midgard days", weekDays);
+        });
+      }
+      // console.log(item);
+    });
+  }
+
+  // console.log(currentMidgard);
+  useEffect(() => {
+    playingMidgard();
+    playingVanaheim();
+    playingJotunheim();
+  }, []);
+  // playingBand(Vanaheim);
+
+  // Object.entries(props.currentBand.Midgard).forEach((item) => {
+  //   console.log(item);
+  // });
   return (
     <>
-      <div>Stage Midgard Band nr {hourBasedIndex}</div>
-      <div>Stage Vanaheim Band nr {hourBasedIndex}</div>
-      <div>Stage Jotunheim Band nr {hourBasedIndex}</div>
+      <div>
+        Stage Midgard: Band called {currentMidgard}, started at {currentHour}
+      </div>
+      <div>
+        Stage Vanaheim: Band called {currentVanaheim}, started at {currentHour}
+      </div>
+      <div>
+        Stage Jotunheim: Band called {currentJotunheim}, started at{" "}
+        {currentHour}
+      </div>
     </>
   );
 }
