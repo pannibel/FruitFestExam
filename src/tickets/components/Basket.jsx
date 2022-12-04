@@ -15,12 +15,41 @@ function Basket(props) {
       <h2>Basket</h2>
       <h3>Tickets:</h3>
       <ul>
-        {props.basket.map((item) => (
+        {props.basket.map((item) => {
+          if (item.type === "ticket") {
+            return (
           <li key={item.name}>
             {item.name} {item.amount}, {item.amount * item.price},-
             <button onClick={() => props.removeFromBasket(item.name)}>X</button>
-          </li>
-        ))}
+          </li>)
+          } 
+        })}
+      </ul>
+
+      <h3>Extras:</h3>
+      <ul>
+        {props.basket.map((item) => {
+          if (item.type === "extra") {
+            return (
+          <li key={item.name}>
+            {item.name} {item.amount}, {item.amount * item.price},-
+            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
+          </li>)
+          } 
+        })}
+      </ul>
+
+      <h3>Camping spot:</h3>
+      <ul>
+        {props.basket.map((item) => {
+          if (item.type === "camping spot") {
+            return (
+          <li key={item.name}>
+            {item.name} {item.amount}, {item.amount * item.price},-
+            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
+          </li>)
+          } 
+        })}
       </ul>
       <h3>Total: {totalPrice()},-</h3>
       <button onClick={() => props.setShowForm(true)}>Checkout</button>

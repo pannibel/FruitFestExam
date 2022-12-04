@@ -13,6 +13,7 @@ function Products(props) {
   const extra1price = 100;
   const extra2price = 200;
   const extra3price = 300;
+  let chosenSpot;
   let productData = {
     name: "",
     type: "",
@@ -72,9 +73,24 @@ function Products(props) {
     props.addToBasket(productData);
   }
 
+  function onChangeValue(e) {
+
+    chosenSpot = e.target.value;
+    console.log(chosenSpot)
+  }
+
   function addSpot(e) {
     e.preventDefault();
-    console.log(e.target.name, "spot picked");
+
+    productData = {
+      name: chosenSpot,
+      type: "camping spot",
+      amount: 1,
+      price: "",
+    };
+
+    console.log(productData);
+    props.addToBasket(productData);
   }
 
   return (
@@ -98,7 +114,7 @@ function Products(props) {
               extra2price={extra2price}
               extra3price={extra3price}
             />
-            <CampingProduct addSpot={addSpot}/>
+            <CampingProduct addSpot={addSpot} onChangeValue={onChangeValue}/>
         </form>
     </div>
     </div>

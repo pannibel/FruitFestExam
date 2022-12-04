@@ -1,30 +1,45 @@
-import React from 'react'
+import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
 
 function CampingProduct(props) {
+
   return (
     <div className="form-control">
-    <h3>3. Choose your camping spot</h3>
+      <h3>3. Choose your camping spot</h3>
 
-    <label htmlFor="form-spot">Svartheim</label>
-    <input type="radio" name="spot" />
+      <div onChange={props.onChangeValue}>
+        <div>
+          <label htmlFor="form-spot">Svartheim</label>
+          <input type="radio" name="spot" value="Svartheim" />
+        </div>
 
-    <label htmlFor="form-spot">Nilfheim</label>
-    <input type="radio" name="spot" />
+        <div>
+          <label htmlFor="form-spot">Nilfheim</label>
+          <input type="radio" name="spot" value="Nilfheim" />
+        </div>
 
-    <label htmlFor="form-spot">Helheim</label>
-    <input type="radio" name="spot" />
+        <div>
+          <label htmlFor="form-spot">Helheim</label>
+          <input type="radio" name="spot" value="Helheim" />
+        </div>
 
-    <label htmlFor="form-spot">Muspelheim</label>
-    <input type="radio" name="spot" />
+        <div>
+          <label htmlFor="form-spot">Muspelheim</label>
+          <input type="radio" name="spot" value="Muspelheim" />
+        </div>
 
-    <label htmlFor="form-spot">Alfheim</label>
-    <input type="radio" name="spot" />
+        <div>
+          <label htmlFor="form-spot">Alfheim</label>
+          <input type="radio" name="spot" value="Alfheim" />
+        </div>
+      </div>
 
-    <button onClick={props.addSpot}>Add</button>
+      <div>
+        <button onClick={props.addSpot}>Add</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default CampingProduct
+export default CampingProduct;
