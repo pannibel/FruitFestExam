@@ -7,17 +7,34 @@ import Pay from "./Pay";
 import Confirmation from "./Confirmation";
 
 function CheckoutForm(props) {
-  const [nextPage, setNextPage] = useState(null);
-  const [previousPage, setPreviousPage] = useState(null);
+  const [state, setState] = useState(1);
+
+  function changePage(e) {
+    e.preventDefault();
+
+    if (e.target.name === "next") {
+      setState(state++)
+    };
+    if (e.target.name === "back") {
+      setState(state--)
+    };
+  }
 
   return (
     <div>
       <h2>Checkoutform</h2>
-
-      <GuestInfo setNextPage={setNextPage}/>
-      <PaymentDetails setNextPage={setNextPage} setPreviousPage={setPreviousPage}/>
-      <Pay setNextPage={setNextPage} setPreviousPage={setPreviousPage}/>
-      <Confirmation setPreviousPage={setPreviousPage}/>
+      {(state === 1) (      
+      <GuestInfo changePage={changePage}/>
+      )}
+      {(state === 2) (      
+      <PaymentDetails changePage={changePage}/>
+      )}
+      {(state === 3) (
+      <Pay changePage={changePage} />
+      )}
+      {(state === 4) (
+        <Confirmation changePage={changePage}/>
+      )}
     </div>
   );
 }

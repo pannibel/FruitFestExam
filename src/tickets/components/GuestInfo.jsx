@@ -9,7 +9,7 @@ function GuestInfo(props) {
         <p>Lorem Ipsum</p>
         <p>Lorem Ipsum</p>
 
-        <button onClick={props.setNextPage}>Next</button>
+        <button onClick={props.changePage} name="next">Next</button>
     </div>
   )
 }
