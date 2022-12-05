@@ -1,0 +1,14 @@
+.NavBarCont {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+}
+.burgerIcon {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}

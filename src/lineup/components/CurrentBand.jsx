@@ -5,20 +5,18 @@ function CurrentBand(props) {
   const [currentMidgard, setCurrentMidgard] = useState();
   const [currentVanaheim, setCurrentVanaheim] = useState();
   const [currentJotunheim, setCurrentJotunheim] = useState();
-  // const [currentVanaheim, setcurrentVanaheim] = useState("");
-
   // chekcing current time
 
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let currentHour = hourBasedIndex + ":00";
-  // console.log(currentHour);
+  console.log(currentHour);
 
   // chekcing current day of the week
   const dayOfWeekName = new Date().toLocaleString("default", {
     weekday: "short",
   });
-  // console.log(dayOfWeekName.toLowerCase());
+  console.log(dayOfWeekName.toLowerCase());
 
   // let Midgard = "Midgard";
   // let Vanaheim = "Vanaheim";
@@ -114,13 +112,16 @@ function CurrentBand(props) {
   // });
   return (
     <>
-      <div>
-        Stage Midgard: Band called {currentMidgard}, started at {currentHour}
+      <h3>Currently Playing:</h3>
+      <div className="currentBandRow" id="stageGreen">
+        <div>MIDGARD |</div>
+        <div>{currentMidgard}</div>
+        <div>| {currentHour}</div>
       </div>
-      <div>
+      <div className="currentBandRow" id="stageRed">
         Stage Vanaheim: Band called {currentVanaheim}, started at {currentHour}
       </div>
-      <div>
+      <div className="currentBandRow" id="stageBlue">
         Stage Jotunheim: Band called {currentJotunheim}, started at{" "}
         {currentHour}
       </div>

@@ -1,10 +1,13 @@
 import React from "react";
+import "../LineUpApp.scss";
 import { useState, useEffect } from "react";
 import Bandslist from "./components/Bandslist";
 import CurrentBand from "./components/CurrentBand";
 
 function Lineup() {
-  const [lineUpPage, setLineUpPage] = useState(2);
+  const [lineUpPage, setLineUpPage] = useState(1);
+  const [burgerState, setBurgerState] = useState(true);
+
   const [currentBand, setCurrentBand] = useState([]);
   useEffect(() => {
     async function getData() {
@@ -35,20 +38,29 @@ function Lineup() {
     setLineUpPage(value);
     // console.log("change the state to " + lineUpPage);
   }
-
+  function openBurger() {
+    setBurgerState(!burgerState);
+    console.log("burger menu is open " + burgerState);
+  }
   return (
     <>
-      <button onClick={() => changePageApp(2)} className="">
-        Show the main screen
+      <button onClick={() => openBurger()} className="burgerIcon">
+        borger
       </button>
-      <button onClick={() => changePageApp(3)} className="">
-        Show all bands
-      </button>
-      <button onClick={() => changePageApp(4)} className="">
-        Show the schedule
-      </button>
-      {lineUpPage == 2 ? <CurrentBand currentBand={currentBand} /> : ""}
-      {lineUpPage == 3 ? <Bandslist bands={bands} /> : ""}
+      <div className="Logo">Ranch Fest</div>
+      {lineUpPage == 1 ? <CurrentBand currentBand={currentBand} /> : ""}
+      {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
+      <div className="NavBarCont">
+        <button onClick={() => changePageApp(1)} className="">
+          HOME
+        </button>
+        <button onClick={() => changePageApp(2)} className="">
+          BANDS
+        </button>
+        <button onClick={() => changePageApp(3)} className="">
+          SCHEDULE
+        </button>
+      </div>
       {/* <Bandslist bands={bands} /> */}
     </>
   );
