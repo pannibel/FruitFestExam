@@ -13,28 +13,20 @@ function CheckoutForm(props) {
     e.preventDefault();
 
     if (e.target.name === "next") {
-      setState(state++)
+      setState(state+1)
     };
     if (e.target.name === "back") {
-      setState(state--)
+      setState(state-1)
     };
   }
 
   return (
     <div>
       <h2>Checkoutform</h2>
-      {(state === 1) (      
-      <GuestInfo changePage={changePage}/>
-      )}
-      {(state === 2) (      
-      <PaymentDetails changePage={changePage}/>
-      )}
-      {(state === 3) (
-      <Pay changePage={changePage} />
-      )}
-      {(state === 4) (
-        <Confirmation changePage={changePage}/>
-      )}
+      {state == 1 ? <GuestInfo changePage={changePage}/> : ""}
+      {state == 2 ? <PaymentDetails changePage={changePage}/> : ""}
+      {state == 3 ? <Pay changePage={changePage} /> : ""}
+      {state == 4 ? <Confirmation changePage={changePage}/> : ""}
     </div>
   );
 }
