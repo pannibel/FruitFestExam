@@ -52,7 +52,7 @@ function Basket(props) {
         })}
       </ul>
       <h3>Total: {totalPrice()},-</h3>
-      <button onClick={() => props.setShowForm(true)}>Checkout</button>
+      <button onClick={() => {props.setShowForm(true); props.totalGuests()}}>Checkout</button>
     </div>
   );
 }

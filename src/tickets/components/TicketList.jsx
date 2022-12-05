@@ -4,7 +4,6 @@ import Basket from "./Basket";
 import Products from "./Products";
 
 function TicketList(props) {
-    const [basket, setBasket] = useState([]);
     const [currentAmount1, setCurrentAmount1] = useState(1);
     const [currentAmount2, setCurrentAmount2] = useState(1);
     const [spotAdded, setSpotAdded] = useState(false);
@@ -17,9 +16,13 @@ function TicketList(props) {
       setCurrentAmount2(newAmount);
     };
 
+    function totalGuests() {
+      props.setGuestNumber(parseInt(currentAmount1)+parseInt(currentAmount2));
+    }
+
     function addToBasket(data) {
-      if (basket.find((entry) => entry.name === data.name)) {
-        setBasket((oldBasket) =>
+      if (props.basket.find((entry) => entry.name === data.name)) {
+        props.setBasket((oldBasket) =>
           oldBasket.map((entry) => {
             if (entry.name !== data.name) {
               return entry;
@@ -35,12 +38,12 @@ function TicketList(props) {
           })
         );
       } else {
-          setBasket((oldBasket) => oldBasket.concat({ ...data}));
+          props.setBasket((oldBasket) => oldBasket.concat({ ...data}));
       }}
     
       function removeFromBasket(name) {
         // find and modify a product
-        setBasket(oldBasket => {
+        props.setBasket(oldBasket => {
           const subtracted = oldBasket.map(item => {
             if (item.name === name) {
               return {...item, amount: item.amount-1}
@@ -53,12 +56,12 @@ function TicketList(props) {
         //filter
       }
 
-      console.log(basket)
+      console.log(props.basket)
 
   return (
     <div className="ticketlist">
-      <Products addToBasket={addToBasket} currentAmount1={currentAmount1} currentAmount2={currentAmount2} changeAmount1={changeAmount1} changeAmount2={changeAmount2} setSpotAdded={setSpotAdded} spotAdded={spotAdded}/>
-      <Basket setShowForm={props.setShowForm} basket={basket} removeFromBasket={removeFromBasket} setSpotAdded={setSpotAdded}/>
+      <Products addToBasket={addToBasket} currentAmount1={currentAmount1} currentAmount2={currentAmount2} changeAmount1={changeAmount1} changeAmount2={changeAmount2} setSpotAdded={setSpotAdded} spotAdded={spotAdded} />
+      <Basket setShowForm={props.setShowForm} basket={props.basket} removeFromBasket={removeFromBasket} setSpotAdded={setSpotAdded} totalGuests={totalGuests}/>
     </div>
   );
 }
