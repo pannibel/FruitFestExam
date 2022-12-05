@@ -7,6 +7,8 @@ function TicketList(props) {
     const [basket, setBasket] = useState([]);
     const [currentAmount1, setCurrentAmount1] = useState(1);
     const [currentAmount2, setCurrentAmount2] = useState(1);
+    const [spotAdded, setSpotAdded] = useState(false);
+
   
     const changeAmount1 = (newAmount) => {
       setCurrentAmount1(newAmount);
@@ -51,10 +53,12 @@ function TicketList(props) {
         //filter
       }
 
+      console.log(basket)
+
   return (
     <div className="ticketlist">
-      <Products addToBasket={addToBasket} currentAmount1={currentAmount1} currentAmount2={currentAmount2} changeAmount1={changeAmount1} changeAmount2={changeAmount2}/>
-      <Basket setShowForm={props.setShowForm} basket={basket} removeFromBasket={removeFromBasket}/>
+      <Products addToBasket={addToBasket} currentAmount1={currentAmount1} currentAmount2={currentAmount2} changeAmount1={changeAmount1} changeAmount2={changeAmount2} setSpotAdded={setSpotAdded} spotAdded={spotAdded}/>
+      <Basket setShowForm={props.setShowForm} basket={basket} removeFromBasket={removeFromBasket} setSpotAdded={setSpotAdded}/>
     </div>
   );
 }
