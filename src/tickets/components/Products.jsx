@@ -7,13 +7,13 @@ import TicketProduct from "./TicketProduct";
 
 function Products(props) {
   const theForm = useRef(null);
+  const [chosenSpot, setChosenSpot] = useState();
 
   const cheapprice = 799;
   const expprice = 1299;
   const extra1price = 100;
   const extra2price = 200;
   const extra3price = 300;
-  let chosenSpot;
   let productData = {
     name: "",
     type: "",
@@ -42,15 +42,11 @@ function Products(props) {
       };
     }
 
-    console.log(productData);
-
     props.addToBasket(productData);
   }
 
   function addExtras(e) {
     e.preventDefault();
-    console.log(e.target.name, "extra added");
-
     let extraprice;
 
     if (e.target.name === "extra1") {
@@ -68,29 +64,31 @@ function Products(props) {
       amount: 1,
       price: extraprice,
     };
-    console.log(productData);
 
     props.addToBasket(productData);
   }
 
   function onChangeValue(e) {
-
-    chosenSpot = e.target.value;
-    console.log(chosenSpot)
+    setChosenSpot(e.target.value);
   }
 
   function addSpot(e) {
     e.preventDefault();
-
-    productData = {
-      name: chosenSpot,
-      type: "camping spot",
-      amount: 1,
-      price: "",
+    if (props.spotAdded === false) {
+      props.setSpotAdded(true)
+  
+      productData = {
+        name: chosenSpot,
+        type: "camping spot",
+        amount: 1,
+        price: "",
+      };
+  
+      props.addToBasket(productData);
     };
-
-    console.log(productData);
-    props.addToBasket(productData);
+    if (props.spotAdded === true) {
+      console.log("action not possible")
+    }
   }
 
   return (
@@ -99,24 +97,24 @@ function Products(props) {
 
       <div>
         <form ref={theForm} className="products">
-            <TicketProduct
-              currentAmount1={props.currentAmount1}
-              currentAmount2={props.currentAmount2}
-              addTicket={addTicket}
-              changeAmount1={props.changeAmount1}
-              changeAmount2={props.changeAmount2}
-              cheapprice={cheapprice}
-              expprice={expprice}
-            />
-            <ExtraProduct
-              addExtras={addExtras}
-              extra1price={extra1price}
-              extra2price={extra2price}
-              extra3price={extra3price}
-            />
-            <CampingProduct addSpot={addSpot} onChangeValue={onChangeValue}/>
+          <TicketProduct
+            currentAmount1={props.currentAmount1}
+            currentAmount2={props.currentAmount2}
+            addTicket={addTicket}
+            changeAmount1={props.changeAmount1}
+            changeAmount2={props.changeAmount2}
+            cheapprice={cheapprice}
+            expprice={expprice}
+          />
+          <ExtraProduct
+            addExtras={addExtras}
+            extra1price={extra1price}
+            extra2price={extra2price}
+            extra3price={extra3price}
+          />
+          <CampingProduct addSpot={addSpot} onChangeValue={onChangeValue} />
         </form>
-    </div>
+      </div>
     </div>
   );
 }

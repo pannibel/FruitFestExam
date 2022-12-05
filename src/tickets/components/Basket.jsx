@@ -46,13 +46,13 @@ function Basket(props) {
             return (
           <li key={item.name}>
             {item.name} {item.amount}, {item.amount * item.price},-
-            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
+            <button onClick={() => {props.removeFromBasket(item.name); props.setSpotAdded(false)}}>X</button>
           </li>)
           } 
         })}
       </ul>
       <h3>Total: {totalPrice()},-</h3>
-      <button onClick={() => props.setShowForm(true)}>Checkout</button>
+      <button onClick={() => {props.setShowForm(true); props.totalGuests()}}>Checkout</button>
     </div>
   );
 }

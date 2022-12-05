@@ -9,7 +9,7 @@ function Confirmation(props) {
       <p>Lorem Ipsum</p>
       <p>Lorem Ipsum</p>
 
-      <button onClick={props.changePage} name="back">Back</button>
+      <button onClick={props.changePage} name="homepage">Back to homepage</button>
     </div>
   );
 }
