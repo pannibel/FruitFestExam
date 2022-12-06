@@ -9,18 +9,20 @@ function TicketProduct(props) {
 
     <div>
       <h4>Regular ticket</h4>
+      <p>
+        Price: <span>{props.cheapprice}</span>,-
+      </p>
       <label htmlFor="ticketamount">Amount: </label>
       <select
         onChange={(event) => props.changeAmount1(event.target.value)}
         value={props.currentAmount1}>
+        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <p>
-        Price: <span>{props.cheapprice}</span>,-
-      </p>
+
       <button onClick={props.addTicket} name="Regular ticket">
         Add
       </button>
@@ -28,18 +30,19 @@ function TicketProduct(props) {
 
     <div>
       <h4>VIP ticket</h4>
+      <p>
+        Price: <span>{props.expprice}</span>,-
+      </p>
       <label htmlFor="ticketamount">Amount: </label>
       <select
         onChange={(event) => props.changeAmount2(event.target.value)}
         value={props.currentAmount2}>
+        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      <p>
-        Price: <span>{props.expprice}</span>,-
-      </p>
       <button onClick={props.addTicket} name="VIP ticket">
         Add
       </button>

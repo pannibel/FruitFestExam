@@ -91,7 +91,7 @@ function PaymentDetails(props) {
           />
         </section>
 
-        <h3>Address</h3>
+        <h3>Billing address</h3>
         <section>
           <label htmlFor="">Street name</label>
           <input
@@ -137,13 +137,13 @@ function PaymentDetails(props) {
 
         <div>
           <section>
-            <label htmlFor="">Full name</label>
+            <label htmlFor="">Name on card</label>
             <input
               defaultValue={""}
               type="text"
               name="fullname"
               id="form-fullname"
-              placeholder="your name here"
+              placeholder=""
             />
           </section>
           <section>

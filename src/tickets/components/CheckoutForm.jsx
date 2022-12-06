@@ -9,6 +9,8 @@ import App from "../../App";
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
 
+  console.log(props.guestNumber)
+
   function changePage(e) {
     e.preventDefault();
 

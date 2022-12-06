@@ -11,9 +11,9 @@ function Products(props) {
 
   const cheapprice = 799;
   const expprice = 1299;
-  const extra1price = 100;
-  const extra2price = 200;
-  const extra3price = 300;
+  const extra1price = 249;
+  const extra2price = 299;
+  const extra3price = 399;
   let productData = {
     name: "",
     type: "",
@@ -25,21 +25,28 @@ function Products(props) {
     e.preventDefault();
 
     if (e.target.name === "Regular ticket") {
-      productData = {
-        name: e.target.name,
-        type: "ticket",
-        amount: parseInt(props.currentAmount1),
-        price: cheapprice * props.currentAmount1,
-      };
+      if (props.currentAmount1 > 0) {
+        productData = {
+          name: e.target.name,
+          type: "ticket",
+          amount: parseInt(props.currentAmount1),
+          price: cheapprice * props.currentAmount1,
+        };
+      } else if (props.currentAmount1 === 0) {
+        console.log("select amount first pls")
+      }
     }
 
     if (e.target.name === "VIP ticket") {
+      if (props.currentAmount2 > 0) {
       productData = {
         name: e.target.name,
         type: "ticket",
         amount: parseInt(props.currentAmount2),
         price: expprice * props.currentAmount2,
       };
+    }} else if (props.currentAmount2 === 0) {
+      console.log("select amount first pls")
     }
 
     props.addToBasket(productData);
@@ -49,12 +56,12 @@ function Products(props) {
     e.preventDefault();
     let extraprice;
 
-    if (e.target.name === "extra1") {
+    if (e.target.name === "Green camping") {
       extraprice = extra1price;
-    } else if (e.target.name === "extra2") {
+    } else if (e.target.name === "2-person tent set up") {
       extraprice = extra2price;
     }
-    if (e.target.name === "extra3") {
+    if (e.target.name === "3-person tent set up") {
       extraprice = extra3price;
     }
 
