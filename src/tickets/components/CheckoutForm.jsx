@@ -8,20 +8,19 @@ import App from "../../App";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-  console.log(props.guestNumber);
 
   function changePage(e) {
     e.preventDefault();
 
     if (e.target.name === "next") {
-      setState(state+1)
-    };
+      setState(state + 1);
+    }
     if (e.target.name === "back") {
-      setState(state-1)
-    };
+      setState(state - 1);
+    }
     if (e.target.name === "homepage") {
-      setState(0)
-    };
+      setState(0);
+    }
   }
 
   function totalPrice() {
@@ -34,47 +33,16 @@ function CheckoutForm(props) {
 
   return (
     <div className="checkoutform">
-            <div>
-        <h3>Items</h3>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "ticket") {
-            return (
-          <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
-          </li>)
-          } 
-        })}
-      </ul>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "extra") {
-            return (
-          <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
-          </li>)
-          } 
-        })}
-      </ul>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "camping spot") {
-            return (
-          <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
-          </li>)
-          } 
-        })}
-      </ul>
-      <h3>Total: {totalPrice()},-</h3>
-      </div>
-      <h2>Checkoutform</h2>
-      {state == 0 ? <App /> : ""}
-      {state == 1 ? <GuestInfo changePage={changePage} guestNumber={props.guestNumber}/> : ""}
-      {state == 2 ? <PaymentDetails changePage={changePage}/> : ""}
-      {state == 3 ? <Pay changePage={changePage} /> : ""}
-      {state == 4 ? <Confirmation changePage={changePage}/> : ""}
 
+      {state == 0 ? <App /> : ""}
+      {state == 1 ? (
+        <GuestInfo changePage={changePage} guestNumber={props.guestNumber} basket={props.basket} totalPrice={totalPrice}/>
+      ) : (
+        ""
+      )}
+      {state == 2 ? <PaymentDetails changePage={changePage} basket={props.basket} totalPrice={totalPrice}/> : ""}
+      {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
+      {state == 3 ? <Confirmation changePage={changePage} basket={props.basket} totalPrice={totalPrice}/> : ""}
     </div>
   );
 }

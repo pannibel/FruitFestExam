@@ -6,13 +6,49 @@ function GuestInfo(props) {
   let i = 0;
 
   return (
+    
     <div>
+      <div>
+        <h3>Items</h3>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "ticket") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "extra") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "camping spot") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <h3>Total: {props.totalPrice()},-</h3>
+      </div>
+
       <h1>Guest Info</h1>
-      <p>Guest number: {props.guestNumber}</p>
       <form ref={theForm} className="inputForm">
-      {[...Array(props.guestNumber)].map((elementInArray, index) => (
-
-
+        {[...Array(props.guestNumber)].map((elementInArray, index) => (
           <div className="" key={i++}>
             <h3>Guest info {i + 1}</h3>
             <input
@@ -30,7 +66,7 @@ function GuestInfo(props) {
               placeholder="Email address"
             />
           </div>
-      ))}
+        ))}
       </form>
 
       <button onClick={props.changePage} name="next">
