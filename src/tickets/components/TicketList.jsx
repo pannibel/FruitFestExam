@@ -4,39 +4,38 @@ import Basket from "./Basket";
 import Products from "./Products";
 
 function TicketList(props) {
-  const [currentAmount1, setCurrentAmount1] = useState(1);
-  const [currentAmount2, setCurrentAmount2] = useState(1);
+  const [currentAmount1, setCurrentAmount1] = useState(0);
+  const [currentAmount2, setCurrentAmount2] = useState(0);
   const [spotAdded, setSpotAdded] = useState(false);
 
   const changeAmount1 = (newAmount) => {
-    setCurrentAmount1(newAmount);
+    setCurrentAmount1(parseInt(newAmount));
   };
   const changeAmount2 = (newAmount) => {
-    setCurrentAmount2(newAmount);
+    setCurrentAmount2(parseInt(newAmount));
   };
 
   function addToBasket(data) {
-
     if (props.basket.find((entry) => entry.name === data.name)) {
-      props.setBasket((oldBasket) =>
-        oldBasket.map((entry) => {
-          if (entry.name !== data.name) {
-            return entry;
-          }
 
-          const copy = { ...entry };
-
-              if (entry.name === "Regular ticket") {
-                copy.amount = currentAmount1;
-              } else if (entry.name === "VIP ticket") {
-                copy.amount = currentAmount2;
-              }
-          return copy;
-            }));
-    } else {
-      props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
-    }
-  }
+        props.setBasket((oldBasket) =>
+          oldBasket.map((entry) => {
+            if (entry.name !== data.name) {
+              return entry;
+            }
+            const copy = { ...entry };
+  
+                if (entry.name === "Regular ticket") {
+                  copy.amount = currentAmount1;
+                } else if (entry.name === "VIP ticket") {
+                  copy.amount = currentAmount2;
+                }
+            return copy;
+              }));
+      } else {
+        props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
+      }
+      }
 
   function removeFromBasket(name) {
     // find and modify a product
@@ -65,6 +64,7 @@ function TicketList(props) {
         changeAmount2={changeAmount2}
         setSpotAdded={setSpotAdded}
         spotAdded={spotAdded}
+        guestNumber={props.guestNumber}
       />
       <Basket
         setShowForm={props.setShowForm}

@@ -43,7 +43,7 @@ function Basket(props) {
           if (item.type === "extra") {
             return (
           <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
+            {item.name}, {item.amount * item.price},-
             <button onClick={() => props.removeFromBasket(item.name)}>X</button>
           </li>)
           } 
@@ -56,7 +56,7 @@ function Basket(props) {
           if (item.type === "camping spot") {
             return (
           <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
+            {item.name}, {item.amount * item.price},-
             <button onClick={() => {props.removeFromBasket(item.name); props.setSpotAdded(false)}}>X</button>
           </li>)
           } 

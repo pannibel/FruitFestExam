@@ -16,6 +16,7 @@ function TicketProduct(props) {
       <select
         onChange={(event) => props.changeAmount1(event.target.value)}
         value={props.currentAmount1}>
+        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -36,6 +37,7 @@ function TicketProduct(props) {
       <select
         onChange={(event) => props.changeAmount2(event.target.value)}
         value={props.currentAmount2}>
+        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

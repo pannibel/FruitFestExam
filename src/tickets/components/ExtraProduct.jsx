@@ -12,7 +12,7 @@ function ExtraProduct(props) {
     <p>
       Price: <span>{props.extra1price}</span>,-
     </p>
-    <button onClick={props.addExtras} name="extra1">
+    <button onClick={props.addExtras} name="Green camping">
       Add
     </button>
   </div>
@@ -22,7 +22,7 @@ function ExtraProduct(props) {
     <p>
       Price: <span>{props.extra2price}</span>,-
     </p>
-    <button onClick={props.addExtras} name="extra2">
+    <button onClick={props.addExtras} name="2-person tent set up">
       Add
     </button>
   </div>
@@ -32,7 +32,7 @@ function ExtraProduct(props) {
     <p>
       Price: <span>{props.extra3price}</span>,-
     </p>
-    <button onClick={props.addExtras} name="extra3">
+    <button onClick={props.addExtras} name="3-person tent set up">
       Add
     </button>
   </div>
