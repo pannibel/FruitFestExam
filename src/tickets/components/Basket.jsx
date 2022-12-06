@@ -10,6 +10,17 @@ function Basket(props) {
     return total;
   }
 
+  function totalGuests() {
+    let i = 0;
+    props.basket.forEach((item) => {
+      if (item.type === "ticket") {
+        i = i + item.amount
+      }
+      props.setGuestNumber(i);
+    });
+    
+  }
+
   return (
     <div>
       <h2>Basket</h2>
@@ -52,7 +63,7 @@ function Basket(props) {
         })}
       </ul>
       <h3>Total: {totalPrice()},-</h3>
-      <button onClick={() => {props.setShowForm(true); props.totalGuests()}}>Checkout</button>
+      <button onClick={() => {props.setShowForm(true); totalGuests()}}>Checkout</button>
     </div>
   );
 }
