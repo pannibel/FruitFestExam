@@ -118,4 +118,5 @@ button:focus-visible {
   font-size: x-large;
   color: #9e00ff;
   -webkit-text-stroke: 2px rgb(221, 221, 221);
+  mix-blend-mode: lighten;
 }

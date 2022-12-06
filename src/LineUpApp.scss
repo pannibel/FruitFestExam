@@ -62,7 +62,7 @@ body {
   color: #000aff;
 }
 #stageGreen {
-  color: darkgreen;
+  color: #006400;
 }
 
 // band list
@@ -74,9 +74,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  // border: rgb(120, 120, 120, 0.5) 2px solid;
-  outline: rgba(255, 255, 255, 0.6) 2px solid;
-  outline-offset: -2px;
+  border: rgba(255, 255, 255, 0.6) 2px solid;
 }
 
 .singleBandCont {
@@ -92,9 +90,14 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  h4 {
+    color: black;
+  }
 }
 .likeBtn {
   text-align: left;
+  color: #4400ff;
+
   button {
     background: none;
     color: #4400ff;
