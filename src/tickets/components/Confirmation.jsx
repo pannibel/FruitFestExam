@@ -4,12 +4,45 @@ function Confirmation(props) {
   return (
     <div>
       <h1>Confirmation of purchase</h1>
-      <p>Lorem Ipsum</p>
-      <p>Lorem Ipsum</p>
-      <p>Lorem Ipsum</p>
-      <p>Lorem Ipsum</p>
+      <div>
+        <h3>Your items:</h3>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "ticket") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "extra") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "camping spot") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <h3>Total: {props.totalPrice()},-</h3>
 
       <button onClick={props.changePage} name="homepage">Back to homepage</button>
+    </div>
     </div>
   );
 }

@@ -6,7 +6,45 @@ function GuestInfo(props) {
   let i = 0;
 
   return (
+    
     <div>
+      <div>
+        <h3>Items</h3>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "ticket") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "extra") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "camping spot") {
+              return (
+                <li key={item.name}>
+                  {item.name} {item.amount}, {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <h3>Total: {props.totalPrice()},-</h3>
+      </div>
 
       <h1>Guest Info</h1>
       <form ref={theForm} className="inputForm">
