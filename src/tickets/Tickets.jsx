@@ -35,7 +35,6 @@ function Tickets() {
           <CheckoutForm
             showForm={showForm}
             basket={basket}
-            setGuestNumber={setGuestNumber}
             guestNumber={guestNumber}
           />
         )}
