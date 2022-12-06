@@ -1,14 +1,106 @@
+body {
+  background-image: url("./assets/background_1.webp");
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .NavBarCont {
   position: fixed;
+  width: 80%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0);
+
   bottom: 10px;
-  left: 10px;
-  right: 10px;
+  // left: 10px;
+  // right: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 5%;
+  gap: 10%;
 }
 .burgerIcon {
   position: fixed;
   top: 30px;
   right: 30px;
+}
+
+// currently playing player
+.currentlyCont {
+  display: grid;
+  text-align: start;
+  background-color: rgba(247, 247, 247, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 3px solid #cccccc;
+  margin-top: 20vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  // padding: 5%;
+  h3 {
+    font-size: large;
+  }
+}
+.currentBandRow {
+  font-size: small;
+  display: grid;
+  grid-template-columns: 5fr 5fr 4fr;
+  justify-content: space-between;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+// .playerStage {
+//   text-align: start;
+// }
+.playerBand {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 150px;
+}
+#stageRed {
+  color: #ff1100;
+}
+#stageBlue {
+  color: #000aff;
+}
+#stageGreen {
+  color: darkgreen;
+}
+
+// band list
+.imgSingleBand {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 5vw;
+  height: 50%;
+}
+.singleBandCont {
+  margin-left: 3%;
+  margin-right: 3%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  border: 1px white solid;
+  align-items: center;
+  text-align: start;
+  background-color: rgb(255, 255, 255, 0.75);
+}
+.likeBtn {
+  text-align: left;
+  button {
+    background: none;
+    color: #4400ff;
+    padding: 0;
+    margin: 0;
+  }
+  button:hover {
+    border-color: none;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: none;
+  }
 }

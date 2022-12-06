@@ -9,6 +9,7 @@ function CurrentBand(props) {
 
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
+  let showCurrentActTime = hourBasedIndex + "-" + (hourBasedIndex + 2);
   let currentHour = hourBasedIndex + ":00";
   console.log(currentHour);
 
@@ -104,7 +105,7 @@ function CurrentBand(props) {
     playingMidgard();
     playingVanaheim();
     playingJotunheim();
-  }, []);
+  }, [props.currentBand]);
   // playingBand(Vanaheim);
 
   // Object.entries(props.currentBand.Midgard).forEach((item) => {
@@ -112,18 +113,23 @@ function CurrentBand(props) {
   // });
   return (
     <>
-      <h3>Currently Playing:</h3>
-      <div className="currentBandRow" id="stageGreen">
-        <div>MIDGARD |</div>
-        <div>{currentMidgard}</div>
-        <div>| {currentHour}</div>
-      </div>
-      <div className="currentBandRow" id="stageRed">
-        Stage Vanaheim: Band called {currentVanaheim}, started at {currentHour}
-      </div>
-      <div className="currentBandRow" id="stageBlue">
-        Stage Jotunheim: Band called {currentJotunheim}, started at{" "}
-        {currentHour}
+      <div className="currentlyCont">
+        <h3>Currently Playing:</h3>
+        <div className="currentBandRow" id="stageGreen">
+          <div className="playerStage">MIDGARD</div>
+          <div className="playerBand">| {currentMidgard}</div>
+          <div>| {currentHour}</div>
+        </div>
+        <div className="currentBandRow" id="stageRed">
+          <div className="playerStage">VANAHEIM</div>
+          <div className="playerBand">| {currentVanaheim}</div>
+          <div>| {showCurrentActTime}</div>{" "}
+        </div>
+        <div className="currentBandRow" id="stageBlue">
+          <div className="playerStage">JOTUNHEIM</div>
+          <div className="playerBand">| {currentJotunheim}</div>
+          <div>| {showCurrentActTime}</div>{" "}
+        </div>
       </div>
     </>
   );

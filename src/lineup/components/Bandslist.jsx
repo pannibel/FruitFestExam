@@ -6,21 +6,9 @@ function Bandslist(props) {
     <>
       <div>
         {props.bands.map((band) => (
-          <SingleBand
-            data={band}
-
-            // addToCart={props.addToCart}
-          />
+          <SingleBand data={band} />
         ))}
       </div>
-      <ul>
-        <li>Band one</li>
-        <li>Band two</li>
-        <li>Band three</li>
-        <li>Band four</li>
-        <li>Band five</li>
-        <li>Band six</li>
-      </ul>
     </>
   );
 }

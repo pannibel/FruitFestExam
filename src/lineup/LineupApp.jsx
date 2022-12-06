@@ -43,26 +43,28 @@ function Lineup() {
     console.log("burger menu is open " + burgerState);
   }
   return (
-    <>
+    <div className="appCont">
       <button onClick={() => openBurger()} className="burgerIcon">
-        borger
+        brurgor
       </button>
-      <div className="Logo">Ranch Fest</div>
+      <div className="logoBig">
+        <h1>Ranch Fest</h1>
+      </div>
       {lineUpPage == 1 ? <CurrentBand currentBand={currentBand} /> : ""}
       {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
       <div className="NavBarCont">
         <button onClick={() => changePageApp(1)} className="">
-          HOME
+          H
         </button>
         <button onClick={() => changePageApp(2)} className="">
-          BANDS
+          B
         </button>
         <button onClick={() => changePageApp(3)} className="">
-          SCHEDULE
+          SC
         </button>
       </div>
       {/* <Bandslist bands={bands} /> */}
-    </>
+    </div>
   );
 }
 

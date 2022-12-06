@@ -9,14 +9,19 @@ function SingleBand(props) {
   }
 
   return (
-    <>
-      <h2>{props.data.name}</h2>
-      <h3>{props.data.genre}</h3>
-      <h6>{JSON.stringify(likedBand)}</h6>
-      <button onClick={likeBand}>like it</button>
-      <h5>{props.data.name}</h5>
-      <img src={props.data.logo} alt={props.data.logoCredits}></img>
-    </>
+    <div className="singleBandCont">
+      <img
+        src={props.data.logo}
+        // alt={props.data.logoCredits}
+        className="imgSingleBand"
+      ></img>
+      <h4>{props.data.name}</h4>
+
+      <div className="likeBtn">
+        <button onClick={likeBand}>like it</button>
+        <div>{JSON.stringify(likedBand)}</div>
+      </div>
+    </div>
   );
 }
 

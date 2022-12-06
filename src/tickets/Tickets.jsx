@@ -17,7 +17,7 @@ function Tickets() {
     <div>
       <div>
         {" "}
-        <Countdown date={Date.now() + 10000000} />
+        <Countdown date={Date.now() + 1000000000} />
       </div>
       {/* <TicketHeader /> */}
       <main>
