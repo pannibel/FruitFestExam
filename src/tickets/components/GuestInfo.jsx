@@ -7,12 +7,10 @@ function GuestInfo(props) {
 
   return (
     <div>
+
       <h1>Guest Info</h1>
-      <p>Guest number: {props.guestNumber}</p>
       <form ref={theForm} className="inputForm">
-      {[...Array(props.guestNumber)].map((elementInArray, index) => (
-
-
+        {[...Array(props.guestNumber)].map((elementInArray, index) => (
           <div className="" key={i++}>
             <h3>Guest info {i + 1}</h3>
             <input
@@ -30,7 +28,7 @@ function GuestInfo(props) {
               placeholder="Email address"
             />
           </div>
-      ))}
+        ))}
       </form>
 
       <button onClick={props.changePage} name="next">

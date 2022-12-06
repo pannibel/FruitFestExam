@@ -8,7 +8,6 @@ import App from "../../App";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-  console.log(props.guestNumber);
 
   function changePage(e) {
     e.preventDefault();
@@ -68,12 +67,12 @@ function CheckoutForm(props) {
       </ul>
       <h3>Total: {totalPrice()},-</h3>
       </div>
-      <h2>Checkoutform</h2>
+
       {state == 0 ? <App /> : ""}
       {state == 1 ? <GuestInfo changePage={changePage} guestNumber={props.guestNumber}/> : ""}
       {state == 2 ? <PaymentDetails changePage={changePage}/> : ""}
-      {state == 3 ? <Pay changePage={changePage} /> : ""}
-      {state == 4 ? <Confirmation changePage={changePage}/> : ""}
+      {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
+      {state == 3 ? <Confirmation changePage={changePage}/> : ""}
 
     </div>
   );

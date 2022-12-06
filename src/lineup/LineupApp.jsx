@@ -3,6 +3,7 @@ import "../LineUpApp.scss";
 import { useState, useEffect } from "react";
 import Bandslist from "./components/Bandslist";
 import CurrentBand from "./components/CurrentBand";
+//npm i react-creditcard-validator
 
 function Lineup() {
   const [lineUpPage, setLineUpPage] = useState(1);
