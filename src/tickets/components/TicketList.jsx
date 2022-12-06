@@ -16,6 +16,7 @@ function TicketList(props) {
   };
 
   function addToBasket(data) {
+
     if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
         oldBasket.map((entry) => {
@@ -24,14 +25,14 @@ function TicketList(props) {
           }
 
           const copy = { ...entry };
-          if (entry.name === "Regular ticket") {
-            copy.amount = currentAmount1;
-          } else if (entry.name === "VIP ticket") {
-            copy.amount = currentAmount2;
-          }
+
+              if (entry.name === "Regular ticket") {
+                copy.amount = currentAmount1;
+              } else if (entry.name === "VIP ticket") {
+                copy.amount = currentAmount2;
+              }
           return copy;
-        })
-      );
+            }));
     } else {
       props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
     }

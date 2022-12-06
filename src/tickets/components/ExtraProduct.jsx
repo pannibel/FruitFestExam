@@ -8,7 +8,7 @@ function ExtraProduct(props) {
     <h3>2. Add extras</h3>
 
   <div className="extra">
-    <label htmlFor="form-extras">VIP treatment</label>
+    <label htmlFor="form-extras">Green camping option</label>
     <p>
       Price: <span>{props.extra1price}</span>,-
     </p>
@@ -18,7 +18,7 @@ function ExtraProduct(props) {
   </div>
 
   <div className="extra">
-    <label htmlFor="form-extras">Better food</label>
+    <label htmlFor="form-extras">2-person tent set up (tent included)</label>
     <p>
       Price: <span>{props.extra2price}</span>,-
     </p>
@@ -28,7 +28,7 @@ function ExtraProduct(props) {
   </div>
 
   <div className="extra">
-    <label htmlFor="form-extras">No racist comments</label>
+    <label htmlFor="form-extras">3-person tent set up (tent included)</label>
     <p>
       Price: <span>{props.extra3price}</span>,-
     </p>

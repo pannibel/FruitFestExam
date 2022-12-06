@@ -11,9 +11,9 @@ function Products(props) {
 
   const cheapprice = 799;
   const expprice = 1299;
-  const extra1price = 100;
-  const extra2price = 200;
-  const extra3price = 300;
+  const extra1price = 249;
+  const extra2price = 299;
+  const extra3price = 399;
   let productData = {
     name: "",
     type: "",
