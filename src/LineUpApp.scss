@@ -12,10 +12,8 @@ body {
   left: 50%;
   text-align: center;
   transform: translate(-50%, 0);
-
   bottom: 10px;
-  // left: 10px;
-  // right: 10px;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10%;
@@ -50,9 +48,7 @@ body {
   margin-left: 3%;
   margin-right: 3%;
 }
-// .playerStage {
-//   text-align: start;
-// }
+
 .playerBand {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -75,10 +71,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
-  width: 5vw;
-  height: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  // border: rgb(120, 120, 120, 0.5) 2px solid;
+  outline: rgba(255, 255, 255, 0.6) 2px solid;
+  outline-offset: -2px;
 }
+
 .singleBandCont {
+  font-size: small;
   margin-left: 3%;
   margin-right: 3%;
   display: grid;
@@ -87,6 +89,9 @@ body {
   align-items: center;
   text-align: start;
   background-color: rgb(255, 255, 255, 0.75);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .likeBtn {
   text-align: left;
