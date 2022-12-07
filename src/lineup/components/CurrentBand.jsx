@@ -49,12 +49,12 @@ function CurrentBand(props) {
       // console.log(item);
     });
   }
-  function playingVanaheim() {
+  function playingVanaheim(x) {
     Object.entries(props.currentBand).map((item) => {
       if (item[0] === "Vanaheim") {
         Object.entries(item[1]).map((weekDays) => {
           if (weekDays[0] === dayOfWeekName.toLowerCase()) {
-            // console.log(weekDays[1]);
+            // console.log(props.currentBand);
             let currentDay = weekDays[1].find(
               (day) => day.start === currentHour
             );

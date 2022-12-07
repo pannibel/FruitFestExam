@@ -42,8 +42,10 @@ function Confirmation(props) {
         </ul>
         <h3>Total: {props.totalPrice()},-</h3>
 
-      <button onClick={props.changePage} name="homepage">Back to homepage</button>
-    </div>
+        <button onClick={props.changePage} name="homepage">
+          Back to homepage
+        </button>
+      </div>
     </div>
   );
 }
