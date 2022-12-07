@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+
 function SingleBand(props) {
   const [likedBand, setLikedBand] = useState(true);
   function likeBand() {
@@ -7,11 +8,18 @@ function SingleBand(props) {
     // props.data.liked = JSON.stringify(likedBand);
     // console.log(likedBand);
   }
+  let imageDir = props.data.logo;
+  function pickImage() {
+    if (!imageDir.includes("https://")) {
+      imageDir = "http://localhost:8080/logos/" + props.data.logo;
+    }
+  }
+  pickImage();
 
   return (
     <div className="singleBandCont">
       <img
-        src={props.data.logo}
+        src={imageDir}
         // alt={props.data.logoCredits}
         className="imgSingleBand"
       ></img>

@@ -20,7 +20,6 @@ function Basket(props) {
     });
   }
 
-
   return (
     <div>
       <h2>Basket</h2>
@@ -29,11 +28,14 @@ function Basket(props) {
         {props.basket.map((item) => {
           if (item.type === "ticket") {
             return (
-          <li key={item.name}>
-            {item.name} {item.amount}, {item.amount * item.price},-
-            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
-          </li>)
-          } 
+              <li key={item.name}>
+                {item.name} {item.amount}, {item.amount * item.price},-
+                <button onClick={() => props.removeFromBasket(item.name)}>
+                  X
+                </button>
+              </li>
+            );
+          }
         })}
       </ul>
 
@@ -42,11 +44,14 @@ function Basket(props) {
         {props.basket.map((item) => {
           if (item.type === "extra") {
             return (
-          <li key={item.name}>
-            {item.name}, {item.amount * item.price},-
-            <button onClick={() => props.removeFromBasket(item.name)}>X</button>
-          </li>)
-          } 
+              <li key={item.name}>
+                {item.name}, {item.amount * item.price},-
+                <button onClick={() => props.removeFromBasket(item.name)}>
+                  X
+                </button>
+              </li>
+            );
+          }
         })}
       </ul>
 
@@ -55,15 +60,32 @@ function Basket(props) {
         {props.basket.map((item) => {
           if (item.type === "camping spot") {
             return (
-          <li key={item.name}>
-            {item.name}, {item.amount * item.price},-
-            <button onClick={() => {props.removeFromBasket(item.name); props.setSpotAdded(false)}}>X</button>
-          </li>)
-          } 
+              <li key={item.name}>
+                {item.name}, {item.amount * item.price},-
+                <button
+                  onClick={() => {
+                    props.removeFromBasket(item.name);
+                    props.setSpotAdded(false);
+                  }}
+                >
+                  X
+                </button>
+              </li>
+            );
+          }
         })}
       </ul>
       <h3>Total: {totalPrice()},-</h3>
-      <button onClick={() => {{props.setShowForm(true); totalGuests()}}}>Checkout</button>
+      <button
+        onClick={() => {
+          {
+            props.setShowForm(true);
+            totalGuests();
+          }
+        }}
+      >
+        Checkout
+      </button>
     </div>
   );
 }

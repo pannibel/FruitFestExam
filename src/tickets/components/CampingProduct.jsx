@@ -1,9 +1,8 @@
 import React from "react";
-import { useRef } from "react";
-import { useState } from "react";
+// import { useRef } from "react";
+// import { useState } from "react";
 
 function CampingProduct(props) {
-
   return (
     <div className="form-control">
       <h3>3. Choose your camping spot</h3>

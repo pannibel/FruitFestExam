@@ -29,11 +29,11 @@ function CurrentBand(props) {
       if (item[0] === "Midgard") {
         Object.entries(item[1]).map((weekDays) => {
           if (weekDays[0] === dayOfWeekName.toLowerCase()) {
-            // console.log(weekDays[1]);
+            console.log(weekDays[1]);
             let currentDay = weekDays[1].find(
               (day) => day.start === currentHour
             );
-            // console.log(currentDay.act);
+            // console.log(currentDay);
             let currentAct = currentDay.act;
 
             // stage.preventDefault();
