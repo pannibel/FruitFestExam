@@ -4,6 +4,8 @@ import React from "react";
 
 function CampingProduct(props) {
   console.log(props.campingSpots);
+
+
   return (
     <div className="form-control">
       <h3>3. Choose your camping spot</h3>
