@@ -26,10 +26,10 @@ function Lineup() {
       const res = await fetch("http://localhost:8080/bands");
       const data = await res.json();
       setBands(data);
-      let i = 1;
-      data.forEach(function (element) {
+
+      data.forEach(function (element, i) {
         element.liked = "true";
-        element.key = ++i;
+        element.key = i;
       });
       console.log(data);
     }

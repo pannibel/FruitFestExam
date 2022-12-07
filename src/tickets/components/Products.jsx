@@ -33,20 +33,21 @@ function Products(props) {
           price: cheapprice * props.currentAmount1,
         };
       } else if (props.currentAmount1 === 0) {
-        console.log("select amount first pls")
+        console.log("select amount first pls");
       }
     }
 
     if (e.target.name === "VIP ticket") {
       if (props.currentAmount2 > 0) {
-      productData = {
-        name: e.target.name,
-        type: "ticket",
-        amount: parseInt(props.currentAmount2),
-        price: expprice * props.currentAmount2,
-      };
-    }} else if (props.currentAmount2 === 0) {
-      console.log("select amount first pls")
+        productData = {
+          name: e.target.name,
+          type: "ticket",
+          amount: parseInt(props.currentAmount2),
+          price: expprice * props.currentAmount2,
+        };
+      }
+    } else if (props.currentAmount2 === 0) {
+      console.log("select amount first pls");
     }
 
     props.addToBasket(productData);
@@ -78,23 +79,26 @@ function Products(props) {
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
   }
+  // function checkAvailSpots() {
+
+  // }
 
   function addSpot(e) {
     e.preventDefault();
     if (props.spotAdded === false) {
-      props.setSpotAdded(true)
-  
+      props.setSpotAdded(true);
+
       productData = {
         name: chosenSpot,
         type: "camping spot",
         amount: 1,
         price: "",
       };
-  
+
       props.addToBasket(productData);
-    };
+    }
     if (props.spotAdded === true) {
-      console.log("action not possible")
+      console.log("action not possible");
     }
   }
 
@@ -119,7 +123,11 @@ function Products(props) {
             extra2price={extra2price}
             extra3price={extra3price}
           />
-          <CampingProduct addSpot={addSpot} onChangeValue={onChangeValue} />
+          <CampingProduct
+            addSpot={addSpot}
+            onChangeValue={onChangeValue}
+            campingSpots={props.campingSpots}
+          />
         </form>
       </div>
     </div>
