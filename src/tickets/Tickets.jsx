@@ -34,10 +34,12 @@ function Tickets() {
         {showForm && (
           <CheckoutForm
             showForm={showForm}
+            setShowForm={setShowForm}
             basket={basket}
             guestNumber={guestNumber}
           />
         )}
+        <a href={`/`}>go to the main page</a>
       </main>
     </div>
   );

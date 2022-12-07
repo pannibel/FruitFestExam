@@ -9,7 +9,7 @@ import App from "../../App";
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
 
-  console.log(props.guestNumber)
+  console.log(props.guestNumber);
 
   function changePage(e) {
     e.preventDefault();
@@ -35,16 +35,45 @@ function CheckoutForm(props) {
 
   return (
     <div className="checkoutform">
-
       {state == 0 ? <App /> : ""}
       {state == 1 ? (
-        <GuestInfo changePage={changePage} guestNumber={props.guestNumber} basket={props.basket} totalPrice={totalPrice}/>
+        <GuestInfo
+          changePage={changePage}
+          guestNumber={props.guestNumber}
+          basket={props.basket}
+          totalPrice={totalPrice}
+        />
       ) : (
         ""
       )}
-      {state == 2 ? <PaymentDetails changePage={changePage} basket={props.basket} totalPrice={totalPrice}/> : ""}
+      {state == 2 ? (
+        <PaymentDetails
+          changePage={changePage}
+          basket={props.basket}
+          totalPrice={totalPrice}
+        />
+      ) : (
+        ""
+      )}
       {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
-      {state == 3 ? <Confirmation changePage={changePage} basket={props.basket} totalPrice={totalPrice}/> : ""}
+      {state == 3 ? (
+        <Confirmation
+          changePage={changePage}
+          basket={props.basket}
+          totalPrice={totalPrice}
+        />
+      ) : (
+        ""
+      )}
+      <button
+        onClick={() => {
+          {
+            props.setShowForm(false);
+          }
+        }}
+      >
+        Go back
+      </button>
     </div>
   );
 }
