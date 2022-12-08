@@ -26,8 +26,15 @@ function SingleBand(props) {
       <h4>{props.data.name}</h4>
 
       <div className="likeBtn">
-        <button onClick={likeBand}>like it</button>
-        <div>{JSON.stringify(likedBand)}</div>
+        <button
+          className={likedBand ? "buttBlue" : "buttRed"}
+          onClick={likeBand}
+        >
+          {likedBand ? "like it" : "liked"}
+        </button>
+        <div className={likedBand ? "buttBlue" : "buttRed"}>
+          {JSON.stringify(likedBand)}
+        </div>
       </div>
     </div>
   );
