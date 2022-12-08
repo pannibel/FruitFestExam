@@ -3,6 +3,65 @@ import { useRef } from "react";
 import { useState } from "react";
 
 function TicketProduct(props) {
+  let [count, setCount] = useState({reg:0, vip:0});
+
+  function incrementCount(e) {
+    e.preventDefault();
+
+    if (e.target.name === "regInc") {
+      if (count.reg <= 3) {
+        count.reg++;
+        count.vip = count.vip;
+        console.log(count.reg)
+      } else {
+        console.log("you maxed the tickets out")
+        console.log(count)
+      };
+    }
+
+    if (e.target.name === "vipInc") {
+      if (count.vip <= 3) {
+        count.vip++;
+        count.reg = count.reg;
+        console.log(count.vip)
+      } else {
+        console.log("you maxed the tickets out")
+        console.log(count)
+      }
+    }
+
+    setCount({reg: count.reg, vip: count.vip});
+
+  }
+
+  function decrementCount(e) {
+    e.preventDefault();
+
+    if (e.target.name === "regDec") {
+      if (count.reg > 0) {
+        count.reg--;
+        count.vip = count.vip;
+        console.log(count.reg)
+      } else {
+        console.log("you can't buy minus amount dumby")
+        console.log(count)
+      };
+    }
+
+    if (e.target.name === "vipDec") {
+      if (count.vip > 0) {
+        count.vip--;
+        count.reg = count.reg;
+        console.log(count.vip)
+      } else {
+        console.log("you can't buy minus amount dumby")
+        console.log(count)
+      }
+    }
+
+    setCount({reg: count.reg, vip: count.vip});
+  }
+
   return (
       <div className="form-control">
         <h3>1. Choose ticket type</h3>
@@ -13,15 +72,12 @@ function TicketProduct(props) {
         Price: <span>{props.cheapprice}</span>,-
       </p>
       <label htmlFor="ticketamount">Amount: </label>
-      <select
-        onChange={(event) => props.changeAmount1(event.target.value)}
-        value={props.currentAmount1}>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
+
+      <div>
+      <button name="regDec" onClick={decrementCount}>-</button>
+      <div>{count.reg}</div>
+      <button name="regInc" onClick={incrementCount}>+</button>
+      </div>
 
       <button onClick={props.addTicket} name="Regular ticket">
         Add
@@ -34,15 +90,13 @@ function TicketProduct(props) {
         Price: <span>{props.expprice}</span>,-
       </p>
       <label htmlFor="ticketamount">Amount: </label>
-      <select
-        onChange={(event) => props.changeAmount2(event.target.value)}
-        value={props.currentAmount2}>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
+ 
+      <div>
+      <button name="vipDec" onClick={decrementCount}>-</button>
+      <div>{count.vip}</div>
+      <button name="vipInc" onClick={incrementCount}>+</button>
+      </div>
+      
       <button onClick={props.addTicket} name="VIP ticket">
         Add
       </button>

@@ -8,6 +8,7 @@ import TicketProduct from "./TicketProduct";
 function Products(props) {
   const theForm = useRef(null);
   const [chosenSpot, setChosenSpot] = useState();
+  let [count, setCount] = useState(0);
 
   const cheapprice = 799;
   const expprice = 1299;
@@ -23,6 +24,7 @@ function Products(props) {
 
   function addTicket(e) {
     e.preventDefault();
+    console.log("tick");
 
     if (e.target.name === "Regular ticket") {
       if (props.currentAmount1 > 0) {
@@ -109,6 +111,8 @@ function Products(props) {
       <div>
         <form ref={theForm} className="products">
           <TicketProduct
+            count={count}
+            setCount={setCount}
             currentAmount1={props.currentAmount1}
             currentAmount2={props.currentAmount2}
             addTicket={addTicket}
