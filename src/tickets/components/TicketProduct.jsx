@@ -3,34 +3,33 @@ import { useRef } from "react";
 import { useState } from "react";
 
 function TicketProduct(props) {
-  let [count, setCount] = useState({reg:0, vip:0});
 
   function incrementCount(e) {
     e.preventDefault();
 
     if (e.target.name === "regInc") {
-      if (count.reg <= 3) {
-        count.reg++;
-        count.vip = count.vip;
-        console.log(count.reg)
+      if (props.count.reg <= 3) {
+        props.count.reg++;
+        console.log(props.count.reg)
       } else {
         console.log("you maxed the tickets out")
-        console.log(count)
+        console.log(props.count)
       };
+      props.addTicket("regular")
     }
 
     if (e.target.name === "vipInc") {
-      if (count.vip <= 3) {
-        count.vip++;
-        count.reg = count.reg;
-        console.log(count.vip)
+      if (props.count.vip <= 3) {
+        props.count.vip++;
+        console.log(props.count.vip)
       } else {
         console.log("you maxed the tickets out")
-        console.log(count)
-      }
+        console.log(props.count)
+      };
+      props.addTicket("vip")
     }
 
-    setCount({reg: count.reg, vip: count.vip});
+    props.setCount({reg: props.count.reg, vip: props.count.vip});
 
   }
 
@@ -38,28 +37,28 @@ function TicketProduct(props) {
     e.preventDefault();
 
     if (e.target.name === "regDec") {
-      if (count.reg > 0) {
-        count.reg--;
-        count.vip = count.vip;
-        console.log(count.reg)
+      if (props.count.reg > 1) {
+        props.count.reg--;
+        console.log(props.count.reg)
       } else {
         console.log("you can't buy minus amount dumby")
-        console.log(count)
+        console.log(props.count)
       };
+      props.addTicket("regular")
     }
 
     if (e.target.name === "vipDec") {
-      if (count.vip > 0) {
-        count.vip--;
-        count.reg = count.reg;
-        console.log(count.vip)
+      if (props.count.vip > 1) {
+        props.count.vip--;
+        console.log(props.count.vip)
       } else {
         console.log("you can't buy minus amount dumby")
-        console.log(count)
-      }
+        console.log(props.count)
+      };
+      props.addTicket("vip")
     }
 
-    setCount({reg: count.reg, vip: count.vip});
+    props.setCount({reg: props.count.reg, vip: props.count.vip});
   }
 
   return (
@@ -75,13 +74,9 @@ function TicketProduct(props) {
 
       <div>
       <button name="regDec" onClick={decrementCount}>-</button>
-      <div>{count.reg}</div>
+      <div>{props.count.reg}</div>
       <button name="regInc" onClick={incrementCount}>+</button>
       </div>
-
-      <button onClick={props.addTicket} name="Regular ticket">
-        Add
-      </button>
     </div>
 
     <div>
@@ -93,13 +88,9 @@ function TicketProduct(props) {
  
       <div>
       <button name="vipDec" onClick={decrementCount}>-</button>
-      <div>{count.vip}</div>
+      <div>{props.count.vip}</div>
       <button name="vipInc" onClick={incrementCount}>+</button>
       </div>
-      
-      <button onClick={props.addTicket} name="VIP ticket">
-        Add
-      </button>
     </div>
     </div>
   )
