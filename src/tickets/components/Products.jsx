@@ -24,7 +24,7 @@ function Products(props) {
   function addTicket(tickettype) {
     console.log(props.count);
 
-    if (tickettype === "regular") {
+    if (tickettype === "regular" && props.count.reg + props.count.vip <= 4) {
         productData = {
           name: "regular",
           type: "ticket",
@@ -34,7 +34,7 @@ function Products(props) {
       }
     
 
-    if (tickettype === "vip") {
+    if (tickettype === "vip" && props.count.reg + props.count.vip <= 4) {
         productData = {
           name: "vip",
           type: "ticket",

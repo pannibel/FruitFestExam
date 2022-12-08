@@ -8,7 +8,7 @@ function TicketProduct(props) {
     e.preventDefault();
 
     if (e.target.name === "regInc") {
-      if (props.count.reg <= 3) {
+      if (props.count.reg <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.reg++;
         console.log(props.count.reg)
       } else {
@@ -19,7 +19,7 @@ function TicketProduct(props) {
     }
 
     if (e.target.name === "vipInc") {
-      if (props.count.vip <= 3) {
+      if (props.count.vip <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.vip++;
         console.log(props.count.vip)
       } else {
