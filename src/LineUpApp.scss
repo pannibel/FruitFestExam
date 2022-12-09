@@ -18,6 +18,23 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10%;
 }
+
+.burgerMenu {
+background-color: #ffffff71;
+background-blend-mode: difference;
+position: absolute;
+top: 0;
+left: 0;
+height: 100vh;
+
+display: flex;
+flex-direction: column;
+
+padding-top: 10rem;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+
 .burgerIcon {
   position: fixed;
   top: 30px;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.8",
     "react-countdown": "^2.3.5",
     "react-creditcard-validator": "^1.0.6",
     "react-dom": "^18.2.0",

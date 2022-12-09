@@ -3,11 +3,13 @@ import "../LineUpApp.scss";
 import { useState, useEffect } from "react";
 import Bandslist from "./components/Bandslist";
 import CurrentBand from "./components/CurrentBand";
+import Burger from "./components/Burger";
 //npm i react-creditcard-validator
+//npm i react-burger-menu
 
 function Lineup() {
   const [lineUpPage, setLineUpPage] = useState(1);
-  const [burgerState, setBurgerState] = useState(true);
+  const [burgerState, setBurgerState] = useState(false);
 
   const [currentBand, setCurrentBand] = useState([]);
   useEffect(() => {
@@ -46,9 +48,8 @@ function Lineup() {
   }
   return (
     <div className="appCont">
-      <button onClick={() => openBurger()} className="burgerIcon">
-        brurgor
-      </button>
+
+
       <div className="logoBig">
         <h1>Ranch Fest</h1>
       </div>
@@ -66,6 +67,20 @@ function Lineup() {
         </button>
       </div>
       {/* <Bandslist bands={bands} /> */}
+
+      {!burgerState && (
+        <button onClick={() => openBurger()} className="burgerIcon">
+          burgir
+        </button>
+      )}
+      {burgerState && (
+        <>
+          <button onClick={() => openBurger()} className="burgerIcon">
+            x
+          </button>
+          <Burger />
+        </>
+      )}
     </div>
   );
 }

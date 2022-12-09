@@ -30,8 +30,8 @@ function TicketProduct(props) {
     }
 
     props.setCount({reg: props.count.reg, vip: props.count.vip});
+    }
 
-  }
 
   function decrementCount(e) {
     e.preventDefault();
@@ -58,7 +58,8 @@ function TicketProduct(props) {
       props.addTicket("vip")
     }
 
-    props.setCount({reg: props.count.reg, vip: props.count.vip});
+    props.setCount({reg: props.count.reg, vip: props.count.vip})
+
   }
 
   return (
@@ -73,9 +74,9 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
 
       <div>
-      <button name="regDec" onClick={decrementCount}>-</button>
+      <button name="regDec" onClick={decrementCount} disabled={false}>-</button>
       <div>{props.count.reg}</div>
-      <button name="regInc" onClick={incrementCount}>+</button>
+      <button name="regInc" onClick={incrementCount} disabled={false}>+</button>
       </div>
     </div>
 
@@ -87,9 +88,9 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
  
       <div>
-      <button name="vipDec" onClick={decrementCount}>-</button>
+      <button name="vipDec" onClick={decrementCount} disabled={false}>-</button>
       <div>{props.count.vip}</div>
-      <button name="vipInc" onClick={incrementCount}>+</button>
+      <button name="vipInc" onClick={incrementCount} disabled={false}>+</button>
       </div>
     </div>
     </div>
