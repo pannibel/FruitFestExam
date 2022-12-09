@@ -4,10 +4,10 @@ import Basket from "./Basket";
 import Products from "./Products";
 
 function TicketList(props) {
-  const [currentAmount1, setCurrentAmount1] = useState(0);
-  const [currentAmount2, setCurrentAmount2] = useState(0);
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
+  let [count, setCount] = useState({reg:0, vip:0});
+
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -18,13 +18,6 @@ function TicketList(props) {
     getData();
   }, []);
 
-  const changeAmount1 = (newAmount) => {
-    setCurrentAmount1(parseInt(newAmount));
-  };
-  const changeAmount2 = (newAmount) => {
-    setCurrentAmount2(parseInt(newAmount));
-  };
-
   function addToBasket(data) {
     if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
@@ -34,10 +27,10 @@ function TicketList(props) {
           }
           const copy = { ...entry };
 
-          if (entry.name === "Regular ticket") {
-            copy.amount = currentAmount1;
-          } else if (entry.name === "VIP ticket") {
-            copy.amount = currentAmount2;
+          if (entry.name === "regular") {
+            copy.amount = count.reg;
+          } else if (entry.name === "vip") {
+            copy.amount = count.vip;
           }
           return copy;
         })
@@ -52,7 +45,7 @@ function TicketList(props) {
     props.setBasket((oldBasket) => {
       const subtracted = oldBasket.map((item) => {
         if (item.name === name) {
-          return { ...item, amount: item.amount - 1 };
+          return { ...item, amount: 0};
         }
         return item;
       });
@@ -68,16 +61,16 @@ function TicketList(props) {
     <div className="ticketlist">
       <Products
         addToBasket={addToBasket}
-        currentAmount1={currentAmount1}
-        currentAmount2={currentAmount2}
-        changeAmount1={changeAmount1}
-        changeAmount2={changeAmount2}
+        count={count}
+        setCount={setCount}
         setSpotAdded={setSpotAdded}
         spotAdded={spotAdded}
         guestNumber={props.guestNumber}
         campingSpots={campingSpots}
       />
       <Basket
+        count={count}
+        setCount={setCount}
         setShowForm={props.setShowForm}
         basket={props.basket}
         removeFromBasket={removeFromBasket}

@@ -21,33 +21,26 @@ function Products(props) {
     price: "",
   };
 
-  function addTicket(e) {
-    e.preventDefault();
+  function addTicket(tickettype) {
+    console.log(props.count);
 
-    if (e.target.name === "Regular ticket") {
-      if (props.currentAmount1 > 0) {
+    if (tickettype === "regular" && props.count.reg + props.count.vip <= 4) {
         productData = {
-          name: e.target.name,
+          name: "regular",
           type: "ticket",
-          amount: parseInt(props.currentAmount1),
-          price: cheapprice * props.currentAmount1,
-        };
-      } else if (props.currentAmount1 === 0) {
-        console.log("select amount first pls");
-      }
-    }
-
-    if (e.target.name === "VIP ticket") {
-      if (props.currentAmount2 > 0) {
-        productData = {
-          name: e.target.name,
-          type: "ticket",
-          amount: parseInt(props.currentAmount2),
-          price: expprice * props.currentAmount2,
+          amount: parseInt(props.count.reg),
+          price: cheapprice * props.count.reg,
         };
       }
-    } else if (props.currentAmount2 === 0) {
-      console.log("select amount first pls");
+    
+
+    if (tickettype === "vip" && props.count.reg + props.count.vip <= 4) {
+        productData = {
+          name: "vip",
+          type: "ticket",
+          amount: parseInt(props.count.vip),
+          price: expprice * props.count.vip,
+        }
     }
 
     props.addToBasket(productData);
@@ -109,11 +102,9 @@ function Products(props) {
       <div>
         <form ref={theForm} className="products">
           <TicketProduct
-            currentAmount1={props.currentAmount1}
-            currentAmount2={props.currentAmount2}
+            count={props.count}
+            setCount={props.setCount}
             addTicket={addTicket}
-            changeAmount1={props.changeAmount1}
-            changeAmount2={props.changeAmount2}
             cheapprice={cheapprice}
             expprice={expprice}
           />
