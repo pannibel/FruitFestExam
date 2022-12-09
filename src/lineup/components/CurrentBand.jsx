@@ -29,15 +29,17 @@ function CurrentBand(props) {
       if (item[0] === "Midgard") {
         Object.entries(item[1]).map((weekDays) => {
           if (weekDays[0] === dayOfWeekName.toLowerCase()) {
-            console.log(weekDays[1]);
-            let currentDay = weekDays[1].find(
-              (day) => day.start === currentHour
-            );
-            // console.log(currentDay);
-            let currentAct = currentDay.act;
-
-            // stage.preventDefault();
+            let result = weekDays[1].find((item) => item.start === currentHour);
+            let currentAct = result.act;
             setCurrentMidgard(currentAct);
+            // let currentDay = weekDays[1].find(
+            //   (day) => day.start === currentHour
+            // );
+            // // console.log(currentDay);
+            // let currentAct = currentDay.act;
+
+            // // stage.preventDefault();
+            // setCurrentMidgard(currentAct);
             // console.log(currentAct);
             // return currentAct;
             // console.log(currentMidgard);
@@ -49,20 +51,27 @@ function CurrentBand(props) {
       // console.log(item);
     });
   }
-  function playingVanaheim(x) {
+  function playingVanaheim() {
     Object.entries(props.currentBand).map((item) => {
       if (item[0] === "Vanaheim") {
         Object.entries(item[1]).map((weekDays) => {
-          if (weekDays[0] === dayOfWeekName.toLowerCase()) {
+          if (weekDays[0] == dayOfWeekName.toLowerCase()) {
+            let result = weekDays[1].find((item) => item.start === currentHour);
+            let currentAct = result.act;
+            setCurrentVanaheim(currentAct);
+            // Object.entries(weekDays[1]).map((curDay) => {
+            //   console.log(curDay);
+            // });
             // console.log(props.currentBand);
-            let currentDay = weekDays[1].find(
-              (day) => day.start === currentHour
-            );
-            // console.log(currentDay.act);
-            let currentAct = currentDay.act;
+
+            // let currentDay = weekDays[1].find(
+            //   (day) => day.start == currentHour
+            // );
+
+            // let currentAct = currentDay.act;
 
             // stage.preventDefault();
-            setCurrentVanaheim(currentAct);
+            // setCurrentVanaheim(currentAct);
             // console.log(currentAct);
             // return currentAct;
             // console.log(currentMidgard);
@@ -79,15 +88,14 @@ function CurrentBand(props) {
       if (item[0] === "Jotunheim") {
         Object.entries(item[1]).map((weekDays) => {
           if (weekDays[0] === dayOfWeekName.toLowerCase()) {
-            // console.log(weekDays[1]);
-            let currentDay = weekDays[1].find(
-              (day) => day.start === currentHour
-            );
+            let result = weekDays[1].find((item) => item.start === currentHour);
+            let currentAct = result.act;
+            setCurrentJotunheim(currentAct);
             // console.log(currentDay.act);
-            let currentAct = currentDay.act;
+            // let currentAct = currentDay.act;
 
             // stage.preventDefault();
-            setCurrentJotunheim(currentAct);
+            // setCurrentJotunheim(currentAct);
             // console.log(currentAct);
             // return currentAct;
             // console.log(currentMidgard);

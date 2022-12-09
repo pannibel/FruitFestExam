@@ -1,5 +1,5 @@
 import React from "react";
-import SingleBand from "./SingleBand";
+import SingleBand from "./SingleBandList";
 
 function Bandslist(props) {
   // let sortedBands = props.bands.sort((a, b) => a.name - b.name);

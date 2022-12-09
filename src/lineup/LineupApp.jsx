@@ -2,6 +2,7 @@ import React from "react";
 import "../LineUpApp.scss";
 import { useState, useEffect } from "react";
 import Bandslist from "./components/Bandslist";
+import Schedule from "./components/Schedule";
 import CurrentBand from "./components/CurrentBand";
 //npm i react-creditcard-validator
 
@@ -54,6 +55,11 @@ function Lineup() {
       </div>
       {lineUpPage == 1 ? <CurrentBand currentBand={currentBand} /> : ""}
       {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
+      {lineUpPage == 3 ? (
+        <Schedule bands={bands} currentBand={currentBand} />
+      ) : (
+        ""
+      )}
       <div className="NavBarCont">
         <button onClick={() => changePageApp(1)} className="">
           H
