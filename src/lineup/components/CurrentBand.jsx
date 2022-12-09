@@ -59,6 +59,7 @@ function CurrentBand(props) {
     });
   }
 
+  // console.log(currentMidgard);
   useEffect(() => {
     playingMidgard();
     playingVanaheim();
@@ -68,8 +69,8 @@ function CurrentBand(props) {
   return (
     <>
       <div className="currentlyCont">
-        <h2>Currently Playing:</h2>
-        <div>{showCurrentActTime}</div>
+        <h3>Currently Playing:</h3>
+        <div>| {showCurrentActTime}</div>
         <div className="currentBandRow" id="stageGreen">
           <div className="playerStage">MIDGARD</div>
           <div className="playerBand">| {currentMidgard}</div>
