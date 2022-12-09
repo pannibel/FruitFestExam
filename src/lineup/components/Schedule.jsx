@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 
 function Bandslist(props) {
   const [schedDay, setSchedDay] = useState("mon");
-  console.log(schedDay);
+
   const testArr = [];
   let testArr2 = [];
-  const testArr3 = [];
-  let damnObject = {};
 
   function playingMidgard() {
     Object.entries(props.currentBand).map((item) => {
@@ -16,32 +14,47 @@ function Bandslist(props) {
         // console.log(weekDays);
         if (weekDays[0] === schedDay) {
           weekDays[1].forEach((el) => {
-            // el.stage = item[0];
+            // console.log(props.bands);
+            props.bands.forEach((y) => {
+              if (y.name === el.act) {
+                el.logo = y.logo;
+                el.logoCredits = y.logoCredits;
+              }
+            });
+            el.stage = item[0];
             testArr.push(el);
           });
         }
       });
     });
-    testArr2 = testArr.reduce((bandsSoFar, { start, act }) => {
-      if (!bandsSoFar[start]) bandsSoFar[start] = [];
-      bandsSoFar[start].push(act);
-      return bandsSoFar;
+    // !VERSION THAT WORKS
+    // testArr2 = testArr.reduce((bandsSoFar, { start, act, stage }) => {
+    //   if (!bandsSoFar[start]) bandsSoFar[start] = [];
+    //   bandsSoFar[start].push(act, stage);
+    //   return bandsSoFar;
+    // }, {});
+    // !VERSION THAT WORKS
+    // ? VERSION THAT IS MUCH BETTER
+    testArr2 = testArr.reduce(function (r, a) {
+      r[a.start] = r[a.start] || [];
+      r[a.start].push(a);
+      return r;
     }, {});
+
+    // ? END
     console.log(testArr2);
   }
 
-  console.log(testArr2);
-  // console.log(testArr2);
-  // console.log(testArr3);
+  console.log(testArr);
+
   playingMidgard();
-  // console.log(testArr);
-  // function Timeslot({time, acts}) {}
+
   return (
     <div>
       <button onClick={() => setSchedDay("mon")} className="">
         mon
       </button>
-      <button onClick={() => setSchedDay("tus")} className="">
+      <button onClick={() => setSchedDay("tue")} className="">
         tues
       </button>
       <button onClick={() => setSchedDay("wed")} className="">
@@ -50,21 +63,19 @@ function Bandslist(props) {
       <button onClick={() => setSchedDay("thu")} className="">
         thur
       </button>
-      <button onClick={() => setSchedDay("all")} className="">
-        all
+      <button onClick={() => setSchedDay("fri")} className="">
+        fri
       </button>
+      <button onClick={() => setSchedDay("sat")} className="">
+        sat
+      </button>
+      <button onClick={() => setSchedDay("sun")} className="">
+        sun
+      </button>
+
       <div>
-        {Object.entries(testArr2).map((x) => {
-          // return <p>{`${x}`}</p>;
-          return (
-            <li>
-              <h3>{`${x[0]}`}</h3>
-              <h5>{`${x[1][0]}`}</h5>
-              <h5>{`${x[1][1]}`}</h5>
-              <h5>{`${x[1][2]}`}</h5>
-            </li>
-          );
-          // return <Timeslot time={x[0]} acts={x[1]} />;
+        {Object.entries(testArr2).map((x, index) => {
+          return <SingleBandSchedule data={x} key={index} />;
         })}
       </div>
     </div>

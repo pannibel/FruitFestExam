@@ -3,7 +3,7 @@ import SingleBand from "./SingleBandList";
 
 function Bandslist(props) {
   // let sortedBands = props.bands.sort((a, b) => a.name - b.name);
-  // console.log(props.bands);
+  console.log(props.bands);
   let sortedBands = props.bands.sort((a, b) => {
     return a.name > b.name ? 1 : -1;
   });

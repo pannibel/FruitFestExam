@@ -49,15 +49,17 @@ function Lineup() {
   }
   return (
     <div className="appCont">
-
-
       <div className="logoBig">
         <h1>Ranch Fest</h1>
       </div>
-      {lineUpPage == 1 ? <CurrentBand currentBand={currentBand} /> : ""}
+      {lineUpPage == 1 ? (
+        <CurrentBand currentBand={currentBand} bands={bands} />
+      ) : (
+        ""
+      )}
       {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
       {lineUpPage == 3 ? (
-        <Schedule bands={bands} currentBand={currentBand} />
+        <Schedule currentBand={currentBand} bands={bands} />
       ) : (
         ""
       )}
