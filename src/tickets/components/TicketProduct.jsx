@@ -1,11 +1,17 @@
 import React from 'react'
 import { useRef } from "react";
-import { useState } from "react";
 
 function TicketProduct(props) {
+  const regInc = useRef(null)
+  const regDec = useRef(null)
+  const vipInc = useRef(null)
+  const vipDec = useRef(null)
 
-  function incrementCount(e) {
+
+  function changeCount(e) {
     e.preventDefault();
+
+      //* INCREASING TICKET AMOUNT
 
     if (e.target.name === "regInc") {
       if (props.count.reg <= 3 && props.count.reg + props.count.vip < 4) {
@@ -29,12 +35,7 @@ function TicketProduct(props) {
       props.addTicket("vip")
     }
 
-    props.setCount({reg: props.count.reg, vip: props.count.vip});
-    }
-
-
-  function decrementCount(e) {
-    e.preventDefault();
+        //* DECREASING TICKET AMOUNT
 
     if (e.target.name === "regDec") {
       if (props.count.reg > 1) {
@@ -60,6 +61,32 @@ function TicketProduct(props) {
 
     props.setCount({reg: props.count.reg, vip: props.count.vip})
 
+
+    //* DISABLING BUTTONS IF WE REACH 4 TICKETS OR MINUS TICKETS
+
+    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
+      regInc.current.disabled = true
+    } else if (props.count.reg < 4 || props.count.reg + props.count.vip !== 4) {
+      regInc.current.disabled = false
+    };
+
+    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
+      vipInc.current.disabled = true
+    } else if (props.count.vip < 4 || props.count.reg + props.count.vip !== 4) {
+      vipInc.current.disabled = false
+    };
+
+    if (props.count.reg > 0) {
+      regDec.current.disabled = false
+    } else if (props.count.reg < 2) {
+      regDec.current.disabled = true
+    };
+
+    if (props.count.vip > 0) {
+      vipDec.current.disabled = false
+    } else if (props.count.vip < 2) {
+      vipDec.current.disabled = true
+    };
   }
 
   return (
@@ -74,9 +101,9 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
 
       <div>
-      <button name="regDec" onClick={decrementCount} disabled={false}>-</button>
+      <button ref={regDec} name="regDec" onClick={changeCount} disabled={true}>-</button>
       <div>{props.count.reg}</div>
-      <button name="regInc" onClick={incrementCount} disabled={false}>+</button>
+      <button ref={regInc} name="regInc" onClick={changeCount} disabled={false}>+</button>
       </div>
     </div>
 
@@ -88,9 +115,9 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
  
       <div>
-      <button name="vipDec" onClick={decrementCount} disabled={false}>-</button>
+      <button ref={vipDec} name="vipDec" onClick={changeCount} disabled={true}>-</button>
       <div>{props.count.vip}</div>
-      <button name="vipInc" onClick={incrementCount} disabled={false}>+</button>
+      <button ref={vipInc} name="vipInc" onClick={changeCount} disabled={false}>+</button>
       </div>
     </div>
     </div>
