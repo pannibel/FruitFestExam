@@ -66,12 +66,38 @@ function CurrentBand(props) {
     playingJotunheim();
   }, [props.currentBand]);
 
+  function pickImage(x) {
+    props.bands.map((el) => {
+      if (el.name == x) {
+        console.log(el.logo);
+        if (el.logo.includes("https://")) {
+          return <img src={el.logo} className="imgSingleBand"></img>;
+        } else if (
+          el.logo.includes("png") ||
+          el.logo.includes("jpg") ||
+          el.logo.includes("JPG") ||
+          el.logo.includes("svg")
+        ) {
+          return (
+            console.log(el.logo),
+            (
+              <img
+                src={"http://localhost:8080/logos/" + el.logo}
+                className="imgSingleBand"
+              ></img>
+            )
+          );
+        }
+      }
+    });
+  }
   return (
     <>
       <div className="currentlyCont">
         <h3>Currently Playing:</h3>
         <div>| {showCurrentActTime}</div>
         <div className="currentBandRow" id="stageGreen">
+          {pickImage(currentMidgard)}
           <div className="playerStage">MIDGARD</div>
           <div className="playerBand">| {currentMidgard}</div>
         </div>

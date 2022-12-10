@@ -64,28 +64,24 @@ function Lineup() {
         ""
       )}
       <div className="NavBarCont">
-        <button onClick={() => changePageApp(1)} className="">
-          H
-        </button>
-        <button onClick={() => changePageApp(2)} className="">
+        <button onClick={() => changePageApp(2)} className="btn_side">
           B
         </button>
-        <button onClick={() => changePageApp(3)} className="">
+        <button onClick={() => changePageApp(1)} className="btn_side">
+          H
+        </button>
+        <button onClick={() => changePageApp(3)} className="btn_side">
           SC
         </button>
       </div>
       {/* <Bandslist bands={bands} /> */}
 
       {!burgerState && (
-        <button onClick={() => openBurger()} className="burgerIcon">
-          burgir
-        </button>
+        <button onClick={() => openBurger()} className="burgerIcon"></button>
       )}
       {burgerState && (
         <>
-          <button onClick={() => openBurger()} className="burgerIcon">
-            x
-          </button>
+          <button onClick={() => openBurger()} className="burgerIcon"></button>
           <Burger />
         </>
       )}
