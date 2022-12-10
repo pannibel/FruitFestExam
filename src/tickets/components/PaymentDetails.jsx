@@ -13,8 +13,24 @@ function PaymentDetails(props) {
     meta: { erroredInputs },
   } = useCreditCardValidator();
 
-  return (
+  function saveBillingInfo(e) {
+    e.preventDefault();
+    const nextData = [];
 
+    nextData.push({
+      name: theForm.current.elements.fullname.value,
+      email: theForm.current.elements.email.value,
+      phonenumber: theForm.current.elements.phone.value,
+      streetname: theForm.current.elements.street.value,
+      apartment: theForm.current.elements.apartment.value,
+      city: theForm.current.elements.city.value,
+      country: theForm.current.elements.country.value
+    });
+    props.setBilling(nextData);
+    console.log(props.billing);
+  }
+
+  return (
     <div>
       <h1>Payment Details</h1>
       <form ref={theForm} method="">
@@ -110,10 +126,7 @@ function PaymentDetails(props) {
           </section>
           <section>
             <label htmlFor="">Card number</label>
-            <input
-              name="cardnumber"
-              {...getCardNumberProps()}
-            />
+            <input name="cardnumber" {...getCardNumberProps()} />
             <small>
               {erroredInputs.cardNumber && erroredInputs.cardNumber}
             </small>
@@ -140,7 +153,12 @@ function PaymentDetails(props) {
       <button onClick={props.changePage} name="back">
         Back
       </button>
-      <button onClick={props.changePage} name="next">
+      <button
+        onClick={(e) => {
+          saveBillingInfo(e);
+          props.changePage(e);
+        }}
+        name="next">
         Complete payment
       </button>
     </div>

@@ -4,12 +4,11 @@ import GuestInfo from "./GuestInfo";
 import PaymentDetails from "./PaymentDetails";
 import Pay from "./Pay";
 import Confirmation from "./Confirmation";
-import App from "../../App";
-import Basket from "./Basket";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-  const [guestInfo, setGuestInfo] = useState([])
+  const [guestInfo, setGuestInfo] = useState([]);
+  const [billing, setBilling] = useState({});
 
   function changePage(e) {
     e.preventDefault();
@@ -86,6 +85,8 @@ function CheckoutForm(props) {
       {state == 2 ? (
         <PaymentDetails
           changePage={changePage}
+          billing={billing}
+          setBilling={setBilling}
         />
       ) : (
         ""
