@@ -9,8 +9,7 @@ import Basket from "./Basket";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-
-  console.log(props.guestNumber);
+  const [guestInfo, setGuestInfo] = useState([])
 
   function changePage(e) {
     e.preventDefault();
@@ -78,6 +77,8 @@ function CheckoutForm(props) {
         <GuestInfo
           changePage={changePage}
           guestNumber={props.guestNumber}
+          guestInfo={guestInfo}
+          setGuestInfo={setGuestInfo}
         />
       ) : (
         ""
