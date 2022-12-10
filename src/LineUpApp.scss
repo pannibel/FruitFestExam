@@ -163,7 +163,9 @@ button:focus-visible {
 
 .btn_side_off {
   color: #213547;
-  background-image: url("./assets/nav_side_off.svg");
+  background-image: url("./assets/nav_side_2.0.svg");
+  // box-shadow: 1px -20px 20px 20px #888888;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   background-size: contain;
   background-repeat: no-repeat;
   border: 0;
