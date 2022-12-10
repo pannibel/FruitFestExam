@@ -38,7 +38,7 @@ function TicketProduct(props) {
         //* DECREASING TICKET AMOUNT
 
     if (e.target.name === "regDec") {
-      if (props.count.reg > 1) {
+      if (props.count.reg > 0) {
         props.count.reg--;
         console.log(props.count.reg)
       } else {
@@ -49,7 +49,7 @@ function TicketProduct(props) {
     }
 
     if (e.target.name === "vipDec") {
-      if (props.count.vip > 1) {
+      if (props.count.vip > 0) {
         props.count.vip--;
         console.log(props.count.vip)
       } else {
@@ -78,15 +78,15 @@ function TicketProduct(props) {
 
     if (props.count.reg > 0) {
       regDec.current.disabled = false
-    } else if (props.count.reg < 2) {
+    } else if (props.count.reg < 1) {
       regDec.current.disabled = true
     };
 
     if (props.count.vip > 0) {
       vipDec.current.disabled = false
-    } else if (props.count.vip < 2) {
+    } else if (props.count.vip < 1) {
       vipDec.current.disabled = true
-    };
+    }; 
   }
 
   return (
@@ -101,7 +101,7 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
 
       <div>
-      <button ref={regDec} name="regDec" onClick={changeCount} disabled={true}>-</button>
+      <button ref={regDec} name="regDec" onClick={changeCount} disabled={false}>-</button>
       <div>{props.count.reg}</div>
       <button ref={regInc} name="regInc" onClick={changeCount} disabled={false}>+</button>
       </div>
@@ -115,7 +115,7 @@ function TicketProduct(props) {
       <label htmlFor="ticketamount">Amount: </label>
  
       <div>
-      <button ref={vipDec} name="vipDec" onClick={changeCount} disabled={true}>-</button>
+      <button ref={vipDec} name="vipDec" onClick={changeCount} disabled={false}>-</button>
       <div>{props.count.vip}</div>
       <button ref={vipInc} name="vipInc" onClick={changeCount} disabled={false}>+</button>
       </div>
