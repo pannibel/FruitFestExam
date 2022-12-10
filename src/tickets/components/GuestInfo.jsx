@@ -4,34 +4,64 @@ import { useRef, useState } from "react";
 function GuestInfo(props) {
   const theForm = useRef(null);
   let i = 0;
+  let singleGuest;
+
+  function saveGuestInfo(e) {
+    e.preventDefault();
+    const nextData = [];
+
+    /*     {
+      [...Array(props.guestNumber)].map(() => {
+        nextData.push({
+          name: theForm.current.elements.fullname[0].value,
+          email: theForm.current.elements.email[0].value,
+        });
+        props.setGuestInfo(nextData);
+        console.log(props.guestInfo);
+      });
+    } */
+
+    for (let i = 0; i < 100; i++) {
+      nextData.push(
+        (singleGuest = {
+          name: theForm.current.elements.fullname[i].value,
+          email: theForm.current.elements.email[i].value,
+        })
+      );
+      props.setGuestInfo(nextData);
+      console.log(props.guestInfo);
+    }
+  }
 
   return (
-    
     <div>
       <h1>Guest Info</h1>
       <form ref={theForm} className="inputForm">
-        {[...Array(props.guestNumber)].map((elementInArray, index) => (
-          <div className="" key={i++}>
-            <h3>Guest info {i + 1}</h3>
+        {[...Array(props.guestNumber)].map((/* elementInArray, index */) => (
+          <div key={i++}>
+            <h3>Guest {i + 1}</h3>
             <input
-              defaultValue={""}
               type="text"
               name="fullname"
-              id="form-fullname"
+              id={i}
               placeholder="Full name"
             />
             <input
-              defaultValue={""}
               type="email"
               name="email"
-              id="form-email"
+              id={i}
               placeholder="Email address"
             />
           </div>
         ))}
       </form>
 
-      <button onClick={props.changePage} name="next">
+      <button
+        onClick={(e) => {
+          saveGuestInfo(e);
+          props.changePage(e);
+        }}
+        name="next">
         Next
       </button>
     </div>
