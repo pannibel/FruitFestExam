@@ -35,7 +35,7 @@ button:focus-visible {
 .burgerMenu {
   background-color: #ffffff71;
   background-blend-mode: difference;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
