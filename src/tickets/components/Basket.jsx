@@ -29,7 +29,7 @@ function Basket(props) {
           if (item.type === "ticket") {
             return (
               <li key={item.name}>
-                {item.name} {item.amount}, {item.amount * item.price},-
+                {item.name} x {item.amount} | {item.amount * item.price},-
                 <button onClick={() => props.removeFromBasket(item.name)}>
                   X
                 </button>
@@ -45,7 +45,7 @@ function Basket(props) {
           if (item.type === "extra") {
             return (
               <li key={item.name}>
-                {item.name}, {item.amount * item.price},-
+                {item.name} | {item.amount * item.price},-
                 <button onClick={() => props.removeFromBasket(item.name)}>
                   X
                 </button>
@@ -75,7 +75,11 @@ function Basket(props) {
           }
         })}
       </ul>
-      <h3>Total: {totalPrice()},-</h3>
+
+      <h3>Subtotal: {totalPrice()},-</h3>
+      <h3>Booking fee: 99,-</h3>
+      <h3>Total: {totalPrice() + 99},-</h3>
+
       <button
         onClick={() => {
           {

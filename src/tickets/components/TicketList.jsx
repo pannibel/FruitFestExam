@@ -27,9 +27,9 @@ function TicketList(props) {
           }
           const copy = { ...entry };
 
-          if (entry.name === "regular") {
+          if (entry.name === "Regular ticket") {
             copy.amount = count.reg;
-          } else if (entry.name === "vip") {
+          } else if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
           }
           return copy;
