@@ -61,6 +61,7 @@ function TicketList(props) {
     <div className="ticketlist">
       <Products
         addToBasket={addToBasket}
+        removeFromBasket={removeFromBasket}
         count={count}
         setCount={setCount}
         setSpotAdded={setSpotAdded}
