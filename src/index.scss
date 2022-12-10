@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@font-face {
+  font-family: "Chopsic";
+  src: url("./assets/font_Chopsic/chopsic-webfont.woff") format("woff"),
+    url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
+    url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
+}
+// url("./assets/nav_mid_on.svg");
 :root {
   font-family: Audiowide, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -27,7 +34,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  // display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -115,8 +122,14 @@ h1 {
 }
 
 .logoBig {
-  font-size: x-large;
+  display: block;
   color: #9e00ff;
-  -webkit-text-stroke: 2px rgb(221, 221, 221);
-  mix-blend-mode: lighten;
+  // -webkit-text-stroke: 2px rgb(221, 221, 221);
+  // mix-blend-mode: lighten;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  opacity: 0.9;
+  // height: 100%;
+  // width: 100%;
 }

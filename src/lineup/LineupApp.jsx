@@ -49,9 +49,11 @@ function Lineup() {
   }
   return (
     <div className="appCont">
-      <div className="logoBig">
-        <h1>Ranch Fest</h1>
-      </div>
+      <img
+        className="logoBig"
+        src="../src/assets/logo_big.svg"
+        alt="big logo of the festival"
+      ></img>
       {lineUpPage == 1 ? (
         <CurrentBand currentBand={currentBand} bands={bands} />
       ) : (
@@ -64,13 +66,13 @@ function Lineup() {
         ""
       )}
       <div className="NavBarCont">
-        <button onClick={() => changePageApp(2)} className="btn_side">
+        <button onClick={() => changePageApp(2)} className="btn_side_off">
           B
         </button>
-        <button onClick={() => changePageApp(1)} className="btn_side">
+        <button onClick={() => changePageApp(1)} className="btn_mid_on">
           H
         </button>
-        <button onClick={() => changePageApp(3)} className="btn_side">
+        <button onClick={() => changePageApp(3)} className="btn_side_off">
           SC
         </button>
       </div>
