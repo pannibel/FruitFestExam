@@ -11,15 +11,13 @@ function GuestInfo(props) {
 
     for (let i = 0; i < props.guestNumber; i++) {
       nextData.push({
-          name: theForm.current.elements.fullname[i].value,
-          email: theForm.current.elements.email[i].value,
-        }
-      );
+        name: theForm.current.elements.fullname[i].value,
+        email: theForm.current.elements.email[i].value,
+      });
       props.setGuestInfo(nextData);
     }
 
     console.log(props.guestInfo);
-
   }
 
   return (

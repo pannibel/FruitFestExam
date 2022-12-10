@@ -76,9 +76,9 @@ function Basket(props) {
         })}
       </ul>
 
-      <h3>Subtotal: {totalPrice()},-</h3>
-      <h3>Booking fee: 99,-</h3>
-      <h3>Total: {totalPrice() + 99},-</h3>
+{/*       <h3>Subtotal: {totalPrice()},-</h3>
+      <h3>Booking fee: 99,-</h3> */}
+      <h3>Total: {totalPrice()},-</h3>
 
       <button
         onClick={() => {
