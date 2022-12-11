@@ -21,75 +21,77 @@ function Basket(props) {
   }
 
   return (
-    <div>
-      <h2>Basket</h2>
-      <h3>Tickets:</h3>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "ticket") {
-            return (
-              <li key={item.name}>
-                {item.name} x {item.amount} | {item.amount * item.price},-
-                <button onClick={() => props.removeFromBasket(item.name)}>
-                  X
-                </button>
-              </li>
-            );
-          }
-        })}
-      </ul>
+    <div id="basketCont">
+      <div id="basket">
+        <h3>Basket</h3>
+        <h4>Tickets:</h4>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "ticket") {
+              return (
+                <li key={item.name}>
+                  {item.name} x {item.amount} | {item.amount * item.price},-
+                  <button onClick={() => props.removeFromBasket(item.name)}>
+                    X
+                  </button>
+                </li>
+              );
+            }
+          })}
+        </ul>
 
-      <h3>Extras:</h3>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "extra") {
-            return (
-              <li key={item.name}>
-                {item.name} | {item.amount * item.price},-
-                <button onClick={() => props.removeFromBasket(item.name)}>
-                  X
-                </button>
-              </li>
-            );
-          }
-        })}
-      </ul>
+        <h4>Extras:</h4>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "extra") {
+              return (
+                <li key={item.name}>
+                  {item.name} | {item.amount * item.price},-
+                  <button onClick={() => props.removeFromBasket(item.name)}>
+                    X
+                  </button>
+                </li>
+              );
+            }
+          })}
+        </ul>
 
-      <h3>Camping spot:</h3>
-      <ul>
-        {props.basket.map((item) => {
-          if (item.type === "camping spot") {
-            return (
-              <li key={item.name}>
-                {item.name}, {item.amount * item.price},-
-                <button
-                  onClick={() => {
-                    props.removeFromBasket(item.name);
-                    props.setSpotAdded(false);
-                  }}
-                >
-                  X
-                </button>
-              </li>
-            );
-          }
-        })}
-      </ul>
+        <h4>Camping spot:</h4>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "camping spot") {
+              return (
+                <li key={item.name}>
+                  {item.name}, {item.amount * item.price},-
+                  <button
+                    onClick={() => {
+                      props.removeFromBasket(item.name);
+                      props.setSpotAdded(false);
+                    }}
+                  >
+                    X
+                  </button>
+                </li>
+              );
+            }
+          })}
+        </ul>
 
-{/*       <h3>Subtotal: {totalPrice()},-</h3>
+        {/*       <h3>Subtotal: {totalPrice()},-</h3>
       <h3>Booking fee: 99,-</h3> */}
-      <h3>Total: {totalPrice()},-</h3>
+        <h3>Total: {totalPrice()},-</h3>
 
-      <button
-        onClick={() => {
-          {
-            props.setShowForm(true);
-            totalGuests();
-          }
-        }}
-      >
-        Checkout
-      </button>
+        <button
+          onClick={() => {
+            {
+              props.setShowForm(true);
+              totalGuests();
+            }
+          }}
+        >
+          Checkout
+        </button>
+      </div>
     </div>
   );
 }

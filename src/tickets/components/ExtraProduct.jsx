@@ -1,8 +1,11 @@
 import React from "react";
 import { useRef } from "react";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 function ExtraProduct(props) {
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+
   return (
     <div className="form-control">
       <h3>2. Add extras</h3>
@@ -18,8 +21,8 @@ function ExtraProduct(props) {
           </button>
         </div>
 
-        <div className="extra">
-          <label htmlFor="form-extras">
+        <div className={isMobile ? "extra extraMobile" : "extra"}>
+          <label htmlFor="form-extras" className="gradient-text">
             2-person tent set up (tent included)
           </label>
           <p>

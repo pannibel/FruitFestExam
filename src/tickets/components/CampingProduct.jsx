@@ -26,14 +26,14 @@ function CampingProduct(props) {
   function checkAvailSpots(item) {
     // console.log("here", spotsAvailable[`${item}`]);
     if (spotsAvailable[`${item}`] == 2) {
-      return "classGrey";
+      return "campGrey";
     } else if (
       spotsAvailable[`${item}`] < 10 &&
       spotsAvailable[`${item}`] > 0
     ) {
-      return "classRed";
+      return "campRed";
     } else {
-      return "classBlack";
+      return "campIdle";
     }
   }
   // console.log(props.campingSpots);
@@ -50,18 +50,19 @@ function CampingProduct(props) {
       <div onChange={props.onChangeValue} id="ticketCampSpots">
         <div>
           <label htmlFor="form-spot">
+            <input type="radio" name="spot" value="Svartheim" />
+
             <div
+              onClick={props.addSpot}
               className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
             >
-              Svartheim
+              <p> Svartheim</p>
             </div>
           </label>
-          <input type="radio" name="spot" value="Svartheim" />
         </div>
 
         <div>
           <label htmlFor="form-spot">
-            {" "}
             <div
               className={spotsAvailable ? checkAvailSpots("Nilfheim") : null}
             >

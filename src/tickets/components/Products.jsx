@@ -100,6 +100,7 @@ function Products(props) {
     if (props.spotAdded === true) {
       console.log("action not possible");
     }
+    console.log(productData);
   }
 
   return (

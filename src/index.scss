@@ -82,11 +82,31 @@ h1 {
 /* TICKETLIST */
 
 .ticketlist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
 
   li {
     list-style: none;
+  }
+  h3 {
+    font-family: Chopsic;
+    color: #4400ff;
+    margin: 0;
+  }
+  h4 {
+    color: #6a6a6a;
+    margin-bottom: 4%;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  h5 {
+    margin: 0;
+    font-size: 16px;
+  }
+  p {
+    margin: 0px;
+    font-size: 12px;
   }
 }
 

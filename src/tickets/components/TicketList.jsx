@@ -76,30 +76,32 @@ function TicketList(props) {
   }
 
   return (
-    <div className="ticketlist">
-      <Products
-        addToBasket={addToBasket}
-        removeFromBasket={removeFromBasket}
-        count={count}
-        setCount={setCount}
-        setSpotAdded={setSpotAdded}
-        spotAdded={spotAdded}
-        guestNumber={props.guestNumber}
-        campingSpots={campingSpots}
-      />
-      <Basket
-        count={count}
-        setCount={setCount}
-        setShowForm={props.setShowForm}
-        basket={props.basket}
-        removeFromBasket={removeFromBasket}
-        setSpotAdded={setSpotAdded}
-        setGuestNumber={props.setGuestNumber}
-        guestNumber={props.guestNumber}
-      />
+    <>
+      <div className="ticketlist">
+        <Products
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          count={count}
+          setCount={setCount}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          guestNumber={props.guestNumber}
+          campingSpots={campingSpots}
+        />
+        <Basket
+          count={count}
+          setCount={setCount}
+          setShowForm={props.setShowForm}
+          basket={props.basket}
+          removeFromBasket={removeFromBasket}
+          setSpotAdded={setSpotAdded}
+          setGuestNumber={props.setGuestNumber}
+          guestNumber={props.guestNumber}
+        />
+        {/* <button onClick={confirmReservation}>yellow</button> */}
+      </div>
       <button onClick={reserveSpot}>yellow</button>
-      {/* <button onClick={confirmReservation}>yellow</button> */}
-    </div>
+    </>
   );
 }
 

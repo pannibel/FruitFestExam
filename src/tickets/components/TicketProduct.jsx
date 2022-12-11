@@ -86,14 +86,14 @@ function TicketProduct(props) {
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>
-      <h4>You can choose up to 4 tickets in total at a time.</h4>
+      <h4>You can choose up to 4 tickets at a time.</h4>
       <div id="ticketOptions">
-        <div id="chooseTicket">
-          <h4>Regular ticket</h4>
+        <div className="chooseTicket">
+          <h5>Regular ticket</h5>
           <p>
             <span>{props.cheapprice}</span>,-
           </p>
-          <label htmlFor="ticketamount">Amount: </label>
+          {/* <label htmlFor="ticketamount">Amount: </label> */}
 
           <div className="ticketOptionBtn">
             <button
@@ -116,12 +116,12 @@ function TicketProduct(props) {
           </div>
         </div>
 
-        <div id="chooseTicket">
-          <h4>VIP ticket</h4>
+        <div className="chooseTicket tickGold">
+          <h5>VIP ticket</h5>
           <p>
             <span>{props.expprice}</span>,-
           </p>
-          <label htmlFor="ticketamount">Amount: </label>
+          {/* <label htmlFor="ticketamount">Amount: </label> */}
 
           <div className="ticketOptionBtn">
             <button
