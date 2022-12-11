@@ -16,9 +16,18 @@ function GuestInfo(props) {
       });
       props.setGuestInfo(nextData);
     }
-
     console.log(props.guestInfo);
   }
+  /* 
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    // Update the formValues state with the new input value
+    props.setFormValues({
+      ...props.formValues,
+      [name]: value
+    });
+  } */
 
   return (
     <div>
@@ -32,12 +41,14 @@ function GuestInfo(props) {
               name="fullname"
               id={i}
               placeholder="Full name"
+              defaultValue={props.formValues.fullname}
             />
             <input
               type="email"
               name="email"
               id={i}
               placeholder="Email address"
+              defaultValue={props.formValues.email}
             />
           </div>
         ))}
@@ -51,6 +62,48 @@ function GuestInfo(props) {
         name="next">
         Next
       </button>
+
+      {/* BASKET */}
+      <div>
+        <h3>Items</h3>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "ticket") {
+              return (
+                <li key={item.name}>
+                  {item.name} x {item.amount} | {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "extra") {
+              return (
+                <li key={item.name}>
+                  {item.name} | {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          {props.basket.map((item) => {
+            if (item.type === "camping spot") {
+              return (
+                <li key={item.name}>
+                  {item.name} x {item.amount} | {item.amount * item.price},-
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <ul>
+          <li>Booking fee: 99,-</li>
+        </ul>
+        <h3>Total: {props.totalPrice() + 99},-</h3>
+      </div>
     </div>
   );
 }
