@@ -93,25 +93,10 @@ h1 {
 .products {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  // gap: 3rem;
 
-  padding: 1rem;
-  border: 1px solid black;
-}
-
-.form-control {
-  display: grid;
-  grid-template-columns: repeat (1fr, 3);
-  grid-template-rows: auto;
-  column-gap: 3rem;
-
-  padding: 1rem;
-  border: 1px solid black;
-
-  h3 {
-    grid-row: 1 / 2;
-    grid-column: 1 / 4;
-  }
+  // padding: 1rem;
+  // border: 1px solid black;
 }
 
 /* CHECKOUTFORM */

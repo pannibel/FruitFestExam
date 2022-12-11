@@ -42,8 +42,12 @@ function CampingProduct(props) {
   return (
     <div className="form-control">
       <h3>3. Choose your camping spot</h3>
-
-      <div onChange={props.onChangeValue}>
+      <h4>
+        You are required to reserve camping spots in one of the areas, free of
+        charge. The unavailable areas have fewer free spots than your number of
+        tickets.
+      </h4>
+      <div onChange={props.onChangeValue} id="ticketCampSpots">
         <div>
           <label htmlFor="form-spot">
             <div

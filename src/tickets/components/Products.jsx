@@ -24,23 +24,30 @@ function Products(props) {
   function addTicket(tickettype) {
     console.log(props.count);
 
-    if (tickettype === "regular" && props.count.reg + props.count.vip <= 4 && props.count.reg > 0) {
-        productData = {
-          name: "Regular ticket",
-          type: "ticket",
-          amount: parseInt(props.count.reg),
-          price: cheapprice * props.count.reg,
-        };
-      }
-    
+    if (
+      tickettype === "regular" &&
+      props.count.reg + props.count.vip <= 4 &&
+      props.count.reg > 0
+    ) {
+      productData = {
+        name: "Regular ticket",
+        type: "ticket",
+        amount: parseInt(props.count.reg),
+        price: cheapprice * props.count.reg,
+      };
+    }
 
-    if (tickettype === "vip" && props.count.reg + props.count.vip <= 4 && props.count.vip > 0) {
-        productData = {
-          name: "VIP ticket",
-          type: "ticket",
-          amount: parseInt(props.count.vip),
-          price: expprice * props.count.vip,
-        }
+    if (
+      tickettype === "vip" &&
+      props.count.reg + props.count.vip <= 4 &&
+      props.count.vip > 0
+    ) {
+      productData = {
+        name: "VIP ticket",
+        type: "ticket",
+        amount: parseInt(props.count.vip),
+        price: expprice * props.count.vip,
+      };
     }
 
     props.addToBasket(productData);
@@ -96,32 +103,28 @@ function Products(props) {
   }
 
   return (
-    <div>
-      <h2>Products</h2>
-
-      <div>
-        <form ref={theForm} className="products">
-          <TicketProduct
-            count={props.count}
-            setCount={props.setCount}
-            addTicket={addTicket}
-            cheapprice={cheapprice}
-            expprice={expprice}
-            removeFromBasket={props.removeFromBasket}
-          />
-          <ExtraProduct
-            addExtras={addExtras}
-            extra1price={extra1price}
-            extra2price={extra2price}
-            extra3price={extra3price}
-          />
-          <CampingProduct
-            addSpot={addSpot}
-            onChangeValue={onChangeValue}
-            campingSpots={props.campingSpots}
-          />
-        </form>
-      </div>
+    <div id="productList" className="box">
+      <form ref={theForm} className="products">
+        <TicketProduct
+          count={props.count}
+          setCount={props.setCount}
+          addTicket={addTicket}
+          cheapprice={cheapprice}
+          expprice={expprice}
+          removeFromBasket={props.removeFromBasket}
+        />
+        <ExtraProduct
+          addExtras={addExtras}
+          extra1price={extra1price}
+          extra2price={extra2price}
+          extra3price={extra3price}
+        />
+        <CampingProduct
+          addSpot={addSpot}
+          onChangeValue={onChangeValue}
+          campingSpots={props.campingSpots}
+        />
+      </form>
     </div>
   );
 }
