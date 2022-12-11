@@ -9,6 +9,10 @@ function CheckoutForm(props) {
   const [state, setState] = useState(1);
   const [guestInfo, setGuestInfo] = useState([]);
   const [billing, setBilling] = useState({});
+  let [formValues, setFormValues] = useState({
+    fullname: '',
+    email: ''
+  });
 
   function changePage(e) {
     e.preventDefault();
@@ -34,50 +38,17 @@ function CheckoutForm(props) {
 
   return (
     <div className="checkoutform">
-      <div>
-        <h3>Items</h3>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "ticket") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "extra") {
-              return (
-                <li key={item.name}>
-                  {item.name} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "camping spot") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul><li>Booking fee: 99,-</li></ul>
-        <h3>Total: {totalPrice() + 99},-</h3>
-      </div>
+
       {state == 1 ? (
         <GuestInfo
           changePage={changePage}
           guestNumber={props.guestNumber}
           guestInfo={guestInfo}
           setGuestInfo={setGuestInfo}
+          formValues={formValues}
+          setFormValues={setFormValues}
+          basket={props.basket}
+          totalPrice={totalPrice}
         />
       ) : (
         ""
@@ -87,6 +58,8 @@ function CheckoutForm(props) {
           changePage={changePage}
           billing={billing}
           setBilling={setBilling}
+          basket={props.basket}
+          totalPrice={totalPrice}
         />
       ) : (
         ""
