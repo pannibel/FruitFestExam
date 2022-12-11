@@ -2,12 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Basket from "./Basket";
 import Products from "./Products";
-
+import { confirmReservation } from "../../database";
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
+  const [idValue, setidValue] = useState();
   const [campingSpots, setCampingSpots] = useState([]);
-  let [count, setCount] = useState({reg:0, vip:0});
-
+  let [count, setCount] = useState({ reg: 0, vip: 0 });
+  let testValue;
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -45,17 +46,34 @@ function TicketList(props) {
     props.setBasket((oldBasket) => {
       const subtracted = oldBasket.map((item) => {
         if (item.name === name) {
-          return { ...item, amount: 0};
+          return { ...item, amount: 0 };
         }
         return item;
       });
       const filtered = subtracted.filter((item) => item.amount > 0);
       return filtered;
     });
-    //filter
   }
 
-  console.log(props.basket);
+  // useEffect(() => {
+
+  //   3}, [])
+  function reserveSpot() {
+    const url = "http://localhost:8080/";
+    fetch(url + "reserve-spot", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        area: "Alfheim",
+        amount: 2,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => console.log(response.id))
+      .catch((err) => console.error(err));
+  }
 
   return (
     <div className="ticketlist">
@@ -79,6 +97,8 @@ function TicketList(props) {
         setGuestNumber={props.setGuestNumber}
         guestNumber={props.guestNumber}
       />
+      <button onClick={reserveSpot}>yellow</button>
+      {/* <button onClick={confirmReservation}>yellow</button> */}
     </div>
   );
 }

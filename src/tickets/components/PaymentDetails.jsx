@@ -14,7 +14,6 @@ function PaymentDetails(props) {
   } = useCreditCardValidator();
 
   return (
-
     <div>
       <div>
         <h3>Items</h3>
@@ -52,7 +51,6 @@ function PaymentDetails(props) {
           })}
         </ul>
         <h3>Total: {props.totalPrice()},-</h3>
-
       </div>
       <h1>Payment Details</h1>
       <form ref={theForm} method="">
@@ -148,10 +146,7 @@ function PaymentDetails(props) {
           </section>
           <section>
             <label htmlFor="">Card number</label>
-            <input
-              name="cardnumber"
-              {...getCardNumberProps()}
-            />
+            <input name="cardnumber" {...getCardNumberProps()} />
             <small>
               {erroredInputs.cardNumber && erroredInputs.cardNumber}
             </small>
