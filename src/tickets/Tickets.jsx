@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "../Tickets.scss";
 import CheckoutForm from "./components/CheckoutForm";
 import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
@@ -15,10 +16,10 @@ function Tickets() {
   // ReactDOM.render(<Countdown date={Date.now() + 10000} />);
   return (
     <div>
-      <div>
+      {/* <div>
         {" "}
         <Countdown date={Date.now() + 1000000000} />
-      </div>
+      </div> */}
       {/* <TicketHeader /> */}
       <main>
         {!showForm && (
