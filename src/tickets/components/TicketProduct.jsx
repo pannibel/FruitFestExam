@@ -16,10 +16,8 @@ function TicketProduct(props) {
     if (e.target.name === "regInc") {
       if (props.count.reg <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.reg++;
-        console.log(props.count.reg)
       } else {
         console.log("you maxed the tickets out")
-        console.log(props.count)
       };
       props.addTicket("regular")
     }
@@ -27,10 +25,8 @@ function TicketProduct(props) {
     if (e.target.name === "vipInc") {
       if (props.count.vip <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.vip++;
-        console.log(props.count.vip)
       } else {
         console.log("you maxed the tickets out")
-        console.log(props.count)
       };
       props.addTicket("vip")
     }
@@ -38,25 +34,25 @@ function TicketProduct(props) {
         //* DECREASING TICKET AMOUNT
 
     if (e.target.name === "regDec") {
-      if (props.count.reg > 0) {
+      if (props.count.reg > 1) {
         props.count.reg--;
-        console.log(props.count.reg)
+        props.addTicket("regular")
       } else {
+        props.count.reg--;
         console.log("you can't buy minus amount dumby")
-        console.log(props.count)
+        props.removeFromBasket("Regular ticket")
       };
-      props.addTicket("regular")
     }
 
     if (e.target.name === "vipDec") {
-      if (props.count.vip > 0) {
+      if (props.count.vip > 1) {
         props.count.vip--;
-        console.log(props.count.vip)
+        props.addTicket("vip")
       } else {
+        props.count.vip--;
         console.log("you can't buy minus amount dumby")
-        console.log(props.count)
+        props.removeFromBasket("VIP ticket")
       };
-      props.addTicket("vip")
     }
 
     props.setCount({reg: props.count.reg, vip: props.count.vip})
@@ -78,13 +74,13 @@ function TicketProduct(props) {
 
     if (props.count.reg > 0) {
       regDec.current.disabled = false
-    } else if (props.count.reg < 1) {
+    } else if (props.count.reg === 0) {
       regDec.current.disabled = true
     };
 
     if (props.count.vip > 0) {
       vipDec.current.disabled = false
-    } else if (props.count.vip < 1) {
+    } else if (props.count.vip === 0) {
       vipDec.current.disabled = true
     }; 
   }
@@ -96,7 +92,7 @@ function TicketProduct(props) {
     <div>
       <h4>Regular ticket</h4>
       <p>
-        Price: <span>{props.cheapprice}</span>,-
+        <span>{props.cheapprice}</span>,-
       </p>
       <label htmlFor="ticketamount">Amount: </label>
 
@@ -110,7 +106,7 @@ function TicketProduct(props) {
     <div>
       <h4>VIP ticket</h4>
       <p>
-        Price: <span>{props.expprice}</span>,-
+        <span>{props.expprice}</span>,-
       </p>
       <label htmlFor="ticketamount">Amount: </label>
  

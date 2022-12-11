@@ -13,45 +13,25 @@ function PaymentDetails(props) {
     meta: { erroredInputs },
   } = useCreditCardValidator();
 
+  function saveBillingInfo(e) {
+    e.preventDefault();
+    const nextData = [];
+
+    nextData.push({
+      name: theForm.current.elements.fullname.value,
+      email: theForm.current.elements.email.value,
+      phonenumber: theForm.current.elements.phone.value,
+      streetname: theForm.current.elements.street.value,
+      apartment: theForm.current.elements.apartment.value,
+      city: theForm.current.elements.city.value,
+      country: theForm.current.elements.country.value,
+    });
+    props.setBilling(nextData);
+    console.log(props.billing);
+  }
+
   return (
     <div>
-      <div>
-        <h3>Items</h3>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "ticket") {
-              return (
-                <li key={item.name}>
-                  {item.name} {item.amount}, {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "extra") {
-              return (
-                <li key={item.name}>
-                  {item.name} {item.amount}, {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "camping spot") {
-              return (
-                <li key={item.name}>
-                  {item.name} {item.amount}, {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <h3>Total: {props.totalPrice()},-</h3>
-      </div>
       <h1>Payment Details</h1>
       <form ref={theForm} method="">
         <h2>Billing details</h2>
@@ -173,7 +153,13 @@ function PaymentDetails(props) {
       <button onClick={props.changePage} name="back">
         Back
       </button>
-      <button onClick={props.changePage} name="next">
+      <button
+        onClick={(e) => {
+          saveBillingInfo(e);
+          props.changePage(e);
+        }}
+        name="next"
+      >
         Complete payment
       </button>
     </div>

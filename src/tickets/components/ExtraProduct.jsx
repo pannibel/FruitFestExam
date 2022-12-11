@@ -10,7 +10,7 @@ function ExtraProduct(props) {
   <div className="extra">
     <label htmlFor="form-extras">Green camping option</label>
     <p>
-      Price: <span>{props.extra1price}</span>,-
+      <span>{props.extra1price}</span>,-
     </p>
     <button onClick={props.addExtras} name="Green camping">
       Add
@@ -20,7 +20,7 @@ function ExtraProduct(props) {
   <div className="extra">
     <label htmlFor="form-extras">2-person tent set up (tent included)</label>
     <p>
-      Price: <span>{props.extra2price}</span>,-
+      <span>{props.extra2price}</span>,-
     </p>
     <button onClick={props.addExtras} name="2-person tent set up">
       Add
@@ -30,7 +30,7 @@ function ExtraProduct(props) {
   <div className="extra">
     <label htmlFor="form-extras">3-person tent set up (tent included)</label>
     <p>
-      Price: <span>{props.extra3price}</span>,-
+      <span>{props.extra3price}</span>,-
     </p>
     <button onClick={props.addExtras} name="3-person tent set up">
       Add

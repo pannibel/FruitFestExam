@@ -26,7 +26,7 @@ function Products(props) {
 
     if (tickettype === "regular" && props.count.reg + props.count.vip <= 4 && props.count.reg > 0) {
         productData = {
-          name: "regular",
+          name: "Regular ticket",
           type: "ticket",
           amount: parseInt(props.count.reg),
           price: cheapprice * props.count.reg,
@@ -36,7 +36,7 @@ function Products(props) {
 
     if (tickettype === "vip" && props.count.reg + props.count.vip <= 4 && props.count.vip > 0) {
         productData = {
-          name: "vip",
+          name: "VIP ticket",
           type: "ticket",
           amount: parseInt(props.count.vip),
           price: expprice * props.count.vip,
@@ -107,6 +107,7 @@ function Products(props) {
             addTicket={addTicket}
             cheapprice={cheapprice}
             expprice={expprice}
+            removeFromBasket={props.removeFromBasket}
           />
           <ExtraProduct
             addExtras={addExtras}
