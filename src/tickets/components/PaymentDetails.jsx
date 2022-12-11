@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef, useState } from "react";
 import { useCreditCardValidator, images } from "react-creditcard-validator";
+import { insertOrder } from "../../database";
 
 function PaymentDetails(props) {
   const theForm = useRef(null);
@@ -27,6 +28,9 @@ function PaymentDetails(props) {
       country: theForm.current.elements.country.value,
     });
     props.setBilling(nextData);
+    insertOrder({
+      ticketOwners: nextData,
+    });
     console.log(props.billing);
   }
 
@@ -158,7 +162,8 @@ function PaymentDetails(props) {
           saveBillingInfo(e);
           props.changePage(e);
         }}
-        name="next">
+        name="next"
+      >
         Complete payment
       </button>
 

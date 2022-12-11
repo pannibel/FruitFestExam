@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
   const [spotsAvailable, setSpotsAvailable] = useState({
-    Svartheim: 300,
-    Nilfheim: 400,
-    Helheim: 400,
-    Alfheim: 400,
-    Muspelheim: 400,
+    Svartheim: "",
+    Nilfheim: "",
+    Helheim: "",
+    Alfheim: "",
+    Muspelheim: "",
   });
 
   useEffect(() => {
@@ -20,11 +20,11 @@ function CampingProduct(props) {
       });
     });
 
-    console.log(spotsAvailable);
+    // console.log(spotsAvailable);
   }, [props.campingSpots]);
 
   function checkAvailSpots(item) {
-    console.log("here", spotsAvailable[`${item}`]);
+    // console.log("here", spotsAvailable[`${item}`]);
     if (spotsAvailable[`${item}`] == 2) {
       return "classGrey";
     } else if (
