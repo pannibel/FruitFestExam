@@ -1,5 +1,6 @@
 import React from "react";
 import "../LineUpApp.scss";
+import "../dayButtons.scss";
 import { useState, useEffect } from "react";
 import Bandslist from "./components/Bandslist";
 import Schedule from "./components/Schedule";
@@ -104,11 +105,11 @@ function Lineup() {
       {/* <Bandslist bands={bands} /> */}
 
       {!burgerState && (
-        <button onClick={() => openBurger()} className="burgerIcon" button-name="openburg"></button>
+        <button onClick={() => openBurger()} className="burgerIcon" button-name="openburg"> </button>
       )}
       {burgerState && (
         <>
-          <button onClick={() => openBurger()} className="burgerIcon" button-name="klosburg"></button>
+          <button onClick={() => openBurger()} className="burgerIcon" button-name="klosburg"> </button>
           <Burger />
         </>
       )}

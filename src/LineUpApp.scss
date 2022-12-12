@@ -5,7 +5,7 @@
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
 body {
-  // background-image: url("./assets/background_1.webp");
+  background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
   background-color: #99caea;
   background-position: center;
@@ -336,6 +336,69 @@ button:focus-visible {
       background-repeat: no-repeat;
       min-width: 30px;
       min-height: 30px;
+    }
+  }
+}
+
+.skedgeCont {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 0px 20px;
+  gap: 20px;
+
+  .logo_small {
+    width: 30vw;
+    justify-self: flex-start;
+  }
+
+  .weekDays {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skedgeList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+
+    background-color: rgba(247, 247, 247, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 3px solid #cccccc;
+
+    // band list
+    .imgSingleBand {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      border: rgba(255, 255, 255, 0.6) 2px solid;
+    }
+
+    .singleBandCont {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 5fr 1fr;
+      gap: 10px;
+
+      align-items: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: medium;
+
+      img {
+        margin: 0;
+      }
+      h4 {
+        color: black;
+      }
     }
   }
 }

@@ -71,7 +71,7 @@ function CurrentBand(props) {
       if (el.name == x) {
         console.log(el.logo);
         if (el.logo.includes("https://")) {
-          return <img src={el.logo} className="imgSingleBand"></img>;
+          return <img src={el.logo} className="imgSingleBand" alt=""></img>;
         } else if (
           el.logo.includes("png") ||
           el.logo.includes("jpg") ||
@@ -83,7 +83,8 @@ function CurrentBand(props) {
             (
               <img
                 src={"http://localhost:8080/logos/" + el.logo}
-                className="imgSingleBand"></img>
+                className="imgSingleBand"
+                alt=""></img>
             )
           );
         }
@@ -115,7 +116,7 @@ function CurrentBand(props) {
           </div>
           <div className="currentBandRow" id="stageBlue">
             {pickImage(currentJotunheim)}
-            
+
             <div className="playerBand">{currentJotunheim}</div>
             <div className="playerStage">JOTUNHEIM</div>
           </div>

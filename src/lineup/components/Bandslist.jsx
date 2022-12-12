@@ -39,7 +39,7 @@ function Bandslist(props) {
         <button
           className="searchBtn"
           button-name="search"
-          onClick={searchList}></button>
+          onClick={searchList}> </button>
       </div>
 
       <div className="bandListBox">

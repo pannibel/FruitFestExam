@@ -9,7 +9,7 @@ function SingleBandSchedule(props) {
 
   function pickImage(x) {
     if (x.includes("https://")) {
-      return <img src={x} className="imgSingleBand"></img>;
+      return <img src={x} className="imgSingleBand" alt=""></img>;
     } else if (
       x.includes("png") ||
       x.includes("jpg") ||
@@ -18,9 +18,9 @@ function SingleBandSchedule(props) {
     ) {
       return (
         <img
+          alt=""
           src={"http://localhost:8080/logos/" + x}
-          className="imgSingleBand"
-        ></img>
+          className="imgSingleBand"></img>
       );
     }
   }
