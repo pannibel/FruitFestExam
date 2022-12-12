@@ -178,20 +178,43 @@ body {
   justify-self: center;
 }
 #basket {
+  p {
+    font-size: 14px;
+    /* Create the gradient. */
+    background-image: linear-gradient(45deg, #1934fd, #ad31ff);
+
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
   div {
     font-size: 14px;
+    color: black;
+    // margin-top: 10px;
   }
   .ticketBasket {
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     color: #656565;
+    align-items: flex-end;
   }
   h3 {
     text-align: center;
+    font-size: 20px;
   }
   h4 {
+    font-size: 16px;
     color: black;
+    margin-top: 10px;
   }
   ul {
     padding: 0;
@@ -201,7 +224,7 @@ body {
     color: black;
   }
   margin: 3vw;
-  min-width: 50px;
+  min-width: 150px;
   // text-align: center;
   padding: 20px 20px;
   border-radius: 30px;
@@ -235,6 +258,47 @@ body {
     pointer-events: none;
   }
 }
+.ticketItem {
+  padding: 10px 15px;
+  border-radius: 30px;
+  background-color: rgba(244, 244, 244, 0.7);
+  display: block;
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 3px; /* control the border thickness */
+    background: linear-gradient(
+      174deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(197, 197, 197, 1) 52%,
+      rgba(120, 120, 120, 1) 100%
+    );
+
+    mask: #ffffff content-box, #ffffff71;
+    mask-composite: exclude;
+
+    -webkit-mask: linear-gradient(
+          rgba(255, 255, 255, 1) 0%,
+          rgba(197, 197, 197, 1) 39%
+        )
+        content-box,
+      linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(197, 197, 197, 1) 39%);
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+  }
+}
+.separateTickets {
+  .ticketItem {
+    margin-bottom: 15px;
+  }
+}
+.separateTickets.ticketItem {
+  margin-bottom: 15px;
+}
 #ticketCampSpots {
   display: flex;
   flex-wrap: wrap;
@@ -250,12 +314,12 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 16px;
+  font-size: 20px;
   transition: 0.3s;
   p {
     background-color: red;
     text-align: center;
-
+    font-size: 18px;
     /* Create the gradient. */
     background-image: linear-gradient(45deg, #9900ff, #0026ff);
 
@@ -291,12 +355,12 @@ input[type="radio"] {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 16px;
+  font-size: 20px;
   transition: 0.3s;
   p {
     background-color: red;
     text-align: center;
-
+    font-size: 18px;
     /* Create the gradient. */
     background-image: linear-gradient(45deg, #ff3838, #af4261);
 
@@ -323,11 +387,11 @@ input[type="radio"] {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 16px;
+  font-size: 20px;
   transition: 0.3s;
   p {
     text-align: center;
-
+    font-size: 18px;
     /* Create the gradient. */
     background-image: linear-gradient(45deg, #656565, #c0c0c0);
 
@@ -367,6 +431,26 @@ input[type="radio"] {
   padding: 5px;
   color: #213547;
   background-image: url("./assets/buttons/basket_rmv.svg");
+  // filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.3s;
+  align-self: center;
+}
+.ticketBasket.ticketItem {
+  margin-bottom: 10px;
+}
+.basketCheckout {
+  border: 0;
+  margin-top: 20px;
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px;
+  color: #213547;
+  background-image: url("./assets/buttons/checkout_btn.svg");
   // filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
   background-size: contain;
   background-position: center;

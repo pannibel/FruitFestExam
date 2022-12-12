@@ -25,14 +25,16 @@ function Basket(props) {
       <div id="basket">
         <h3>Basket</h3>
         <h4>Tickets:</h4>
-        <div>
+        <div className="separateTickets">
           {props.basket.map((item) => {
             if (item.type === "ticket") {
               return (
-                <div key={item.name}>
-                  {item.name} x {item.amount}
+                <div key={item.name} className="ticketItem">
+                  <p>
+                    {item.name} x {item.amount}
+                  </p>
                   <div className="ticketBasket">
-                    <div>{item.amount * item.price},-</div>
+                    <p>{item.amount * item.price},-</p>
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
@@ -49,10 +51,10 @@ function Basket(props) {
           {props.basket.map((item) => {
             if (item.type === "extra") {
               return (
-                <div key={item.name}>
-                  {item.name}
+                <div key={item.name} className="separateTickets ticketItem ">
+                  <p>{item.name}</p>
                   <div className="ticketBasket">
-                    {item.amount * item.price},-
+                    <p>{item.amount * item.price},-</p>
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
@@ -69,8 +71,8 @@ function Basket(props) {
           {props.basket.map((item) => {
             if (item.name === "campingSpot") {
               return (
-                <div key={item.type} className="ticketBasket">
-                  {item.type}
+                <div key={item.type} className="ticketBasket ticketItem">
+                  <p>{item.type}</p>
                   <button
                     onClick={() => {
                       props.removeFromBasket(item.name);
@@ -95,9 +97,8 @@ function Basket(props) {
               totalGuests();
             }
           }}
-        >
-          Checkout
-        </button>
+          className="basketCheckout"
+        ></button>
       </div>
     </div>
   );
