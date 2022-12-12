@@ -90,8 +90,8 @@ function Products(props) {
       props.setSpotAdded(true);
 
       productData = {
-        name: value,
-        type: "camping spot",
+        name: "campingSpot",
+        type: value,
         amount: 1,
         price: "",
       };
@@ -99,7 +99,12 @@ function Products(props) {
       props.addToBasket(productData);
     }
     if (props.spotAdded === true) {
-      console.log("action not possible");
+      productData = {
+        amount: 1,
+        name: "campingSpot",
+        type: value,
+      };
+      props.addToBasket(productData);
     }
     console.log(productData);
   }

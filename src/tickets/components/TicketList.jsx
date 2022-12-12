@@ -23,6 +23,22 @@ function TicketList(props) {
     if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
         oldBasket.map((entry) => {
+          if (entry.name == "campingSpot") {
+            console.log("it's been there");
+
+            props.setBasket((oldBasket) => {
+              const subtracted = oldBasket.map((item) => {
+                if (entry.name === item.name) {
+                  return { ...item, amount: 0 };
+                }
+                return item;
+              });
+              const filtered = subtracted.filter((item) => item.amount > 0);
+              return filtered;
+            });
+            props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
+          }
+
           if (entry.name !== data.name) {
             return entry;
           }
@@ -33,6 +49,7 @@ function TicketList(props) {
           } else if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
           }
+
           return copy;
         })
       );

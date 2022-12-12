@@ -3,6 +3,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
+  const handleClick = (event) => {
+    // 👇️ toggle class on click
+    event.currentTarget.classList.toggle("campPicked");
+  };
+
   const [spotsAvailable, setSpotsAvailable] = useState({
     Svartheim: "",
     Nilfheim: "",
@@ -50,49 +55,46 @@ function CampingProduct(props) {
         <label
           htmlFor="Svartheim"
           className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
+          onClick={handleClick}
         >
           <p> Svartheim</p>
         </label>
 
-        <div>
-          <label htmlFor="form-spot">
-            <div
-              className={spotsAvailable ? checkAvailSpots("Nilfheim") : null}
-            >
-              Nilfheim
-            </div>
-          </label>
-          <input type="radio" name="spot" value="Nilfheim" />
-        </div>
+        <input id="Nilfheim" type="radio" name="spot" value="Nilfheim" />
+        <label
+          htmlFor="Nilfheim"
+          className={spotsAvailable ? checkAvailSpots("Nilfheim") : null}
+          onClick={handleClick}
+        >
+          <p> Nilfheim</p>
+        </label>
 
-        <div>
-          <label htmlFor="form-spot">
-            <div className={spotsAvailable ? checkAvailSpots("Helheim") : null}>
-              Helheim
-            </div>
-          </label>
-          <input type="radio" name="spot" value="Helheim" />
-        </div>
+        <input id="Helheim" type="radio" name="spot" value="Helheim" />
+        <label
+          htmlFor="Helheim"
+          className={spotsAvailable ? checkAvailSpots("Helheim") : null}
+          onClick={handleClick}
+        >
+          <p> Helheim</p>
+        </label>
 
-        <div>
-          <label htmlFor="form-spot">
-            <div
-              className={spotsAvailable ? checkAvailSpots("Muspelheim") : null}
-            >
-              Muspelheim
-            </div>
-          </label>
-          <input type="radio" name="spot" value="Muspelheim" />
-        </div>
+        <input id="Muspelheim" type="radio" name="spot" value="Muspelheim" />
+        <label
+          htmlFor="Muspelheim"
+          className={spotsAvailable ? checkAvailSpots("Muspelheim") : null}
+          onClick={handleClick}
+        >
+          <p> Muspelheim</p>
+        </label>
 
-        <div>
-          <label htmlFor="form-spot">
-            <div className={spotsAvailable ? checkAvailSpots("Alfheim") : null}>
-              Alfheim
-            </div>
-          </label>
-          <input type="radio" name="spot" value="Alfheim" />
-        </div>
+        <input id="Alfheim" type="radio" name="spot" value="Alfheim" />
+        <label
+          htmlFor="Alfheim"
+          className={spotsAvailable ? checkAvailSpots("Alfheim") : null}
+          onClick={handleClick}
+        >
+          <p> Alfheim</p>
+        </label>
       </div>
 
       <div>
