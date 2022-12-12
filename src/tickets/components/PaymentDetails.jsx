@@ -26,6 +26,7 @@ function PaymentDetails(props) {
       apartment: theForm.current.elements.apartment.value,
       city: theForm.current.elements.city.value,
       country: theForm.current.elements.country.value,
+      // basket: props.
     });
     props.setBilling(nextData);
     insertOrder({
