@@ -54,9 +54,10 @@ function CampingProduct(props) {
 
             <div
               onClick={props.addSpot}
+              value="Svartheim"
               className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
             >
-              <p> Svartheim</p>
+              Svartheim
             </div>
           </label>
         </div>
