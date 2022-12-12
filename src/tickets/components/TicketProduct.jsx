@@ -102,7 +102,7 @@ function TicketProduct(props) {
               onClick={changeCount}
               disabled={false}
               className="regDec"
-            ></button>
+            > </button>
             <div>{props.count.reg}</div>
             <button
               ref={regInc}
@@ -110,7 +110,7 @@ function TicketProduct(props) {
               onClick={changeCount}
               disabled={false}
               className="regInc"
-            ></button>
+            > </button>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ function TicketProduct(props) {
               onClick={changeCount}
               disabled={false}
               className="vipDec"
-            ></button>
+            > </button>
             <div>{props.count.vip}</div>
             <button
               ref={vipInc}
@@ -136,7 +136,7 @@ function TicketProduct(props) {
               onClick={changeCount}
               disabled={false}
               className="vipInc"
-            ></button>
+            > </button>
           </div>
         </div>
       </div>
