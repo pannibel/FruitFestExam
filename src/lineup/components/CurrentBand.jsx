@@ -9,7 +9,7 @@ function CurrentBand(props) {
 
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
-  let showCurrentActTime = hourBasedIndex + "-" + (hourBasedIndex + 2);
+  let showCurrentActTime = hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
   let currentHour = hourBasedIndex + ":00";
   console.log(currentHour);
 
@@ -92,6 +92,7 @@ function CurrentBand(props) {
     });
   }
   return (
+    <div className="anotherCont">
     <div className="homeCont">
       <img
         className="logo"
@@ -122,6 +123,7 @@ function CurrentBand(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

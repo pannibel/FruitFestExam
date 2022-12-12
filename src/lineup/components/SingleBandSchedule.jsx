@@ -9,16 +9,14 @@ function SingleBandSchedule(props) {
   useEffect(() => {
     props.data[1].map((el) => {
       if (el.act !== "break") {
-        setBreak(!isBreak)
+        setBreak(!isBreak);
       }
     });
-  }, [])
+  }, []);
 
   useEffect(() => {
-    props.data[1].map((el) => 
-        setEnd(el.end)
-      );
-  }, [])
+    props.data[1].map((el) => setEnd(el.end));
+  }, []);
 
   function likeBand() {
     setLikedBand(!likedBand);
@@ -46,27 +44,25 @@ function SingleBandSchedule(props) {
   return (
     <div className="timeSlot">
       <h3 className="time">
-      {isBreak ? `${props.data[0]} - ${end}` : `${props.data[0]} - ${end}` }
+        {isBreak ? `${props.data[0]} - ${end}` : `${props.data[0]} - ${end}`}
       </h3>
-        
-        <div>
-      {isBreak ? "break" : ""}
 
-       {props.data[1].map((el) => {
-        if (el.act !== "break") {
-          return (
-            <li className="singleBand">
-              {pickImage(`${el.logo}`)}
-              <h3>{el.act}</h3>
-              <h3>{el.stage}</h3>
-            </li>
-          )
-        }
-       })}
-       </div>
-     
+      <div className="currentBandBox">
+      {isBreak ? "break" : ""}
+        {props.data[1].map((el) => {
+          if (el.act !== "break") {
+            return (
+              <li className="singleBand">
+                {pickImage(`${el.logo}`)}
+                <h3 className="act">{el.act}</h3>
+                <h3 className="stage">{el.stage}</h3>
+              </li>
+            );
+          }
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
 export default SingleBandSchedule;
