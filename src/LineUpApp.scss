@@ -371,7 +371,20 @@ button:focus-visible {
     border-radius: 30px;
     border: 3px solid #cccccc;
 
+    list-style: none;
+
     // band list
+
+    .timeSlot {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .singleBand {
+      display: flex;
+      flex-direction: row;
+    }
+
     .imgSingleBand {
       display: block;
       margin-left: auto;
