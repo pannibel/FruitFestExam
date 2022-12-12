@@ -8,6 +8,11 @@ function SingleBand(props) {
     // props.data.liked = JSON.stringify(likedBand);
     // console.log(likedBand);
   }
+
+  const handleClick = e => {
+    e.currentTarget.classList.toggle('buttRed');
+  }
+
   let imageDir = props.data.logo;
   function pickImage() {
     if (!imageDir.includes("https://")) {
@@ -28,8 +33,9 @@ function SingleBand(props) {
 
       <div className="likeBtn">
         <button
-          className={likedBand ? "buttBlue" : "buttRed"}
-          onClick={likeBand}
+          className="buttBlue"
+          onClick={(e) => {handleClick(e); likeBand}}
+          value="like"
         >
           {likedBand ? "like it" : "liked"}
         </button>
