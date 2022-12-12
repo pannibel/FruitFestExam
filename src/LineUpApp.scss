@@ -25,6 +25,9 @@ button:focus,
 button:focus-visible {
   outline: none;
 }
+
+
+
 .NavBarCont {
   position: fixed;
   width: 80%;
@@ -36,6 +39,73 @@ button:focus-visible {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10%;
   height: 100px;
+
+  button {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  .homeOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/home_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .homeOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/home_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .bandsOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/bands_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .bandsOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/bands_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .scheduleOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/skedge_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .scheduleOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/skedge_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 .burgerMenu {

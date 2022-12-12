@@ -39,21 +39,38 @@ function Lineup() {
     getData();
   }, []);
 
+  
   function changePageApp(value) {
     setLineUpPage(value);
     // console.log("change the state to " + lineUpPage);
   }
+
+  function checkPageApp(value) {
+    if (lineUpPage == 1) {
+      if (value === "home")
+        return "homeOn"
+    } else
+    if (lineUpPage == 2) {
+      if (value === "bands")
+      return "bandsOn"
+    } else
+    if (lineUpPage == 3) {
+      if (value === "schedule")
+      return "scheduleOn"
+    }
+  }
+
   function openBurger() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
+
   }
   return (
     <div className="appCont">
       <img
         className="logoBig"
         src="../src/assets/logo_big.svg"
-        alt="big logo of the festival"
-      ></img>
+        alt="big logo of the festival"></img>
       {lineUpPage == 1 ? (
         <CurrentBand currentBand={currentBand} bands={bands} />
       ) : (
@@ -66,14 +83,23 @@ function Lineup() {
         ""
       )}
       <div className="NavBarCont">
-        <button onClick={() => changePageApp(2)} className="btn_side_off">
-          B
+        <button
+          onClick={() => changePageApp(1)}
+          className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
+          value="home"
+          >
         </button>
-        <button onClick={() => changePageApp(1)} className="btn_mid_on">
-          H
+        <button
+          onClick={() => changePageApp(2)}
+          className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
+          value="bands"
+          >
         </button>
-        <button onClick={() => changePageApp(3)} className="btn_side_off">
-          SC
+        <button
+          onClick={() => changePageApp(3)}
+          className={lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"}
+          value="schedule"
+          >
         </button>
       </div>
       {/* <Bandslist bands={bands} /> */}
