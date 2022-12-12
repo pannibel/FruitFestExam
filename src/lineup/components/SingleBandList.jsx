@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 function SingleBand(props) {
   const [likedBand, setLikedBand] = useState(true);
   function likeBand() {
+    console.log("he")
     setLikedBand(!likedBand);
     // props.data.liked = JSON.stringify(likedBand);
     // console.log(likedBand);
@@ -11,6 +12,7 @@ function SingleBand(props) {
 
   const handleClick = e => {
     e.currentTarget.classList.toggle('buttRed');
+    console.log("michael jackson")
   }
 
   let imageDir = props.data.logo;
@@ -34,7 +36,7 @@ function SingleBand(props) {
       <div className="likeBtn">
         <button
           className="buttBlue"
-          onClick={(e) => {handleClick(e); likeBand}}
+          onClick={(e) => {handleClick(e); likeBand(e)}}
           value="like"
         >
           {likedBand ? "like it" : "liked"}
