@@ -3,6 +3,16 @@ import { useState, useEffect } from "react";
 
 function SingleBandSchedule(props) {
   const [likedBand, setLikedBand] = useState(true);
+  const [isBreak, setBreak] = useState(true);
+
+  useEffect(() => {
+    props.data[1].map((el) => {
+      if (el.act !== "break") {
+        setBreak(!isBreak)
+      }
+    });
+  }, [])
+
   function likeBand() {
     setLikedBand(!likedBand);
   }
@@ -24,19 +34,24 @@ function SingleBandSchedule(props) {
       );
     }
   }
-
   console.log(props.data[1]);
+
   return (
-    <div>
-      <h3>{props.data[0]}</h3>
+    <div className="timeSlot">
+      <h3>
+      {isBreak ? `${props.data[0]} - break` : props.data[0]}
+      </h3>
+        
       {props.data[1].map((el) => {
-        return (
-          <li>
-            <h3>{el.act}</h3>
-            <h3>{el.stage}</h3>
-            {pickImage(`${el.logo}`)}
-          </li>
-        );
+        if (el.act !== "break") {
+          return (
+            <li className="singleBand">
+              {pickImage(`${el.logo}`)}
+              <h3>{el.act}</h3>
+              <h3>{el.stage}</h3>
+            </li>
+          )
+        }
       })}
     </div>
   );
