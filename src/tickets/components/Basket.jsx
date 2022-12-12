@@ -59,10 +59,10 @@ function Basket(props) {
         <h4>Camping spot:</h4>
         <ul>
           {props.basket.map((item) => {
-            if (item.type === "camping spot") {
+            if (item.name === "campingSpot") {
               return (
-                <li key={item.name}>
-                  {item.name}, {item.amount * item.price},-
+                <li key={item.type}>
+                  {item.type}
                   <button
                     onClick={() => {
                       props.removeFromBasket(item.name);

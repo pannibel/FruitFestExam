@@ -126,7 +126,7 @@ function TicketProduct(props) {
               ref={vipDec}
               name="vipDec"
               onClick={changeCount}
-              disabled={true}
+              disabled={false}
               className="vipDec"
             ></button>
             <div>{props.count.vip}</div>
