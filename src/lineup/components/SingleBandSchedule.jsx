@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 function SingleBandSchedule(props) {
   const [likedBand, setLikedBand] = useState(true);
   const [isBreak, setBreak] = useState(true);
+  const [end, setEnd] = useState();
 
   useEffect(() => {
     props.data[1].map((el) => {
@@ -11,6 +12,12 @@ function SingleBandSchedule(props) {
         setBreak(!isBreak)
       }
     });
+  }, [])
+
+  useEffect(() => {
+    props.data[1].map((el) => 
+        setEnd(el.end)
+      );
   }, [])
 
   function likeBand() {
@@ -38,11 +45,14 @@ function SingleBandSchedule(props) {
 
   return (
     <div className="timeSlot">
-      <h3>
-      {isBreak ? `${props.data[0]} - break` : props.data[0]}
+      <h3 className="time">
+      {isBreak ? `${props.data[0]} - ${end}` : `${props.data[0]} - ${end}` }
       </h3>
         
-      {props.data[1].map((el) => {
+        <div>
+      {isBreak ? "break" : ""}
+
+       {props.data[1].map((el) => {
         if (el.act !== "break") {
           return (
             <li className="singleBand">
@@ -52,9 +62,11 @@ function SingleBandSchedule(props) {
             </li>
           )
         }
-      })}
+       })}
+       </div>
+     
     </div>
-  );
+  )
 }
 
 export default SingleBandSchedule;
