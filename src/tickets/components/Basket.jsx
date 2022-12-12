@@ -25,57 +25,64 @@ function Basket(props) {
       <div id="basket">
         <h3>Basket</h3>
         <h4>Tickets:</h4>
-        <ul>
+        <div>
           {props.basket.map((item) => {
             if (item.type === "ticket") {
               return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                  <button onClick={() => props.removeFromBasket(item.name)}>
-                    X
-                  </button>
-                </li>
+                <div key={item.name}>
+                  {item.name} x {item.amount}
+                  <div className="ticketBasket">
+                    <div>{item.amount * item.price},-</div>
+                    <button
+                      onClick={() => props.removeFromBasket(item.name)}
+                      className="basketBtnRmv"
+                    ></button>
+                  </div>{" "}
+                </div>
               );
             }
           })}
-        </ul>
+        </div>
 
         <h4>Extras:</h4>
-        <ul>
+        <div>
           {props.basket.map((item) => {
             if (item.type === "extra") {
               return (
-                <li key={item.name}>
-                  {item.name} | {item.amount * item.price},-
-                  <button onClick={() => props.removeFromBasket(item.name)}>
-                    X
-                  </button>
-                </li>
+                <div key={item.name}>
+                  {item.name}
+                  <div className="ticketBasket">
+                    {item.amount * item.price},-
+                    <button
+                      onClick={() => props.removeFromBasket(item.name)}
+                      className="basketBtnRmv"
+                    ></button>
+                  </div>
+                </div>
               );
             }
           })}
-        </ul>
+        </div>
 
         <h4>Camping spot:</h4>
-        <ul>
+        <div>
           {props.basket.map((item) => {
             if (item.name === "campingSpot") {
               return (
-                <li key={item.type}>
+                <div key={item.type} className="ticketBasket">
                   {item.type}
                   <button
                     onClick={() => {
                       props.removeFromBasket(item.name);
                       props.setSpotAdded(false);
                     }}
-                  >
-                    X
-                  </button>
-                </li>
+                    className="basketBtnRmv"
+                  ></button>
+                </div>
               );
             }
           })}
-        </ul>
+        </div>
 
         {/*       <h3>Subtotal: {totalPrice()},-</h3>
       <h3>Booking fee: 99,-</h3> */}

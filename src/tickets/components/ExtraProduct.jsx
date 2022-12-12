@@ -16,9 +16,11 @@ function ExtraProduct(props) {
           <p>
             <span>{props.extra1price}</span>,-
           </p>
-          <button onClick={props.addExtras} name="Green camping">
-            Add
-          </button>
+          <button
+            onClick={props.addExtras}
+            name="Green camping"
+            className="extraBtnADD"
+          ></button>
         </div>
 
         <div className={isMobile ? "extra extraMobile" : "extra"}>
@@ -28,9 +30,11 @@ function ExtraProduct(props) {
           <p>
             <span>{props.extra2price}</span>,-
           </p>
-          <button onClick={props.addExtras} name="2-person tent set up">
-            Add
-          </button>
+          <button
+            onClick={props.addExtras}
+            name="2-person tent set up"
+            className="extraBtnADD"
+          ></button>
         </div>
 
         <div className="extra">
@@ -40,9 +44,11 @@ function ExtraProduct(props) {
           <p>
             <span>{props.extra3price}</span>,-
           </p>
-          <button onClick={props.addExtras} name="3-person tent set up">
-            Add
-          </button>
+          <button
+            onClick={props.addExtras}
+            name="3-person tent set up"
+            className="extraBtnADD"
+          ></button>
         </div>
       </div>
     </div>

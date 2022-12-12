@@ -8,9 +8,9 @@ body {
   background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
   background-color: #99caea;
-  background-position: center;
+  // background-position: center;
   background-attachment: fixed;
-  background-size: cover;
+  // background-size: cover;
 }
 
 .form-control {
@@ -134,7 +134,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5%;
-  margin: 50px;
+  margin: 3vw;
   display: inline-block;
   background-color: rgba(244, 244, 244, 0.7);
   border-radius: 50px;
@@ -178,10 +178,32 @@ body {
   justify-self: center;
 }
 #basket {
-  margin: 50px;
+  div {
+    font-size: 14px;
+  }
+  .ticketBasket {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    color: #656565;
+  }
+  h3 {
+    text-align: center;
+  }
+  h4 {
+    color: black;
+  }
+  ul {
+    padding: 0;
+    font-size: 14px;
+  }
+  li {
+    color: black;
+  }
+  margin: 3vw;
   min-width: 50px;
-  text-align: center;
-  padding: 20px 30px;
+  // text-align: center;
+  padding: 20px 20px;
   border-radius: 30px;
   background-color: rgba(244, 244, 244, 0.7);
   display: block;
@@ -321,4 +343,35 @@ input[type="radio"] {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+}
+.extraBtnADD {
+  border: 0;
+  height: 30px;
+  cursor: pointer;
+  padding: 20px;
+  color: #213547;
+  background-image: url("./assets/buttons/tct_add.svg");
+  filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.3s;
+  align-self: flex-end;
+}
+.basketBtnRmv {
+  border: 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  padding: 5px;
+  color: #213547;
+  background-image: url("./assets/buttons/basket_rmv.svg");
+  // filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.3s;
+  align-self: center;
 }
