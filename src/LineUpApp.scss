@@ -57,20 +57,36 @@ button:focus-visible {
 
 .searchbarCont {
   display: flex;
+  align-items: center;
+
+  background: linear-gradient(
+    to bottom,
+    rgb(136, 136, 137),
+    rgb(226, 227, 226)
+  );
+  opacity: 0.7;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 3px solid #cccccc;
+
   input {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(
-      to bottom,
-      rgb(136, 136, 137),
-      rgb(226, 227, 226)
-    );
-    opacity: 0.7;
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    border: 3px solid #cccccc;
     font-family: "Audiowide";
     font-size: medium;
+    border: none;
+    background-color: transparent;
+    border-radius: 60px;
+  }
+
+  .searchBtn {
+    border: none;
+    margin-right: 5px;
+
+    background-image: url("./assets/buttons/search.svg");
+    background-repeat: no-repeat;
+    min-width: 30px;
+    min-height: 30px;
   }
 }
 
@@ -318,6 +334,8 @@ button:focus-visible {
     .buttRed {
       background-image: url("./assets/buttons/orange_like.svg");
       background-repeat: no-repeat;
+      min-width: 30px;
+      min-height: 30px;
     }
   }
 }
