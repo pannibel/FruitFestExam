@@ -13,13 +13,23 @@ function Bandslist(props) {
   //   return a.props.band.localeCompare(b.firstName);
   // })
   return (
-    <>
-      <div>
-        {sortedBands.map((band, i) => (
-          <SingleBand data={band} key={i} />
-        ))}
+    <div className="bandsCont">
+      <img
+        className="logo_small"
+        src="../src/assets/logo.svg"
+        alt="big logo of the festival"></img>
+
+      <div className="searchbarCont">
+        <input type="text" name="searchbar" placeholder="search..." />
       </div>
-    </>
+
+
+        <div className="bandListBox">
+          {sortedBands.map((band, i) => (
+            <SingleBand data={band} key={i} />
+          ))}
+        </div>
+    </div>
   );
 }
 
