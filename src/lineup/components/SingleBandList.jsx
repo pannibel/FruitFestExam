@@ -2,16 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 function SingleBand(props) {
-  const [likedBand, setLikedBand] = useState(true);
-  function likeBand() {
-    setLikedBand(!likedBand);
-    // props.data.liked = JSON.stringify(likedBand);
-    // console.log(likedBand);
-  }
+  // const [likedBand, setLikedBand] = useState(true);
+  // function likeBand() {
+  //   setLikedBand(!likedBand);
+  // props.data.liked = JSON.stringify(likedBand);
+  // console.log(likedBand);
+  // }
 
-  const handleClick = e => {
-    e.currentTarget.classList.toggle('buttRed');
-  }
+  const handleClick = (e) => {
+    e.currentTarget.classList.toggle("buttRed");
+  };
 
   let imageDir = props.data.logo;
   function pickImage() {
@@ -34,12 +34,14 @@ function SingleBand(props) {
       <div className="likeBtn">
         <button
           className="buttBlue"
-          onClick={(e) => {handleClick(e); likeBand}}
+          onClick={(e) => {
+            handleClick(e);
+          }}
           value="like"
         >
-          {likedBand ? "like it" : "liked"}
+          {/* {likedBand ? "like it" : "liked"} */}
         </button>
-{/*         <div className={likedBand ? "buttBlue" : "buttRed"}>
+        {/*         <div className={likedBand ? "buttBlue" : "buttRed"}>
           {/* {JSON.stringify(likedBand)} }
         </div> */}
       </div>
