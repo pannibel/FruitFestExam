@@ -78,23 +78,24 @@ function Products(props) {
 
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
+    console.log(e.target.value);
+    addSpot(e.target.value);
   }
-  // function checkAvailSpots() {
 
-  // }
-
-  function addSpot(e) {
-    e.preventDefault();
+  function addSpot(value) {
+    // e.preventDefault();
+    // e.preventDefault();
+    // console.log(chosenSpot);
     if (props.spotAdded === false) {
       props.setSpotAdded(true);
 
       productData = {
-        name: chosenSpot,
+        name: value,
         type: "camping spot",
         amount: 1,
         price: "",
       };
-
+      console.log(productData);
       props.addToBasket(productData);
     }
     if (props.spotAdded === true) {
@@ -122,6 +123,7 @@ function Products(props) {
         />
         <CampingProduct
           addSpot={addSpot}
+          count={props.count}
           onChangeValue={onChangeValue}
           campingSpots={props.campingSpots}
         />

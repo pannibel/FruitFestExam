@@ -48,16 +48,14 @@ function CampingProduct(props) {
         tickets.
       </h4>
       <div onChange={props.onChangeValue} id="ticketCampSpots">
-        <div>
-          <label htmlFor="form-spot">
-            <input type="radio" name="spot" value="Svartheim" />
-
-            <div
-              onClick={props.addSpot}
-              value="Svartheim"
-              className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
-            >
-              Svartheim
+        <div className="cc-selector">
+          <input id="Svartheim" type="radio" name="spot" value="Svartheim" />
+          <label
+            htmlFor="Svartheim"
+            className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
+          >
+            <div>
+              <p> Svartheim</p>
             </div>
           </label>
         </div>
