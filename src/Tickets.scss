@@ -13,7 +13,6 @@ body {
   background-size: cover;
 }
 
-
 .form-control {
   display: grid;
   // grid-template-columns: repeat (1fr, 3);
@@ -223,6 +222,7 @@ body {
   gap: 20px;
 }
 .campIdle {
+  min-width: 100px;
   cursor: pointer;
   padding: 20px;
   color: #213547;
@@ -231,14 +231,14 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 14px;
+  font-size: 16px;
   transition: 0.3s;
   p {
     background-color: red;
     text-align: center;
 
     /* Create the gradient. */
-    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-image: linear-gradient(45deg, #9900ff, #0026ff);
 
     /* Set the background size and repeat properties. */
     background-size: 100%;
@@ -263,22 +263,54 @@ input[type="radio"] {
   visibility: hidden;
 }
 .campPicked {
+  min-width: 100px;
   cursor: pointer;
   padding: 20px;
   color: #213547;
-  background-image: url("./assets/tickets/camp_idle.svg");
-  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+  background-image: url("./assets/tickets/camp_picked.svg");
+  filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  font-size: 14px;
+  font-size: 16px;
   transition: 0.3s;
   p {
     background-color: red;
     text-align: center;
 
     /* Create the gradient. */
-    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-image: linear-gradient(45deg, #ff3838, #af4261);
+
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+}
+.campGrey {
+  min-width: 100px;
+  cursor: pointer;
+  padding: 20px;
+  color: #213547;
+  background-image: url("./assets/tickets/camp_grey.svg");
+  filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.3s;
+  p {
+    text-align: center;
+
+    /* Create the gradient. */
+    background-image: linear-gradient(45deg, #656565, #c0c0c0);
 
     /* Set the background size and repeat properties. */
     background-size: 100%;

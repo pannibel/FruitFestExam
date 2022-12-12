@@ -3,10 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
-  const handleClick = (event) => {
-    // 👇️ toggle class on click
-    event.currentTarget.classList.toggle("campPicked");
-  };
+  const [curCampBtn, setCurCampBtn] = useState();
 
   const [spotsAvailable, setSpotsAvailable] = useState({
     Svartheim: "",
@@ -36,7 +33,7 @@ function CampingProduct(props) {
       spotsAvailable[`${item}`] < 10 &&
       spotsAvailable[`${item}`] > 0
     ) {
-      return "campRed";
+      return "campGrey";
     } else {
       return "campIdle";
     }
@@ -54,46 +51,76 @@ function CampingProduct(props) {
         <input id="Svartheim" type="radio" name="spot" value="Svartheim" />
         <label
           htmlFor="Svartheim"
-          className={spotsAvailable ? checkAvailSpots("Svartheim") : null}
-          onClick={handleClick}
+          className={
+            curCampBtn == "Svartheim"
+              ? "campPicked"
+              : spotsAvailable
+              ? checkAvailSpots("Nilfheim")
+              : null
+          }
+          onClick={() => setCurCampBtn("Svartheim")}
         >
-          <p> Svartheim</p>
+          <p>Svartheim</p>
         </label>
 
         <input id="Nilfheim" type="radio" name="spot" value="Nilfheim" />
         <label
           htmlFor="Nilfheim"
-          className={spotsAvailable ? checkAvailSpots("Nilfheim") : null}
-          onClick={handleClick}
+          className={
+            curCampBtn == "Nilfheim"
+              ? "campPicked"
+              : spotsAvailable
+              ? checkAvailSpots("Nilfheim")
+              : null
+          }
+          onClick={() => setCurCampBtn("Nilfheim")}
         >
-          <p> Nilfheim</p>
+          <p>Nilfheim</p>
         </label>
 
         <input id="Helheim" type="radio" name="spot" value="Helheim" />
         <label
           htmlFor="Helheim"
-          className={spotsAvailable ? checkAvailSpots("Helheim") : null}
-          onClick={handleClick}
+          className={
+            curCampBtn == "Helheim"
+              ? "campPicked"
+              : spotsAvailable
+              ? checkAvailSpots("Helheim")
+              : null
+          }
+          onClick={() => setCurCampBtn("Helheim")}
         >
-          <p> Helheim</p>
+          <p>Helheim</p>
         </label>
 
         <input id="Muspelheim" type="radio" name="spot" value="Muspelheim" />
         <label
           htmlFor="Muspelheim"
-          className={spotsAvailable ? checkAvailSpots("Muspelheim") : null}
-          onClick={handleClick}
+          className={
+            curCampBtn == "Muspelheim"
+              ? "campPicked"
+              : spotsAvailable
+              ? checkAvailSpots("Muspelheim")
+              : null
+          }
+          onClick={() => setCurCampBtn("Muspelheim")}
         >
-          <p> Muspelheim</p>
+          <p>Muspelheim</p>
         </label>
 
         <input id="Alfheim" type="radio" name="spot" value="Alfheim" />
         <label
           htmlFor="Alfheim"
-          className={spotsAvailable ? checkAvailSpots("Alfheim") : null}
-          onClick={handleClick}
+          className={
+            curCampBtn == "Alfheim"
+              ? "campPicked"
+              : spotsAvailable
+              ? checkAvailSpots("Alfheim")
+              : null
+          }
+          onClick={() => setCurCampBtn("Alfheim")}
         >
-          <p> Alfheim</p>
+          <p>Alfheim</p>
         </label>
       </div>
 
