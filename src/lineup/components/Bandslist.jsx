@@ -26,35 +26,6 @@ function Bandslist(props) {
     }
   }
 
-  // ! ! ! copy
-  // function searchList() {
-  //   sortedBands.map((band) => {
-  //     if (band.name.includes(theInput.current.value)) {
-  //       // sortedBands.filter(band);
-  //       // console.log(sortedBands.filter(band));
-  //       console.log(band);
-  //     }
-  //   });
-  // }
-  // ! ! ! copy
-  // ! it's here
-  // function searchList() {
-  //   if (theInput.current.value != "") {
-  //     setSearching(true);
-  //     let filtered = initArray.filter((band) => {
-  //       band.name.includes(theInput.current.value);
-  //     });
-  //     console.log(filtered);
-
-  //     sortedBands = sortedBands.filter((band) =>
-  //       band.name.includes(theInput.current.value)
-  //     );
-  //       sortedBands.push(searchedBands);
-  //     } else {
-  //       setSearching(false);
-  //   }
-  // }
-  // ! ! !
   return (
     <div className="bandsCont">
       <img
