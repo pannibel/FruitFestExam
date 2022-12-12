@@ -1,0 +1,97 @@
+// ? here there are buttons for reguard and vip tickets
+#ticketOptions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+.chooseTicket {
+  min-width: 100px;
+  text-align: center;
+  padding: 20px 30px;
+  border-radius: 30px;
+  background: linear-gradient(
+    47deg,
+    rgba(162, 157, 173, 0.7) 0%,
+    rgba(197, 197, 197, 0.7) 88%,
+    rgba(208, 207, 210, 0.7) 90%
+  );
+  display: block;
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 2px; /* control the border thickness */
+    background: linear-gradient(
+      174deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(197, 197, 197, 1) 52%,
+      rgba(120, 120, 120, 1) 100%
+    );
+
+    mask: #ffffff content-box, #ffffff71;
+    mask-composite: exclude;
+
+    -webkit-mask: linear-gradient(
+          rgba(255, 255, 255, 1) 0%,
+          rgba(197, 197, 197, 1) 39%
+        )
+        content-box,
+      linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(197, 197, 197, 1) 39%);
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+  }
+}
+.tickGold {
+  background: linear-gradient(
+    171deg,
+    rgba(250, 218, 106, 1) 9%,
+    rgba(234, 184, 55, 1) 70%,
+    rgba(248, 219, 117, 1) 82%
+  );
+}
+.ticketOptionBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
+  button {
+    border: 0;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    // padding: 20px;
+    color: #213547;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+}
+.regInc {
+  background-image: url("./assets/tickets/regIncON.svg");
+}
+button:disabled.regInc {
+  background-image: url("./assets/tickets/regIncOFF.svg");
+}
+.regDec {
+  background-image: url("./assets/tickets/regDecON.svg");
+}
+button:disabled.regDec {
+  background-image: url("./assets/tickets/regDecOFF.svg");
+}
+.vipInc {
+  background-image: url("./assets/tickets/vipIncON.svg");
+}
+button:disabled.vipInc {
+  background-image: url("./assets/tickets/vipIncOFF.svg");
+}
+.vipDec {
+  background-image: url("./assets/tickets/vipDecON.svg");
+}
+button:disabled.vipDec {
+  background-image: url("./assets/tickets/vipDecOFF.svg");
+}

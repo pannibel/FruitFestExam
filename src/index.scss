@@ -5,14 +5,13 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
-// url("./assets/nav_mid_on.svg");
 :root {
   font-family: Audiowide, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
+  // color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 

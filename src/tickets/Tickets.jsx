@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "../Tickets.scss";
+import "../ticketButtons.scss";
 import CheckoutForm from "./components/CheckoutForm";
 import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
