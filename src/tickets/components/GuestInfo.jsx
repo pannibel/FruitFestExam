@@ -18,22 +18,12 @@ function GuestInfo(props) {
     }
     console.log(props.guestInfo);
   }
-  /* 
-  function handleChange(event) {
-    const { name, value } = event.target;
-
-    // Update the formValues state with the new input value
-    props.setFormValues({
-      ...props.formValues,
-      [name]: value
-    });
-  } */
 
   return (
     <div>
       <h1>Guest Info</h1>
       <form ref={theForm} className="inputForm">
-        {[...Array(props.guestNumber)].map((/* elementInArray, index */) => (
+        {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3>Guest {i + 1}</h3>
             <input
@@ -41,14 +31,12 @@ function GuestInfo(props) {
               name="fullname"
               id={i}
               placeholder="Full name"
-              defaultValue={props.formValues.fullname}
             />
             <input
               type="email"
               name="email"
               id={i}
               placeholder="Email address"
-              defaultValue={props.formValues.email}
             />
           </div>
         ))}
