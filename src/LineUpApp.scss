@@ -14,7 +14,7 @@ body {
 }
 button {
   background: none;
-
+  font-family: "Audiowide";
   padding: 0;
   margin: 0;
 }
@@ -24,88 +24,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: none;
-}
-
-
-
-.NavBarCont {
-  position: fixed;
-  width: 80%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, 0);
-  bottom: 0px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10%;
-  height: 100px;
-
-  button {
-    border: 0;
-    height: 100%;
-    width: 100%;
-    transition: 0.3s;
-  }
-
-  .homeOn {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/home_on.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .homeOff {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/home_off.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .bandsOn {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/bands_on.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .bandsOff {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/bands_off.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .scheduleOn {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/skedge_on.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .scheduleOff {
-    padding: 5px;
-    color: #213547;
-    background-image: url("./assets/buttons/skedge_off.svg");
-    background-size: cover;
-    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
 }
 
 .burgerMenu {
@@ -137,98 +55,263 @@ button:focus-visible {
   width: 10%;
 }
 
-// currently playing player
-.currentlyCont {
-  display: grid;
-  text-align: start;
-  background-color: rgba(247, 247, 247, 0.4);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  border: 3px solid #cccccc;
-  margin-top: 20vh;
-  margin-left: 2vw;
-  margin-right: 2vw;
-  // padding: 5%;
-  h3 {
-    font-size: large;
+.searchbarCont {
+  display: flex;
+  input {
+    width:100%;
+    padding: 15px;
+    background: linear-gradient(to bottom, rgb(136, 136, 137), rgb(226, 227, 226));
+    opacity: 0.7;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 3px solid #cccccc;
+    font-family: "Audiowide";
+    font-size: medium;
   }
 }
-.currentBandRow {
-  font-size: small;
+
+.NavBarCont {
+  position: fixed;
+  width: 80%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0);
+  bottom: 0px;
   display: grid;
-  grid-template-columns: 5fr 5fr 4fr;
-  justify-content: space-between;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-.playerBand {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 150px;
-}
-#stageRed {
-  color: #ff1100;
-}
-#stageBlue {
-  color: #000aff;
-}
-#stageGreen {
-  color: #006400;
-}
-
-// band list
-.imgSingleBand {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  border: rgba(255, 255, 255, 0.6) 2px solid;
-}
-
-.singleBandCont {
-  font-size: small;
-  margin-left: 3%;
-  margin-right: 3%;
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  border: 1px white solid;
-  align-items: center;
-  text-align: start;
-  background-color: rgb(255, 255, 255, 0.75);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  h4 {
-    color: black;
-  }
-}
-.likeBtn {
-  text-align: left;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10%;
+  height: 100px;
 
   button {
-    background: none;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+  }
 
-    padding: 0;
-    margin: 0;
+  .homeOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/home_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  button:hover {
-    border-color: none;
+
+  .homeOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/home_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  button:focus,
-  button:focus-visible {
-    outline: none;
+
+  .bandsOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/bands_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .bandsOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/bands_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .scheduleOn {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/skedge_on.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .scheduleOff {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/skedge_off.svg");
+    background-size: cover;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
-.buttBlue {
-  color: #4400ff;
+
+.appCont {
+  display: flex;
+  justify-content: center;
+  height: 95vh;
 }
-.buttRed {
-  color: #ff1100;
+
+.homeCont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  justify-content: space-evenly;
+
+  .logo {
+    justify-self: center;
+    margin: 10vw;
+    filter: drop-shadow(0px 5px 5px rgba(255, 255, 255, 0.7));
+  }
+
+  // currently playing player
+  .currentlyCont {
+    display: flex;
+    justify-self: flex-end;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(237, 237, 237);
+
+    background-color: rgba(247, 247, 247, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 3px solid #cccccc;
+
+    margin: 0vh 5vw 0vh 5vw;
+    padding: 5%;
+    h3 {
+      font-size: xx-large;
+      font-family: "Chopsic";
+      color: #7000ff;
+      margin: 0;
+      margin-bottom: 2vh;
+    }
+
+    .currentBandBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 20px;
+      gap: 20px;
+
+      .currentBandRow {
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 5px;
+      }
+
+      .playerBand {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: large;
+        color: rgb(237, 237, 237);
+        overflow: hidden;
+        width: 150px;
+      }
+
+      .playerStage {
+        font-family: "chopsic";
+      }
+
+      #stageRed {
+        color: #9e00ff;
+      }
+      #stageBlue {
+        color: #2e01ff;
+      }
+      #stageGreen {
+        color: #2effbc;
+      }
+    }
+  }
+}
+
+.bandsCont {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 0px 20px;
+  gap: 20px;
+
+  .logo_small {
+    width: 30vw;
+    justify-self: flex-start;
+  }
+
+  .bandListBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    color: rgb(237, 237, 237);
+
+    background-color: rgba(247, 247, 247, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 3px solid #cccccc;
+
+    // band list
+    .imgSingleBand {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      border: rgba(255, 255, 255, 0.6) 2px solid;
+    }
+
+    .singleBandCont {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 5fr 1fr;
+      gap: 10px;
+
+      align-items: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: medium;
+
+      img {
+        margin: 0;
+      }
+      h4 {
+        color: black;
+      }
+    }
+    .likeBtn {
+      text-align: right;
+
+      button {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      button:hover {
+        border-color: none;
+      }
+      button:focus,
+      button:focus-visible {
+        outline: none;
+      }
+    }
+    .buttBlue {
+      background-image: url("./assets/buttons/blue_like.svg");
+      background-repeat: no-repeat;
+    }
+    .buttRed {
+      background-image: url("./assets/buttons/orange_like.svg");
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 .btn_side_off {

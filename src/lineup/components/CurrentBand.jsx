@@ -83,8 +83,7 @@ function CurrentBand(props) {
             (
               <img
                 src={"http://localhost:8080/logos/" + el.logo}
-                className="imgSingleBand"
-              ></img>
+                className="imgSingleBand"></img>
             )
           );
         }
@@ -92,25 +91,37 @@ function CurrentBand(props) {
     });
   }
   return (
-    <>
+    <div className="homeCont">
+      <img
+        className="logo"
+        src="../src/assets/logo.svg"
+        alt="big logo of the festival"></img>
       <div className="currentlyCont">
-        <h3>Currently Playing:</h3>
-        <div>| {showCurrentActTime}</div>
-        <div className="currentBandRow" id="stageGreen">
-          {pickImage(currentMidgard)}
-          <div className="playerStage">MIDGARD</div>
-          <div className="playerBand">| {currentMidgard}</div>
-        </div>
-        <div className="currentBandRow" id="stageRed">
-          <div className="playerStage">VANAHEIM</div>
-          <div className="playerBand">| {currentVanaheim}</div>
-        </div>
-        <div className="currentBandRow" id="stageBlue">
-          <div className="playerStage">JOTUNHEIM</div>
-          <div className="playerBand">| {currentJotunheim}</div>
+        <h3>Now on stage</h3>
+        <div>{showCurrentActTime}</div>
+
+        <div className="currentBandBox">
+          <div className="currentBandRow" id="stageGreen">
+            {pickImage(currentMidgard)}
+
+            <div className="playerBand">{currentMidgard}</div>
+            <div className="playerStage">MIDGARD</div>
+          </div>
+          <div className="currentBandRow" id="stageRed">
+            {pickImage(currentVanaheim)}
+
+            <div className="playerBand">{currentVanaheim}</div>
+            <div className="playerStage">VANAHEIM</div>
+          </div>
+          <div className="currentBandRow" id="stageBlue">
+            {pickImage(currentJotunheim)}
+            
+            <div className="playerBand">{currentJotunheim}</div>
+            <div className="playerStage">JOTUNHEIM</div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -22,6 +22,7 @@ function SingleBand(props) {
         src={imageDir}
         // alt={props.data.logoCredits}
         className="imgSingleBand"
+        alt="img_singleband"
       ></img>
       <h4>{props.data.name}</h4>
 
@@ -32,9 +33,9 @@ function SingleBand(props) {
         >
           {likedBand ? "like it" : "liked"}
         </button>
-        <div className={likedBand ? "buttBlue" : "buttRed"}>
-          {JSON.stringify(likedBand)}
-        </div>
+{/*         <div className={likedBand ? "buttBlue" : "buttRed"}>
+          {/* {JSON.stringify(likedBand)} }
+        </div> */}
       </div>
     </div>
   );

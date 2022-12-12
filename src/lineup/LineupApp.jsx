@@ -67,10 +67,7 @@ function Lineup() {
   }
   return (
     <div className="appCont">
-      <img
-        className="logoBig"
-        src="../src/assets/logo_big.svg"
-        alt="big logo of the festival"></img>
+
       {lineUpPage == 1 ? (
         <CurrentBand currentBand={currentBand} bands={bands} />
       ) : (
@@ -82,6 +79,8 @@ function Lineup() {
       ) : (
         ""
       )}
+
+
       <div className="NavBarCont">
         <button
           onClick={() => changePageApp(1)}
