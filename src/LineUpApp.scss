@@ -27,8 +27,13 @@ button:focus-visible {
 }
 
 .burgerMenu {
-  background-color: #ffffff71;
-  background-blend-mode: difference;
+  align-items: center;
+  color: rgb(237, 237, 237);
+
+  background-color: rgba(247, 247, 247, 0.4);
+  backdrop-filter: blur(10px);
+  border: 3px solid #cccccc;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -41,18 +46,69 @@ button:focus-visible {
   padding-top: 10rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  transition: 0.2s;
+
+  .about {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/about.svg");
+    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 150px;
+    height: 60px;
+  }
+
+  .merch {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/merch.svg");
+    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 150px;
+    height: 60px;
+  }
+
+  .map {
+    padding: 5px;
+    color: #213547;
+    background-image: url("./assets/buttons/map.svg");
+    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 150px;
+    height: 60px;
+  }
 }
 
-.burgerIcon {
+.burger_off {
   position: fixed;
   top: 30px;
   right: 30px;
-  background-image: url("./assets/burger_off.svg");
+  background-image: url("./assets/buttons/burger_off.svg");
   background-size: contain;
   background-repeat: no-repeat;
   border: 0;
   height: 5%;
   width: 10%;
+  transition: 0.3s;
+}
+
+.burger_on {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-image: url("./assets/buttons/burger_on.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0;
+  height: 5%;
+  width: 10%;
+  transition: 0.3s;
 }
 
 .searchbarCont {
@@ -173,10 +229,11 @@ button:focus-visible {
 .appCont {
   display: flex;
   justify-content: center;
-
-  // height: 95vh;
 }
 
+.anotherCont {
+  height: 95vh;
+}
 .homeCont {
   display: flex;
   flex-direction: column;
@@ -258,7 +315,7 @@ button:focus-visible {
 .bandsCont {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 120px 20px;
   gap: 20px;
 
   .logo_small {
@@ -344,7 +401,7 @@ button:focus-visible {
 .skedgeCont {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 120px 20px;
   gap: 20px;
 
   .logo_small {
@@ -365,6 +422,7 @@ button:focus-visible {
     justify-content: center;
     padding: 15px;
     color: rgb(0, 0, 0);
+    gap: 50px;
 
     background-color: rgba(247, 247, 247, 0.4);
     backdrop-filter: blur(10px);
@@ -378,11 +436,62 @@ button:focus-visible {
     .timeSlot {
       display: flex;
       flex-direction: column;
+      align-items: center;
+
+      .time {
+        font-size: x-large;
+        margin: 0;
+        color:#7000ff;
+      }
+    }
+    .currentBandBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 20px;
+      gap: 20px;
+      
     }
 
     .singleBand {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: 1fr 1fr;
+      justify-content: space-between;
+      gap: 5px;
+
+      img {
+        grid-row: 1 / 3;
+        align-self: start;
+        justify-self: center;
+        margin: 0;
+        height: 100%;
+      }
+
+      .act {
+        grid-row: 1 / 2;
+        margin: 0;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: large;
+        color: rgb(20, 20, 20);
+        overflow: hidden;
+        width: 200px;
+      }
+
+      .stage {
+        grid-row: 2 / 3;
+        margin: 0;
+        font-family: "chopsic";
+        font-size: small;
+        align-self: end;
+        color: rgb(232, 232, 232);
+      }
+
+      h4 {
+        color: black;
+      }
     }
 
     .imgSingleBand {
@@ -394,25 +503,6 @@ button:focus-visible {
       height: 50px;
       border-radius: 10px;
       border: rgba(255, 255, 255, 0.6) 2px solid;
-    }
-
-    .singleBandCont {
-      display: grid;
-      width: 100%;
-      grid-template-columns: 1fr 5fr 1fr;
-      gap: 10px;
-
-      align-items: center;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      font-size: medium;
-
-      img {
-        margin: 0;
-      }
-      h4 {
-        color: black;
-      }
     }
   }
 }

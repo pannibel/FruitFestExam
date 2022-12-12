@@ -105,11 +105,11 @@ function Lineup() {
       {/* <Bandslist bands={bands} /> */}
 
       {!burgerState && (
-        <button onClick={() => openBurger()} className="burgerIcon" button-name="openburg"> </button>
+        <button onClick={() => openBurger()} className="burger_off" button-name="openburg"> </button>
       )}
       {burgerState && (
         <>
-          <button onClick={() => openBurger()} className="burgerIcon" button-name="klosburg"> </button>
+          <button onClick={() => openBurger()} className="burger_on" button-name="klosburg"> </button>
           <Burger />
         </>
       )}
