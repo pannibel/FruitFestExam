@@ -7,12 +7,33 @@ function Bandslist(props) {
   let searchedBands = [];
   const theInput = useRef(null);
 
-  // let initArray = props.bands.map((band) => band);
-
   let sortedBands = props.bands.sort((a, b) => {
     return a.name > b.name ? 1 : -1;
   });
+  let bettered = [];
+  let bigLetter;
+  // let bettered = sortedBands.map((a) => {
+  //   let i = 0;
+  //   console.log(sortedBands[i].name, sortedBands[i + 1].name);
+  // });
+  for (let i = 0; i < 125; i++) {
+    if (sortedBands[i].name[0] != sortedBands[i + 1].name[0]) {
+      bettered.push({ letter: sortedBands[i + 1].name[0], logo: "noLogo" });
+      // console.log("the letter would be", sortedBands[i + 1].name[0]);
+    } else {
+      bettered.push(sortedBands[i]);
+      // console.log(sortedBands[i]);
+    }
+  }
+  //   // console.log(sortedBands[i].name[0]);
+  // }
+  //   if (sortedBands[i].name[0] !=) console.log(sortedBands[15]);
+  // // }
+  // console.log(a.name[0]);
+  // return a.name > b.name ? "yellow" : "mellow";
 
+  console.log(bettered);
+  // console.log(sortedBands[i]);
   function searchList() {
     if (theInput.current.value != "") {
       setSearching(true);
@@ -25,6 +46,11 @@ function Bandslist(props) {
       setSearching(false);
     }
   }
+  // let bettered = sortedBands.map((a, b) => {
+  //   if (a.name[0] != b.name[0]) {
+  //     sortedBands.push(`${b.name[0]}`);
+  //   }
+  // });
 
   return (
     <div className="bandsCont">
@@ -51,7 +77,7 @@ function Bandslist(props) {
 
       <div className="bandListBox">
         {!searching
-          ? sortedBands.map((band, i) => <SingleBand data={band} key={i} />)
+          ? bettered.map((band, i) => <SingleBand data={band} key={i} />)
           : searchedBands.map((band, i) => <SingleBand data={band} key={i} />)}
       </div>
     </div>

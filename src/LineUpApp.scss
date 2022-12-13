@@ -4,6 +4,15 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
+.colorVanaheim {
+  color: #9e00ff;
+}
+.colorJotunheim {
+  color: #2e01ff;
+}
+.colorMidgard {
+  color: #2effbc;
+}
 body {
   background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
@@ -127,23 +136,23 @@ button:focus-visible {
   border: 3px solid #cccccc;
 
   input {
-    width: 100%;
-    padding: 15px;
+    width: 89%;
+    padding: 5px;
     font-family: "Audiowide";
     font-size: medium;
     border: none;
     background-color: transparent;
-    border-radius: 60px;
+    // border-radius: 20px;
   }
 
   .searchBtn {
     border: none;
-    margin-right: 5px;
-
+    margin: 5px;
     background-image: url("./assets/buttons/search.svg");
     background-repeat: no-repeat;
-    min-width: 30px;
-    min-height: 30px;
+    background-size: contain;
+    min-width: 18px;
+    min-height: 18px;
   }
 }
 
@@ -299,16 +308,6 @@ button:focus-visible {
       .playerStage {
         font-family: "chopsic";
       }
-
-      #stageRed {
-        color: #9e00ff;
-      }
-      #stageBlue {
-        color: #2e01ff;
-      }
-      #stageGreen {
-        color: #2effbc;
-      }
     }
   }
 }
@@ -411,10 +410,15 @@ button:focus-visible {
   }
 
   .weekDays {
-    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    width: 300px; // display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: center;
+    button {
+      margin-right: 15px;
+    }
   }
 
   .skedgeList {
@@ -442,7 +446,7 @@ button:focus-visible {
       .time {
         font-size: x-large;
         margin: 0;
-        color:#7000ff;
+        color: #7000ff;
       }
     }
     .currentBandBox {
@@ -451,7 +455,6 @@ button:focus-visible {
       justify-content: flex-end;
       padding-top: 20px;
       gap: 20px;
-      
     }
 
     .singleBand {
@@ -487,7 +490,7 @@ button:focus-visible {
         font-family: "chopsic";
         font-size: small;
         align-self: end;
-        color: rgb(232, 232, 232);
+        // color: rgb(232, 232, 232);
       }
 
       h4 {

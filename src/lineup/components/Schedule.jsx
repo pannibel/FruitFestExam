@@ -27,21 +27,13 @@ function Bandslist(props) {
         }
       });
     });
-    // !VERSION THAT WORKS
-    // testArr2 = testArr.reduce((bandsSoFar, { start, act, stage }) => {
-    //   if (!bandsSoFar[start]) bandsSoFar[start] = [];
-    //   bandsSoFar[start].push(act, stage);
-    //   return bandsSoFar;
-    // }, {});
-    // !VERSION THAT WORKS
-    // ? VERSION THAT IS MUCH BETTER
+
     testArr2 = testArr.reduce(function (r, a) {
       r[a.start] = r[a.start] || [];
       r[a.start].push(a);
       return r;
     }, {});
 
-    // ? END
     console.log(testArr2);
   }
 
@@ -51,32 +43,19 @@ function Bandslist(props) {
 
   function checkDay(value) {
     if (schedDay === "mon") {
-      if (value === "mon")
-        return "mon_on"
-    } else
-    if (schedDay === "tue") {
-      if (value === "tue")
-      return "tue_on"
-    } else
-    if (schedDay === "wed") {
-      if (value === "wed")
-      return "wed_on"
-    } else
-    if (schedDay === "thu") {
-      if (value === "thu")
-      return "thu_on"
-    } else
-    if (schedDay === "fri") {
-      if (value === "fri")
-      return "fri_on"
-    } else
-    if (schedDay === "sat") {
-      if (value === "sat")
-      return "sat_on"
-    } else
-    if (schedDay === "sun") {
-      if (value === "sun")
-      return "sun_on"
+      if (value === "mon") return "mon_on";
+    } else if (schedDay === "tue") {
+      if (value === "tue") return "tue_on";
+    } else if (schedDay === "wed") {
+      if (value === "wed") return "wed_on";
+    } else if (schedDay === "thu") {
+      if (value === "thu") return "thu_on";
+    } else if (schedDay === "fri") {
+      if (value === "fri") return "fri_on";
+    } else if (schedDay === "sat") {
+      if (value === "sat") return "sat_on";
+    } else if (schedDay === "sun") {
+      if (value === "sun") return "sun_on";
     }
   }
 
@@ -85,7 +64,8 @@ function Bandslist(props) {
       <img
         className="logo_small"
         src="../src/assets/logo.svg"
-        alt="big logo of the festival"></img>
+        alt="big logo of the festival"
+      ></img>
 
       <div className="searchbarCont">
         <input
@@ -106,39 +86,32 @@ function Bandslist(props) {
       <div className="weekDays">
         <button
           onClick={() => setSchedDay("mon")}
-          className={schedDay === "mon" ? checkDay("mon") : "mon_off"}>
-          
-        </button>
+          className={schedDay === "mon" ? checkDay("mon") : "mon_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("tue")}
-          className={schedDay === "tue" ? checkDay("tue") : "tue_off"}>
-          
-        </button>
+          className={schedDay === "tue" ? checkDay("tue") : "tue_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("wed")}
-          className={schedDay === "wed" ? checkDay("wed") : "wed_off"}>
-          
-        </button>
+          className={schedDay === "wed" ? checkDay("wed") : "wed_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("thu")}
-          className={schedDay === "thu" ? checkDay("thu") : "thu_off"}>
-          
-        </button>
+          className={schedDay === "thu" ? checkDay("thu") : "thu_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("fri")}
-          className={schedDay === "fri" ? checkDay("fri") : "fri_off"}>
-          
-        </button>
+          className={schedDay === "fri" ? checkDay("fri") : "fri_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("sat")}
-          className={schedDay === "sat" ? checkDay("sat") : "sat_off"}>
-          
-        </button>
+          className={schedDay === "sat" ? checkDay("sat") : "sat_off"}
+        ></button>
         <button
           onClick={() => setSchedDay("sun")}
-          className={schedDay === "sun" ? checkDay("sun") : "sun_off"}>
-          
-        </button>
+          className={schedDay === "sun" ? checkDay("sun") : "sun_off"}
+        ></button>
       </div>
 
       <div className="skedgeList">
