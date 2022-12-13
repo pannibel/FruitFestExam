@@ -15,6 +15,7 @@ function TicketProduct(props) {
     if (e.target.name === "regInc") {
       if (props.count.reg <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.reg++;
+        props.count.total++;
       } else {
         console.log("you maxed the tickets out");
       }
@@ -24,6 +25,7 @@ function TicketProduct(props) {
     if (e.target.name === "vipInc") {
       if (props.count.vip <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.vip++;
+        props.count.total++;
       } else {
         console.log("you maxed the tickets out");
       }
@@ -35,6 +37,7 @@ function TicketProduct(props) {
     if (e.target.name === "regDec") {
       if (props.count.reg > 1) {
         props.count.reg--;
+        props.count.total--;
         props.addTicket("regular");
       } else {
         props.count.reg--;
@@ -46,6 +49,7 @@ function TicketProduct(props) {
     if (e.target.name === "vipDec") {
       if (props.count.vip > 1) {
         props.count.vip--;
+        props.count.total--;
         props.addTicket("vip");
       } else {
         props.count.vip--;
@@ -53,8 +57,6 @@ function TicketProduct(props) {
         props.removeFromBasket("VIP ticket");
       }
     }
-
-    props.setCount({ reg: props.count.reg, vip: props.count.vip });
 
     //* DISABLING BUTTONS IF WE REACH 4 TICKETS OR MINUS TICKETS
 
@@ -101,16 +103,18 @@ function TicketProduct(props) {
               name="regDec"
               onClick={changeCount}
               disabled={false}
-              className="regDec"
-            > </button>
+              className="regDec">
+              {" "}
+            </button>
             <div>{props.count.reg}</div>
             <button
               ref={regInc}
               name="regInc"
               onClick={changeCount}
               disabled={false}
-              className="regInc"
-            > </button>
+              className="regInc">
+              {" "}
+            </button>
           </div>
         </div>
 
@@ -127,16 +131,18 @@ function TicketProduct(props) {
               name="vipDec"
               onClick={changeCount}
               disabled={false}
-              className="vipDec"
-            > </button>
+              className="vipDec">
+              {" "}
+            </button>
             <div>{props.count.vip}</div>
             <button
               ref={vipInc}
               name="vipInc"
               onClick={changeCount}
               disabled={false}
-              className="vipInc"
-            > </button>
+              className="vipInc">
+              {" "}
+            </button>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { confirmReservation } from "../../database";
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
-  let [count, setCount] = useState({ reg: 0, vip: 0 , total: 0});
+  let [count, setCount] = useState({ reg: 0, vip: 0, total: 0});
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -16,6 +16,7 @@ function TicketList(props) {
     }
     getData();
   }, []);
+
   
   function addToBasket(data) {
      if (props.basket.find((entry) => entry.name === data.name)) {
