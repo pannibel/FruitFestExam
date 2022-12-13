@@ -35,7 +35,7 @@ function PaymentDetails(props) {
       email: theForm.current.elements.email.value,
       phone: theForm.current.elements.phone.value,
       address: address,
-      ticketOwners: props.formValues,
+      ticketOwners: props.guestInfo,
       basketContent: props.basket,
     });
     console.log(props.billing);
