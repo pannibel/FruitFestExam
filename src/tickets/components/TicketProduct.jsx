@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import { useState } from "react";
 
 function TicketProduct(props) {
   const regInc = useRef(null);
@@ -15,6 +16,7 @@ function TicketProduct(props) {
     if (e.target.name === "regInc") {
       if (props.count.reg <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.reg++;
+        props.count.total++;
       } else {
         console.log("you maxed the tickets out");
       }
@@ -24,6 +26,7 @@ function TicketProduct(props) {
     if (e.target.name === "vipInc") {
       if (props.count.vip <= 3 && props.count.reg + props.count.vip < 4) {
         props.count.vip++;
+        props.count.total++;
       } else {
         console.log("you maxed the tickets out");
       }
@@ -35,6 +38,7 @@ function TicketProduct(props) {
     if (e.target.name === "regDec") {
       if (props.count.reg > 1) {
         props.count.reg--;
+        props.count.total--;
         props.addTicket("regular");
       } else {
         props.count.reg--;
@@ -46,6 +50,7 @@ function TicketProduct(props) {
     if (e.target.name === "vipDec") {
       if (props.count.vip > 1) {
         props.count.vip--;
+        props.count.total--;
         props.addTicket("vip");
       } else {
         props.count.vip--;
@@ -54,35 +59,24 @@ function TicketProduct(props) {
       }
     }
 
-    props.setCount({ reg: props.count.reg, vip: props.count.vip });
-
     //* DISABLING BUTTONS IF WE REACH 4 TICKETS OR MINUS TICKETS
-
-    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
-      regInc.current.disabled = true;
-    } else if (props.count.reg < 4 || props.count.reg + props.count.vip !== 4) {
-      regInc.current.disabled = false;
-    }
-
-    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
-      vipInc.current.disabled = true;
-    } else if (props.count.vip < 4 || props.count.reg + props.count.vip !== 4) {
-      vipInc.current.disabled = false;
-    }
-
-    if (props.count.reg > 0) {
-      regDec.current.disabled = false;
-    } else if (props.count.reg === 0) {
-      regDec.current.disabled = true;
-    }
-
-    if (props.count.vip > 0) {
-      vipDec.current.disabled = false;
-    } else if (props.count.vip === 0) {
-      vipDec.current.disabled = true;
-    }
   }
 
+/*   function checkDisabled(button) {
+    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
+      setDisabled(regInc);
+    }
+    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
+      setDisabled(vipInc);
+    }
+    if (props.count.reg > 0) {
+      setDisabled(regDec);
+    }
+    if (props.count.vip > 0) {
+      setDisabled(vipDec);
+    }
+  }
+ */
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>
@@ -100,17 +94,19 @@ function TicketProduct(props) {
               ref={regDec}
               name="regDec"
               onClick={changeCount}
-              disabled={false}
-              className="regDec"
-            > </button>
+              disabled={props.count.reg == 0 ? true : false}
+              className="regDec">
+              {" "}
+            </button>
             <div>{props.count.reg}</div>
             <button
               ref={regInc}
               name="regInc"
               onClick={changeCount}
-              disabled={false}
-              className="regInc"
-            > </button>
+              disabled={props.count.reg > 3 || props.count.reg + props.count.vip === 4 ? true : false}
+              className="regInc">
+              {" "}
+            </button>
           </div>
         </div>
 
@@ -126,17 +122,19 @@ function TicketProduct(props) {
               ref={vipDec}
               name="vipDec"
               onClick={changeCount}
-              disabled={false}
-              className="vipDec"
-            > </button>
+              disabled={props.count.vip == 0 ? true : false}
+              className="vipDec">
+              {" "}
+            </button>
             <div>{props.count.vip}</div>
             <button
               ref={vipInc}
               name="vipInc"
               onClick={changeCount}
-              disabled={false}
-              className="vipInc"
-            > </button>
+              disabled={props.count.vip > 3 || props.count.reg + props.count.vip === 4 ? true : false}
+              className="vipInc">
+              {" "}
+            </button>
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
   const [curCampBtn, setCurCampBtn] = useState();
-  const theSpots = useRef(null);
 
   const [spotsAvailable, setSpotsAvailable] = useState({
     Svartheim: "",
@@ -27,21 +26,17 @@ function CampingProduct(props) {
   }, [props.campingSpots]);
 
   function checkAvailSpots(item) {
-    // console.log("here", spotsAvailable[`${item}`]);
-    if (spotsAvailable[`${item}`] === 0 || spotsAvailable[`${item}`] < props.guestNumber) {
+    if (spotsAvailable[`${item}`] === 0 || spotsAvailable[`${item}`] < props.count.total) {
       return "campGrey";
-    } else {
+    } else if (spotsAvailable[`${item}`] > 0 && spotsAvailable[`${item}`] > props.count.total) {
       return "campIdle";
     }
   }
 
   function checkDisabled(item) {
-    if (
-      spotsAvailable[`${item}`] === 0 ||
-      spotsAvailable[`${item}`] < props.guestNumber
-    ) {
+    if (spotsAvailable[`${item}`] === 0 || spotsAvailable[`${item}`] < props.count.total) {
       return true;
-    } else {
+    } else if (spotsAvailable[`${item}`] > 0 && spotsAvailable[`${item}`] > props.count.total) {
       return false;
     }
   }
@@ -54,7 +49,7 @@ function CampingProduct(props) {
         charge. The unavailable areas have fewer free spots than your number of
         tickets.
       </h4>
-      <div onChange={props.onChangeValue} id="ticketCampSpots" ref={theSpots}>
+      <div onChange={props.onChangeValue} id="ticketCampSpots">
         <input
           id="Svartheim"
           type="radio"
@@ -71,12 +66,8 @@ function CampingProduct(props) {
               ? checkAvailSpots("Svartheim")
               : null
           }
-          onClick={
-            spotsAvailable["Svartheim"] === 0 ||
-            spotsAvailable["Svartheim"] < props.guestNumber
-              ? () => checkAvailSpots("Svartheim")
-              : () => setCurCampBtn("Svartheim")
-          }>
+          onClick={() => {checkDisabled("Svartheim") === false ? setCurCampBtn("Svartheim") : null}}>
+
           <p>Svartheim</p>
         </label>
 
@@ -96,12 +87,8 @@ function CampingProduct(props) {
               ? checkAvailSpots("Nilfheim")
               : null
           }
-          onClick={
-            spotsAvailable["Nilfheim"] === 0 ||
-            spotsAvailable["Nilfheim"] < props.guestNumber
-              ? () => checkAvailSpots("Nilfheim")
-              : () => setCurCampBtn("Nilfheim")
-          }>
+          onClick={() => {checkDisabled("Nilfheim") === false ? setCurCampBtn("Nilfheim") : null}}>
+
           <p>Nilfheim</p>
         </label>
 
@@ -110,7 +97,7 @@ function CampingProduct(props) {
           type="radio"
           name="spot"
           value="Helheim"
-          disabled={spotsAvailable ? checkAvailSpots("Helheim") : false}
+          disabled={spotsAvailable ? checkDisabled("Helheim") : false}
         />
         <label
           htmlFor="Helheim"
@@ -121,12 +108,7 @@ function CampingProduct(props) {
               ? checkAvailSpots("Helheim")
               : null
           }
-          onClick={
-            spotsAvailable["Helheim"] === 0 ||
-            spotsAvailable["Helheim"] < props.guestNumber
-              ? () => checkAvailSpots("Helheim")
-              : () => setCurCampBtn("Helheim")
-          }>
+          onClick={() => {checkDisabled("Helheim") === false ? setCurCampBtn("Helheim") : null}}>
           <p>Helheim</p>
         </label>
 
@@ -146,12 +128,7 @@ function CampingProduct(props) {
               ? checkAvailSpots("Muspelheim")
               : null
           }
-          onClick={
-            spotsAvailable["Muspelheim"] === 0 ||
-            spotsAvailable["Muspelheim"] < props.guestNumber
-              ? () => checkAvailSpots("Muspelheim")
-              : () => setCurCampBtn("Muspelheim")
-          }>
+          onClick={() => {checkDisabled("Muspelheim") === false ? setCurCampBtn("Muspelheim") : null}}>
           <p>Muspelheim</p>
         </label>
 
@@ -171,12 +148,7 @@ function CampingProduct(props) {
               ? checkAvailSpots("Alfheim")
               : null
           }
-          onClick={
-            spotsAvailable["Alfheim"] === 0 ||
-            spotsAvailable["Alfheim"] < props.guestNumber
-              ? () => checkAvailSpots("Alfheim")
-              : () => setCurCampBtn("Alfheim")
-          }>
+          onClick={() => {checkDisabled("Alfheim") === false ? setCurCampBtn("Alfheim") : null}}>
           <p>Alfheim</p>
         </label>
       </div>

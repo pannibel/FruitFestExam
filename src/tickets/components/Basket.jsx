@@ -92,7 +92,7 @@ function Basket(props) {
               return (
                 <div key={item.type} className="ticketBasket ticketItem">
                   <p>{item.type}</p>
-                  {/* <button
+                  <button
                     onClick={() => {
                       props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
@@ -100,7 +100,7 @@ function Basket(props) {
                     className="basketBtnRmv"
                   >
                     {" "}
-                  </button> */}
+                  </button>
                 </div>
               );
             }
