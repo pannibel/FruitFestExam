@@ -22,7 +22,7 @@ function PaymentDetails(props) {
       // name: theForm.current.elements.fullname.value,
       // email: theForm.current.elements.email.value,
       // phonenumber: theForm.current.elements.phone.value,
-      ownerName: theForm.current.elements.mainname.value,
+
       streetname: theForm.current.elements.street.value,
       apartment: theForm.current.elements.apartment.value,
       city: theForm.current.elements.city.value,
@@ -31,7 +31,7 @@ function PaymentDetails(props) {
     });
     props.setBilling(address);
     insertOrder({
-      // fullname: theForm.current.elements.fullname.value,
+      fullname: theForm.current.elements.mainname.value,
       email: theForm.current.elements.email.value,
       phone: theForm.current.elements.phone.value,
       address: address,
