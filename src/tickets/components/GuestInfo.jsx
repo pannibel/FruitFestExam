@@ -14,7 +14,7 @@ function GuestInfo(props) {
         name: theForm.current.elements.fullname[l].value,
         email: theForm.current.elements.email[l].value,
       });
-      props.setGuestInfo(nextData);
+      props.setFormValues(nextData);
     }
     console.log(props.guestInfo);
   }

@@ -7,7 +7,7 @@ import Confirmation from "./Confirmation";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-  const [guestInfo, setGuestInfo] = useState([]);
+  // const [guestInfo, setGuestInfo] = useState([]);
   const [billing, setBilling] = useState({});
   let [formValues, setFormValues] = useState({
     fullname: "",
@@ -42,8 +42,8 @@ function CheckoutForm(props) {
         <GuestInfo
           changePage={changePage}
           guestNumber={props.guestNumber}
-          guestInfo={guestInfo}
-          setGuestInfo={setGuestInfo}
+          // guestInfo={guestInfo}
+          // setGuestInfo={setGuestInfo}
           formValues={formValues}
           setFormValues={setFormValues}
           basket={props.basket}
