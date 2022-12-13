@@ -79,32 +79,27 @@ function Products(props) {
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
     console.log(e.target.value);
-    addSpot(e.target.value);
-  }
+    addSpot(e.target.value);  }
 
   function addSpot(value) {
     // e.preventDefault();
     // e.preventDefault();
     // console.log(chosenSpot);
     if (props.spotAdded === false) {
-      props.setSpotAdded(true);
-
       productData = {
-        name: "campingSpot",
-        type: value,
+        type: "campingSpot",
+        name: value,
         amount: 1,
         price: "",
       };
       console.log(productData);
       props.addToBasket(productData);
+      props.setSpotAdded(true);
     }
+
     if (props.spotAdded === true) {
-      productData = {
-        amount: 1,
-        name: "campingSpot",
-        type: value,
-      };
-      props.addToBasket(productData);
+      console.log("spot is already added")
+      console.log("spot added?" , props.spotAdded)
     }
     console.log(productData);
   }
@@ -131,6 +126,7 @@ function Products(props) {
           count={props.count}
           onChangeValue={onChangeValue}
           campingSpots={props.campingSpots}
+          spotAdded={props.spotAdded}
         />
       </form>
     </div>
