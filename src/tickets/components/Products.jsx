@@ -78,7 +78,6 @@ function Products(props) {
 
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
-    console.log(e.target.value);
     addSpot(e.target.value);  
   }
 
@@ -89,7 +88,6 @@ function Products(props) {
         amount: 1,
         price: "",
       };
-      console.log(productData);
       props.addToBasket(productData);
       props.setSpotAdded(true);
   }
