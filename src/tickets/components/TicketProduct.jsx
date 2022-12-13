@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import { useState } from "react";
 
 function TicketProduct(props) {
   const regInc = useRef(null);
@@ -59,32 +60,23 @@ function TicketProduct(props) {
     }
 
     //* DISABLING BUTTONS IF WE REACH 4 TICKETS OR MINUS TICKETS
-
-    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
-      regInc.current.disabled = true;
-    } else if (props.count.reg < 4 || props.count.reg + props.count.vip !== 4) {
-      regInc.current.disabled = false;
-    }
-
-    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
-      vipInc.current.disabled = true;
-    } else if (props.count.vip < 4 || props.count.reg + props.count.vip !== 4) {
-      vipInc.current.disabled = false;
-    }
-
-    if (props.count.reg > 0) {
-      regDec.current.disabled = false;
-    } else if (props.count.reg === 0) {
-      regDec.current.disabled = true;
-    }
-
-    if (props.count.vip > 0) {
-      vipDec.current.disabled = false;
-    } else if (props.count.vip === 0) {
-      vipDec.current.disabled = true;
-    }
   }
 
+/*   function checkDisabled(button) {
+    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
+      setDisabled(regInc);
+    }
+    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
+      setDisabled(vipInc);
+    }
+    if (props.count.reg > 0) {
+      setDisabled(regDec);
+    }
+    if (props.count.vip > 0) {
+      setDisabled(vipDec);
+    }
+  }
+ */
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>
@@ -102,7 +94,7 @@ function TicketProduct(props) {
               ref={regDec}
               name="regDec"
               onClick={changeCount}
-              disabled={false}
+              disabled={props.count.reg == 0 ? true : false}
               className="regDec">
               {" "}
             </button>
@@ -111,7 +103,7 @@ function TicketProduct(props) {
               ref={regInc}
               name="regInc"
               onClick={changeCount}
-              disabled={false}
+              disabled={props.count.reg > 3 || props.count.reg + props.count.vip === 4 ? true : false}
               className="regInc">
               {" "}
             </button>
@@ -130,7 +122,7 @@ function TicketProduct(props) {
               ref={vipDec}
               name="vipDec"
               onClick={changeCount}
-              disabled={false}
+              disabled={props.count.vip == 0 ? true : false}
               className="vipDec">
               {" "}
             </button>
@@ -139,7 +131,7 @@ function TicketProduct(props) {
               ref={vipInc}
               name="vipInc"
               onClick={changeCount}
-              disabled={false}
+              disabled={props.count.vip > 3 || props.count.reg + props.count.vip === 4 ? true : false}
               className="vipInc">
               {" "}
             </button>
