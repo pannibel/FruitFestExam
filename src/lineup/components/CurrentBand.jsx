@@ -9,7 +9,8 @@ function CurrentBand(props) {
 
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
-  let showCurrentActTime = hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
+  let showCurrentActTime =
+    hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
   let currentHour = hourBasedIndex + ":00";
   console.log(currentHour);
 
@@ -84,7 +85,8 @@ function CurrentBand(props) {
               <img
                 src={"http://localhost:8080/logos/" + el.logo}
                 className="imgSingleBand"
-                alt=""></img>
+                alt=""
+              ></img>
             )
           );
         }
@@ -93,37 +95,38 @@ function CurrentBand(props) {
   }
   return (
     <div className="anotherCont">
-    <div className="homeCont">
-      <img
-        className="logo"
-        src="../src/assets/logo.svg"
-        alt="big logo of the festival"></img>
-      <div className="currentlyCont">
-        <h3>Now on stage</h3>
-        <div>{showCurrentActTime}</div>
+      <div className="homeCont">
+        <img
+          className="logo"
+          src="../src/assets/logo.svg"
+          alt="big logo of the festival"
+        ></img>
+        <div className="currentlyCont">
+          <h3>Now on stage</h3>
+          <div>{showCurrentActTime}</div>
 
-        <div className="currentBandBox">
-          <div className="currentBandRow" id="stageGreen">
-            {pickImage(currentMidgard)}
+          <div className="currentBandBox">
+            <div className="currentBandRow colorMidgard">
+              {pickImage(currentMidgard)}
 
-            <div className="playerBand">{currentMidgard}</div>
-            <div className="playerStage">MIDGARD</div>
-          </div>
-          <div className="currentBandRow" id="stageRed">
-            {pickImage(currentVanaheim)}
+              <div className="playerBand">{currentMidgard}</div>
+              <div className="playerStage">MIDGARD</div>
+            </div>
+            <div className="currentBandRow  colorVanaheim">
+              {pickImage(currentVanaheim)}
 
-            <div className="playerBand">{currentVanaheim}</div>
-            <div className="playerStage">VANAHEIM</div>
-          </div>
-          <div className="currentBandRow" id="stageBlue">
-            {pickImage(currentJotunheim)}
+              <div className="playerBand">{currentVanaheim}</div>
+              <div className="playerStage">VANAHEIM</div>
+            </div>
+            <div className="currentBandRow colorJotunheim">
+              {pickImage(currentJotunheim)}
 
-            <div className="playerBand">{currentJotunheim}</div>
-            <div className="playerStage">JOTUNHEIM</div>
+              <div className="playerBand">{currentJotunheim}</div>
+              <div className="playerStage">JOTUNHEIM</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

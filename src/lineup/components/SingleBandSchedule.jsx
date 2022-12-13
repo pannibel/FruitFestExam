@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
+// import "../LineUpApp.scss";
 
 function SingleBandSchedule(props) {
-  const [likedBand, setLikedBand] = useState(true);
+  // const [likedBand, setLikedBand] = useState(true);
   const [isBreak, setBreak] = useState(true);
   const [end, setEnd] = useState();
-
+  console.log(props.data);
   useEffect(() => {
     props.data[1].map((el) => {
       if (el.act !== "break") {
@@ -18,9 +19,9 @@ function SingleBandSchedule(props) {
     props.data[1].map((el) => setEnd(el.end));
   }, []);
 
-  function likeBand() {
-    setLikedBand(!likedBand);
-  }
+  // function likeBand() {
+  //   setLikedBand(!likedBand);
+  // }
 
   function pickImage(x) {
     if (x.includes("https://")) {
@@ -35,7 +36,8 @@ function SingleBandSchedule(props) {
         <img
           alt=""
           src={"http://localhost:8080/logos/" + x}
-          className="imgSingleBand"></img>
+          className="imgSingleBand"
+        ></img>
       );
     }
   }
@@ -44,18 +46,28 @@ function SingleBandSchedule(props) {
   return (
     <div className="timeSlot">
       <h3 className="time">
-        {isBreak ? `${props.data[0]} - ${end}` : `${props.data[0]} - ${end}`}
+        {props.data[0]} - {end}
       </h3>
 
       <div className="currentBandBox">
-      {isBreak ? "break" : ""}
+        {isBreak ? "break" : ""}
         {props.data[1].map((el) => {
           if (el.act !== "break") {
             return (
               <li className="singleBand">
                 {pickImage(`${el.logo}`)}
                 <h3 className="act">{el.act}</h3>
-                <h3 className="stage">{el.stage}</h3>
+                <h3
+                  className={
+                    el.stage == "Midgard"
+                      ? "stage colorMidgard"
+                      : el.stage == "Vanaheim"
+                      ? "stage colorVanaheim"
+                      : "stage colorJotunheim"
+                  }
+                >
+                  {el.stage}
+                </h3>
               </li>
             );
           }
