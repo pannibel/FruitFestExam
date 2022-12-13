@@ -38,9 +38,9 @@ function Basket(props) {
     // console.log(i);
 
     props.basket.map((item) => {
-      if (item.type === "campingSpot") {
+      if (item.name === "campingSpot") {
         // console.log(item.type);
-        area = item.name;
+        area = item.type;
       }
     });
 
