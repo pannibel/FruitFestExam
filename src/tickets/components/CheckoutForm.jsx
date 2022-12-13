@@ -40,8 +40,8 @@ function CheckoutForm(props) {
           guestNumber={props.guestNumber}
           guestInfo={guestInfo}
           setGuestInfo={setGuestInfo}
-          // formValues={formValues}
-          // setFormValues={setFormValues}
+          formValues={props.formValues}
+          setFormValues={props.setFormValues}
           basket={props.basket}
           totalPrice={totalPrice}
         />
@@ -50,6 +50,8 @@ function CheckoutForm(props) {
       )}
       {state == 2 ? (
         <PaymentDetails
+          guestInfo={guestInfo}
+          setGuestInfo={setGuestInfo}
           formValues={props.formValues}
           setFormValues={props.setFormValues}
           changePage={changePage}

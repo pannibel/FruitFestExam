@@ -6,6 +6,7 @@ function GuestInfo(props) {
   let i = 0;
 
   function saveGuestInfo(e) {
+    console.log(props.idValue);
     e.preventDefault();
     const nextData = [];
 

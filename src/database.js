@@ -31,14 +31,12 @@ export function reserveSpot(payload) {
 export function confirmReservation(idValue) {
 
     const url = "http://localhost:8080/";
-    fetch(url + "reserve-spot", {
+    fetch(url + "fullfill-reservation", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            "id": idValue
-        }),
+        body: JSON.stringify(idValue),
     })
         .then((response) => response.json())
         // .then((response) => console.log(response, response.id))
