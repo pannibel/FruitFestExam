@@ -75,7 +75,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Nilfheim")}
-          disabled={props.spotAdded ? false : true}
+          disabled={props.spotAdded === false ? false : true}
         >
           <p>Nilfheim</p>
         </label>
@@ -127,10 +127,6 @@ function CampingProduct(props) {
         >
           <p>Alfheim</p>
         </label>
-      </div>
-
-      <div>
-        <button onClick={props.addSpot}>Add</button>
       </div>
     </div>
   );

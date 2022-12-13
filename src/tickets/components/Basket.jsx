@@ -69,13 +69,13 @@ function Basket(props) {
         <h4>Camping spot:</h4>
         <div>
           {props.basket.map((item) => {
-            if (item.type === "campingSpot") {
+            if (item.name === "campingSpot") {
               return (
-                <div key={item.name} className="ticketBasket ticketItem">
-                  <p>{item.name}</p>
+                <div key={item.type} className="ticketBasket ticketItem">
+                  <p>{item.type}</p>
                   <button
                     onClick={() => {
-                      props.removeFromBasket(item.name);
+                      props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
                     }}
                     className="basketBtnRmv"
