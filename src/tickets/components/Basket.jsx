@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+// import { reserveSpot } from "../../database";
 
 function Basket(props) {
   function totalPrice() {
@@ -9,17 +10,51 @@ function Basket(props) {
     });
     return total;
   }
+  function reserveSpot(payload) {
+    let testValue;
+    const url = "http://localhost:8080/";
+    fetch(url + "reserve-spot", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((response) => props.setIdValue(response.id))
+      .catch((err) => console.error(err));
+  }
 
   function totalGuests() {
     let i = 0;
+    let area;
     props.basket.forEach((item) => {
       if (item.type === "ticket") {
         i = i + item.amount;
       }
       props.setGuestNumber(i);
     });
-  }
+    // console.log(props.basket);
+    // console.log(i);
 
+    props.basket.map((item) => {
+      if (item.type === "campingSpot") {
+        // console.log(item.type);
+        area = item.name;
+      }
+    });
+
+    // if (props.basket.name == "campingSpot") {
+    //   console.log(props.basket.type);
+    // }
+    // e.preventDefault();
+    reserveSpot({
+      area: area,
+      amount: i,
+    });
+    console.log(area);
+    console.log(i);
+  }
   return (
     <div id="basketCont">
       <div id="basket">
@@ -38,7 +73,9 @@ function Basket(props) {
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
-                    > </button>
+                    >
+                      {" "}
+                    </button>
                   </div>{" "}
                 </div>
               );
@@ -58,7 +95,9 @@ function Basket(props) {
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
-                    > </button>
+                    >
+                      {" "}
+                    </button>
                   </div>
                 </div>
               );
@@ -79,7 +118,9 @@ function Basket(props) {
                       props.setSpotAdded(false);
                     }}
                     className="basketBtnRmv"
-                  > </button>
+                  >
+                    {" "}
+                  </button>
                 </div>
               );
             }
@@ -98,7 +139,9 @@ function Basket(props) {
             }
           }}
           className="basketCheckout"
-        > </button>
+        >
+          {" "}
+        </button>
       </div>
     </div>
   );

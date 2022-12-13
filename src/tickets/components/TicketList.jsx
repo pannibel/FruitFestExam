@@ -5,10 +5,8 @@ import Products from "./Products";
 import { confirmReservation } from "../../database";
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
-  const [idValue, setidValue] = useState();
   const [campingSpots, setCampingSpots] = useState([]);
   let [count, setCount] = useState({ reg: 0, vip: 0 });
-  let testValue;
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -20,23 +18,6 @@ function TicketList(props) {
   }, []);
 
   function addToBasket(data) {
-  //* this one for the camping spot
-/*     
-    if (data.type === "campingSpot") {
-      if (props.basket.find((entry) => entry.type === data.type)) {
-        props.setBasket((oldBasket) =>
-        oldBasket.map((entry) => {
-          if (entry.name !== data.name) {
-            console.log("third if func passed");
-            return entry;
-          }
-          const copy = { ...entry };
-          copy.name === data.name
-          return copy
-      }))
-    } else {
-      props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
-    }} */
 
      if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
@@ -115,6 +96,9 @@ function TicketList(props) {
           campingSpots={campingSpots}
         />
         <Basket
+          setIdValue={props.setIdValue}
+          idValue={props.idValue}
+          campingSpots={campingSpots}
           count={count}
           setCount={setCount}
           setShowForm={props.setShowForm}

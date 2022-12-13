@@ -10,6 +10,7 @@ import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
 
 function Tickets() {
+  const [idValue, setIdValue] = useState();
   const [showForm, setShowForm] = useState(false);
   const [basket, setBasket] = useState([]);
   const [guestNumber, setGuestNumber] = useState(0);
@@ -25,6 +26,8 @@ function Tickets() {
       <main>
         {!showForm && (
           <TicketList
+            setIdValue={setIdValue}
+            idValue={idValue}
             setShowForm={setShowForm}
             className={TicketList}
             basket={basket}
@@ -35,6 +38,8 @@ function Tickets() {
         )}
         {showForm && (
           <CheckoutForm
+            setIdValue={setIdValue}
+            idValue={idValue}
             showForm={showForm}
             setShowForm={setShowForm}
             basket={basket}

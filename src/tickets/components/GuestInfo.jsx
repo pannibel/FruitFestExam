@@ -9,10 +9,10 @@ function GuestInfo(props) {
     e.preventDefault();
     const nextData = [];
 
-    for (let i = 0; i < props.guestNumber; i++) {
+    for (let l = 0; l < props.guestNumber; l++) {
       nextData.push({
-        name: theForm.current.elements.fullname[i].value,
-        email: theForm.current.elements.email[i].value,
+        name: theForm.current.elements.fullname[l].value,
+        email: theForm.current.elements.email[l].value,
       });
       props.setGuestInfo(nextData);
     }
@@ -26,12 +26,7 @@ function GuestInfo(props) {
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3>Guest {i + 1}</h3>
-            <input
-              type="text"
-              name="fullname"
-              id={i}
-              placeholder="Full name"
-            />
+            <input type="text" name="fullname" id={i} placeholder="Full name" />
             <input
               type="email"
               name="email"
@@ -47,7 +42,8 @@ function GuestInfo(props) {
           saveGuestInfo(e);
           props.changePage(e);
         }}
-        name="next">
+        name="next"
+      >
         Next
       </button>
 
