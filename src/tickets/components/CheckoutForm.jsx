@@ -7,12 +7,8 @@ import Confirmation from "./Confirmation";
 
 function CheckoutForm(props) {
   const [state, setState] = useState(1);
-  // const [guestInfo, setGuestInfo] = useState([]);
+  const [guestInfo, setGuestInfo] = useState([]);
   const [billing, setBilling] = useState({});
-  let [formValues, setFormValues] = useState({
-    fullname: "",
-    email: "",
-  });
 
   function changePage(e) {
     e.preventDefault();
@@ -42,10 +38,10 @@ function CheckoutForm(props) {
         <GuestInfo
           changePage={changePage}
           guestNumber={props.guestNumber}
-          // guestInfo={guestInfo}
-          // setGuestInfo={setGuestInfo}
-          formValues={formValues}
-          setFormValues={setFormValues}
+          guestInfo={guestInfo}
+          setGuestInfo={setGuestInfo}
+          // formValues={formValues}
+          // setFormValues={setFormValues}
           basket={props.basket}
           totalPrice={totalPrice}
         />
