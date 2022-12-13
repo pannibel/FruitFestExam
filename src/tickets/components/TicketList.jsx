@@ -23,9 +23,7 @@ function TicketList(props) {
     if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
         oldBasket.map((entry) => {
-          if (entry.name == "campingSpot") {
-            console.log("it's been there");
-
+          if (entry.type == "campingSpot") {
             props.setBasket((oldBasket) => {
               const subtracted = oldBasket.map((item) => {
                 if (entry.name === item.name) {
@@ -37,6 +35,7 @@ function TicketList(props) {
               return filtered;
             });
             props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
+            setSpotAdded(true)
           }
 
           if (entry.name !== data.name) {
@@ -58,10 +57,12 @@ function TicketList(props) {
     }
   }
 
-  function removeFromBasket(name) {
+  function removeFromBasket(name, type) {
     // find and modify a product
     props.setBasket((oldBasket) => {
       const subtracted = oldBasket.map((item) => {
+        if (item.type === "campingSpot") {
+          setSpotAdded(false);}
         if (item.name === name) {
           return { ...item, amount: 0 };
         }

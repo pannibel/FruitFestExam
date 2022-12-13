@@ -59,6 +59,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Svartheim")}
+          disabled={props.spotAdded ? false : true}
         >
           <p>Svartheim</p>
         </label>
@@ -74,6 +75,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Nilfheim")}
+          disabled={props.spotAdded ? false : true}
         >
           <p>Nilfheim</p>
         </label>
@@ -89,6 +91,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Helheim")}
+          disabled={props.spotAdded ? false : true}
         >
           <p>Helheim</p>
         </label>
@@ -104,6 +107,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Muspelheim")}
+          disabled={props.spotAdded ? false : true}
         >
           <p>Muspelheim</p>
         </label>
@@ -119,6 +123,7 @@ function CampingProduct(props) {
               : null
           }
           onClick={() => setCurCampBtn("Alfheim")}
+          disabled={props.spotAdded ? false : true}
         >
           <p>Alfheim</p>
         </label>

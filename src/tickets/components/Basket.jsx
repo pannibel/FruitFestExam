@@ -38,7 +38,7 @@ function Basket(props) {
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
-                    ></button>
+                    > </button>
                   </div>{" "}
                 </div>
               );
@@ -58,7 +58,7 @@ function Basket(props) {
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
-                    ></button>
+                    > </button>
                   </div>
                 </div>
               );
@@ -69,17 +69,17 @@ function Basket(props) {
         <h4>Camping spot:</h4>
         <div>
           {props.basket.map((item) => {
-            if (item.name === "campingSpot") {
+            if (item.type === "campingSpot") {
               return (
-                <div key={item.type} className="ticketBasket ticketItem">
-                  <p>{item.type}</p>
+                <div key={item.name} className="ticketBasket ticketItem">
+                  <p>{item.name}</p>
                   <button
                     onClick={() => {
                       props.removeFromBasket(item.name);
                       props.setSpotAdded(false);
                     }}
                     className="basketBtnRmv"
-                  ></button>
+                  > </button>
                 </div>
               );
             }
@@ -98,7 +98,7 @@ function Basket(props) {
             }
           }}
           className="basketCheckout"
-        ></button>
+        > </button>
       </div>
     </div>
   );
