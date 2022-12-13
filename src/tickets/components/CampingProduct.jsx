@@ -28,12 +28,7 @@ function CampingProduct(props) {
 
   function checkAvailSpots(item) {
     // console.log("here", spotsAvailable[`${item}`]);
-    if (spotsAvailable[`${item}`] == 2) {
-      return "campGrey";
-    } else if (
-      spotsAvailable[`${item}`] < 10 &&
-      spotsAvailable[`${item}`] > 0
-    ) {
+    if (spotsAvailable[`${item}`] < 10 && spotsAvailable[`${item}`] > 0) {
       return "campGrey";
     } else {
       return "campIdle";
@@ -41,16 +36,12 @@ function CampingProduct(props) {
   }
 
   function checkDisabled(item) {
-    if (spotsAvailable[`${item}`] == 2) {
-      return true;
-    } else if (
-      spotsAvailable[`${item}`] < 10 &&
-      spotsAvailable[`${item}`] > 0
-    ) {
+    if (spotsAvailable[`${item}`] < 10 && spotsAvailable[`${item}`] > 0) {
       return true;
     } else {
       return false;
-    }  }
+    }
+  }
 
   return (
     <div className="form-control">
@@ -77,8 +68,11 @@ function CampingProduct(props) {
               ? checkAvailSpots("Svartheim")
               : null
           }
-          disabled={spotsAvailable ? checkDisabled("Svartheim") : false}
-          onClick={spotsAvailable ? () => checkAvailSpots("Svartheim") : () => setCurCampBtn("Svartheim")}>
+          onClick={
+            spotsAvailable["Svartheim"] < 10
+              ? () => checkAvailSpots("Svartheim")
+              : () => setCurCampBtn("Svartheim")
+          }>
           <p>Svartheim</p>
         </label>
 
@@ -98,7 +92,11 @@ function CampingProduct(props) {
               ? checkAvailSpots("Nilfheim")
               : null
           }
-          onClick={spotsAvailable ? () => checkAvailSpots("Nilfheim") : () => setCurCampBtn("Nilfheim")}>
+          onClick={
+            spotsAvailable < 10
+              ? () => checkAvailSpots("Nilfheim")
+              : () => setCurCampBtn("Nilfheim")
+          }>
           <p>Nilfheim</p>
         </label>
 
@@ -118,7 +116,11 @@ function CampingProduct(props) {
               ? checkAvailSpots("Helheim")
               : null
           }
-          onClick={spotsAvailable ? () => checkAvailSpots("Helheim") : () => setCurCampBtn("Helheim")}>
+          onClick={
+            spotsAvailable["Helheim"] < 10
+              ? () => checkAvailSpots("Helheim")
+              : () => setCurCampBtn("Helheim")
+          }>
           <p>Helheim</p>
         </label>
 
@@ -138,7 +140,11 @@ function CampingProduct(props) {
               ? checkAvailSpots("Muspelheim")
               : null
           }
-          onClick={spotsAvailable ? () => checkAvailSpots("Muspelheim") : () => setCurCampBtn("Muspelheim")}>
+          onClick={
+            spotsAvailable["Muspelheim"] < 10
+              ? () => checkAvailSpots("Muspelheim")
+              : () => setCurCampBtn("Muspelheim")
+          }>
           <p>Muspelheim</p>
         </label>
 
@@ -158,7 +164,11 @@ function CampingProduct(props) {
               ? checkAvailSpots("Alfheim")
               : null
           }
-          onClick={spotsAvailable ? () => checkAvailSpots("Alfheim") : () => setCurCampBtn("Alfheim")}>
+          onClick={
+            spotsAvailable["Alfheim"] < 10
+              ? () => checkAvailSpots("Alfheim")
+              : () => setCurCampBtn("Alfheim")
+          }>
           <p>Alfheim</p>
         </label>
       </div>
