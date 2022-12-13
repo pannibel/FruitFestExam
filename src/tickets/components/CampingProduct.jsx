@@ -1,9 +1,10 @@
 import React from "react";
-// import { useRef } from "react";
+import { useRef } from "react";
 import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
   const [curCampBtn, setCurCampBtn] = useState();
+  const theSpots = useRef(null);
 
   const [spotsAvailable, setSpotsAvailable] = useState({
     Svartheim: "",
@@ -39,6 +40,18 @@ function CampingProduct(props) {
     }
   }
 
+  function checkDisabled(item) {
+    if (spotsAvailable[`${item}`] == 2) {
+      return true;
+    } else if (
+      spotsAvailable[`${item}`] < 10 &&
+      spotsAvailable[`${item}`] > 0
+    ) {
+      return true;
+    } else {
+      return false;
+    }  }
+
   return (
     <div className="form-control">
       <h3>3. Choose your camping spot</h3>
@@ -47,24 +60,35 @@ function CampingProduct(props) {
         charge. The unavailable areas have fewer free spots than your number of
         tickets.
       </h4>
-      <div onChange={props.onChangeValue} id="ticketCampSpots">
-        <input id="Svartheim" type="radio" name="spot" value="Svartheim" />
+      <div onChange={props.onChangeValue} id="ticketCampSpots" ref={theSpots}>
+        <input
+          id="Svartheim"
+          type="radio"
+          name="spot"
+          value="Svartheim"
+          disabled={spotsAvailable ? checkDisabled("Svartheim") : false}
+        />
         <label
           htmlFor="Svartheim"
           className={
             curCampBtn == "Svartheim"
               ? "campPicked"
               : spotsAvailable
-              ? checkAvailSpots("Nilfheim")
+              ? checkAvailSpots("Svartheim")
               : null
           }
-          onClick={() => setCurCampBtn("Svartheim")}
-          disabled={props.spotAdded ? false : true}
-        >
+          disabled={spotsAvailable ? checkDisabled("Svartheim") : false}
+          onClick={spotsAvailable ? () => checkAvailSpots("Svartheim") : () => setCurCampBtn("Svartheim")}>
           <p>Svartheim</p>
         </label>
 
-        <input id="Nilfheim" type="radio" name="spot" value="Nilfheim" />
+        <input
+          id="Nilfheim"
+          type="radio"
+          name="spot"
+          value="Nilfheim"
+          disabled={spotsAvailable ? checkDisabled("Nilfheim") : false}
+        />
         <label
           htmlFor="Nilfheim"
           className={
@@ -74,13 +98,17 @@ function CampingProduct(props) {
               ? checkAvailSpots("Nilfheim")
               : null
           }
-          onClick={() => setCurCampBtn("Nilfheim")}
-          disabled={props.spotAdded === false ? false : true}
-        >
+          onClick={spotsAvailable ? () => checkAvailSpots("Nilfheim") : () => setCurCampBtn("Nilfheim")}>
           <p>Nilfheim</p>
         </label>
 
-        <input id="Helheim" type="radio" name="spot" value="Helheim" />
+        <input
+          id="Helheim"
+          type="radio"
+          name="spot"
+          value="Helheim"
+          disabled={spotsAvailable ? checkAvailSpots("Helheim") : false}
+        />
         <label
           htmlFor="Helheim"
           className={
@@ -90,13 +118,17 @@ function CampingProduct(props) {
               ? checkAvailSpots("Helheim")
               : null
           }
-          onClick={() => setCurCampBtn("Helheim")}
-          disabled={props.spotAdded ? false : true}
-        >
+          onClick={spotsAvailable ? () => checkAvailSpots("Helheim") : () => setCurCampBtn("Helheim")}>
           <p>Helheim</p>
         </label>
 
-        <input id="Muspelheim" type="radio" name="spot" value="Muspelheim" />
+        <input
+          id="Muspelheim"
+          type="radio"
+          name="spot"
+          value="Muspelheim"
+          disabled={spotsAvailable ? checkDisabled("Muspelheim") : false}
+        />
         <label
           htmlFor="Muspelheim"
           className={
@@ -106,13 +138,17 @@ function CampingProduct(props) {
               ? checkAvailSpots("Muspelheim")
               : null
           }
-          onClick={() => setCurCampBtn("Muspelheim")}
-          disabled={props.spotAdded ? false : true}
-        >
+          onClick={spotsAvailable ? () => checkAvailSpots("Muspelheim") : () => setCurCampBtn("Muspelheim")}>
           <p>Muspelheim</p>
         </label>
 
-        <input id="Alfheim" type="radio" name="spot" value="Alfheim" />
+        <input
+          id="Alfheim"
+          type="radio"
+          name="spot"
+          value="Alfheim"
+          disabled={spotsAvailable ? checkDisabled("Alfheim") : false}
+        />
         <label
           htmlFor="Alfheim"
           className={
@@ -122,9 +158,7 @@ function CampingProduct(props) {
               ? checkAvailSpots("Alfheim")
               : null
           }
-          onClick={() => setCurCampBtn("Alfheim")}
-          disabled={props.spotAdded ? false : true}
-        >
+          onClick={spotsAvailable ? () => checkAvailSpots("Alfheim") : () => setCurCampBtn("Alfheim")}>
           <p>Alfheim</p>
         </label>
       </div>
