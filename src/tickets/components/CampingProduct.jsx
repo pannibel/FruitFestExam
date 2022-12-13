@@ -28,7 +28,7 @@ function CampingProduct(props) {
 
   function checkAvailSpots(item) {
     // console.log("here", spotsAvailable[`${item}`]);
-    if (spotsAvailable[`${item}`] < 10 && spotsAvailable[`${item}`] > 0) {
+    if (spotsAvailable[`${item}`] === 0 || spotsAvailable[`${item}`] < props.guestNumber) {
       return "campGrey";
     } else {
       return "campIdle";
@@ -36,7 +36,10 @@ function CampingProduct(props) {
   }
 
   function checkDisabled(item) {
-    if (spotsAvailable[`${item}`] < 10 && spotsAvailable[`${item}`] > 0) {
+    if (
+      spotsAvailable[`${item}`] === 0 ||
+      spotsAvailable[`${item}`] < props.guestNumber
+    ) {
       return true;
     } else {
       return false;
@@ -69,7 +72,8 @@ function CampingProduct(props) {
               : null
           }
           onClick={
-            spotsAvailable["Svartheim"] < 10
+            spotsAvailable["Svartheim"] === 0 ||
+            spotsAvailable["Svartheim"] < props.guestNumber
               ? () => checkAvailSpots("Svartheim")
               : () => setCurCampBtn("Svartheim")
           }>
@@ -93,7 +97,8 @@ function CampingProduct(props) {
               : null
           }
           onClick={
-            spotsAvailable < 10
+            spotsAvailable["Nilfheim"] === 0 ||
+            spotsAvailable["Nilfheim"] < props.guestNumber
               ? () => checkAvailSpots("Nilfheim")
               : () => setCurCampBtn("Nilfheim")
           }>
@@ -117,7 +122,8 @@ function CampingProduct(props) {
               : null
           }
           onClick={
-            spotsAvailable["Helheim"] < 10
+            spotsAvailable["Helheim"] === 0 ||
+            spotsAvailable["Helheim"] < props.guestNumber
               ? () => checkAvailSpots("Helheim")
               : () => setCurCampBtn("Helheim")
           }>
@@ -141,7 +147,8 @@ function CampingProduct(props) {
               : null
           }
           onClick={
-            spotsAvailable["Muspelheim"] < 10
+            spotsAvailable["Muspelheim"] === 0 ||
+            spotsAvailable["Muspelheim"] < props.guestNumber
               ? () => checkAvailSpots("Muspelheim")
               : () => setCurCampBtn("Muspelheim")
           }>
@@ -165,7 +172,8 @@ function CampingProduct(props) {
               : null
           }
           onClick={
-            spotsAvailable["Alfheim"] < 10
+            spotsAvailable["Alfheim"] === 0 ||
+            spotsAvailable["Alfheim"] < props.guestNumber
               ? () => checkAvailSpots("Alfheim")
               : () => setCurCampBtn("Alfheim")
           }>

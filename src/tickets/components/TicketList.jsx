@@ -6,7 +6,7 @@ import { confirmReservation } from "../../database";
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
-  let [count, setCount] = useState({ reg: 0, vip: 0 });
+  let [count, setCount] = useState({ reg: 0, vip: 0 , total: 0});
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -16,9 +16,8 @@ function TicketList(props) {
     }
     getData();
   }, []);
-
+  
   function addToBasket(data) {
-
      if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
         oldBasket.map((entry) => {
@@ -44,7 +43,7 @@ function TicketList(props) {
     } else {
       props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
     }
-  }
+    }
 
   function removeFromBasket(name) {
     // find and modify a product
@@ -62,9 +61,6 @@ function TicketList(props) {
     });
   }
 
-  // useEffect(() => {
-
-  //   3}, [])
   function reserveSpot() {
     const url = "http://localhost:8080/";
     fetch(url + "reserve-spot", {

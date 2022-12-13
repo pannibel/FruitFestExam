@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-// import { reserveSpot } from "../../database";
+import { reserveSpot } from "../../database";
 
 function Basket(props) {
   function totalPrice() {
@@ -47,6 +47,7 @@ function Basket(props) {
     console.log(area);
     console.log(i);
   }
+
   return (
     <div id="basketCont">
       <div id="basket">
@@ -104,7 +105,7 @@ function Basket(props) {
               return (
                 <div key={item.type} className="ticketBasket ticketItem">
                   <p>{item.type}</p>
-                  <button
+                  {/* <button
                     onClick={() => {
                       props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
@@ -112,7 +113,7 @@ function Basket(props) {
                     className="basketBtnRmv"
                   >
                     {" "}
-                  </button>
+                  </button> */}
                 </div>
               );
             }
@@ -127,7 +128,7 @@ function Basket(props) {
           onClick={() => {
             {
               props.setShowForm(true);
-              totalGuests();
+              totalGuests()
             }
           }}
           className="basketCheckout"

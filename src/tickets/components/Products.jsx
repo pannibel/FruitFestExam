@@ -117,6 +117,7 @@ function Products(props) {
           onChangeValue={onChangeValue}
           campingSpots={props.campingSpots}
           spotAdded={props.spotAdded}
+          guestNumber={props.guestNumber}
         />
       </form>
     </div>
