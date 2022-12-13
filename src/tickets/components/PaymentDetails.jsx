@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState } from "react";
 import { useCreditCardValidator, images } from "react-creditcard-validator";
-import { insertOrder } from "../../database";
+import { confirmReservation, insertOrder } from "../../database";
 
 function PaymentDetails(props) {
   const theForm = useRef(null);
@@ -22,6 +22,7 @@ function PaymentDetails(props) {
       // name: theForm.current.elements.fullname.value,
       // email: theForm.current.elements.email.value,
       // phonenumber: theForm.current.elements.phone.value,
+      ownerName: theForm.current.elements.mainname.value,
       streetname: theForm.current.elements.street.value,
       apartment: theForm.current.elements.apartment.value,
       city: theForm.current.elements.city.value,
@@ -30,14 +31,15 @@ function PaymentDetails(props) {
     });
     props.setBilling(address);
     insertOrder({
-      fullName: theForm.current.elements.fullname.value,
+      // fullname: theForm.current.elements.fullname.value,
       email: theForm.current.elements.email.value,
       phone: theForm.current.elements.phone.value,
       address: address,
-      ticketOwners: "",
+      ticketOwners: props.formValues,
       basketContent: props.basket,
     });
     console.log(props.billing);
+    confirmReservation(props.idValue);
   }
 
   return (
@@ -47,16 +49,15 @@ function PaymentDetails(props) {
         <h2>Billing details</h2>
         <h3>Personal details</h3>
         <section>
-          <label htmlFor="">Full name</label>
+          <label htmlFor="">Full Name</label>
           <input
             defaultValue={""}
             type="text"
-            name="fullname"
-            id="form-fullname"
-            placeholder="your name here"
+            name="mainname"
+            id="form-mainname"
+            placeholder="your fullname"
           />
         </section>
-
         <section>
           <label htmlFor="">Email address</label>
           <input
@@ -67,7 +68,6 @@ function PaymentDetails(props) {
             placeholder="your email here"
           />
         </section>
-
         <section>
           <label htmlFor="">Phone number</label>
           <input
@@ -78,7 +78,16 @@ function PaymentDetails(props) {
             placeholder="your number here"
           />
         </section>
-
+        {/* <section>
+          <label htmlFor="">Full name</label>
+          <input
+            defaultValue={""}
+            type="text"
+            name="fullname"
+            id="form-fullname"
+            placeholder="your name here"
+          />
+        </section> */}
         <h3>Billing address</h3>
         <section>
           <label htmlFor="">Street name</label>

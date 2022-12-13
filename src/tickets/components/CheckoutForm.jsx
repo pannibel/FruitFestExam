@@ -50,11 +50,14 @@ function CheckoutForm(props) {
       )}
       {state == 2 ? (
         <PaymentDetails
+          formValues={formValues}
+          setFormValues={setFormValues}
           changePage={changePage}
           billing={billing}
           setBilling={setBilling}
           basket={props.basket}
           totalPrice={totalPrice}
+          idValue={props.idValue}
         />
       ) : (
         ""
