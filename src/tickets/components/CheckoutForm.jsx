@@ -10,8 +10,8 @@ function CheckoutForm(props) {
   const [guestInfo, setGuestInfo] = useState([]);
   const [billing, setBilling] = useState({});
   let [formValues, setFormValues] = useState({
-    fullname: '',
-    email: ''
+    fullname: "",
+    email: "",
   });
 
   function changePage(e) {
@@ -38,7 +38,6 @@ function CheckoutForm(props) {
 
   return (
     <div className="checkoutform">
-
       {state == 1 ? (
         <GuestInfo
           changePage={changePage}
@@ -79,7 +78,8 @@ function CheckoutForm(props) {
           {
             props.setShowForm(false);
           }
-        }}>
+        }}
+      >
         Go back
       </button>
     </div>

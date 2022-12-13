@@ -22,10 +22,6 @@ export function reserveSpot(payload) {
         headers: {
             'Content-Type': 'application/json',
         },
-        // body: JSON.stringify({
-        //     "area": "Alfheim",
-        //     "amount": 2
-        // }),
         body: JSON.stringify(payload),
     })
         .then((response) => response.json())
