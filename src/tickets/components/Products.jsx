@@ -79,29 +79,19 @@ function Products(props) {
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
     console.log(e.target.value);
-    addSpot(e.target.value);  }
+    addSpot(e.target.value);  
+  }
 
   function addSpot(value) {
-    // e.preventDefault();
-    // e.preventDefault();
-    // console.log(chosenSpot);
-    if (props.spotAdded === false) {
       productData = {
-        type: "campingSpot",
-        name: value,
+        name: "campingSpot",
+        type: value,
         amount: 1,
         price: "",
       };
       console.log(productData);
       props.addToBasket(productData);
       props.setSpotAdded(true);
-    }
-
-    if (props.spotAdded === true) {
-      console.log("spot is already added")
-      console.log("spot added?" , props.spotAdded)
-    }
-    console.log(productData);
   }
 
   return (
