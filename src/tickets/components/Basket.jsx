@@ -118,7 +118,8 @@ function Basket(props) {
               totalGuests()
             }
           }}
-          className="basketCheckout"
+          className={props.basket.find((items) => items.type === "ticket") && props.spotAdded ? "basketCheckout" : "disabledCheckout"}
+          disabled={props.basket.find((items) => items.type === "ticket") && props.spotAdded ? false : true}
         >
           {" "}
         </button>

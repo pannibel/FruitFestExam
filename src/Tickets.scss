@@ -442,6 +442,7 @@ input[type="radio"] {
 .ticketBasket.ticketItem {
   margin-bottom: 10px;
 }
+
 .basketCheckout {
   border: 0;
   margin-top: 20px;
@@ -456,6 +457,24 @@ input[type="radio"] {
   background-position: center;
   background-repeat: no-repeat;
   font-size: 16px;
-  transition: 0.3s;
+  transition: 0.1s;
+  align-self: center;
+}
+
+.disabledCheckout {
+  border: 0;
+  margin-top: 20px;
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px;
+  color: #213547;
+  background-image: url("./assets/buttons/checkout_btn_disabled.svg");
+  // filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.1s;
   align-self: center;
 }

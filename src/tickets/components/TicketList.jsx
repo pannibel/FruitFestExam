@@ -50,8 +50,11 @@ function TicketList(props) {
     // find and modify a product
     props.setBasket((oldBasket) => {
       const subtracted = oldBasket.map((item) => {
-        if (item.type === "campingSpot") {
-          setSpotAdded(false)}
+        if (item.name === "campingSpot") {
+          setSpotAdded(false);
+            return {};
+          };
+
         if (item.name === name) {
           return { ...item, amount: 0 };
         }
@@ -102,6 +105,7 @@ function TicketList(props) {
           basket={props.basket}
           removeFromBasket={removeFromBasket}
           setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
           setGuestNumber={props.setGuestNumber}
           guestNumber={props.guestNumber}
         />
