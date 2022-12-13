@@ -16,21 +16,26 @@ function PaymentDetails(props) {
 
   function saveBillingInfo(e) {
     e.preventDefault();
-    const nextData = [];
+    const address = [];
 
-    nextData.push({
-      name: theForm.current.elements.fullname.value,
-      email: theForm.current.elements.email.value,
-      phonenumber: theForm.current.elements.phone.value,
+    address.push({
+      // name: theForm.current.elements.fullname.value,
+      // email: theForm.current.elements.email.value,
+      // phonenumber: theForm.current.elements.phone.value,
       streetname: theForm.current.elements.street.value,
       apartment: theForm.current.elements.apartment.value,
       city: theForm.current.elements.city.value,
       country: theForm.current.elements.country.value,
       // basket: props.
     });
-    props.setBilling(nextData);
+    props.setBilling(address);
     insertOrder({
-      ticketOwners: nextData,
+      fullName: theForm.current.elements.fullname.value,
+      email: theForm.current.elements.email.value,
+      phone: theForm.current.elements.phone.value,
+      address: address,
+      ticketOwners: "",
+      basketContent: props.basket,
     });
     console.log(props.billing);
   }

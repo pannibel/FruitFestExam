@@ -11,7 +11,6 @@ function Basket(props) {
     return total;
   }
   function reserveSpot(payload) {
-    let testValue;
     const url = "http://localhost:8080/";
     fetch(url + "reserve-spot", {
       method: "PUT",
@@ -34,20 +33,13 @@ function Basket(props) {
       }
       props.setGuestNumber(i);
     });
-    // console.log(props.basket);
-    // console.log(i);
 
     props.basket.map((item) => {
       if (item.name === "campingSpot") {
-        // console.log(item.type);
         area = item.type;
       }
     });
 
-    // if (props.basket.name == "campingSpot") {
-    //   console.log(props.basket.type);
-    // }
-    // e.preventDefault();
     reserveSpot({
       area: area,
       amount: i,
