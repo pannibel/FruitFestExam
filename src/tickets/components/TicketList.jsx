@@ -106,6 +106,7 @@ function TicketList(props) {
           campingSpots={campingSpots}
         />
         <Basket
+          campingSpots={campingSpots}
           count={count}
           setCount={setCount}
           setShowForm={props.setShowForm}

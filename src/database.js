@@ -14,7 +14,7 @@
 //     })
 
 // }
-export function reserveSpot() {
+export function reserveSpot(payload) {
     let testValue
     const url = "http://localhost:8080/";
     fetch(url + "reserve-spot", {
@@ -22,13 +22,14 @@ export function reserveSpot() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            "area": "Alfheim",
-            "amount": 2
-        }),
+        // body: JSON.stringify({
+        //     "area": "Alfheim",
+        //     "amount": 2
+        // }),
+        body: JSON.stringify(payload),
     })
         .then((response) => response.json())
-        .then((response) => console.log(response, response.id)).then((response) => testValue = response.id)
+        .then((response) => console.log(response, response.id, JSON.stringify(payload))).then((response) => testValue = response.id)
         .catch((err) => console.error(err))
 }
 export function confirmReservation(idValue) {

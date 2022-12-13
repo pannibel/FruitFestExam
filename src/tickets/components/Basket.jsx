@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { reserveSpot } from "../../database";
 
 function Basket(props) {
   function totalPrice() {
@@ -12,14 +13,34 @@ function Basket(props) {
 
   function totalGuests() {
     let i = 0;
+    let area;
     props.basket.forEach((item) => {
       if (item.type === "ticket") {
         i = i + item.amount;
       }
       props.setGuestNumber(i);
     });
-  }
+    console.log(props.basket);
+    console.log(i);
 
+    props.basket.map((item) => {
+      if (item.name === "campingSpot") {
+        // console.log(item.type);
+        area = item.type;
+      }
+    });
+
+    // if (props.basket.name == "campingSpot") {
+    //   console.log(props.basket.type);
+    // }
+    // e.preventDefault();
+    reserveSpot({
+      area: area,
+      amount: i,
+    });
+    console.log(area);
+    console.log(i);
+  }
   return (
     <div id="basketCont">
       <div id="basket">
