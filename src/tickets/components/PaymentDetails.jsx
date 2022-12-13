@@ -38,8 +38,9 @@ function PaymentDetails(props) {
       ticketOwners: props.guestInfo,
       basketContent: props.basket,
     });
-    console.log(props.billing);
-    confirmReservation(props.idValue);
+    // console.log(props.billing);
+    // console.log(props.idValue);
+    confirmReservation({ id: props.idValue });
   }
 
   return (

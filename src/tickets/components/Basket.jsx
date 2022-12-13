@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-// import { reserveSpot } from "../../database";
+import { reserveSpot } from "../../database";
 
 function Basket(props) {
   function totalPrice() {
@@ -9,19 +9,6 @@ function Basket(props) {
       total += item.amount * item.price;
     });
     return total;
-  }
-  function reserveSpot(payload) {
-    const url = "http://localhost:8080/";
-    fetch(url + "reserve-spot", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .then((response) => props.setIdValue(response.id))
-      .catch((err) => console.error(err));
   }
 
   function totalGuests() {
