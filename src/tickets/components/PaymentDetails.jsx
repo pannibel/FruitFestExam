@@ -44,42 +44,43 @@ function PaymentDetails(props) {
   }
 
   return (
-    <div>
-      <h1>Payment Details</h1>
-      <form ref={theForm} method="">
-        <h2>Billing details</h2>
-        <h3>Personal details</h3>
-        <section>
-          <label htmlFor="">Full Name</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="mainname"
-            id="form-mainname"
-            placeholder="your fullname"
-          />
-        </section>
-        <section>
-          <label htmlFor="">Email address</label>
-          <input
-            defaultValue={""}
-            type="email"
-            name="email"
-            id="form-email"
-            placeholder="your email here"
-          />
-        </section>
-        <section>
-          <label htmlFor="">Phone number</label>
-          <input
-            defaultValue={""}
-            type="number"
-            name="phone"
-            id="form-phone"
-            placeholder="your number here"
-          />
-        </section>
-        {/* <section>
+    <div id="paymentDetails">
+      {/* <h1>Payment Details</h1> */}
+      <div id="productList" className="box">
+        <form ref={theForm} method="">
+          <h2>Billing details</h2>
+          <h3>Personal details</h3>
+          <section>
+            <label htmlFor="">Full Name</label>
+            <input
+              defaultValue={""}
+              type="text"
+              name="mainname"
+              id="form-mainname"
+              placeholder="your fullname"
+            />
+          </section>
+          <section>
+            <label htmlFor="">Email address</label>
+            <input
+              defaultValue={""}
+              type="email"
+              name="email"
+              id="form-email"
+              placeholder="your email here"
+            />
+          </section>
+          <section>
+            <label htmlFor="">Phone number</label>
+            <input
+              defaultValue={""}
+              type="number"
+              name="phone"
+              id="form-phone"
+              placeholder="your number here"
+            />
+          </section>
+          {/* <section>
           <label htmlFor="">Full name</label>
           <input
             defaultValue={""}
@@ -89,102 +90,102 @@ function PaymentDetails(props) {
             placeholder="your name here"
           />
         </section> */}
-        <h3>Billing address</h3>
-        <section>
-          <label htmlFor="">Street name</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="street"
-            id="form-street"
-            placeholder=""
-          />
-        </section>
-        <section>
-          <label htmlFor="">Apartment (number, floor, door, etc)</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="apartment"
-            id="form-apartment"
-            placeholder=""
-          />
-        </section>
-        <section>
-          <label htmlFor="">City</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="city"
-            id="form-city"
-            placeholder=""
-          />
-        </section>
-        <section>
-          <label htmlFor="">Country</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="country"
-            id="form-country"
-            placeholder=""
-          />
-        </section>
-
-        <h2>Card details</h2>
-
-        <div>
+          <h3>Billing address</h3>
           <section>
-            <label htmlFor="">Name on card</label>
+            <label htmlFor="">Street name</label>
             <input
               defaultValue={""}
               type="text"
-              name="fullname"
-              id="form-fullname"
+              name="street"
+              id="form-street"
               placeholder=""
             />
           </section>
           <section>
-            <label htmlFor="">Card number</label>
-            <input name="cardnumber" {...getCardNumberProps()} />
-            <small>
-              {erroredInputs.cardNumber && erroredInputs.cardNumber}
-            </small>
+            <label htmlFor="">Apartment (number, floor, door, etc)</label>
+            <input
+              defaultValue={""}
+              type="text"
+              name="apartment"
+              id="form-apartment"
+              placeholder=""
+            />
           </section>
-
           <section>
-            <label htmlFor="">Expiry date</label>
-            <input name="expirydate" {...getExpiryDateProps()} />
-            <small>
-              {erroredInputs.expiryDate && erroredInputs.expiryDate}
-            </small>
+            <label htmlFor="">City</label>
+            <input
+              defaultValue={""}
+              type="text"
+              name="city"
+              id="form-city"
+              placeholder=""
+            />
           </section>
-
           <section>
-            <label htmlFor="">Security code</label>
-            <input name="cvc" {...getCVCProps()} />
-            <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
+            <label htmlFor="">Country</label>
+            <input
+              defaultValue={""}
+              type="text"
+              name="country"
+              id="form-country"
+              placeholder=""
+            />
           </section>
 
-          <svg {...getCardImageProps({ images })} />
-        </div>
-      </form>
+          <h2>Card details</h2>
 
-      <button onClick={props.changePage} name="back">
-        Back
-      </button>
-      <button
-        onClick={(e) => {
-          saveBillingInfo(e);
-          props.changePage(e);
-        }}
-        name="next"
-      >
-        Complete payment
-      </button>
+          <div>
+            <section>
+              <label htmlFor="">Name on card</label>
+              <input
+                defaultValue={""}
+                type="text"
+                name="fullname"
+                id="form-fullname"
+                placeholder=""
+              />
+            </section>
+            <section>
+              <label htmlFor="">Card number</label>
+              <input name="cardnumber" {...getCardNumberProps()} />
+              <small>
+                {erroredInputs.cardNumber && erroredInputs.cardNumber}
+              </small>
+            </section>
 
+            <section>
+              <label htmlFor="">Expiry date</label>
+              <input name="expirydate" {...getExpiryDateProps()} />
+              <small>
+                {erroredInputs.expiryDate && erroredInputs.expiryDate}
+              </small>
+            </section>
+
+            <section>
+              <label htmlFor="">Security code</label>
+              <input name="cvc" {...getCVCProps()} />
+              <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
+            </section>
+
+            <svg {...getCardImageProps({ images })} />
+          </div>
+        </form>
+
+        <button onClick={props.changePage} name="back">
+          Back
+        </button>
+        <button
+          onClick={(e) => {
+            saveBillingInfo(e);
+            props.changePage(e);
+          }}
+          name="next"
+        >
+          Complete payment
+        </button>
+      </div>
       {/* BASKET */}
-      <div>
+      <div id="basket">
         <h3>Items</h3>
         <ul>
           {props.basket.map((item) => {

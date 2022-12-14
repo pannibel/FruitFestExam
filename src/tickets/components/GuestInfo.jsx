@@ -30,50 +30,51 @@ function GuestInfo(props) {
   }
 
   return (
-    <div>
-      <h1>Guest Info</h1>
-      <form
-        ref={theForm}
-        className="inputForm"
-        onSubmit={(e) => {
-          saveGuestInfo(e);
-          props.changePage({
-            preventDefault: () => {},
-            target: {
-              name: "next",
-            },
-          });
-        }}>
-        {[...Array(props.guestNumber)].map(() => (
-          <div key={i++}>
-            <h3>Guest {i + 1}</h3>
-            <input
-              type="text"
-              name="fullname"
-              id={i}
-              placeholder="Full name"
-              defaultValue={
-                !props.guestInfo.length ?
-                "" : props.guestInfo[i].name
-              }
-            />
-            <input
-              type="email"
-              name="email"
-              id={i}
-              placeholder="Email address"
-              defaultValue={
-                !props.guestInfo.length ?
-                "" : props.guestInfo[i].email
-              }
-            />
-          </div>
-        ))}
-        <button name="next">Next</button>
-      </form>
+    <div id="guestInfoPage">
+      {/* <h1>Guest Info</h1> */}
+      <div id="productList" className="box">
+        <form
+          ref={theForm}
+          className="inputForm"
+          onSubmit={(e) => {
+            saveGuestInfo(e);
+            props.changePage({
+              preventDefault: () => {},
+              target: {
+                name: "next",
+              },
+            });
+          }}
+        >
+          {[...Array(props.guestNumber)].map(() => (
+            <div key={i++}>
+              <h3>Guest {i + 1}</h3>
+              <input
+                type="text"
+                name="fullname"
+                id={i}
+                placeholder="Full name"
+                defaultValue={
+                  !props.guestInfo.length ? "" : props.guestInfo[i].name
+                }
+              />
+              <input
+                type="email"
+                name="email"
+                id={i}
+                placeholder="Email address"
+                defaultValue={
+                  !props.guestInfo.length ? "" : props.guestInfo[i].email
+                }
+              />
+            </div>
+          ))}
+          <button name="next">Next</button>
+        </form>
+      </div>
 
       {/* BASKET */}
-      <div>
+      <div id="basket">
         <h3>Items</h3>
         <ul>
           {props.basket.map((item) => {

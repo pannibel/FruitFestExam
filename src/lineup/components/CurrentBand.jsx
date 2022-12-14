@@ -72,28 +72,33 @@ function CurrentBand(props) {
           <div>{showCurrentActTime}</div>
 
           <div className="currentBandBox">
-            <div className="currentContCont">
-              {" "}
+            <div className="currentBandRow colorMidgard">
               <img
                 src={pickImage(testForTuesday("Midgard"))}
-                // className="img"
+                className="imgSingleBand"
                 alt=""
               ></img>
-              <div className="currentBandRow colorMidgard">
-                <div className="playerBand">{testForTuesday("Midgard")}</div>
-                <div className="playerStage">MIDGARD</div>
-              </div>
+              <div className="playerBand">{testForTuesday("Midgard")}</div>
+              <div className="playerStage">Midgard</div>
             </div>
 
             <div className="currentBandRow  colorVanaheim">
+              <img
+                src={pickImage(testForTuesday("Vanaheim"))}
+                className="imgSingleBand"
+                alt=""
+              ></img>
               <div className="playerBand">{testForTuesday("Vanaheim")}</div>
-              <div className="playerStage">VANAHEIM</div>
+              <div className="playerStage">Vanaheim</div>
             </div>
             <div className="currentBandRow colorJotunheim">
-              {/* {pickImage(currentJotunheim)} */}
-
+              <img
+                src={pickImage(testForTuesday("Jotunheim"))}
+                className="imgSingleBand"
+                alt=""
+              ></img>
               <div className="playerBand">{testForTuesday("Jotunheim")}</div>
-              <div className="playerStage">JOTUNHEIM</div>
+              <div className="playerStage">Jotunheim</div>
             </div>
           </div>
         </div>
