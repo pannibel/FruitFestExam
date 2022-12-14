@@ -94,6 +94,7 @@ function TicketList(props) {
           spotAdded={spotAdded}
           guestNumber={props.guestNumber}
           campingSpots={campingSpots}
+          basket={props.basket}
         />
         <Basket
           setIdValue={props.setIdValue}

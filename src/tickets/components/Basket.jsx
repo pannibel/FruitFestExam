@@ -56,8 +56,10 @@ function Basket(props) {
 
   function controlCamping(item) {
          if (spotsAvailable[`${item}`] < props.count.total) {
+          props.setSpotAdded(false)
           return "disabledTicket ticketItem"}   
           else {
+            props.setSpotAdded(true)
             return "ticketBasket ticketItem"
           }
       }
@@ -145,7 +147,9 @@ function Basket(props) {
               totalGuests()
             }
           }}
-          className={props.basket.find((items) => items.type === "ticket") && props.spotAdded ? "basketCheckout" : "disabledCheckout"}
+          className={props.basket.find((items) => items.type === "ticket") 
+          && props.spotAdded 
+          ? "basketCheckout" : "disabledCheckout"}
           disabled={props.basket.find((items) => items.type === "ticket")
            && props.spotAdded 
            ? false : true}

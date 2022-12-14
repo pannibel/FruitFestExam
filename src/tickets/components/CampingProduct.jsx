@@ -25,6 +25,22 @@ function CampingProduct(props) {
     // console.log(spotsAvailable);
   }, [props.campingSpots]);
 
+  useEffect(() => {
+      function removeSetCurBtn() {
+        console.log(curCampBtn);
+
+        let areas;
+
+        areas = props.basket.map((items) => {
+          if (items.name === "campingSpot") 
+          return items
+        })
+
+        console.log(areas)
+    }
+    removeSetCurBtn();
+  }, []);
+
   function checkAvailSpots(item) {
     if (
       spotsAvailable[`${item}`] === 0 ||
