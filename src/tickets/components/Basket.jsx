@@ -12,6 +12,8 @@ function Basket(props) {
     Muspelheim: "",
   });
 
+  const [enoughExtra, setEnoghExtra] = useState(false)
+
   useEffect(() => {
     props.campingSpots.forEach((el) => {
       setSpotsAvailable((old) => {
@@ -54,6 +56,17 @@ function Basket(props) {
     console.log(i);
   }
 
+/*   function checkExtras() {
+    console.log("checking extras")
+    if (props.basket.find((items) => {
+            if (items.type === "extra") {
+              items.amount === props.count.total
+            }})
+           ) {
+           setEnoghExtra(true)}
+    else {setEnoghExtra(false)}
+  } */
+
   function controlCamping(item) {
          if (spotsAvailable[`${item}`] < props.count.total) {
           props.setSpotAdded(false)
@@ -64,11 +77,7 @@ function Basket(props) {
           }
       }
 
-
-
     function removeSetCurBtn(item) {
-      console.log(props.curCampBtn);
-
       if (spotsAvailable[`${item}`] < props.count.total) {
         props.setSpotAdded(false)
         props.setCurCampBtn("")}   
@@ -112,8 +121,8 @@ function Basket(props) {
           {props.basket.map((item) => {
             if (item.type === "extra") {
               return (
-                <div key={item.name} className="separateTickets ticketItem ">
-                  <p>{item.name}</p>
+                <div key={item.name} className="separateTickets ticketItem">
+                  <p>{item.name} x {item.amount}</p>
                   <div className="ticketBasket">
                     <p>{item.amount * item.price},-</p>
                     <button
@@ -162,11 +171,11 @@ function Basket(props) {
               totalGuests()
             }
           }}
-          className={props.basket.find((items) => items.type === "ticket") 
-          && props.spotAdded 
+          className={props.basket.find((items) => items.type === "ticket")
+          && props.spotAdded
           ? "basketCheckout" : "disabledCheckout"}
           disabled={props.basket.find((items) => items.type === "ticket")
-           && props.spotAdded 
+          && props.spotAdded
            ? false : true}
         >
           {" "}

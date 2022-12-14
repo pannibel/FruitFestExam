@@ -160,14 +160,14 @@ button:focus-visible {
 
 .NavBarCont {
   position: fixed;
-  width: 80%;
+  width: 90%;
   left: 50%;
   text-align: center;
   transform: translate(-50%, 0);
   bottom: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10%;
+  gap: 5%;
   height: 100px;
   // justify-content: center;
   justify-items: center;
@@ -272,12 +272,52 @@ button:focus-visible {
     justify-self: flex-end;
     flex-direction: column;
     align-items: center;
-    color: rgb(237, 237, 237);
+    color: rgba(255, 255, 255, 0.879);
 
-    background-color: rgba(247, 247, 247, 0.4);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(
+      0deg,
+      rgba(61, 61, 61, 0.127) 0%,
+      rgba(197, 197, 197, 0.438) 30%,
+      rgba(255, 255, 255, 0.581) 95%
+    );    
+/*     //* just an idea
+    background: 
+    linear-gradient(210deg, rgb(190, 180, 248), rgba(0, 255, 0, 0) 40.71%),
+    linear-gradient(310deg, rgba(57, 59, 59, 0), rgba(149, 149, 207, 0.582) 80.71%),
+    linear-gradient(40deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 30.71%)
+    ;
+    //* end of idea */
+
+    ::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 30px;
+      padding: 2px; /* control the border thickness */
+      background: linear-gradient(
+        174deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(197, 197, 197, 1) 52%,
+        rgba(120, 120, 120, 1) 100%
+      );
+  
+      mask: #ffffff content-box, #ffffff71;
+      mask-composite: exclude;
+  
+      -webkit-mask: linear-gradient(
+            rgba(255, 255, 255, 1) 0%,
+            rgba(197, 197, 197, 1) 39%
+          )
+          content-box,
+        linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(197, 197, 197, 1) 39%);
+      -webkit-mask-composite: xor;
+  
+      pointer-events: none;
+    }
+
+    backdrop-filter: blur(5px);
     border-radius: 30px;
-    border: 3px solid #cccccc;
+
 
     margin: 0vh 5vw 0vh 5vw;
     padding: 5%;

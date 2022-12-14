@@ -9,9 +9,9 @@ function ExtraProduct(props) {
   return (
     <div className="form-control">
       <h3>2. Add extras</h3>
-      <h4>These are optional, to elevate your festival experience.</h4>
+      <h4>The tent(s) you choose will also be set up before your arrival.</h4>
       <div id="ticketExtras">
-        <div className="extra">
+{/*         <div className="extra">
           <label htmlFor="form-extras">Green camping option</label>
           <p>
             <span>{props.extra1price}</span>,-
@@ -20,35 +20,35 @@ function ExtraProduct(props) {
             onClick={props.addExtras}
             name="Green camping"
             className="extraBtnADD"
-          ></button>
-        </div>
+          > </button>
+        </div> */}
 
         <div className={isMobile ? "extra extraMobile" : "extra"}>
           <label htmlFor="form-extras" className="gradient-text">
-            2-person tent set up (tent included)
+            Medium size tent
           </label>
           <p>
             <span>{props.extra2price}</span>,-
           </p>
           <button
             onClick={props.addExtras}
-            name="2-person tent set up"
+            name="Medium size tent"
             className="extraBtnADD"
-          ></button>
+          > </button>
         </div>
 
         <div className="extra">
           <label htmlFor="form-extras">
-            3-person tent set up (tent included)
+            Large size tent
           </label>
           <p>
             <span>{props.extra3price}</span>,-
           </p>
           <button
             onClick={props.addExtras}
-            name="3-person tent set up"
+            name="Large size tent"
             className="extraBtnADD"
-          ></button>
+          > </button>
         </div>
       </div>
     </div>

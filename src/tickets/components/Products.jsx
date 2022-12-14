@@ -59,10 +59,10 @@ function Products(props) {
 
     if (e.target.name === "Green camping") {
       extraprice = extra1price;
-    } else if (e.target.name === "2-person tent set up") {
+    } else if (e.target.name === "Medium size tent") {
       extraprice = extra2price;
     }
-    if (e.target.name === "3-person tent set up") {
+    if (e.target.name === "Large size tent") {
       extraprice = extra3price;
     }
 

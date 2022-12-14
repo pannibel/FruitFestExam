@@ -56,8 +56,7 @@ function CampingProduct(props) {
       <h3>3. Choose your camping spot</h3>
       <h4>
         You are required to reserve camping spots in one of the areas, free of
-        charge. The unavailable areas have fewer free spots than your number of
-        tickets.
+        charge. If any area is unavailable, it means it has fewer amount of free spots at the moment than the tickets in your basket.
       </h4>
       <div onChange={props.onChangeValue} id="ticketCampSpots">
         <input
