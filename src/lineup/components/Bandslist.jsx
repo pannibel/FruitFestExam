@@ -1,9 +1,12 @@
 import React from "react";
 import SingleBand from "./SingleBandList";
 import { useRef, useState } from "react";
+import OneBand from "./OneBand";
 
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
+  const [singleBandState, setSingleBandState] = useState(false);
+
   // let searchedBands = [];
   const theInput = useRef(null);
 
@@ -35,13 +38,35 @@ function Bandslist(props) {
     }
   }
 
+  function openOneBand() {
+    setSingleBandState(true);
+    console.log("single band is open " + singleBandState);
+  }
+
+  function closeOneBand() {
+    setSingleBandState(false);
+
+  }
+
   return (
     <div className="bandsCont">
+      {!singleBandState}
+      {singleBandState && (
+        <>
+          <OneBand
+            openOneBand={openOneBand}
+            closeOneBand={closeOneBand}
+            data={props.bands}
+            singleBandState={singleBandState}
+            setSingleBandState={setSingleBandState}
+          />
+        </>
+      )}
+
       <img
         className="logo_small"
         src="../src/assets/logo.svg"
-        alt="big logo of the festival"
-      ></img>
+        alt="big logo of the festival"></img>
 
       <div className="searchbarCont">
         <input
@@ -60,8 +85,24 @@ function Bandslist(props) {
 
       <div className="bandListBox">
         {!searchedBands.length
-          ? bettered.map((band, i) => <SingleBand data={band} key={i} />)
-          : searchedBands.map((band, i) => <SingleBand data={band} key={i} />)}
+          ? bettered.map((band, i) => (
+              <SingleBand
+                data={band}
+                key={i}
+                singleBandState={singleBandState}
+                setSingleBandState={setSingleBandState}
+                openOneBand={openOneBand}
+              />
+            ))
+          : searchedBands.map((band, i) => (
+              <SingleBand
+                data={band}
+                key={i}
+                singleBandState={singleBandState}
+                setSingleBandState={setSingleBandState}
+                openOneBand={openOneBand}
+              />
+            ))}
       </div>
     </div>
   );

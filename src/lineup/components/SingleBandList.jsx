@@ -28,7 +28,7 @@ function SingleBand(props) {
           <p>{props.data.letter}</p>
         </div>
       ) : (
-        <div className="singleBandCont">
+        <div className="singleBandCont" onClick={props.openOneBand}>
           {" "}
           <img
             src={imageDir}

@@ -11,9 +11,7 @@ function Basket(props) {
     Alfheim: "",
     Muspelheim: "",
   });
-
-  const [enoughExtra, setEnoghExtra] = useState(false)
-
+  
   useEffect(() => {
     props.campingSpots.forEach((el) => {
       setSpotsAvailable((old) => {
@@ -204,14 +202,6 @@ function Basket(props) {
               totalGuests();
             }
           }}
-<<<<<<< HEAD
-          className={props.basket.find((items) => items.type === "ticket")
-          && props.spotAdded
-          ? "basketCheckout" : "disabledCheckout"}
-          disabled={props.basket.find((items) => items.type === "ticket")
-          && props.spotAdded
-           ? false : true}
-=======
           className={
             props.basket.find((items) => items.type === "ticket") &&
             props.spotAdded
@@ -224,7 +214,6 @@ function Basket(props) {
               ? false
               : true
           }
->>>>>>> 66f923e6dbf4772aa24626c7316d4ce3c30621fb
         >
           {" "}
         </button>
