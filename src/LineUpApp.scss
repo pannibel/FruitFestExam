@@ -57,41 +57,26 @@ button:focus-visible {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   transition: 0.5s;
-
-  .about {
+  button {
     padding: 5px;
     color: #213547;
-    background-image: url("./assets/buttons/about.svg");
     background-size: cover;
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
     width: 150px;
     height: 60px;
+  }
+  .about {
+    background-image: url("./assets/buttons/about.svg");
   }
 
   .merch {
-    padding: 5px;
-    color: #213547;
     background-image: url("./assets/buttons/merch.svg");
-    background-size: cover;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 150px;
-    height: 60px;
   }
 
   .map {
-    padding: 5px;
-    color: #213547;
     background-image: url("./assets/buttons/map.svg");
-    background-size: cover;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 150px;
-    height: 60px;
   }
 }
 
@@ -288,13 +273,19 @@ button:focus-visible {
       margin: 0;
       margin-bottom: 2vh;
     }
-
+    .currentContCont {
+      display: grid;
+      grid-template-columns: 10% 90%;
+    }
     .currentBandBox {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding-top: 20px;
       gap: 20px;
+      img {
+        width: 80px;
+      }
 
       .currentBandRow {
         font-size: medium;
