@@ -134,6 +134,9 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .box {
+  form {
+    width: 100%;
+  }
   // align-self: flex-end;
   position: relative;
   padding-left: 5%;
@@ -181,6 +184,11 @@ body {
 }
 #basketCont {
   justify-self: center;
+  h3 {
+    font-family: Chopsic;
+    color: #4400ff;
+    margin: 0;
+  }
 }
 #basket {
   p {
@@ -229,7 +237,7 @@ body {
     color: black;
   }
   margin: 3vw;
-  min-width: 150px;
+  min-width: 200px;
   // text-align: center;
   padding: 20px 20px;
   border-radius: 30px;
@@ -264,6 +272,9 @@ body {
   }
 }
 .ticketItem {
+  p {
+    margin: 0;
+  }
   padding: 10px 15px;
   border-radius: 30px;
   background-color: rgba(244, 244, 244, 0.7);
@@ -315,12 +326,11 @@ body {
   padding: 20px;
   color: #213547;
   background-image: url("./assets/tickets/camp_idle.svg");
-  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   font-size: 20px;
-  transition: 0.3s;
+  transition: 0.2s;
   p {
     background-color: red;
     text-align: center;
@@ -340,6 +350,13 @@ body {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+}
+.campIdle:hover {
+  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+}
+.campIdle:active {
+  background-image: url("./assets/tickets/camp_picked.svg");
+  filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0));
 }
 [type="radio"] {
   position: absolute;
@@ -361,7 +378,7 @@ input[type="radio"] {
   background-position: center;
   background-repeat: no-repeat;
   font-size: 20px;
-  transition: 0.3s;
+  // transition: 0.2s;
   p {
     background-color: red;
     text-align: center;
@@ -381,6 +398,10 @@ input[type="radio"] {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+}
+.campPicked:hover {
+  transition: 0.1s;
+  filter: drop-shadow(0px 3px 4px rgba(242, 117, 22, 0.9));
 }
 .campGrey {
   min-width: 100px;
@@ -457,7 +478,7 @@ input[type="radio"] {
   border-radius: 30px;
   position: relative;
   p {
-  opacity: 0.5;
+    opacity: 0.5;
   }
 }
 
@@ -527,5 +548,65 @@ input[type="radio"] {
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+  }
+}
+#guestInfoPage {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  background-image: url(/src/assets/background_1.webp);
+  background-repeat: no-repeat;
+  background-color: #99caea;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#paymentDetails {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  background-image: url(/src/assets/background_1.webp);
+  background-repeat: no-repeat;
+  background-color: #99caea;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.checkoutform {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  background-image: url(/src/assets/background_1.webp);
+  background-repeat: no-repeat;
+  background-color: #99caea;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.formInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 90vw;
+  // max-width: 500px;
+  background: linear-gradient(
+    to bottom,
+    rgb(136, 136, 137),
+    rgb(226, 227, 226)
+  );
+  opacity: 0.7;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 3px solid #cccccc;
+
+  input {
+    width: 89%;
+    padding: 5px;
+    font-family: "Audiowide";
+    font-size: medium;
+    border: none;
+    background-color: transparent;
+    // border-radius: 20px;
   }
 }

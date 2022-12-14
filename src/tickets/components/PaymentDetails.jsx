@@ -5,7 +5,7 @@ import { confirmReservation, insertOrder } from "../../database";
 
 function PaymentDetails(props) {
   const theForm = useRef(null);
-  console.log(props.guestInfo[0].name);
+  // console.log(props.guestInfo[0].name);
   const {
     getCardNumberProps,
     getExpiryDateProps,
@@ -44,12 +44,11 @@ function PaymentDetails(props) {
   }
 
   return (
-    <div>
-      <h1>Payment Details</h1>
+    <div id="productList" className="box">
       <form ref={theForm} method="">
         <h2>Billing details</h2>
         <h3>Personal details</h3>
-        <section>
+        <section className="formInput">
           <label htmlFor="">Full Name</label>
           <input
             defaultValue={""}
@@ -182,48 +181,6 @@ function PaymentDetails(props) {
       >
         Complete payment
       </button>
-
-      {/* BASKET */}
-      <div>
-        <h3>Items</h3>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "ticket") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "extra") {
-              return (
-                <li key={item.name}>
-                  {item.name} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "camping spot") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          <li>Booking fee: 99,-</li>
-        </ul>
-        <h3>Total: {props.totalPrice() + 99},-</h3>
-      </div>
     </div>
   );
 }

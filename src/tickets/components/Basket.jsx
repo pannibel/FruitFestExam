@@ -68,25 +68,48 @@ function Basket(props) {
   } */
 
   function controlCamping(item) {
-         if (spotsAvailable[`${item}`] < props.count.total) {
-          props.setSpotAdded(false)
-          return "disabledTicket ticketItem"}   
-          else {
-            props.setSpotAdded(true)
-            return "ticketBasket ticketItem"
-          }
-      }
-
-    function removeSetCurBtn(item) {
-      if (spotsAvailable[`${item}`] < props.count.total) {
-        props.setSpotAdded(false)
-        props.setCurCampBtn("")}   
-        else {
-          props.setSpotAdded(true)
-          props.setCurCampBtn(item)
-        }
+    if (spotsAvailable[`${item}`] < props.count.total) {
+      props.setSpotAdded(false);
+      return "disabledTicket ticketItem";
+    } else {
+      props.setSpotAdded(true);
+      return "ticketBasket ticketItem";
+    }
   }
 
+  function removeSetCurBtn(item) {
+    console.log(props.curCampBtn);
+
+    if (spotsAvailable[`${item}`] < props.count.total) {
+      props.setSpotAdded(false);
+      props.setCurCampBtn("");
+    } else {
+      props.setSpotAdded(true);
+      props.setCurCampBtn(item);
+    }
+  }
+
+    function controlCamping(item) {
+    if (spotsAvailable[`${item}`] < props.count.total) {
+      props.setSpotAdded(false);
+      return "disabledTicket ticketItem";
+    } else {
+      props.setSpotAdded(true);
+      return "ticketBasket ticketItem";
+    }
+  }
+
+  function removeSetCurBtn(item) {
+    console.log(props.curCampBtn);
+
+    if (spotsAvailable[`${item}`] < props.count.total) {
+      props.setSpotAdded(false);
+      props.setCurCampBtn("");
+    } else {
+      props.setSpotAdded(true);
+      props.setCurCampBtn(item);
+    }
+  }
 
   return (
     <div id="basketCont">
@@ -95,9 +118,16 @@ function Basket(props) {
         <h4>Tickets:</h4>
         <div className="separateTickets">
           {props.basket.map((item) => {
-            if (item.type === "ticket") {
+            if (item.type == "ticket") {
               return (
-                <div key={item.name} className="ticketItem">
+                <div
+                  key={item.name}
+                  className={
+                    item.name == "VIP ticket"
+                      ? "ticketItem tickGold"
+                      : "ticketItem"
+                  }
+                >
                   <p>
                     {item.name} x {item.amount}
                   </p>
@@ -115,11 +145,10 @@ function Basket(props) {
             }
           })}
         </div>
-
         <h4>Extras:</h4>
         <div>
           {props.basket.map((item) => {
-            if (item.type === "extra") {
+            if (item.type == "extra") {
               return (
                 <div key={item.name} className="separateTickets ticketItem">
                   <p>{item.name} x {item.amount}</p>
@@ -141,11 +170,15 @@ function Basket(props) {
         <h4>Camping spot:</h4>
         <div>
           {props.basket.map((item) => {
-            if (item.name === "campingSpot") {
+            if (item.name == "campingSpot") {
               return (
-                <div key={item.type} className={controlCamping(item.type)} onChange={removeSetCurBtn(item.type)}>
+                <div
+                  key={item.type}
+                  className={controlCamping(item.type)}
+                  onChange={removeSetCurBtn(item.type)}
+                >
                   <p>{item.type}</p>
-                 {/*  <button
+                  {/*  <button
                     onClick={() => {
                       props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
@@ -168,15 +201,30 @@ function Basket(props) {
           onClick={() => {
             {
               props.setShowForm(true);
-              totalGuests()
+              totalGuests();
             }
           }}
+<<<<<<< HEAD
           className={props.basket.find((items) => items.type === "ticket")
           && props.spotAdded
           ? "basketCheckout" : "disabledCheckout"}
           disabled={props.basket.find((items) => items.type === "ticket")
           && props.spotAdded
            ? false : true}
+=======
+          className={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded
+              ? "basketCheckout"
+              : "disabledCheckout"
+          }
+          disabled={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded
+              ? false
+              : true
+          }
+>>>>>>> 66f923e6dbf4772aa24626c7316d4ce3c30621fb
         >
           {" "}
         </button>

@@ -2,11 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 function CurrentBand(props) {
-  const [currentMidgard, setCurrentMidgard] = useState();
-  const [currentVanaheim, setCurrentVanaheim] = useState();
-  const [currentJotunheim, setCurrentJotunheim] = useState();
-  // chekcing current time
-
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let showCurrentActTime =
@@ -17,7 +12,6 @@ function CurrentBand(props) {
   } else {
     currentHour = hourBasedIndex + ":00";
   }
-  // console.log(currentHour);
 
   // chekcing current day of the week
   const dayOfWeekName = new Date().toLocaleString("default", {
@@ -40,40 +34,30 @@ function CurrentBand(props) {
     });
     return returnValue;
   }
-  console.log(testForTuesday("Vanaheim"));
-  // console.log(currentMidgard);
-  // useEffect(() => {
-  //   playingMidgard();
-  //   playingVanaheim();
-  //   playingJotunheim();
-  // }, [props.currentBand]);
+  // console.log(testForTuesday("Vanaheim"));
 
-  // function pickImage(x) {
-  //   props.bands.map((el) => {
-  //     if (el.name == x) {
-  //       console.log(el.logo);
-  //       if (el.logo.includes("https://")) {
-  //         return <img src={el.logo} className="imgSingleBand" alt=""></img>;
-  //       } else if (
-  //         el.logo.includes("png") ||
-  //         el.logo.includes("jpg") ||
-  //         el.logo.includes("JPG") ||
-  //         el.logo.includes("svg")
-  //       ) {
-  //         return (
-  //           console.log(el.logo),
-  //           (
-  //             <img
-  //               src={"http://localhost:8080/logos/" + el.logo}
-  //               className="imgSingleBand"
-  //               alt=""
-  //             ></img>
-  //           )
-  //         );
-  //       }
-  //     }
-  //   });
-  // }
+  function pickImage(x) {
+    let imgObj;
+    props.bands.map((el) => {
+      if (el.name == x) {
+        console.log(el.logo);
+        if (el.logo.includes("https://")) {
+          console.log(el.logo);
+          imgObj = el.logo;
+          // return <img src={el.logo} className="imgSingleBand" alt=""></img>;
+        } else if (
+          el.logo.includes("png") ||
+          el.logo.includes("jpg") ||
+          el.logo.includes("JPG") ||
+          el.logo.includes("svg")
+        ) {
+          imgObj = `http://localhost:8080/logos/ + ${el.logo}`;
+        }
+      }
+    });
+    console.log(imgObj);
+    return imgObj;
+  }
   return (
     <div className="anotherCont">
       <div className="homeCont">
@@ -89,22 +73,32 @@ function CurrentBand(props) {
 
           <div className="currentBandBox">
             <div className="currentBandRow colorMidgard">
-              {/* {pickImage(currentMidgard)} */}
-
+              <img
+                src={pickImage(testForTuesday("Midgard"))}
+                className="imgSingleBand"
+                alt=""
+              ></img>
               <div className="playerBand">{testForTuesday("Midgard")}</div>
-              <div className="playerStage">MIDGARD</div>
+              <div className="playerStage">Midgard</div>
             </div>
-            <div className="currentBandRow  colorVanaheim">
-              {/* {pickImage(currentVanaheim)} */}
 
+            <div className="currentBandRow  colorVanaheim">
+              <img
+                src={pickImage(testForTuesday("Vanaheim"))}
+                className="imgSingleBand"
+                alt=""
+              ></img>
               <div className="playerBand">{testForTuesday("Vanaheim")}</div>
-              <div className="playerStage">VANAHEIM</div>
+              <div className="playerStage">Vanaheim</div>
             </div>
             <div className="currentBandRow colorJotunheim">
-              {/* {pickImage(currentJotunheim)} */}
-
+              <img
+                src={pickImage(testForTuesday("Jotunheim"))}
+                className="imgSingleBand"
+                alt=""
+              ></img>
               <div className="playerBand">{testForTuesday("Jotunheim")}</div>
-              <div className="playerStage">JOTUNHEIM</div>
+              <div className="playerStage">Jotunheim</div>
             </div>
           </div>
         </div>

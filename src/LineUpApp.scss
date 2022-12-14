@@ -57,41 +57,26 @@ button:focus-visible {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   transition: 0.5s;
-
-  .about {
+  button {
     padding: 5px;
     color: #213547;
-    background-image: url("./assets/buttons/about.svg");
     background-size: cover;
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
     width: 150px;
     height: 60px;
+  }
+  .about {
+    background-image: url("./assets/buttons/about.svg");
   }
 
   .merch {
-    padding: 5px;
-    color: #213547;
     background-image: url("./assets/buttons/merch.svg");
-    background-size: cover;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 150px;
-    height: 60px;
   }
 
   .map {
-    padding: 5px;
-    color: #213547;
     background-image: url("./assets/buttons/map.svg");
-    background-size: cover;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-    width: 150px;
-    height: 60px;
   }
 }
 
@@ -247,7 +232,7 @@ button:focus-visible {
 .appCont {
   display: flex;
   justify-content: center;
-  margin: 20px 20px 120px 20px;
+  margin: 0px 20px 0px 20px;
 }
 
 .anotherCont {
@@ -267,6 +252,13 @@ button:focus-visible {
   }
 
   // currently playing player
+  h3 {
+    font-size: xx-large;
+    font-family: "Chopsic";
+    color: #7000ff;
+    margin: 0;
+    margin-bottom: 2vh;
+  }
   .currentlyCont {
     display: flex;
     justify-self: flex-end;
@@ -321,28 +313,35 @@ button:focus-visible {
 
     margin: 0vh 5vw 0vh 5vw;
     padding: 5%;
-    h3 {
-      font-size: xx-large;
-      font-family: "Chopsic";
-      color: #7000ff;
-      margin: 0;
-      margin-bottom: 2vh;
-    }
 
+    .currentContCont {
+      display: grid;
+      grid-template-columns: 10% 90%;
+    }
     .currentBandBox {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding-top: 20px;
       gap: 20px;
+      img {
+        width: 80px;
+      }
 
       .currentBandRow {
         font-size: medium;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
+        display: grid;
+        // flex-direction: column;
+        // flex-wrap: nowrap;
         justify-content: space-between;
         gap: 5px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+          "img band"
+          "img stage";
+        img {
+          grid-area: img;
+        }
       }
 
       .playerBand {
@@ -360,7 +359,16 @@ button:focus-visible {
     }
   }
 }
-
+.imgSingleBand {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: rgba(255, 255, 255, 0.6) 2px solid;
+}
 .bandsCont {
   display: flex;
   flex-direction: column;
@@ -385,16 +393,6 @@ button:focus-visible {
     border: 3px solid #cccccc;
 
     // band list
-    .imgSingleBand {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      object-fit: cover;
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      border: rgba(255, 255, 255, 0.6) 2px solid;
-    }
 
     .singleBandCont {
       display: grid;

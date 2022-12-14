@@ -30,8 +30,7 @@ function GuestInfo(props) {
   }
 
   return (
-    <div>
-      <h1>Guest Info</h1>
+    <div id="productList" className="box">
       <form
         ref={theForm}
         className="inputForm"
@@ -43,7 +42,8 @@ function GuestInfo(props) {
               name: "next",
             },
           });
-        }}>
+        }}
+      >
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3>Guest {i + 1}</h3>
@@ -53,8 +53,7 @@ function GuestInfo(props) {
               id={i}
               placeholder="Full name"
               defaultValue={
-                !props.guestInfo.length ?
-                "" : props.guestInfo[i].name
+                !props.guestInfo.length ? "" : props.guestInfo[i].name
               }
             />
             <input
@@ -63,56 +62,13 @@ function GuestInfo(props) {
               id={i}
               placeholder="Email address"
               defaultValue={
-                !props.guestInfo.length ?
-                "" : props.guestInfo[i].email
+                !props.guestInfo.length ? "" : props.guestInfo[i].email
               }
             />
           </div>
         ))}
         <button name="next">Next</button>
       </form>
-
-      {/* BASKET */}
-      <div>
-        <h3>Items</h3>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "ticket") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "extra") {
-              return (
-                <li key={item.name}>
-                  {item.name} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          {props.basket.map((item) => {
-            if (item.type === "camping spot") {
-              return (
-                <li key={item.name}>
-                  {item.name} x {item.amount} | {item.amount * item.price},-
-                </li>
-              );
-            }
-          })}
-        </ul>
-        <ul>
-          <li>Booking fee: 99,-</li>
-        </ul>
-        <h3>Total: {props.totalPrice() + 99},-</h3>
-      </div>
     </div>
   );
 }
