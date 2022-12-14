@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import GuestInfo from "./GuestInfo";
+import BasketCheckout from "./BasketCheckout";
 import PaymentDetails from "./PaymentDetails";
 import Pay from "./Pay";
 import Confirmation from "./Confirmation";
@@ -33,47 +34,61 @@ function CheckoutForm(props) {
   }
 
   return (
-    <div className="checkoutform">
-      {state == 1 ? (
-        <GuestInfo
-          changePage={changePage}
-          guestNumber={props.guestNumber}
-          guestInfo={guestInfo}
-          setGuestInfo={setGuestInfo}
-          formValues={props.formValues}
-          setFormValues={props.setFormValues}
-          basket={props.basket}
-          totalPrice={totalPrice}
-        />
-      ) : (
-        ""
-      )}
-      {state == 2 ? (
-        <PaymentDetails
-          guestInfo={guestInfo}
-          setGuestInfo={setGuestInfo}
-          formValues={props.formValues}
-          setFormValues={props.setFormValues}
-          changePage={changePage}
-          billing={billing}
-          setBilling={setBilling}
-          basket={props.basket}
-          totalPrice={totalPrice}
-          idValue={props.idValue}
-        />
-      ) : (
-        ""
-      )}
-      {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
-      {state == 3 ? (
-        <Confirmation
-          changePage={changePage}
-          basket={props.basket}
-          totalPrice={totalPrice}
-        />
-      ) : (
-        ""
-      )}
+    <div>
+      <div className="checkoutform">
+        {state == 1 ? (
+          <GuestInfo
+            changePage={changePage}
+            guestNumber={props.guestNumber}
+            guestInfo={guestInfo}
+            setGuestInfo={setGuestInfo}
+            // formValues={formValues}
+            // setFormValues={setFormValues}
+            basket={props.basket}
+            totalPrice={totalPrice}
+          />
+        ) : (
+          ""
+        )}
+        {state == 2 ? (
+          <PaymentDetails
+            // formValues={formValues}
+            // setFormValues={setFormValues}
+            changePage={changePage}
+            billing={billing}
+            setBilling={setBilling}
+            basket={props.basket}
+            totalPrice={totalPrice}
+            idValue={props.idValue}
+          />
+        ) : (
+          ""
+        )}
+        {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
+        {state == 3 ? (
+          <Confirmation
+            changePage={changePage}
+            basket={props.basket}
+            totalPrice={totalPrice}
+          />
+        ) : (
+          ""
+        )}
+        {state != 3 ? (
+          <BasketCheckout
+            changePage={changePage}
+            guestNumber={props.guestNumber}
+            guestInfo={guestInfo}
+            setGuestInfo={setGuestInfo}
+            // formValues={formValues}
+            // setFormValues={setFormValues}
+            basket={props.basket}
+            totalPrice={totalPrice}
+          />
+        ) : (
+          ""
+        )}
+      </div>{" "}
       <button
         onClick={() => {
           {

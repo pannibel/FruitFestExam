@@ -10,7 +10,7 @@ function CurrentBand(props) {
   if (hourBasedIndex < 10) {
     currentHour = "0" + hourBasedIndex + ":00";
   } else {
-    currentHour = hourBasedIndex + 2 + ":00";
+    currentHour = hourBasedIndex + ":00";
   }
 
   // chekcing current day of the week

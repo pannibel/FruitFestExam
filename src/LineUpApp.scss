@@ -252,6 +252,13 @@ button:focus-visible {
   }
 
   // currently playing player
+  h3 {
+    font-size: xx-large;
+    font-family: "Chopsic";
+    color: #7000ff;
+    margin: 0;
+    margin-bottom: 2vh;
+  }
   .currentlyCont {
     display: flex;
     justify-self: flex-end;
@@ -266,13 +273,7 @@ button:focus-visible {
 
     margin: 0vh 5vw 0vh 5vw;
     padding: 5%;
-    h3 {
-      font-size: xx-large;
-      font-family: "Chopsic";
-      color: #7000ff;
-      margin: 0;
-      margin-bottom: 2vh;
-    }
+
     .currentContCont {
       display: grid;
       grid-template-columns: 10% 90%;
