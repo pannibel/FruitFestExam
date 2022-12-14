@@ -3,8 +3,6 @@ import { useRef } from "react";
 import { useState, useEffect } from "react";
 
 function CampingProduct(props) {
-  const [curCampBtn, setCurCampBtn] = useState();
-
   const [spotsAvailable, setSpotsAvailable] = useState({
     Svartheim: "",
     Nilfheim: "",
@@ -24,22 +22,6 @@ function CampingProduct(props) {
 
     // console.log(spotsAvailable);
   }, [props.campingSpots]);
-
-  useEffect(() => {
-      function removeSetCurBtn() {
-        console.log(curCampBtn);
-
-        let areas;
-
-        areas = props.basket.map((items) => {
-          if (items.name === "campingSpot") 
-          return items
-        })
-
-        console.log(areas)
-    }
-    removeSetCurBtn();
-  }, []);
 
   function checkAvailSpots(item) {
     if (
@@ -88,7 +70,7 @@ function CampingProduct(props) {
         <label
           htmlFor="Svartheim"
           className={
-            curCampBtn == "Svartheim"
+            props.curCampBtn == "Svartheim"
               ? "campPicked"
               : spotsAvailable
               ? checkAvailSpots("Svartheim")
@@ -96,7 +78,7 @@ function CampingProduct(props) {
           }
           onClick={() => {
             checkDisabled("Svartheim") === false
-              ? setCurCampBtn("Svartheim")
+              ? props.setCurCampBtn("Svartheim")
               : null;
           }}>
           <p>Svartheim</p>
@@ -112,7 +94,7 @@ function CampingProduct(props) {
         <label
           htmlFor="Nilfheim"
           className={
-            curCampBtn == "Nilfheim"
+            props.curCampBtn == "Nilfheim"
               ? "campPicked"
               : spotsAvailable
               ? checkAvailSpots("Nilfheim")
@@ -120,7 +102,7 @@ function CampingProduct(props) {
           }
           onClick={() => {
             checkDisabled("Nilfheim") === false
-              ? setCurCampBtn("Nilfheim")
+              ? props.setCurCampBtn("Nilfheim")
               : null;
           }}>
           <p>Nilfheim</p>
@@ -136,7 +118,7 @@ function CampingProduct(props) {
         <label
           htmlFor="Helheim"
           className={
-            curCampBtn == "Helheim"
+            props.curCampBtn == "Helheim"
               ? "campPicked"
               : spotsAvailable
               ? checkAvailSpots("Helheim")
@@ -144,7 +126,7 @@ function CampingProduct(props) {
           }
           onClick={() => {
             checkDisabled("Helheim") === false
-              ? setCurCampBtn("Helheim")
+              ? props.setCurCampBtn("Helheim")
               : null;
           }}>
           <p>Helheim</p>
@@ -160,7 +142,7 @@ function CampingProduct(props) {
         <label
           htmlFor="Muspelheim"
           className={
-            curCampBtn == "Muspelheim"
+            props.curCampBtn == "Muspelheim"
               ? "campPicked"
               : spotsAvailable
               ? checkAvailSpots("Muspelheim")
@@ -168,7 +150,7 @@ function CampingProduct(props) {
           }
           onClick={() => {
             checkDisabled("Muspelheim") === false
-              ? setCurCampBtn("Muspelheim")
+              ? props.setCurCampBtn("Muspelheim")
               : null;
           }}>
           <p>Muspelheim</p>
@@ -184,7 +166,7 @@ function CampingProduct(props) {
         <label
           htmlFor="Alfheim"
           className={
-            curCampBtn == "Alfheim"
+            props.curCampBtn == "Alfheim"
               ? "campPicked"
               : spotsAvailable
               ? checkAvailSpots("Alfheim")
@@ -192,7 +174,7 @@ function CampingProduct(props) {
           }
           onClick={() => {
             checkDisabled("Alfheim") === false
-              ? setCurCampBtn("Alfheim")
+              ? props.setCurCampBtn("Alfheim")
               : null;
           }}>
           <p>Alfheim</p>
