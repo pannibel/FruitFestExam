@@ -14,7 +14,7 @@
   color: #2effbc;
 }
 body {
-  background-image: url("./assets/background_1.webp");
+  // background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
   background-color: #99caea;
   background-position: center;
@@ -56,7 +56,7 @@ button:focus-visible {
   padding-top: 10rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  transition: 0.2s;
+  transition: 0.5s;
 
   .about {
     padding: 5px;
@@ -124,7 +124,9 @@ button:focus-visible {
 .searchbarCont {
   display: flex;
   align-items: center;
-
+  justify-content: center;
+  width: 90vw;
+  max-width: 500px;
   background: linear-gradient(
     to bottom,
     rgb(136, 136, 137),
@@ -167,12 +169,18 @@ button:focus-visible {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10%;
   height: 100px;
+  // justify-content: center;
+  justify-items: center;
+  justify-content: center;
 
   button {
     border: 0;
     height: 100%;
     width: 100%;
     transition: 0.3s;
+    max-width: 100px;
+    // align-self: center;
+    justify-content: center;
   }
 
   .homeOn {
@@ -239,6 +247,7 @@ button:focus-visible {
 .appCont {
   display: flex;
   justify-content: center;
+  margin: 20px 20px 120px 20px;
 }
 
 .anotherCont {
@@ -315,7 +324,7 @@ button:focus-visible {
 .bandsCont {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 120px 20px;
+
   gap: 20px;
 
   .logo_small {
@@ -401,19 +410,24 @@ button:focus-visible {
 .skedgeCont {
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 120px 20px;
   gap: 20px;
 
   .logo_small {
     width: 30vw;
     justify-self: flex-start;
   }
-
+  #weekDaysCont {
+    width: 90vw;
+    max-width: 500px;
+    overflow-x: hidden;
+  }
   .weekDays {
     overflow: auto;
     white-space: nowrap;
-    width: 300px; // display: flex;
-    flex-direction: row;
+    width: 100%;
+
+    // display: flex;
+    // flex-direction: row;
     // flex-wrap: wrap;
     justify-content: center;
     button {

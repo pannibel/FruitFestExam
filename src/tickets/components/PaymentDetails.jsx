@@ -5,7 +5,7 @@ import { confirmReservation, insertOrder } from "../../database";
 
 function PaymentDetails(props) {
   const theForm = useRef(null);
-
+  console.log(props.guestInfo[0].name);
   const {
     getCardNumberProps,
     getExpiryDateProps,
