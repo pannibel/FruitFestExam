@@ -1,8 +1,27 @@
 import React from "react";
 import { useState } from "react";
 import { reserveSpot } from "../../database";
+import { useEffect } from "react";
 
 function Basket(props) {
+  const [spotsAvailable, setSpotsAvailable] = useState({
+    Svartheim: "",
+    Nilfheim: "",
+    Helheim: "",
+    Alfheim: "",
+    Muspelheim: "",
+  });
+
+  useEffect(() => {
+    props.campingSpots.forEach((el) => {
+      setSpotsAvailable((old) => {
+        const newObj = { ...old };
+        newObj[el.area] = el.available;
+        return newObj;
+      });
+    });
+  }, [props.campingSpots]);
+
   function totalPrice() {
     let total = 0;
     props.basket.forEach((item) => {
@@ -34,6 +53,14 @@ function Basket(props) {
     console.log(area);
     console.log(i);
   }
+
+  function controlCamping(item) {
+         if (spotsAvailable[`${item}`] < props.count.total) {
+          return "disabledTicket ticketItem"}   
+          else {
+            return "ticketBasket ticketItem"
+          }
+      }
 
   return (
     <div id="basketCont">
@@ -90,9 +117,9 @@ function Basket(props) {
           {props.basket.map((item) => {
             if (item.name === "campingSpot") {
               return (
-                <div key={item.type} className="ticketBasket ticketItem">
+                <div key={item.type} className={controlCamping(item.type)}>
                   <p>{item.type}</p>
-                  <button
+                 {/*  <button
                     onClick={() => {
                       props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
@@ -100,7 +127,7 @@ function Basket(props) {
                     className="basketBtnRmv"
                   >
                     {" "}
-                  </button>
+                  </button> */}
                 </div>
               );
             }
@@ -119,7 +146,9 @@ function Basket(props) {
             }
           }}
           className={props.basket.find((items) => items.type === "ticket") && props.spotAdded ? "basketCheckout" : "disabledCheckout"}
-          disabled={props.basket.find((items) => items.type === "ticket") && props.spotAdded ? false : true}
+          disabled={props.basket.find((items) => items.type === "ticket")
+           && props.spotAdded 
+           ? false : true}
         >
           {" "}
         </button>

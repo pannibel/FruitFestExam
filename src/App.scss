@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Chopsic";
+    src: url("./assets/font_Chopsic/chopsic-webfont.woff") format("woff"),
+      url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
+      url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
+  }
+  body {
+    background-image: url("./assets/background_1.webp");
+    background-repeat: no-repeat;
+    background-color: #99caea;
+    background-attachment: fixed;
+  }
+
+.main {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 75px;
+
+  .timerCont {
+    background-image: url("./assets/timer_bgr.svg");
+    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: xx-large;
+        color:blueviolet;
+    }
+  }
+
+  .logo {
+    width: 30%;
+    margin: 50px 0px 50px 0px;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7));
+
+  }
+}

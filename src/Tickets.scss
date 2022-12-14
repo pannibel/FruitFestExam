@@ -448,6 +448,19 @@ input[type="radio"] {
   margin-bottom: 10px;
 }
 
+.disabledTicket.ticketItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: rgba(204, 204, 204, 0.5);
+  padding: 10px 15px;
+  border-radius: 30px;
+  position: relative;
+  p {
+  opacity: 0.5;
+  }
+}
+
 .basketCheckout {
   border: 0;
   margin-top: 20px;

@@ -11,10 +11,18 @@ function GuestInfo(props) {
     e.preventDefault();
     const nextData = [];
 
+    let names = theForm.current.elements.fullname;
+    let emails = theForm.current.elements.email;
+
+    if (props.guestNumber < 2) {
+      names = [theForm.current.elements.fullname];
+      emails = [theForm.current.elements.email];
+    }
+
     for (let l = 0; l < props.guestNumber; l++) {
       nextData.push({
-        name: theForm.current.elements.fullname[l].value,
-        email: theForm.current.elements.email[l].value,
+        name: names[l].value,
+        email: emails[l].value,
       });
       props.setGuestInfo(nextData);
     }
@@ -24,30 +32,45 @@ function GuestInfo(props) {
   return (
     <div>
       <h1>Guest Info</h1>
-      <form ref={theForm} className="inputForm">
+      <form
+        ref={theForm}
+        className="inputForm"
+        onSubmit={(e) => {
+          saveGuestInfo(e);
+          props.changePage({
+            preventDefault: () => {},
+            target: {
+              name: "next",
+            },
+          });
+        }}>
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3>Guest {i + 1}</h3>
-            <input type="text" name="fullname" id={i} placeholder="Full name" />
+            <input
+              type="text"
+              name="fullname"
+              id={i}
+              placeholder="Full name"
+              defaultValue={
+                !props.guestInfo.length ?
+                "" : props.guestInfo[i].name
+              }
+            />
             <input
               type="email"
               name="email"
               id={i}
               placeholder="Email address"
+              defaultValue={
+                !props.guestInfo.length ?
+                "" : props.guestInfo[i].email
+              }
             />
           </div>
         ))}
+        <button name="next">Next</button>
       </form>
-
-      <button
-        onClick={(e) => {
-          saveGuestInfo(e);
-          props.changePage(e);
-        }}
-        name="next"
-      >
-        Next
-      </button>
 
       {/* BASKET */}
       <div>
