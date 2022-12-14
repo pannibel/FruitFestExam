@@ -116,6 +116,7 @@ function Products(props) {
           campingSpots={props.campingSpots}
           spotAdded={props.spotAdded}
           guestNumber={props.guestNumber}
+          basket={props.basket}
         />
       </form>
     </div>

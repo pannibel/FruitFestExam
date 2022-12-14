@@ -126,7 +126,9 @@ function TicketProduct(props) {
               className="vipDec">
               {" "}
             </button>
-            <div>{props.count.vip}</div>
+            <div>
+              {props.count.vip}
+              </div>
             <button
               ref={vipInc}
               name="vipInc"
