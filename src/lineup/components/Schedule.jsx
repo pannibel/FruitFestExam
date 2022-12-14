@@ -67,51 +67,48 @@ function Bandslist(props) {
         alt="big logo of the festival"
       ></img>
 
-      <div className="searchbarCont">
+      {/* <div className="searchbarCont">
         <input
-          // ref={theInput}
           type="text"
           name="searchbar"
-          placeholder="search..."
-        />
+          placeholder="search..."/>
         <button
           className="searchBtn"
           button-name="search"
-          /* onClick={searchList} */
-        >
-          {" "}
-        </button>
-      </div>
+        ></button>
+      </div> */}
 
-      <div className="weekDays">
-        <button
-          onClick={() => setSchedDay("mon")}
-          className={schedDay === "mon" ? checkDay("mon") : "mon_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("tue")}
-          className={schedDay === "tue" ? checkDay("tue") : "tue_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("wed")}
-          className={schedDay === "wed" ? checkDay("wed") : "wed_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("thu")}
-          className={schedDay === "thu" ? checkDay("thu") : "thu_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("fri")}
-          className={schedDay === "fri" ? checkDay("fri") : "fri_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("sat")}
-          className={schedDay === "sat" ? checkDay("sat") : "sat_off"}
-        ></button>
-        <button
-          onClick={() => setSchedDay("sun")}
-          className={schedDay === "sun" ? checkDay("sun") : "sun_off"}
-        ></button>
+      <div id="weekDaysCont">
+        <div className="weekDays">
+          <button
+            onClick={() => setSchedDay("mon")}
+            className={schedDay === "mon" ? checkDay("mon") : "mon_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("tue")}
+            className={schedDay === "tue" ? checkDay("tue") : "tue_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("wed")}
+            className={schedDay === "wed" ? checkDay("wed") : "wed_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("thu")}
+            className={schedDay === "thu" ? checkDay("thu") : "thu_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("fri")}
+            className={schedDay === "fri" ? checkDay("fri") : "fri_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("sat")}
+            className={schedDay === "sat" ? checkDay("sat") : "sat_off"}
+          ></button>
+          <button
+            onClick={() => setSchedDay("sun")}
+            className={schedDay === "sun" ? checkDay("sun") : "sun_off"}
+          ></button>
+        </div>
       </div>
 
       <div className="skedgeList">

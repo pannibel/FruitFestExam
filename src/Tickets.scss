@@ -5,12 +5,17 @@
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
 body {
-  background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
   background-color: #99caea;
-  // background-position: center;
+  background-position: center;
   background-attachment: fixed;
-  // background-size: cover;
+  background-size: cover;
+}
+.backClass_1 {
+  background-image: url("./assets/background_1.webp");
+}
+.backClass_2 {
+  background-image: url("./assets/background_2.jpg");
 }
 
 .form-control {

@@ -6,6 +6,9 @@
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
 :root {
+  ul {
+    margin: 0;
+  }
   font-family: Audiowide, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -32,7 +35,7 @@ a:hover {
 }
 
 body {
-  background-color: #213547;
+  // background-color: #213547;
   margin: 0;
   // display: flex;
   place-items: center;
@@ -41,6 +44,7 @@ body {
 }
 
 h1 {
+  margin: 0;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -84,6 +88,12 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap-reverse;
+  background-image: url("./assets/background_1.webp");
+  background-repeat: no-repeat;
+  background-color: #99caea;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 
   li {
     list-style: none;

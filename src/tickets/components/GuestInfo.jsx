@@ -2,6 +2,7 @@ import React from "react";
 import { useRef, useState } from "react";
 
 function GuestInfo(props) {
+  console.log(props.guestInfo);
   const theForm = useRef(null);
   let i = 0;
 
