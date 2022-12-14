@@ -64,6 +64,21 @@ function Basket(props) {
           }
       }
 
+
+
+    function removeSetCurBtn(item) {
+      console.log(props.curCampBtn);
+
+      if (spotsAvailable[`${item}`] < props.count.total) {
+        props.setSpotAdded(false)
+        props.setCurCampBtn("")}   
+        else {
+          props.setSpotAdded(true)
+          props.setCurCampBtn(item)
+        }
+  }
+
+
   return (
     <div id="basketCont">
       <div id="basket">
@@ -119,7 +134,7 @@ function Basket(props) {
           {props.basket.map((item) => {
             if (item.name === "campingSpot") {
               return (
-                <div key={item.type} className={controlCamping(item.type)}>
+                <div key={item.type} className={controlCamping(item.type)} onChange={removeSetCurBtn(item.type)}>
                   <p>{item.type}</p>
                  {/*  <button
                     onClick={() => {

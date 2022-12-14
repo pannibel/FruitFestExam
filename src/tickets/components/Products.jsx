@@ -117,6 +117,8 @@ function Products(props) {
           spotAdded={props.spotAdded}
           guestNumber={props.guestNumber}
           basket={props.basket}
+          curCampBtn={props.curCampBtn}
+          setCurCampBtn={props.setCurCampBtn}
         />
       </form>
     </div>

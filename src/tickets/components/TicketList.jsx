@@ -6,7 +6,9 @@ import { confirmReservation } from "../../database";
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
-  let [count, setCount] = useState({ reg: 0, vip: 0, total: 0});
+  const [curCampBtn, setCurCampBtn] = useState();
+
+  let [count, setCount] = useState({ reg: 0, vip: 0, total: 0 });
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/available-spots");
@@ -17,9 +19,8 @@ function TicketList(props) {
     getData();
   }, []);
 
-  
   function addToBasket(data) {
-     if (props.basket.find((entry) => entry.name === data.name)) {
+    if (props.basket.find((entry) => entry.name === data.name)) {
       props.setBasket((oldBasket) =>
         oldBasket.map((entry) => {
           if (entry.name !== data.name) {
@@ -29,22 +30,21 @@ function TicketList(props) {
 
           if (entry.name === "Regular ticket") {
             copy.amount = count.reg;
-          };
+          }
           if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
-          };
+          }
           if (entry.name === "campingSpot") {
             copy.name = data.name;
             copy.type = data.type;
           }
           return copy;
-        }
-        )
-      )
+        })
+      );
     } else {
       props.setBasket((oldBasket) => oldBasket.concat({ ...data }));
     }
-    }
+  }
 
   function removeFromBasket(name) {
     // find and modify a product
@@ -52,8 +52,8 @@ function TicketList(props) {
       const subtracted = oldBasket.map((item) => {
         if (item.name === "campingSpot") {
           setSpotAdded(false);
-            return {};
-          };
+          return {};
+        }
 
         if (item.name === name) {
           return { ...item, amount: 0 };
@@ -95,6 +95,8 @@ function TicketList(props) {
           guestNumber={props.guestNumber}
           campingSpots={campingSpots}
           basket={props.basket}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
         />
         <Basket
           setIdValue={props.setIdValue}
@@ -109,6 +111,8 @@ function TicketList(props) {
           spotAdded={spotAdded}
           setGuestNumber={props.setGuestNumber}
           guestNumber={props.guestNumber}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
         />
         {/* <button onClick={confirmReservation}>yellow</button> */}
       </div>
