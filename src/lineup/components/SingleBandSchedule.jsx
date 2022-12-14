@@ -6,7 +6,7 @@ function SingleBandSchedule(props) {
   // const [likedBand, setLikedBand] = useState(true);
   const [isBreak, setBreak] = useState(true);
   const [end, setEnd] = useState();
-  console.log(props.data);
+  // console.log(props.data);
   useEffect(() => {
     props.data[1].map((el) => {
       if (el.act !== "break") {
@@ -41,7 +41,7 @@ function SingleBandSchedule(props) {
       );
     }
   }
-  console.log(props.data[1]);
+  // console.log(props.data[1]);
 
   return (
     <div className="timeSlot">
