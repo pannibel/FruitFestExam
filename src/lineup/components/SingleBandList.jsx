@@ -31,6 +31,7 @@ function SingleBand(props) {
           <p>{props.data.letter}</p>
         </div>
       ) : (
+        <div className="contCont">
         <div className="singleBandCont" onClick={() => props.openOneBand(props.data)}>
           {" "}
           <img
@@ -40,20 +41,19 @@ function SingleBand(props) {
             alt="img_singleband"
           ></img>
           <h4>{props.data.name}</h4>
-          <div className="likeBtn">
-            <button
-              className="buttBlue"
-              onClick={(e) => {
-                handleClick(e);
-              }}
-              value="like"
-            >{/* {likedBand ? "like it" : "liked"} */}
-            </button>
-            {/*         <div className={likedBand ? "buttBlue" : "buttRed"}>
-        {/* {JSON.stringify(likedBand)} }
-      </div> */}
-          </div>
+          
         </div>
+        <div className="likeBtn">
+        <button
+          className="buttBlue"
+          onClick={(e) => {
+            handleClick(e);
+          }}
+          value="like"
+        >
+        </button>
+      </div>
+      </div>
       )}
     </div>
   );
