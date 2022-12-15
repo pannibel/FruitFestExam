@@ -112,8 +112,8 @@ function Bandslist(props) {
       </div>
 
       <div className="skedgeList">
-        {Object.entries(testArr2).map((x, index) => {
-          return <SingleBandSchedule data={x} key={index} />;
+        {Object.entries(testArr2).map((x, i) => {
+          return <SingleBandSchedule data={x} key={i} />;
         })}
       </div>
     </div>
