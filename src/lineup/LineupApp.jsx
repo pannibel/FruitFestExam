@@ -66,6 +66,8 @@ function Lineup() {
     setBurgerState(!burgerState);
     console.log("burger menu is open " + burgerState);
   }
+
+  
   return (
     <div className="appCont">
       {lineUpPage == 1 ? (

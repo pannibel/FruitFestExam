@@ -6,8 +6,8 @@ import OneBand from "./OneBand";
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
   const [singleBandState, setSingleBandState] = useState(false);
+  const [openedBand, setOpenedband] = useState();
 
-  // let searchedBands = [];
   const theInput = useRef(null);
 
   let sortedBands = props.bands.sort((a, b) => {
@@ -38,30 +38,15 @@ function Bandslist(props) {
     }
   }
 
-  function openOneBand() {
-    setSingleBandState(true);
+  function openOneBand(band) {
+    setSingleBandState(!singleBandState);
+    setOpenedband(band)
     console.log("single band is open " + singleBandState);
-  }
-
-  function closeOneBand() {
-    setSingleBandState(false);
-
+    console.log(band)
   }
 
   return (
     <div className="bandsCont">
-      {!singleBandState}
-      {singleBandState && (
-        <>
-          <OneBand
-            openOneBand={openOneBand}
-            closeOneBand={closeOneBand}
-            data={props.bands}
-            singleBandState={singleBandState}
-            setSingleBandState={setSingleBandState}
-          />
-        </>
-      )}
 
       <img
         className="logo_small"
@@ -103,6 +88,19 @@ function Bandslist(props) {
                 openOneBand={openOneBand}
               />
             ))}
+      </div>
+
+<div className={singleBandState ? "oneBandCont" : "hidden"}>
+      {!singleBandState}
+      {singleBandState && (
+          <OneBand
+            openOneBand={openOneBand}
+            openedBand={openedBand}
+            data={props.bands}
+            singleBandState={singleBandState}
+            setSingleBandState={setSingleBandState}
+          />
+      )}
       </div>
     </div>
   );

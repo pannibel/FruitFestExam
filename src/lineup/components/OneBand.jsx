@@ -1,37 +1,32 @@
 import React from 'react'
 
 function OneBand(props) {
-/*   let imageDir = props.data.logo;
+let imageDir = props.openedBand.logo;
   function pickImage() {
     if (!imageDir.includes("https://")) {
-      imageDir = "http://localhost:8080/logos/" + props.data.logo;
+      imageDir = "http://localhost:8080/logos/" + props.openedBand.logo;
     }
   }
-  pickImage(); */
+  pickImage();
 
   return (
-    <div>
-      <div className="singleBandCont" onClick={props.openOneBand}>
+      <div className={props.singleBandState ? "oneBand" : "hidden"}>
           {" "}
           <img
-            // src={imageDir}
-            // alt={props.data.logoCredits}
-            className="imgSingleBand"
-            alt="img_singleband"
+            src={imageDir}
+            alt={props.data.logoCredits}
+            className="imgOneBand"
           ></img>
-          <h4>{props.data.name}</h4>
-          <div className="likeBtn">
-            <button
-              className="buttBlue"
-              onClick={(e) => {
-                handleClick(e);
-              }}
-              value="like"
-            >
-            </button>
+          <h3>{props.openedBand.name}</h3>
+
+          <div className='genreCont'>
+          <p>{props.openedBand.genre}</p>
           </div>
-        </div>
-      <button onClick={props.closeOneBand}>X</button>
+
+          <div className='bandBioCont'>
+          <p className='bandBio'>{props.openedBand.bio}</p>
+          </div>
+      <button className="closeBtn" onClick={props.openOneBand}> </button>
     </div>
   )
 }

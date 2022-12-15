@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import OneBand from "./OneBand";
 
 function SingleBand(props) {
   // console.log(props.data.name[0]);
@@ -21,14 +22,16 @@ function SingleBand(props) {
   }
   pickImage();
 
+
   return (
     <div>
+
       {props.data.hasOwnProperty("letter") ? (
         <div className="bandslistLetter">
           <p>{props.data.letter}</p>
         </div>
       ) : (
-        <div className="singleBandCont" onClick={props.openOneBand}>
+        <div className="singleBandCont" onClick={() => props.openOneBand(props.data)}>
           {" "}
           <img
             src={imageDir}
@@ -44,8 +47,7 @@ function SingleBand(props) {
                 handleClick(e);
               }}
               value="like"
-            >
-              {/* {likedBand ? "like it" : "liked"} */}
+            >{/* {likedBand ? "like it" : "liked"} */}
             </button>
             {/*         <div className={likedBand ? "buttBlue" : "buttRed"}>
         {/* {JSON.stringify(likedBand)} }
