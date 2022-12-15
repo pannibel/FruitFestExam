@@ -469,7 +469,9 @@ button:focus-visible {
     width: 90vw;
     max-width: 500px;
     overflow-x: hidden;
+    ::-webkit-scrollbar{display: none}
   }
+  
   .weekDays {
     overflow: auto;
     white-space: nowrap;
