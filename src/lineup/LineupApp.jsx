@@ -14,7 +14,6 @@ function Lineup() {
   const [burgerState, setBurgerState] = useState(false);
   const [currentBand, setCurrentBand] = useState([]);
 
-
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
     document.querySelector("body").classList.add("backClass_1");
@@ -68,7 +67,6 @@ function Lineup() {
     console.log("burger menu is open " + burgerState);
   }
 
-  
   return (
     <div className="appCont">
       {lineUpPage == 1 ? (
@@ -76,7 +74,7 @@ function Lineup() {
       ) : (
         ""
       )}
-      {lineUpPage == 2 ? <Bandslist bands={bands}/> : ""}
+      {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
       {lineUpPage == 3 ? (
         <Schedule currentBand={currentBand} bands={bands} />
       ) : (

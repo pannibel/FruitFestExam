@@ -4,13 +4,6 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
-body {
-  background-repeat: no-repeat;
-  background-color: #99caea;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 .warning {
   color: red;
@@ -326,6 +319,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 .campIdle {
   min-width: 100px;

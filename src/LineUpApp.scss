@@ -18,14 +18,6 @@
   display: none;
 }
 
-body {
-  // background-image: url("./assets/background_1.webp");
-  background-repeat: no-repeat;
-  background-color: #99caea;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-}
 button {
   background: none;
   font-family: "Audiowide";
@@ -241,7 +233,7 @@ button:focus-visible {
 }
 
 .anotherCont {
-  height: 95vh;
+  height: 100vh;
 }
 .homeCont {
   display: flex;
@@ -252,7 +244,7 @@ button:focus-visible {
 
   .logo {
     justify-self: center;
-    margin: 10vw;
+    // margin: 10vw;
     filter: drop-shadow(0px 5px 5px rgba(255, 255, 255, 0.7));
   }
 
@@ -275,23 +267,6 @@ button:focus-visible {
     backdrop-filter: blur(10px);
     border-radius: 30px;
     border: 3px solid #cccccc;
-
-    // background: linear-gradient(
-    //     210deg,
-    //     rgb(190, 180, 248),
-    //     rgba(0, 255, 0, 0) 40.71%
-    //   ),
-    //   linear-gradient(
-    //     310deg,
-    //     rgba(57, 59, 59, 0),
-    //     rgba(149, 149, 207, 0.582) 80.71%
-    //   ),
-    //   linear-gradient(
-    //     40deg,
-    //     rgba(255, 255, 255, 0.85),
-    //     rgba(255, 255, 255, 0) 30.71%
-    //   );
-    //* end of idea */
 
     .currentContCont {
       display: grid;
@@ -352,8 +327,8 @@ button:focus-visible {
 }
 .bandsCont {
   display: flex;
- // flex-wrap: wrap;
- flex-direction: column;
+  // flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   gap: 20px;
   padding-top: 30px;
@@ -574,7 +549,6 @@ button:focus-visible {
   align-items: center;
 
   background-color: #000000a6;
-
 
   .oneBand {
     position: relative;
