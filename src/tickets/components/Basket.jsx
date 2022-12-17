@@ -76,6 +76,18 @@ function Basket(props) {
     }
   }
 
+  function resetAmount(item) {
+    if (item === "Regular ticket") {
+      props.count.reg = 0
+    } else if (item === "VIP ticket") {
+      props.count.vip = 0
+    }
+
+    props.count.total = props.count.reg+props.count.vip
+
+    console.log(props.count)
+  }
+
   return (
     <div id="basketCont">
       <div id="basket">
@@ -99,7 +111,7 @@ function Basket(props) {
                   <div className="ticketBasket">
                     <p>{item.amount * item.price},-</p>
                     <button
-                      onClick={() => props.removeFromBasket(item.name)}
+                      onClick={() => {props.removeFromBasket(item.name); resetAmount(item.name)}}
                       className="basketBtnRmv"
                     >
                       {" "}
