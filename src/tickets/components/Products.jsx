@@ -108,6 +108,8 @@ function Products(props) {
           extra1price={extra1price}
           extra2price={extra2price}
           extra3price={extra3price}
+          count={props.count}
+          setCount={props.setCount}
         />
         <CampingProduct
           addSpot={addSpot}

@@ -25,7 +25,7 @@ function ExtraProduct(props) {
 
         <div className={isMobile ? "extra extraMobile" : "extra"}>
           <label htmlFor="form-extras" className="gradient-text">
-            Medium size tent
+            Medium size tent x {props.count.total}
           </label>
           <p>
             <span>{props.extra2price}</span>,-
@@ -39,7 +39,7 @@ function ExtraProduct(props) {
 
         <div className="extra">
           <label htmlFor="form-extras">
-            Large size tent
+            Large size tent x {props.count.total}
           </label>
           <p>
             <span>{props.extra3price}</span>,-
