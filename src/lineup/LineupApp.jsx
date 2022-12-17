@@ -14,6 +14,7 @@ function Lineup() {
   const [burgerState, setBurgerState] = useState(false);
   const [currentBand, setCurrentBand] = useState([]);
 
+
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
     document.querySelector("body").classList.add("backClass_1");
@@ -39,7 +40,7 @@ function Lineup() {
       setBands(data);
 
       data.forEach(function (element, i) {
-        element.liked = "true";
+        element.liked = false;
         element.key = i;
       });
       console.log(data);
@@ -75,7 +76,7 @@ function Lineup() {
       ) : (
         ""
       )}
-      {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
+      {lineUpPage == 2 ? <Bandslist bands={bands}/> : ""}
       {lineUpPage == 3 ? (
         <Schedule currentBand={currentBand} bands={bands} />
       ) : (
