@@ -78,14 +78,25 @@ function Basket(props) {
 
   function resetAmount(item) {
     if (item === "Regular ticket") {
-      props.count.reg = 0
+      props.count.reg = 0;
     } else if (item === "VIP ticket") {
-      props.count.vip = 0
+      props.count.vip = 0;
     }
 
-    props.count.total = props.count.reg+props.count.vip
+    props.count.total = props.count.reg + props.count.vip;
 
-    console.log(props.count)
+    console.log(props.count);
+  }
+
+  function removeExtras() {
+    if (props.count.total === 0) {
+      props.basket.map((product) => {
+        if (product.type === "extra") {
+          props.removeFromBasket(product.name);
+          console.log("removed extra");
+        }
+      });
+    }
   }
 
   return (
@@ -103,17 +114,19 @@ function Basket(props) {
                     item.name == "VIP ticket"
                       ? "ticketItem tickGold"
                       : "ticketItem"
-                  }
-                >
+                  }>
                   <p>
                     {item.name} x {item.amount}
                   </p>
                   <div className="ticketBasket">
                     <p>{item.amount * item.price},-</p>
                     <button
-                      onClick={() => {props.removeFromBasket(item.name); resetAmount(item.name)}}
-                      className="basketBtnRmv"
-                    >
+                      onClick={() => {
+                        props.removeFromBasket(item.name);
+                        resetAmount(item.name);
+                        removeExtras();
+                      }}
+                      className="basketBtnRmv">
                       {" "}
                     </button>
                   </div>{" "}
@@ -128,13 +141,14 @@ function Basket(props) {
             if (item.type == "extra") {
               return (
                 <div key={item.name} className="separateTickets ticketItem ">
-                  <p>{item.name} x {props.count.total}</p>
+                  <p>
+                    {item.name} x {props.count.total}
+                  </p>
                   <div className="ticketBasket">
-                    <p>{item.price},-</p>
+                    <p>{item.price * props.count.total},-</p>
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
-                      className="basketBtnRmv"
-                    >
+                      className="basketBtnRmv">
                       {" "}
                     </button>
                   </div>
@@ -152,8 +166,7 @@ function Basket(props) {
                 <div
                   key={item.type}
                   className={controlCamping(item.type)}
-                  onChange={removeSetCurBtn(item.type)}
-                >
+                  onChange={removeSetCurBtn(item.type)}>
                   <p>{item.type}</p>
                   {/*  <button
                     onClick={() => {
@@ -192,8 +205,7 @@ function Basket(props) {
             props.spotAdded
               ? false
               : true
-          }
-        >
+          }>
           {" "}
         </button>
       </div>
