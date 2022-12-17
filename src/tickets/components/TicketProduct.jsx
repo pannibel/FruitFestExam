@@ -42,7 +42,7 @@ function TicketProduct(props) {
         props.addTicket("regular");
       } else {
         props.count.reg--;
-        console.log("you can't buy minus amount dumby");
+        props.count.total--;
         props.removeFromBasket("Regular ticket");
       }
     }
@@ -54,29 +54,14 @@ function TicketProduct(props) {
         props.addTicket("vip");
       } else {
         props.count.vip--;
-        console.log("you can't buy minus amount dumby");
+        props.count.total--;
         props.removeFromBasket("VIP ticket");
       }
     }
 
-    //* DISABLING BUTTONS IF WE REACH 4 TICKETS OR MINUS TICKETS
+    console.log(props.count)
   }
-
-/*   function checkDisabled(button) {
-    if (props.count.reg > 3 || props.count.reg + props.count.vip === 4) {
-      setDisabled(regInc);
-    }
-    if (props.count.vip > 3 || props.count.reg + props.count.vip === 4) {
-      setDisabled(vipInc);
-    }
-    if (props.count.reg > 0) {
-      setDisabled(regDec);
-    }
-    if (props.count.vip > 0) {
-      setDisabled(vipDec);
-    }
-  }
- */
+  
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>

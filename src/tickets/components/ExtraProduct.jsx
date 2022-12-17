@@ -10,6 +10,7 @@ function ExtraProduct(props) {
     <div className="form-control">
       <h3>2. Add extras</h3>
       <h4>The tent(s) you choose will also be set up before your arrival.</h4>
+      <p className={props.warning.extras === false ? "hidden" : "warning"}> Please select a ticket first</p>
       <div id="ticketExtras">
 {/*         <div className="extra">
           <label htmlFor="form-extras">Green camping option</label>
@@ -25,7 +26,7 @@ function ExtraProduct(props) {
 
         <div className={isMobile ? "extra extraMobile" : "extra"}>
           <label htmlFor="form-extras" className="gradient-text">
-            Medium size tent x {props.count.total}
+          {props.count.total === 0 ? "" : props.count.total} Medium size tent{props.count.total < 2 ? "" : "s"}
           </label>
           <p>
             <span>{props.extra2price}</span>,-
@@ -39,7 +40,7 @@ function ExtraProduct(props) {
 
         <div className="extra">
           <label htmlFor="form-extras">
-            Large size tent x {props.count.total}
+          {props.count.total === 0 ? "" : props.count.total} Large size tent{props.count.total < 2 ? "" : "s"}
           </label>
           <p>
             <span>{props.extra3price}</span>,-
