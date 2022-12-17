@@ -56,32 +56,14 @@ function TicketList(props) {
     // find and modify a product
     props.setBasket((oldBasket) => {
       const subtracted = oldBasket.map((item) => {
-
         if (item.name === name) {
           return { ...item, amount: 0 };
         }
-        return item
+        return item;
       });
       const filtered = subtracted.filter((item) => item.amount > 0);
       return filtered;
     });
-  }
-
-  function reserveSpot() {
-    const url = "http://localhost:8080/";
-    fetch(url + "reserve-spot", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        area: "Alfheim",
-        amount: 2,
-      }),
-    })
-      .then((response) => response.json())
-      .then((response) => console.log(response.id))
-      .catch((err) => console.error(err));
   }
 
   return (
@@ -116,9 +98,7 @@ function TicketList(props) {
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
         />
-        {/* <button onClick={confirmReservation}>yellow</button> */}
       </div>
-      <button onClick={reserveSpot}>yellow</button>
     </>
   );
 }
