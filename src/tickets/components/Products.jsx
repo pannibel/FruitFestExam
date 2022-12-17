@@ -51,6 +51,7 @@ function Products(props) {
 
     props.addToBasket(productData);
     warning.extras = false;
+
   }
 
   function addExtras(e) {
@@ -105,6 +106,7 @@ function Products(props) {
           cheapprice={cheapprice}
           expprice={expprice}
           removeFromBasket={props.removeFromBasket}
+          basket={props.basket}
         />
         <ExtraProduct
           addExtras={addExtras}

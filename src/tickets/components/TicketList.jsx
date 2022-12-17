@@ -58,9 +58,10 @@ function TicketList(props) {
       const subtracted = oldBasket.map((item) => {
         if (item.name === name) {
           return { ...item, amount: 0 };
-        }
+        };
         return item;
-      });
+      })
+
       const filtered = subtracted.filter((item) => item.amount > 0);
       return filtered;
     });
