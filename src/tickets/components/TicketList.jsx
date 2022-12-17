@@ -34,12 +34,12 @@ function TicketList(props) {
           if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
           }
-          if (entry.name === "Medium size tent") {
-            copy.amount++;
+/*           if (entry.name === "Medium size tent") {
+            copy.amount++
           }
           if (entry.name === "Large size tent") {
-            copy.amount++;
-          }
+            copy.amount++
+          } */
           if (entry.name === "campingSpot") {
             copy.name = data.name;
             copy.type = data.type;

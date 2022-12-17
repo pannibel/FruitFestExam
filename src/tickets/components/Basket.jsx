@@ -128,9 +128,9 @@ function Basket(props) {
             if (item.type == "extra") {
               return (
                 <div key={item.name} className="separateTickets ticketItem ">
-                  <p>{item.name} x {item.amount}</p>
+                  <p>{item.name} x {props.count.total}</p>
                   <div className="ticketBasket">
-                    <p>{item.amount * item.price},-</p>
+                    <p>{item.price},-</p>
                     <button
                       onClick={() => props.removeFromBasket(item.name)}
                       className="basketBtnRmv"
