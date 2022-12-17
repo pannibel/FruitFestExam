@@ -8,6 +8,7 @@ import TicketProduct from "./TicketProduct";
 function Products(props) {
   const theForm = useRef(null);
   const [chosenSpot, setChosenSpot] = useState();
+  let [warning, setWarning] = useState({extras: false, camping: false});
 
   const cheapprice = 799;
   const expprice = 1299;
@@ -22,8 +23,6 @@ function Products(props) {
   };
 
   function addTicket(tickettype) {
-    console.log(props.count);
-
     if (
       tickettype === "regular" &&
       props.count.reg + props.count.vip <= 4 &&
@@ -51,6 +50,7 @@ function Products(props) {
     }
 
     props.addToBasket(productData);
+    warning.extras = false;
   }
 
   function addExtras(e) {
@@ -66,30 +66,33 @@ function Products(props) {
       extraprice = extra3price;
     }
 
-    productData = {
-      name: e.target.name,
-      type: "extra",
-      amount: 1,
-      price: extraprice,
-    };
-
-    props.addToBasket(productData);
+    if (props.basket.find((item) => item.type === "ticket")) {
+      productData = {
+        name: e.target.name,
+        type: "extra",
+        amount: props.count.total,
+        price: extraprice,
+      };
+      props.addToBasket(productData);
+    } else {
+      setWarning({extras: true})
+    }
   }
 
   function onChangeValue(e) {
     setChosenSpot(e.target.value);
-    addSpot(e.target.value);  
+    addSpot(e.target.value);
   }
 
   function addSpot(value) {
-      productData = {
-        name: "campingSpot",
-        type: value,
-        amount: 1,
-        price: "",
-      };
-      props.addToBasket(productData);
-      props.setSpotAdded(true);
+    productData = {
+      name: "campingSpot",
+      type: value,
+      amount: 1,
+      price: "",
+    };
+    props.addToBasket(productData);
+    props.setSpotAdded(true);
   }
 
   return (
@@ -105,6 +108,7 @@ function Products(props) {
         />
         <ExtraProduct
           addExtras={addExtras}
+          warning={warning}
           extra1price={extra1price}
           extra2price={extra2price}
           extra3price={extra3price}
@@ -113,6 +117,8 @@ function Products(props) {
         />
         <CampingProduct
           addSpot={addSpot}
+          warning={warning}
+          setWarning={setWarning}
           count={props.count}
           onChangeValue={onChangeValue}
           campingSpots={props.campingSpots}

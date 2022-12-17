@@ -128,7 +128,7 @@ function Basket(props) {
             if (item.type == "extra") {
               return (
                 <div key={item.name} className="separateTickets ticketItem ">
-                  <p>{item.name}</p>
+                  <p>{item.name} x {item.amount}</p>
                   <div className="ticketBasket">
                     <p>{item.amount * item.price},-</p>
                     <button

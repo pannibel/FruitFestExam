@@ -11,6 +11,15 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.warning {
+color: red;
+}
+
+.hidden {
+  display: none;
+}
+
 .backClass_1 {
   background-image: url("./assets/background_1.webp");
 }
