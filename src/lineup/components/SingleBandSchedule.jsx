@@ -56,7 +56,7 @@ function SingleBandSchedule(props) {
             return (
               <li className="singleBand">
                 {pickImage(`${el.logo}`)}
-                <h3 className="act">{el.act}</h3>
+                <h4 className="act">{el.act}</h4>
                 <h3
                   className={
                     el.stage == "Midgard"

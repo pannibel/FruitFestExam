@@ -167,7 +167,7 @@ button:focus-visible {
     border: 0;
     height: 100%;
     width: 100%;
-    transition: 0.3s;
+    transition: 0.2s;
     max-width: 100px;
     // align-self: center;
     justify-content: center;
@@ -258,11 +258,11 @@ button:focus-visible {
 
   // currently playing player
   h3 {
-    font-size: xx-large;
+    font-size: x-large;
     font-family: "Chopsic";
     color: #7000ff;
     margin: 0;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
   }
   .currentlyCont {
     display: flex;
@@ -316,7 +316,7 @@ button:focus-visible {
     border-radius: 30px;
 
     margin: 0vh 5vw 0vh 5vw;
-    padding: 5%;
+    padding: 3%;
 
     .currentContCont {
       display: grid;
@@ -326,10 +326,10 @@ button:focus-visible {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-top: 20px;
-      gap: 20px;
+      padding-top: 10px;
+      gap: 5px;
       img {
-        width: 80px;
+        width: 40px;
       }
 
       .currentBandRow {
@@ -338,7 +338,7 @@ button:focus-visible {
         // flex-direction: column;
         // flex-wrap: nowrap;
         justify-content: space-between;
-        gap: 5px;
+        // gap: 5px;
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
           "img band"
@@ -351,14 +351,15 @@ button:focus-visible {
       .playerBand {
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: large;
+        font-size: 14px;
         color: rgb(237, 237, 237);
         overflow: hidden;
-        width: 150px;
+        width: 200px;
       }
 
       .playerStage {
         font-family: "chopsic";
+        font-size: 12px;
       }
     }
   }
@@ -368,17 +369,20 @@ button:focus-visible {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
-  width: 50px;
-  height: 50px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   border: rgba(255, 255, 255, 0.6) 2px solid;
 }
 .bandsCont {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: center;
-
+  flex-direction: column;
   gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   .logo_small {
     width: 30vw;
@@ -409,7 +413,7 @@ button:focus-visible {
       width: 100%;
       grid-template-columns: 1fr 5fr 1fr;
       gap: 10px;
-
+      cursor: pointer;
       align-items: center;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -419,7 +423,8 @@ button:focus-visible {
         margin: 0;
       }
       h4 {
-        color: black;
+        font-size: 14px;
+        color: rgb(255, 255, 255);
       }
     }
 
@@ -460,6 +465,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   .logo_small {
     width: 30vw;
@@ -469,9 +476,11 @@ button:focus-visible {
     width: 90vw;
     max-width: 500px;
     overflow-x: hidden;
-    ::-webkit-scrollbar{display: none}
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
-  
+
   .weekDays {
     overflow: auto;
     white-space: nowrap;
@@ -534,19 +543,19 @@ button:focus-visible {
         align-self: start;
         justify-self: center;
         margin: 0;
-        height: 100%;
+        height: 40px;
       }
 
       .act {
         grid-row: 1 / 2;
         margin: 0;
-
         text-overflow: ellipsis;
         white-space: nowrap;
-        font-size: large;
+        font-size: 14px;
         color: rgb(20, 20, 20);
         overflow: hidden;
         width: 200px;
+        color: white;
       }
 
       .stage {
@@ -568,8 +577,8 @@ button:focus-visible {
       margin-left: auto;
       margin-right: auto;
       object-fit: cover;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 10px;
       border: rgba(255, 255, 255, 0.6) 2px solid;
     }
