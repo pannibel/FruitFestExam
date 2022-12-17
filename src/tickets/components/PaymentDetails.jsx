@@ -49,34 +49,53 @@ function PaymentDetails(props) {
         <h2>Billing details</h2>
         <h3>Personal details</h3>
         <section className="formInput">
-          <label htmlFor="">Full Name</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="mainname"
-            id="form-mainname"
-            placeholder="your fullname"
-          />
+          <label htmlFor="form-mainname" className="labelGuestList">
+            Full Name
+          </label>
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="text"
+                name="mainname"
+                id="form-mainname"
+                placeholder="your fullname"
+              />{" "}
+            </div>
+          </div>
         </section>
-        <section>
-          <label htmlFor="">Email address</label>
-          <input
-            defaultValue={""}
-            type="email"
-            name="email"
-            id="form-email"
-            placeholder="your email here"
-          />
+        <section className="formInput">
+          <label htmlFor="form-email" className="labelGuestList">
+            Email address
+          </label>{" "}
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="email"
+                name="email"
+                id="form-email"
+                placeholder="your email here"
+              />{" "}
+            </div>
+          </div>
         </section>
-        <section>
-          <label htmlFor="">Phone number</label>
-          <input
-            defaultValue={""}
-            type="number"
-            name="phone"
-            id="form-phone"
-            placeholder="your number here"
-          />
+        <section className="formInput">
+          {" "}
+          <label htmlFor="form-phone" className="labelGuestList">
+            Phone number
+          </label>{" "}
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="number"
+                name="phone"
+                id="form-phone"
+                placeholder="your number here"
+              />{" "}
+            </div>
+          </div>
         </section>
         {/* <section>
           <label htmlFor="">Full name</label>
@@ -89,79 +108,128 @@ function PaymentDetails(props) {
           />
         </section> */}
         <h3>Billing address</h3>
-        <section>
-          <label htmlFor="">Street name</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="street"
-            id="form-street"
-            placeholder=""
-          />
+        <section className="formInput">
+          <label htmlFor="form-street" className="labelGuestList">
+            Street name
+          </label>{" "}
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="text"
+                name="street"
+                id="form-street"
+                placeholder="name of your street"
+              />
+            </div>
+          </div>
         </section>
-        <section>
-          <label htmlFor="">Apartment (number, floor, door, etc)</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="apartment"
-            id="form-apartment"
-            placeholder=""
-          />
-        </section>
-        <section>
-          <label htmlFor="">City</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="city"
-            id="form-city"
-            placeholder=""
-          />
-        </section>
-        <section>
-          <label htmlFor="">Country</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="country"
-            id="form-country"
-            placeholder=""
-          />
+        <section className="formInput">
+          <label htmlFor="form-street" className="labelGuestList">
+            Apartment (number, floor, door, etc)
+          </label>
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="text"
+                name="apartment"
+                id="form-apartment"
+                placeholder=""
+              />
+            </div>
+          </div>
         </section>
 
-        <h2>Card details</h2>
+        <section className="formInput">
+          <label htmlFor="form-city" className="labelGuestList">
+            City
+          </label>
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="text"
+                name="city"
+                id="form-city"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </section>
+        <section className="formInput">
+          <label htmlFor="form-country" className="labelGuestList">
+            Country
+          </label>
+          <div className="formInputCont ">
+            <div>
+              <input
+                defaultValue={""}
+                type="text"
+                name="country"
+                id="form-country"
+                placeholder="country"
+              />
+            </div>
+          </div>
+        </section>
+
+        <h3>Card details</h3>
 
         <div>
-          <section>
-            <label htmlFor="">Name on card</label>
-            <input
-              defaultValue={""}
-              type="text"
-              name="fullname"
-              id="form-fullname"
-              placeholder=""
-            />
+          <section className="formInput">
+            <label htmlFor="form-fullname" className="labelGuestList">
+              Name on card
+            </label>{" "}
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="fullname"
+                  id="form-fullname"
+                  placeholder=""
+                />{" "}
+              </div>
+            </div>
           </section>
-          <section>
-            <label htmlFor="">Card number</label>
-            <input name="cardnumber" {...getCardNumberProps()} />
+          <section className="formInput">
+            <label htmlFor="" className="labelGuestList">
+              Card number
+            </label>
+            <div className="formInputCont ">
+              <div>
+                <input name="cardnumber" {...getCardNumberProps()} />{" "}
+              </div>
+            </div>
             <small>
               {erroredInputs.cardNumber && erroredInputs.cardNumber}
             </small>
           </section>
 
-          <section>
-            <label htmlFor="">Expiry date</label>
-            <input name="expirydate" {...getExpiryDateProps()} />
+          <section className="formInput">
+            <label htmlFor="" className="labelGuestList">
+              Expiry date
+            </label>
+            <div className="formInputShorter formInputCont">
+              <div>
+                <input name="expirydate" {...getExpiryDateProps()} />{" "}
+              </div>
+            </div>
             <small>
               {erroredInputs.expiryDate && erroredInputs.expiryDate}
             </small>
           </section>
 
-          <section>
-            <label htmlFor="">Security code</label>
-            <input name="cvc" {...getCVCProps()} />
+          <section className="formInput">
+            <label htmlFor="" className="labelGuestList">
+              Security code
+            </label>
+            <div className="formInputShorter formInputCont ">
+              <div>
+                <input name="cvc" {...getCVCProps()} />{" "}
+              </div>
+            </div>
             <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
           </section>
 
@@ -169,17 +237,21 @@ function PaymentDetails(props) {
         </div>
       </form>
 
-      <button onClick={props.changePage} name="back">
+      <button className="campIdle" onClick={props.changePage} name="back">
         Back
       </button>
+
       <button
+        className="campIdle"
         onClick={(e) => {
           saveBillingInfo(e);
           props.changePage(e);
         }}
         name="next"
       >
-        Complete payment
+        <p>
+          Complete <br></br> payment
+        </p>
       </button>
     </div>
   );

@@ -46,7 +46,6 @@ function Tickets() {
             guestNumber={guestNumber}
           />
         )}
-        <a href={`/`}>go to the main page</a>
       </main>
     </div>
   );
