@@ -6,7 +6,11 @@
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
 // ! to be removed
-
+h3 {
+  font-family: Chopsic;
+  color: #4400ff;
+  margin: 0;
+}
 .linkMockup {
   font-family: "Chopsic";
   font-size: large;
@@ -108,11 +112,7 @@ h1 {
   li {
     list-style: none;
   }
-  h3 {
-    font-family: Chopsic;
-    color: #4400ff;
-    margin: 0;
-  }
+
   h4 {
     color: #6a6a6a;
     margin-bottom: 4%;
