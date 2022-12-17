@@ -49,24 +49,26 @@ function GuestInfo(props) {
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3>Guest {i + 1}</h3>
-            <input
-              type="text"
-              name="fullname"
-              id={i}
-              placeholder="Full name"
-              defaultValue={
-                !props.guestInfo.length ? "" : props.guestInfo[i].name
-              }
-            />
-            <input
-              type="email"
-              name="email"
-              id={i}
-              placeholder="Email address"
-              defaultValue={
-                !props.guestInfo.length ? "" : props.guestInfo[i].email
-              }
-            />
+
+            <div className="formInputCont ">
+              <div>
+                <input
+                  type="text"
+                  name="fullname"
+                  id={i}
+                  placeholder="Full name"
+                />
+              </div>
+            </div>
+            <div className="formInputCont ">
+              <div></div>
+              <input
+                type="email"
+                name="email"
+                id={i}
+                placeholder="Email address"
+              />
+            </div>
           </div>
         ))}
         <button
