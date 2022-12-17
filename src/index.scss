@@ -5,6 +5,16 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
+// ! to be removed
+
+.linkMockup {
+  font-family: "Chopsic";
+  font-size: large;
+  color: #d1d1d1;
+  background-color: #4400ff;
+  margin: 50px;
+  position: relative;
+}
 :root {
   ul {
     margin: 0;

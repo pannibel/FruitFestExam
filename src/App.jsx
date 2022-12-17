@@ -13,19 +13,25 @@ function App() {
       <img
         className="logo"
         src="../src/assets/logo.svg"
-        alt="big logo of the festival"></img>
+        alt="big logo of the festival"
+      ></img>
 
       <img
         className="date"
         src="../src/assets/date.svg"
-        alt="big date of the festival"></img>
+        alt="big date of the festival"
+      ></img>
 
       <ul>
         <li>
-          <a href={`tickets`}>Buy the tickets</a>
+          <a className="linkMockup" href={`tickets`}>
+            Buy the tickets
+          </a>
         </li>
         <li>
-          <a href={`lineup`}>Check out the app</a>
+          <a className="linkMockup" href={`lineup`}>
+            Check out the app
+          </a>
         </li>
       </ul>
 
