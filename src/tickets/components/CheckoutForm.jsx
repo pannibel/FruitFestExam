@@ -46,6 +46,7 @@ function CheckoutForm(props) {
             // setFormValues={setFormValues}
             basket={props.basket}
             totalPrice={totalPrice}
+            setShowForm={props.setShowForm}
           />
         ) : (
           ""
@@ -60,6 +61,7 @@ function CheckoutForm(props) {
             basket={props.basket}
             totalPrice={totalPrice}
             idValue={props.idValue}
+            setShowForm={props.setShowForm}
           />
         ) : (
           ""
@@ -88,16 +90,7 @@ function CheckoutForm(props) {
         ) : (
           ""
         )}
-      </div>{" "}
-      <button
-        onClick={() => {
-          {
-            props.setShowForm(false);
-          }
-        }}
-      >
-        Go back
-      </button>
+      </div>
     </div>
   );
 }

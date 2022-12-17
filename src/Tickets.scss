@@ -13,7 +13,7 @@ body {
 }
 
 .warning {
-color: red;
+  color: red;
 }
 
 .hidden {
@@ -40,11 +40,12 @@ color: red;
   width: 100%;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .chooseTicket {
-  min-width: 150px;
+  width: 150px;
   text-align: center;
-  padding: 20px 30px;
+  padding: 20px 20px;
   border-radius: 30px;
   background: linear-gradient(
     47deg,

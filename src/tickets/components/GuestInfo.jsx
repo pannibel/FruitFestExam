@@ -67,6 +67,15 @@ function GuestInfo(props) {
             />
           </div>
         ))}
+        <button
+          onClick={() => {
+            {
+              props.setShowForm(false);
+            }
+          }}
+        >
+          Go back
+        </button>
         <button name="next">Next</button>
       </form>
     </div>
