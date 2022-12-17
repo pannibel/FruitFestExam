@@ -83,7 +83,8 @@ function TicketProduct(props) {
               className="regDec">
               {" "}
             </button>
-            <div>{props.count.reg}</div>
+            <div>
+              {props.count.reg}</div>
             <button
               ref={regInc}
               name="regInc"

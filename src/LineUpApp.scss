@@ -377,9 +377,8 @@ button:focus-visible {
 }
 .bandsCont {
   display: flex;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   gap: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -596,7 +595,7 @@ button:focus-visible {
   background-color: #000000a6;
 
   .oneBand {
-    position: absolute;
+    position: relative;
     display: flex;
     width: 85%;
     height: 70%;
