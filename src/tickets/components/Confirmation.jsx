@@ -28,9 +28,9 @@ function Confirmation(props) {
           </button>
         </a>
       </div>{" "}
-      <Canvas>
+      {/* <Canvas>
         <Box />
-      </Canvas>
+      </Canvas> */}
     </div>
   );
 }
