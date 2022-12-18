@@ -22,6 +22,7 @@ function SingleBandSchedule(props) {
     props.data[1].map((el) => setEnd(el.end));
   }, []);
 
+
   // function likeBand() {
   //   setLikedBand(!likedBand);
   // }
@@ -58,7 +59,7 @@ function SingleBandSchedule(props) {
           if (el.act !== "break") {
             return (
               <div className="contCont">
-                <li className="singleBand">
+                <li className="singleBand" onClick={() => props.openOneBand(el.act)}>
                   {pickImage(`${el.logo}`)}
                   <h4 className="act">{el.act}</h4>
                   <h3

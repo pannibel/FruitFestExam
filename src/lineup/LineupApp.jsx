@@ -13,7 +13,8 @@ function Lineup() {
   const [lineUpPage, setLineUpPage] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [currentBand, setCurrentBand] = useState([]);
-  const [bands, setBands] = useState([]);
+  const [singleBandState, setSingleBandState] = useState(false);
+  const [openedBand, setOpenedband] = useState();
 
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
@@ -68,6 +69,23 @@ function Lineup() {
     console.log("burger menu is open " + burgerState);
   }
 
+  function openOneBand(band) {
+    setSingleBandState(!singleBandState);
+    console.log(band);
+
+    //get the band name and find the same thing in the original array and get the data from that object
+    // band name is under different keys:
+    // in SingleBandList it's name
+    // in SingleBandSchedule it's act
+
+    data.map((item) => {
+      if (item.name === band) return bands;
+    });
+
+    setOpenedband(band);
+    console.log("single band is open " + singleBandState);
+  }
+
   return (
     <div className="appCont">
       {lineUpPage == 1 ? (
@@ -75,9 +93,26 @@ function Lineup() {
       ) : (
         ""
       )}
-      {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
+      {lineUpPage == 2 ? (
+        <Bandslist
+          bands={bands}
+          openOneBand={openOneBand}
+          openedBand={openedBand}
+          singleBandState={singleBandState}
+          setSingleBandState={setSingleBandState}
+        />
+      ) : (
+        ""
+      )}
       {lineUpPage == 3 ? (
-        <Schedule currentBand={currentBand} bands={bands} />
+        <Schedule
+          currentBand={currentBand}
+          bands={bands}
+          openOneBand={openOneBand}
+          openedBand={openedBand}
+          singleBandState={singleBandState}
+          setSingleBandState={setSingleBandState}
+        />
       ) : (
         ""
       )}

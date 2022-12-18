@@ -33,7 +33,7 @@ function SingleBand(props) {
         <div className="contCont">
           <div
             className="singleBandCont"
-            onClick={() => props.openOneBand(props.data)}
+            onClick={() => props.openOneBand(props.data.name)}
           >
             {" "}
             <img

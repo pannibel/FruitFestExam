@@ -6,37 +6,35 @@ import Countdown from "react-countdown";
 
 function App() {
   return (
-    <div className="main">
-      <div className="timerCont">
-        <Countdown date={Date.now() + 1000000000} />
+    <>
+      <header className="appHeader">
+        <a className="ticketsBtn" href={`tickets`}>Get tickets
+        </a>
+      </header>
+
+      <div className="main">
+        <div className="timerCont">
+          <Countdown date={Date.now() + 1000000000} />
+        </div>
+        <img
+          className="logo"
+          src="../src/assets/logo2.svg"
+          alt="big logo of the festival"></img>
+
+<img
+          className="date"
+          src="../src/assets/date.svg"
+          alt="big logo of the festival"></img>
+        
+        <div className="btnCont">
+            <a className="appBtn" href={`lineup`}>Go to app
+            </a>
+            </div>
+
+
+        <div className="mainNamesCont"></div>
       </div>
-      <img
-        className="logo"
-        src="../src/assets/logo.svg"
-        alt="big logo of the festival"
-      ></img>
-
-      <img
-        className="date"
-        src="../src/assets/date.svg"
-        alt="big date of the festival"
-      ></img>
-
-      <ul>
-        <li>
-          <a className="linkMockup" href={`tickets`}>
-            Buy the tickets
-          </a>
-        </li>
-        <li>
-          <a className="linkMockup" href={`lineup`}>
-            Check out the app
-          </a>
-        </li>
-      </ul>
-
-      <div className="mainNamesCont"></div>
-    </div>
+    </>
   );
 }
 
