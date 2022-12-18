@@ -40,32 +40,33 @@ function Bandslist(props) {
 
   function openOneBand(band) {
     setSingleBandState(!singleBandState);
-    setOpenedband(band)
+    setOpenedband(band);
     console.log("single band is open " + singleBandState);
-    console.log(band)
+    console.log(band);
   }
 
   return (
     <div className="bandsCont">
-
       <img
         className="logo_small"
         src="../src/assets/logo.svg"
-        alt="big logo of the festival"></img>
-
-      <div className="searchbarCont">
-        <input
-          ref={theInput}
-          type="text"
-          name="searchbar"
-          placeholder="search..."
-          onInput={searchList}
-        />
-        <button
-          className="searchBtn"
-          button-name="search"
-          // onClick={searchList}
-        ></button>
+        alt="big logo of the festival"
+      ></img>
+      <div className="searchContCont">
+        <div className="searchbarCont">
+          <input
+            ref={theInput}
+            type="text"
+            name="searchbar"
+            placeholder="search..."
+            onInput={searchList}
+          />
+          <button
+            className="searchBtn"
+            button-name="search"
+            // onClick={searchList}
+          ></button>
+        </div>
       </div>
 
       <div className="bandListBox">
@@ -90,9 +91,9 @@ function Bandslist(props) {
             ))}
       </div>
 
-<div className={singleBandState ? "oneBandCont" : "hidden"}>
-      {!singleBandState}
-      {singleBandState && (
+      <div className={singleBandState ? "oneBandCont" : "hidden"}>
+        {!singleBandState}
+        {singleBandState && (
           <OneBand
             openOneBand={openOneBand}
             openedBand={openedBand}
@@ -100,7 +101,7 @@ function Bandslist(props) {
             singleBandState={singleBandState}
             setSingleBandState={setSingleBandState}
           />
-      )}
+        )}
       </div>
     </div>
   );

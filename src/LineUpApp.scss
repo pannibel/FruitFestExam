@@ -106,13 +106,15 @@ button:focus-visible {
   width: 10%;
   transition: 0.3s;
 }
-
+.searchContCont {
+  width: 95vw;
+  max-width: 500px;
+}
 .searchbarCont {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90vw;
-  max-width: 500px;
+
   background: linear-gradient(
     to bottom,
     rgb(136, 136, 137),
@@ -362,12 +364,13 @@ button:focus-visible {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 .bandsCont {
   display: flex;
   // flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+
   gap: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -378,6 +381,7 @@ button:focus-visible {
   }
 
   .bandListBox {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -392,9 +396,9 @@ button:focus-visible {
     // band list
 
     .singleBandCont {
-      display: grid;
-      width: 100%;
-      grid-template-columns: 1fr 5fr;
+      display: flex;
+      // width: 100%;
+      // grid-template-columns: 1fr 5fr;
       gap: 10px;
       cursor: pointer;
       align-items: center;
@@ -408,6 +412,7 @@ button:focus-visible {
       h4 {
         font-size: 14px;
         color: rgb(0, 0, 0);
+        width: 200px;
       }
     }
   }
@@ -425,7 +430,7 @@ button:focus-visible {
     justify-self: flex-start;
   }
   #weekDaysCont {
-    width: 90vw;
+    width: 95vw;
     max-width: 500px;
     overflow-x: hidden;
     ::-webkit-scrollbar {
@@ -488,7 +493,8 @@ button:focus-visible {
       grid-template-columns: 1fr 4fr;
       grid-template-rows: 1fr 1fr;
       justify-content: space-between;
-      gap: 5px;
+      row-gap: 0;
+      column-gap: 10px;
 
       img {
         grid-row: 1 / 3;
