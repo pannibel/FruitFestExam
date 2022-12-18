@@ -397,6 +397,14 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
+.cancelled_contCont {
+  filter: grayscale(100%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .bandsCont {
   display: flex;
   // flex-wrap: wrap;
