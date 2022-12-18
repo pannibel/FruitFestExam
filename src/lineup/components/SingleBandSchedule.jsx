@@ -14,7 +14,10 @@ function SingleBandSchedule(props) {
       }
     });
   }, []);
-
+  function handleClick(e) {
+    e.target.classList.toggle("buttRed");
+    props.data.liked = !props.data.liked;
+  }
   useEffect(() => {
     props.data[1].map((el) => setEnd(el.end));
   }, []);
@@ -54,21 +57,30 @@ function SingleBandSchedule(props) {
         {props.data[1].map((el) => {
           if (el.act !== "break") {
             return (
-              <li className="singleBand">
-                {pickImage(`${el.logo}`)}
-                <h4 className="act">{el.act}</h4>
-                <h3
-                  className={
-                    el.stage == "Midgard"
-                      ? "stage colorMidgard"
-                      : el.stage == "Vanaheim"
-                      ? "stage colorVanaheim"
-                      : "stage colorJotunheim"
-                  }
-                >
-                  {el.stage}
-                </h3>
-              </li>
+              <div className="contCont">
+                <li className="singleBand">
+                  {pickImage(`${el.logo}`)}
+                  <h4 className="act">{el.act}</h4>
+                  <h3
+                    className={
+                      el.stage == "Midgard"
+                        ? "stage colorMidgard"
+                        : el.stage == "Vanaheim"
+                        ? "stage colorVanaheim"
+                        : "stage colorJotunheim"
+                    }
+                  >
+                    {el.stage}
+                  </h3>
+                </li>
+                <div className="likeBtn">
+                  <button
+                    className={props.data.liked ? "buttRed" : "buttBlue"}
+                    onClick={(e) => handleClick(e)}
+                    value="like"
+                  ></button>
+                </div>{" "}
+              </div>
             );
           }
         })}
