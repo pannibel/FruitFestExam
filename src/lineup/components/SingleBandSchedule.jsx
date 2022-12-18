@@ -59,12 +59,14 @@ function SingleBandSchedule(props) {
         {isBreak ? "break" : ""}
         {props.data[1].map((el) => {
           if (el.act !== "break") {
+            if (!el.cancelled) {
             return (
               <div className="contCont">
                 <li
                   className="singleBand"
                   onClick={() => props.openOneBand(el.act)}>
                   {pickImage(`${el.logo}`)}
+
                   <h4 className="act">{el.act}</h4>
                   <h3
                     className={
@@ -87,7 +89,40 @@ function SingleBandSchedule(props) {
                     value="like"></button>
                 </div>{" "}
               </div>
-            );
+            )} 
+            
+            
+            else {
+              return (
+                <div className="cancelled_contCont" disabled={true}>
+                  <li
+                    className="singleBand"
+                    onClick={() => props.openOneBand(el.act)}>
+                    {pickImage(`${el.logo}`)}  
+                    <h4 className="act">{el.act}</h4>
+                    <h3
+                      className={
+                        el.stage == "Midgard"
+                          ? "stage colorMidgard"
+                          : el.stage == "Vanaheim"
+                          ? "stage colorVanaheim"
+                          : "stage colorJotunheim"
+                      }>
+                      {el.cancelled ? `${el.stage} - cancelled` : el.stage}
+                    </h3>
+                  </li>
+                  <div className="likeBtn">
+                    <button
+                      className={el.liked ? "buttRed" : "buttBlue"}
+                      onClick={(e) => {
+                        handleClick(e, el.act);
+                        el.liked = !el.liked;
+                      }}
+                      value="like"></button>
+                  </div>{" "}
+                </div>
+              )
+            }
           }
         })}
       </div>
