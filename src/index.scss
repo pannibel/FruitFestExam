@@ -61,8 +61,10 @@ h1 {
 /* TICKETLIST */
 
 .ticketlist {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  gap: 30px;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  // margin-right: 10vw;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;

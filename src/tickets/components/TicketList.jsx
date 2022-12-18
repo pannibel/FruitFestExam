@@ -84,26 +84,7 @@ function TicketList(props) {
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
         />{" "}
-        <div className="hiddenBasket">
-          <Basket
-            setIdValue={props.setIdValue}
-            idValue={props.idValue}
-            campingSpots={campingSpots}
-            count={count}
-            setCount={setCount}
-            setShowForm={props.setShowForm}
-            basket={props.basket}
-            removeFromBasket={removeFromBasket}
-            setSpotAdded={setSpotAdded}
-            spotAdded={spotAdded}
-            setGuestNumber={props.setGuestNumber}
-            guestNumber={props.guestNumber}
-            curCampBtn={curCampBtn}
-            setCurCampBtn={setCurCampBtn}
-          />{" "}
-        </div>
-      </div>
-      <div className="fixedBasket">
+        {/* <div className="fixedBasket"> */}
         <Basket
           setIdValue={props.setIdValue}
           idValue={props.idValue}
@@ -120,6 +101,7 @@ function TicketList(props) {
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
         />
+        {/* </div> */}
       </div>
     </>
   );
