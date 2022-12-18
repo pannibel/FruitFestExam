@@ -13,6 +13,7 @@ function Lineup() {
   const [lineUpPage, setLineUpPage] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [currentBand, setCurrentBand] = useState([]);
+  const [bands, setBands] = useState([]);
 
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
@@ -31,7 +32,7 @@ function Lineup() {
     getData();
   }, []);
 
-  const [bands, setBands] = useState([]);
+  // const [bands, setBands] = useState([]);
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/bands");

@@ -15,14 +15,13 @@ function Tickets() {
   const [basket, setBasket] = useState([]);
   const [guestNumber, setGuestNumber] = useState(0);
 
-  // ReactDOM.render(<Countdown date={Date.now() + 10000} />);
   return (
     <div>
-      {/* <div>
-        {" "}
-        <Countdown date={Date.now() + 1000000000} />
-      </div> */}
-      {/* <TicketHeader /> */}
+      <img
+        className="logo"
+        src="../src/assets/logo.svg"
+        alt="big logo of the festival"
+      ></img>
       <main>
         {!showForm && (
           <TicketList
