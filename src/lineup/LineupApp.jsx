@@ -78,11 +78,10 @@ function Lineup() {
     // in SingleBandList it's name
     // in SingleBandSchedule it's act
 
-    data.map((item) => {
-      if (item.name === band) return bands;
+    bands.map((item) => {
+      if (item.name === band) setOpenedband(item);
     });
 
-    setOpenedband(band);
     console.log("single band is open " + singleBandState);
   }
 
