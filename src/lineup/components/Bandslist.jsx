@@ -5,9 +5,6 @@ import OneBand from "./OneBand";
 
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
-  const [singleBandState, setSingleBandState] = useState(false);
-  const [openedBand, setOpenedband] = useState();
-
   const theInput = useRef(null);
 
   let sortedBands = props.bands.sort((a, b) => {
@@ -36,13 +33,6 @@ function Bandslist(props) {
     } else {
       setSearchedBands([]);
     }
-  }
-
-  function openOneBand(band) {
-    setSingleBandState(!singleBandState);
-    setOpenedband(band);
-    console.log("single band is open " + singleBandState);
-    console.log(band);
   }
 
   return (
@@ -75,31 +65,31 @@ function Bandslist(props) {
               <SingleBand
                 data={band}
                 key={i}
-                singleBandState={singleBandState}
-                setSingleBandState={setSingleBandState}
-                openOneBand={openOneBand}
+                singleBandState={props.singleBandState}
+                setSingleBandState={props.setSingleBandState}
+                openOneBand={props.openOneBand}
               />
             ))
           : searchedBands.map((band, i) => (
               <SingleBand
                 data={band}
                 key={i}
-                singleBandState={singleBandState}
-                setSingleBandState={setSingleBandState}
-                openOneBand={openOneBand}
+                singleBandState={props.singleBandState}
+                setSingleBandState={props.setSingleBandState}
+                openOneBand={props.openOneBand}
               />
             ))}
       </div>
 
-      <div className={singleBandState ? "oneBandCont" : "hidden"}>
-        {!singleBandState}
-        {singleBandState && (
+      <div className={props.singleBandState ? "oneBandCont" : "hidden"}>
+        {!props.singleBandState}
+        {props.singleBandState && (
           <OneBand
-            openOneBand={openOneBand}
-            openedBand={openedBand}
+            openOneBand={props.openOneBand}
+            openedBand={props.openedBand}
             data={props.bands}
-            singleBandState={singleBandState}
-            setSingleBandState={setSingleBandState}
+            singleBandState={props.singleBandState}
+            setSingleBandState={props.setSingleBandState}
           />
         )}
       </div>

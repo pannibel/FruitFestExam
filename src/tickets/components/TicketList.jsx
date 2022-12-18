@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Basket from "./Basket";
 import Products from "./Products";
 import { confirmReservation } from "../../database";
+
 function TicketList(props) {
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);

@@ -13,6 +13,8 @@ function Lineup() {
   const [lineUpPage, setLineUpPage] = useState(1);
   const [burgerState, setBurgerState] = useState(false);
   const [currentBand, setCurrentBand] = useState([]);
+  const [singleBandState, setSingleBandState] = useState(false);
+  const [openedBand, setOpenedband] = useState();
 
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
@@ -67,6 +69,13 @@ function Lineup() {
     console.log("burger menu is open " + burgerState);
   }
 
+  function openOneBand(band) {
+    setSingleBandState(!singleBandState);
+    setOpenedband(band);
+    console.log("single band is open " + singleBandState);
+    console.log(band);
+  }
+
   return (
     <div className="appCont">
       {lineUpPage == 1 ? (
@@ -74,9 +83,26 @@ function Lineup() {
       ) : (
         ""
       )}
-      {lineUpPage == 2 ? <Bandslist bands={bands} /> : ""}
+      {lineUpPage == 2 ? (
+        <Bandslist
+          bands={bands}
+          openOneBand={openOneBand}
+          openedBand={openedBand}
+          singleBandState={singleBandState}
+          setSingleBandState={setSingleBandState}
+        />
+      ) : (
+        ""
+      )}
       {lineUpPage == 3 ? (
-        <Schedule currentBand={currentBand} bands={bands} />
+        <Schedule
+          currentBand={currentBand}
+          bands={bands}
+          openOneBand={openOneBand}
+          openedBand={openedBand}
+          singleBandState={singleBandState}
+          setSingleBandState={setSingleBandState}
+        />
       ) : (
         ""
       )}
@@ -85,20 +111,17 @@ function Lineup() {
         <button
           onClick={() => changePageApp(1)}
           className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
-          value="home"
-        ></button>
+          value="home"></button>
         <button
           onClick={() => changePageApp(2)}
           className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
-          value="bands"
-        ></button>
+          value="bands"></button>
         <button
           onClick={() => changePageApp(3)}
           className={
             lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"
           }
-          value="schedule"
-        ></button>
+          value="schedule"></button>
       </div>
       {/* <Bandslist bands={bands} /> */}
 
@@ -106,8 +129,7 @@ function Lineup() {
         <button
           onClick={() => openBurger()}
           className="burger_off"
-          button-name="openburg"
-        >
+          button-name="openburg">
           {" "}
         </button>
       )}
@@ -116,8 +138,7 @@ function Lineup() {
           <button
             onClick={() => openBurger()}
             className="burger_on"
-            button-name="klosburg"
-          >
+            button-name="klosburg">
             {" "}
           </button>
           <Burger />
