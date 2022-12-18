@@ -14,14 +14,17 @@ function SingleBandSchedule(props) {
       }
     });
   }, []);
-  function handleClick(e) {
+  function handleClick(e, name) {
     e.target.classList.toggle("buttRed");
-    props.data.liked = !props.data.liked;
+
+    props.bands.map((item) => {
+      if (item.name === name) 
+      item.liked = !item.liked
+    })
   }
   useEffect(() => {
     props.data[1].map((el) => setEnd(el.end));
   }, []);
-
 
   // function likeBand() {
   //   setLikedBand(!likedBand);
@@ -40,8 +43,7 @@ function SingleBandSchedule(props) {
         <img
           alt=""
           src={"http://localhost:8080/logos/" + x}
-          className="imgSingleBand"
-        ></img>
+          className="imgSingleBand"></img>
       );
     }
   }
@@ -59,7 +61,9 @@ function SingleBandSchedule(props) {
           if (el.act !== "break") {
             return (
               <div className="contCont">
-                <li className="singleBand" onClick={() => props.openOneBand(el.act)}>
+                <li
+                  className="singleBand"
+                  onClick={() => props.openOneBand(el.act)}>
                   {pickImage(`${el.logo}`)}
                   <h4 className="act">{el.act}</h4>
                   <h3
@@ -69,17 +73,18 @@ function SingleBandSchedule(props) {
                         : el.stage == "Vanaheim"
                         ? "stage colorVanaheim"
                         : "stage colorJotunheim"
-                    }
-                  >
+                    }>
                     {el.stage}
                   </h3>
                 </li>
                 <div className="likeBtn">
                   <button
-                    className={props.data.liked ? "buttRed" : "buttBlue"}
-                    onClick={(e) => handleClick(e)}
-                    value="like"
-                  ></button>
+                    className={el.liked ? "buttRed" : "buttBlue"}
+                    onClick={(e) => {
+                      handleClick(e, el.act);
+                      el.liked = !el.liked;
+                    }}
+                    value="like"></button>
                 </div>{" "}
               </div>
             );

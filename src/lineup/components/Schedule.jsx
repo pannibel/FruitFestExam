@@ -20,6 +20,7 @@ function Bandslist(props) {
               if (y.name === el.act) {
                 el.logo = y.logo;
                 el.logoCredits = y.logoCredits;
+                el.liked = y.liked
               }
             });
             el.stage = item[0];
@@ -127,6 +128,7 @@ function Bandslist(props) {
               singleBandState={props.singleBandState}
               setSingleBandState={props.setSingleBandState}
               openOneBand={props.openOneBand}
+              bands={props.bands}
             />
           );
         })}
