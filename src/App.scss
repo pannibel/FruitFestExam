@@ -5,6 +5,7 @@
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
 body {
+  // overflow-y: hidden; /* Hide vertical scrollbar */
   background-image: url("./assets/background_1.webp");
 
   background-color: #99caea;

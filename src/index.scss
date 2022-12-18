@@ -5,7 +5,9 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
-
+// html {
+//   overflow-y: scroll;
+// }
 // ! to be removed
 h3 {
   font-family: Chopsic;
