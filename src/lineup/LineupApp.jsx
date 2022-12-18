@@ -71,9 +71,21 @@ function Lineup() {
 
   function openOneBand(band) {
     setSingleBandState(!singleBandState);
+    console.log(band);
+
+    //get the band name and find the same thing in the original array and get the data from that object
+    // band name is under different keys:
+    // in SingleBandList it's name
+    // in SingleBandSchedule it's act
+
+    data.map((item) => {
+      if (item.name === band)
+      return bands
+    })
+
     setOpenedband(band);
     console.log("single band is open " + singleBandState);
-    console.log(band);
+
   }
 
   return (

@@ -59,7 +59,7 @@ function SingleBandSchedule(props) {
           if (el.act !== "break") {
             return (
               <div className="contCont">
-                <li className="singleBand" onClick={() => props.openOneBand(el)}>
+                <li className="singleBand" onClick={() => props.openOneBand(el.act)}>
                   {pickImage(`${el.logo}`)}
                   <h4 className="act">{el.act}</h4>
                   <h3
