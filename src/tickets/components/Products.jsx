@@ -8,7 +8,7 @@ import TicketProduct from "./TicketProduct";
 function Products(props) {
   const theForm = useRef(null);
   const [chosenSpot, setChosenSpot] = useState();
-  let [warning, setWarning] = useState({extras: false, camping: false});
+  let [warning, setWarning] = useState({ extras: false, camping: false });
 
   const cheapprice = 799;
   const expprice = 1299;
@@ -51,7 +51,6 @@ function Products(props) {
 
     props.addToBasket(productData);
     warning.extras = false;
-
   }
 
   function addExtras(e) {
@@ -76,7 +75,7 @@ function Products(props) {
       };
       props.addToBasket(productData);
     } else {
-      setWarning({extras: true})
+      setWarning({ extras: true });
     }
   }
 
@@ -97,40 +96,48 @@ function Products(props) {
   }
 
   return (
-    <div id="productList" className="box">
-      <form ref={theForm} className="products">
-        <TicketProduct
-          count={props.count}
-          setCount={props.setCount}
-          addTicket={addTicket}
-          cheapprice={cheapprice}
-          expprice={expprice}
-          removeFromBasket={props.removeFromBasket}
-          basket={props.basket}
-        />
-        <ExtraProduct
-          addExtras={addExtras}
-          warning={warning}
-          extra1price={extra1price}
-          extra2price={extra2price}
-          extra3price={extra3price}
-          count={props.count}
-          setCount={props.setCount}
-        />
-        <CampingProduct
-          addSpot={addSpot}
-          warning={warning}
-          setWarning={setWarning}
-          count={props.count}
-          onChangeValue={onChangeValue}
-          campingSpots={props.campingSpots}
-          spotAdded={props.spotAdded}
-          guestNumber={props.guestNumber}
-          basket={props.basket}
-          curCampBtn={props.curCampBtn}
-          setCurCampBtn={props.setCurCampBtn}
-        />
-      </form>
+    <div id="productList" className="box2">
+      <div className="box">
+        <form ref={theForm} className="products">
+          <TicketProduct
+            count={props.count}
+            setCount={props.setCount}
+            addTicket={addTicket}
+            cheapprice={cheapprice}
+            expprice={expprice}
+            removeFromBasket={props.removeFromBasket}
+            basket={props.basket}
+          />
+          <ExtraProduct
+            addExtras={addExtras}
+            warning={warning}
+            extra1price={extra1price}
+            extra2price={extra2price}
+            extra3price={extra3price}
+            count={props.count}
+            setCount={props.setCount}
+          />
+          <CampingProduct
+            addSpot={addSpot}
+            warning={warning}
+            setWarning={setWarning}
+            count={props.count}
+            onChangeValue={onChangeValue}
+            campingSpots={props.campingSpots}
+            spotAdded={props.spotAdded}
+            guestNumber={props.guestNumber}
+            basket={props.basket}
+            curCampBtn={props.curCampBtn}
+            setCurCampBtn={props.setCurCampBtn}
+          />
+        </form>
+      </div>
+      <a className="linkMockup" href={`/`}>
+        {" "}
+        <button className="confirmation campIdle">
+          Go back to the main page
+        </button>
+      </a>
     </div>
   );
 }
