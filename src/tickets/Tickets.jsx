@@ -17,11 +17,14 @@ function Tickets() {
 
   return (
     <div>
-      <img
-        className="logo"
-        src="../src/assets/logo.svg"
-        alt="big logo of the festival"
-      ></img>
+      <a className="logoCheckout" href={`/`}>
+        {" "}
+        <img
+          className="logo"
+          src="../src/assets/logo.svg"
+          alt="big logo of the festival"
+        ></img>
+      </a>
       <main>
         {!showForm && (
           <TicketList

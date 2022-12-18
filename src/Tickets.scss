@@ -4,6 +4,17 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
+.logoCheckout {
+  display: block;
+  width: 300px;
+  padding-top: 30px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  img {
+    // margin-top: 20px;
+    width: 300px;
+  }
+}
 
 .warning {
   color: red;
@@ -133,6 +144,9 @@
   text-align: center;
 }
 .box {
+  // align-self: flex-start;
+  // align-items: flex-start;
+  // align-content: flex-start;
   form {
     width: 100%;
   }
@@ -141,12 +155,12 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5%;
-  margin: 3vw;
-  display: inline-block;
+  margin-bottom: 30px;
+  // display: inline-block;
   background-color: rgba(244, 244, 244, 0.7);
   border-radius: 50px;
-  width: 50%;
-  min-width: 300px;
+  // width: 50%;
+  // min-width: 300px;
 
   h3 {
     margin-top: 7%;
@@ -241,7 +255,7 @@
     color: black;
     margin-bottom: 15px;
   }
-  margin: 3vw;
+  // margin: 3vw;
   width: 50%;
   min-width: 200px;
   padding: 20px 20px;
@@ -585,9 +599,10 @@ input[type="radio"] {
   background-size: cover;
 }
 .checkoutform {
+  margin-left: 10vw;
+  margin-right: 10vw;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap-reverse;
+  justify-content: space-around;
   background-image: url(/src/assets/background_1.webp);
   background-repeat: no-repeat;
   background-color: #99caea;
@@ -695,4 +710,21 @@ input[type="radio"] {
   h2 {
     text-align: center;
   }
+}
+.box2 {
+  width: 60%;
+  min-width: 300px;
+  .confirmation {
+    margin-bottom: 30px;
+  }
+}
+
+.fixedBasket {
+  position: fixed;
+  top: 170px;
+  left: 70%;
+  min-width: 100px;
+}
+.hiddenBasket {
+  visibility: hidden;
 }

@@ -35,7 +35,7 @@ function TicketList(props) {
           if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
           }
-/*           if (entry.name === "Medium size tent") {
+          /*           if (entry.name === "Medium size tent") {
             copy.amount++
           }
           if (entry.name === "Large size tent") {
@@ -59,9 +59,9 @@ function TicketList(props) {
       const subtracted = oldBasket.map((item) => {
         if (item.name === name) {
           return { ...item, amount: 0 };
-        };
+        }
         return item;
-      })
+      });
 
       const filtered = subtracted.filter((item) => item.amount > 0);
       return filtered;
@@ -83,7 +83,27 @@ function TicketList(props) {
           basket={props.basket}
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
-        />
+        />{" "}
+        <div className="hiddenBasket">
+          <Basket
+            setIdValue={props.setIdValue}
+            idValue={props.idValue}
+            campingSpots={campingSpots}
+            count={count}
+            setCount={setCount}
+            setShowForm={props.setShowForm}
+            basket={props.basket}
+            removeFromBasket={removeFromBasket}
+            setSpotAdded={setSpotAdded}
+            spotAdded={spotAdded}
+            setGuestNumber={props.setGuestNumber}
+            guestNumber={props.guestNumber}
+            curCampBtn={curCampBtn}
+            setCurCampBtn={setCurCampBtn}
+          />{" "}
+        </div>
+      </div>
+      <div className="fixedBasket">
         <Basket
           setIdValue={props.setIdValue}
           idValue={props.idValue}

@@ -61,8 +61,10 @@ h1 {
 /* TICKETLIST */
 
 .ticketlist {
+  margin-left: 10vw;
+  margin-right: 10vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap-reverse;
   background-image: url("./assets/background_1.webp");
   background-repeat: no-repeat;
