@@ -12,13 +12,17 @@ function Bandslist(props) {
   });
   let bettered = [];
 
-  for (let i = 0; i < 125; i++) {
-    if (sortedBands[i].name[0] != sortedBands[i + 1].name[0]) {
+  for (let i = 0; i < 126; i++) {
+    if (sortedBands[i].name == "A Perfect Circle") {
       bettered.push({ letter: sortedBands[i + 1].name[0], logo: "noLogo" });
-      // console.log("the letter would be", sortedBands[i + 1].name[0]);
+      bettered.push(sortedBands[i]);
+    } else if (sortedBands[i].name == "Zboncak - Haag") {
+      bettered.push(sortedBands[i]);
+    } else if (sortedBands[i].name[0] != sortedBands[i + 1].name[0]) {
+      bettered.push(sortedBands[i]);
+      bettered.push({ letter: sortedBands[i + 1].name[0], logo: "noLogo" });
     } else {
       bettered.push(sortedBands[i]);
-      // console.log(sortedBands[i]);
     }
   }
   console.log(bettered);

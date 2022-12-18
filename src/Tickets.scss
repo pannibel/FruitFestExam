@@ -604,10 +604,13 @@ input[type="radio"] {
   background-size: cover;
 }
 .checkoutform {
+  gap: 30px;
+  margin-right: 5vw;
   margin-left: 10vw;
-  margin-right: 10vw;
+  // margin-right: 10vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
   background-image: url(/src/assets/background_1.webp);
   background-repeat: no-repeat;
   background-color: #99caea;
@@ -615,7 +618,13 @@ input[type="radio"] {
   background-attachment: fixed;
   background-size: cover;
   align-self: center;
-  padding-top: 10%;
+  .box {
+    min-width: 300px;
+  }
+  #basket {
+    margin-right: 10vw;
+  }
+  // padding-top: 10%;
 }
 .formInputShorter {
   width: 50%;
@@ -730,10 +739,12 @@ input[type="radio"] {
     left: auto;
     // min-width: 300px;
   }
-  #basket {
+  #basket,
+  .checkoutform #basket {
     margin: 0;
   }
-  .ticketlist {
+  .ticketlist,
+  .checkoutform {
     justify-content: center;
   }
 }
