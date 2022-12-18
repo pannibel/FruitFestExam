@@ -377,7 +377,7 @@ button:focus-visible {
       }
       h4 {
         font-size: 14px;
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
       }
     }
 
@@ -508,7 +508,7 @@ button:focus-visible {
         color: rgb(20, 20, 20);
         overflow: hidden;
         width: 200px;
-        color: white;
+        // color: white;
       }
 
       .stage {
@@ -518,10 +518,6 @@ button:focus-visible {
         font-size: small;
         align-self: end;
         // color: rgb(232, 232, 232);
-      }
-
-      h4 {
-        color: black;
       }
     }
 

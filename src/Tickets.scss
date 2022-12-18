@@ -327,6 +327,7 @@
   justify-content: center;
 }
 .campIdle {
+  margin: 1px;
   min-width: 100px;
   cursor: pointer;
   padding: 20px 30px;
@@ -335,7 +336,8 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  // font-size: 16px;
+  filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+  border: 0px;
   transition: 0.2s;
   p {
     background-color: red;
@@ -362,7 +364,10 @@
 }
 .campIdle:active {
   background-image: url("./assets/tickets/camp_picked.svg");
-  filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0));
+  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0));
+}
+.campIdle:visited {
+  background-image: url("./assets/tickets/camp_picked.svg");
 }
 [type="radio"] {
   position: absolute;
@@ -374,6 +379,7 @@ input[type="radio"] {
   visibility: hidden;
 }
 .campPicked {
+  margin: 1px;
   min-width: 100px;
   cursor: pointer;
   padding: 20px 30px;
@@ -383,14 +389,14 @@ input[type="radio"] {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  // font-size: 20px;
-  // transition: 0.2s;
+  border: 0px;
+  transition: 0.2s;
   p {
     background-color: red;
     text-align: center;
-    font-size: 80%;
+    font-size: 90%;
     /* Create the gradient. */
-    background-image: linear-gradient(45deg, #ff3838, #af4261);
+    background-image: linear-gradient(45deg, #f89d00, #af4261);
 
     /* Set the background size and repeat properties. */
     background-size: 100%;
@@ -406,7 +412,7 @@ input[type="radio"] {
   }
 }
 .campPicked:hover {
-  transition: 0.1s;
+  transition: 0.2s;
   filter: drop-shadow(0px 3px 4px rgba(242, 117, 22, 0.9));
 }
 .campGrey {
@@ -662,9 +668,9 @@ input[type="radio"] {
 .confirmation {
   button {
     display: block;
-
+    background: none;
     margin: 0 auto;
-    border: 0;
+    border: 0px;
   }
 
   h1 {
