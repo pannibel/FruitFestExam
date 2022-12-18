@@ -15,6 +15,7 @@ function Lineup() {
   const [currentBand, setCurrentBand] = useState([]);
   const [singleBandState, setSingleBandState] = useState(false);
   const [openedBand, setOpenedband] = useState();
+  const [bands, setBands] = useState([]);
 
   if (lineUpPage == 1) {
     document.querySelector("body").classList = "";
@@ -33,7 +34,6 @@ function Lineup() {
     getData();
   }, []);
 
-  const [bands, setBands] = useState([]);
   useEffect(() => {
     async function getData() {
       const res = await fetch("http://localhost:8080/bands");
@@ -79,8 +79,7 @@ function Lineup() {
     // in SingleBandSchedule it's act
 
     bands.map((item) => {
-      if (item.name === band) 
-      setOpenedband(item);
+      if (item.name === band) setOpenedband(item);
     });
 
     console.log("single band is open " + singleBandState);
