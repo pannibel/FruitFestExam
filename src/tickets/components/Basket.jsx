@@ -112,7 +112,7 @@ function Basket(props) {
                   key={item.name}
                   className={
                     item.name == "VIP ticket"
-                      ? "ticketItem tickGold"
+                      ? "ticketItem basketGold"
                       : "ticketItem"
                   }
                 >

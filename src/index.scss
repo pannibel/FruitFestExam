@@ -62,44 +62,6 @@ h1 {
 
 /* TICKETLIST */
 
-.ticketlist {
-  z-index: 5;
-  position: relative;
-  gap: 30px;
-  margin-right: 5vw;
-  margin-left: 5vw;
-  // margin-right: 10vw;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
-  background-image: url("./assets/background_1.webp");
-  background-repeat: no-repeat;
-  background-color: #99caea;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-
-  li {
-    list-style: none;
-  }
-
-  h4 {
-    color: #6a6a6a;
-    margin-bottom: 4%;
-    margin-top: 0;
-    font-size: 14px;
-    line-height: 1.2;
-  }
-  h5 {
-    margin: 0;
-    font-size: 16px;
-  }
-  p {
-    margin: 0px;
-    font-size: 12px;
-  }
-}
-
 .products {
   display: flex;
   flex-direction: column;

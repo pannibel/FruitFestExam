@@ -39,6 +39,7 @@ function ExtraProduct(props) {
             onClick={props.addExtras}
             name="Medium size tent"
             className="extraBtnADD"
+            // disabled={props.}
           >
             {" "}
           </button>

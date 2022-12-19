@@ -1,6 +1,6 @@
 // ? here there are buttons for reguard and vip tickets
 
-.tickGold {
+.basketGold {
   background: linear-gradient(
     171deg,
     rgba(250, 218, 106, 1) 9%,
@@ -23,30 +23,71 @@
     background-position: center;
     background-repeat: no-repeat;
     font-size: 16px;
-    transition: 0.3s;
+    transition: 0.1s;
   }
 }
 .regInc {
   background-image: url("./assets/tickets/regIncON.svg");
+  border: 0;
+}
+button:hover.regInc {
+  scale: 0.99;
+  filter: drop-shadow(0px 1px 2px rgba(165, 165, 165, 0.7));
+}
+button:active.regInc {
+  scale: 0.8;
 }
 button:disabled.regInc {
-  background-image: url("./assets/tickets/regIncOFF.svg");
+  opacity: 0.3;
+  scale: 1;
 }
+
 .regDec {
   background-image: url("./assets/tickets/regDecON.svg");
 }
+button:active.regDec {
+  scale: 0.8;
+}
 button:disabled.regDec {
-  background-image: url("./assets/tickets/regDecOFF.svg");
+  opacity: 0.3;
+  scale: 1;
 }
 .vipInc {
   background-image: url("./assets/tickets/vipIncON.svg");
 }
+button:active.vipInc {
+  scale: 0.8;
+}
 button:disabled.vipInc {
-  background-image: url("./assets/tickets/vipIncOFF.svg");
+  opacity: 0.3;
+  scale: 1;
 }
 .vipDec {
   background-image: url("./assets/tickets/vipDecON.svg");
 }
+button:active.vipDec {
+  scale: 0.8;
+}
 button:disabled.vipDec {
-  background-image: url("./assets/tickets/vipDecOFF.svg");
+  opacity: 0.3;
+  scale: 1;
+}
+
+.extraBtnADD {
+  border: 0;
+  height: 30px;
+  cursor: pointer;
+  padding: 20px;
+  color: #213547;
+  background-image: url("./assets/buttons/tct_add.svg");
+  filter: drop-shadow(0px 2px 2px rgba(106, 106, 106, 0.7));
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  transition: 0.3s;
+  align-self: flex-end;
+}
+button:active.extraBtnADD {
+  scale: 0.8;
 }

@@ -70,37 +70,40 @@ function TicketList(props) {
 
   return (
     <>
-      <Products
-        addToBasket={addToBasket}
-        removeFromBasket={removeFromBasket}
-        count={count}
-        setCount={setCount}
-        setSpotAdded={setSpotAdded}
-        spotAdded={spotAdded}
-        guestNumber={props.guestNumber}
-        campingSpots={campingSpots}
-        basket={props.basket}
-        curCampBtn={curCampBtn}
-        setCurCampBtn={setCurCampBtn}
-      />{" "}
-      {/* <div className="fixedBasket"> */}
-      <Basket
-        setIdValue={props.setIdValue}
-        idValue={props.idValue}
-        campingSpots={campingSpots}
-        count={count}
-        setCount={setCount}
-        setShowForm={props.setShowForm}
-        basket={props.basket}
-        removeFromBasket={removeFromBasket}
-        setSpotAdded={setSpotAdded}
-        spotAdded={spotAdded}
-        setGuestNumber={props.setGuestNumber}
-        guestNumber={props.guestNumber}
-        curCampBtn={curCampBtn}
-        setCurCampBtn={setCurCampBtn}
-      />{" "}
-      <div className="ticketlist">{/* </div> */}</div>
+      {" "}
+      <div className="ticketlist">
+        <Products
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          count={count}
+          setCount={setCount}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          guestNumber={props.guestNumber}
+          campingSpots={campingSpots}
+          basket={props.basket}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
+        />{" "}
+        {/* <div className="fixedBasket"> */}
+        <Basket
+          setIdValue={props.setIdValue}
+          idValue={props.idValue}
+          campingSpots={campingSpots}
+          count={count}
+          setCount={setCount}
+          setShowForm={props.setShowForm}
+          basket={props.basket}
+          removeFromBasket={removeFromBasket}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          setGuestNumber={props.setGuestNumber}
+          guestNumber={props.guestNumber}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
+        />{" "}
+        {/* </div> */}
+      </div>
     </>
   );
 }

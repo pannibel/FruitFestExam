@@ -15,7 +15,7 @@ function basketCheckout(props) {
                   key={item.name}
                   className={
                     item.name == "VIP ticket"
-                      ? "ticketItem tickGold"
+                      ? "ticketItem basketGold"
                       : "ticketItem"
                   }
                 >
@@ -36,7 +36,9 @@ function basketCheckout(props) {
             if (item.type == "extra") {
               return (
                 <div key={item.name} className="separateTickets ticketItem ">
-                  <p>{item.name} x {item.amount}</p>
+                  <p>
+                    {item.name} x {item.amount}
+                  </p>
                   <div className="ticketBasket">
                     <p>{item.amount * item.price},-</p>
                   </div>
