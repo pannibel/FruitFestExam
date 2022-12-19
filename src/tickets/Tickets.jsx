@@ -48,7 +48,7 @@ function Tickets() {
     bgTexture.wrapS = THREE.MirroredRepeatWrapping;
     bgTexture.wrapT = THREE.MirroredRepeatWrapping;
 
-    // my uplaoded 3d object
+    // my uplaoded 3d o
 
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
