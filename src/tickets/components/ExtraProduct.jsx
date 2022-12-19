@@ -10,10 +10,10 @@ function ExtraProduct(props) {
     <div className="form-control">
       <h3>2. Add extras</h3>
       <h4>The tent(s) you choose will also be set up before your arrival.</h4>
-      <p className={props.warning.extras === false ? "hidden" : "warning"}>
+{/*       <p className={props.warning.extras === false ? "hidden" : "warning"}>
         {" "}
         Please select a ticket first
-      </p>
+      </p> */}
       <div id="ticketExtras">
         {/*         <div className="extra">
           <label htmlFor="form-extras">Green camping option</label>
@@ -38,8 +38,8 @@ function ExtraProduct(props) {
           <button
             onClick={props.addExtras}
             name="Medium size tent"
-            className="extraBtnADD"
-            // disabled={props.}
+            className={props.warning.extras ? "disabledExtraBtn" : "extraBtnADD"}
+            disabled={props.warning.extras ? true : false}
           >
             {" "}
           </button>
@@ -56,7 +56,8 @@ function ExtraProduct(props) {
           <button
             onClick={props.addExtras}
             name="Large size tent"
-            className="extraBtnADD"
+            className={props.warning.extras ? "disabledExtraBtn" : "extraBtnADD"}
+            disabled={props.warning.extras ? true : false}
           >
             {" "}
           </button>
