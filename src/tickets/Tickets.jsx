@@ -97,7 +97,7 @@ function Tickets() {
     // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
     // scene.add(boxMesh);
 
-    // const controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
     const stats = Stats();
     document.body.appendChild(stats.dom);
 
@@ -131,7 +131,7 @@ function Tickets() {
         {" "}
         <img
           className="logo"
-          src="../src/assets/logo2.svg"
+          src="assets/logo2.svg"
           alt="big logo of the festival"
         ></img>
       </a>
@@ -159,19 +159,6 @@ function Tickets() {
           />
         )}
       </main>
-
-      {/* <Canvas>
-        <Animate></Animate>
-      </Canvas> */}
-
-      {/* <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
-        <mesh>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </Canvas> */}
     </div>
   );
 }
