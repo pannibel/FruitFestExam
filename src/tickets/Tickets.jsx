@@ -14,6 +14,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
 // ? ========================================================
 
 function Tickets() {
@@ -42,9 +44,13 @@ function Tickets() {
     bgTexture.wrapT = THREE.MirroredRepeatWrapping;
 
     // my uplaoded 3d object
+
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
     const glftLoader = new GLTFLoader();
+    glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("../src/assets/mountain_2.glb", (gltfScene) => {
+    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -91,6 +97,9 @@ function Tickets() {
     document.body.appendChild(stats.dom);
 
     const animate = () => {
+      // setTimeout(function () {
+      //   requestAnimationFrame(animate);
+      // }, 1000 / 30);
       if (loadedModel) {
         loadedModel.scene.rotation.y += 0.01;
       }
@@ -117,7 +126,7 @@ function Tickets() {
         {" "}
         <img
           className="logo"
-          src="../src/assets/logo.svg"
+          src="../src/assets/logo2.svg"
           alt="big logo of the festival"
         ></img>
       </a>
