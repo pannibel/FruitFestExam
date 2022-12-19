@@ -59,7 +59,7 @@ function PaymentDetails(props) {
                 type="text"
                 name="mainname"
                 id="form-mainname"
-                placeholder="your fullname"
+                placeholder="e.g. Harry Truman"
               />{" "}
             </div>
           </div>
@@ -75,7 +75,7 @@ function PaymentDetails(props) {
                 type="email"
                 name="email"
                 id="form-email"
-                placeholder="your email here"
+                placeholder="example@example.com"
               />{" "}
             </div>
           </div>
@@ -92,7 +92,7 @@ function PaymentDetails(props) {
                 type="number"
                 name="phone"
                 id="form-phone"
-                placeholder="your number here"
+                placeholder="e.g. +00 1234 5678"
               />{" "}
             </div>
           </div>
@@ -119,7 +119,7 @@ function PaymentDetails(props) {
                 type="text"
                 name="street"
                 id="form-street"
-                placeholder="name of your street"
+                placeholder=""
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ function PaymentDetails(props) {
                 type="text"
                 name="country"
                 id="form-country"
-                placeholder="country"
+                placeholder=""
               />
             </div>
           </div>

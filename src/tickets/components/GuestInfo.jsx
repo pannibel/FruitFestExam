@@ -58,7 +58,7 @@ function GuestInfo(props) {
                   type="text"
                   name="fullname"
                   id={i}
-                  placeholder="full name"
+                  placeholder="e.g. Harry Truman"
                 />
               </div>
             </div>
@@ -68,7 +68,7 @@ function GuestInfo(props) {
             </label>
             <div className="formInputCont ">
               <div>
-                <input type="email" name="email" id={i} placeholder="e-mail" />
+                <input type="email" name="email" id={i} placeholder="example@example.com" />
               </div>
             </div>
           </div>
