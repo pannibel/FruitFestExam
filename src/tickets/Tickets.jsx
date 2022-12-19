@@ -6,6 +6,11 @@ import CheckoutForm from "./components/CheckoutForm";
 import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
 import ReactDOM from "react-dom";
+
+// ? weird ass react components acting gay (late 18hundreds way of perceving gays, now we know we're all cool and who know, sexuality is a spectrum right and everyone should find a cosy place on that spectrum)
+
+// import Mountain from "../src/assets/mountain_4";
+// ? end of imported components
 // npm install react-countdown --save
 import Countdown from "react-countdown";
 // ! =======================================================
@@ -50,7 +55,7 @@ function Tickets() {
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("../../src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;

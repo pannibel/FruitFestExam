@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.scss";
 import Countdown from "react-countdown";
 import imageSrc from "./assets/logo2.svg";
+import imageSrc2 from "../src/assets/date.svg";
 
 // import { Outlet } from "react-router-dom";
 
@@ -26,7 +27,7 @@ function App() {
 
         <img
           className="date"
-          src="../src/assets/date.svg"
+          src={imageSrc2}
           alt="big logo of the festival"
         ></img>
 
