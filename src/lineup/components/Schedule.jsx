@@ -20,7 +20,7 @@ function Bandslist(props) {
               if (y.name === el.act) {
                 el.logo = y.logo;
                 el.logoCredits = y.logoCredits;
-                el.liked = y.liked
+                el.liked = y.liked;
               }
             });
             el.stage = item[0];
@@ -65,8 +65,9 @@ function Bandslist(props) {
     <div className="skedgeCont">
       <img
         className="logo_small"
-        src="../src/assets/logo.svg"
-        alt="big logo of the festival"></img>
+        src="src/assets/logo.svg"
+        alt="big logo of the festival"
+      ></img>
 
       {/* <div className="searchbarCont">
         <input
@@ -83,39 +84,32 @@ function Bandslist(props) {
         <div className="weekDays">
           <button
             onClick={() => setSchedDay("mon")}
-            className={
-              schedDay === "mon" ? checkDay("mon") : "mon_off"
-            }></button>
+            className={schedDay === "mon" ? checkDay("mon") : "mon_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("tue")}
-            className={
-              schedDay === "tue" ? checkDay("tue") : "tue_off"
-            }></button>
+            className={schedDay === "tue" ? checkDay("tue") : "tue_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("wed")}
-            className={
-              schedDay === "wed" ? checkDay("wed") : "wed_off"
-            }></button>
+            className={schedDay === "wed" ? checkDay("wed") : "wed_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("thu")}
-            className={
-              schedDay === "thu" ? checkDay("thu") : "thu_off"
-            }></button>
+            className={schedDay === "thu" ? checkDay("thu") : "thu_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("fri")}
-            className={
-              schedDay === "fri" ? checkDay("fri") : "fri_off"
-            }></button>
+            className={schedDay === "fri" ? checkDay("fri") : "fri_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("sat")}
-            className={
-              schedDay === "sat" ? checkDay("sat") : "sat_off"
-            }></button>
+            className={schedDay === "sat" ? checkDay("sat") : "sat_off"}
+          ></button>
           <button
             onClick={() => setSchedDay("sun")}
-            className={
-              schedDay === "sun" ? checkDay("sun") : "sun_off"
-            }></button>
+            className={schedDay === "sun" ? checkDay("sun") : "sun_off"}
+          ></button>
         </div>
       </div>
 

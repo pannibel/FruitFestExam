@@ -43,7 +43,7 @@ function Bandslist(props) {
     <div className="bandsCont">
       <img
         className="logo_small"
-        src="../src/assets/logo.svg"
+        src="src/assets/logo.svg"
         alt="big logo of the festival"
       ></img>
       <div className="searchContCont">

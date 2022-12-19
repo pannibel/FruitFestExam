@@ -63,7 +63,7 @@ function CurrentBand(props) {
       <div className="homeCont">
         <img
           className="logo"
-          src="./src/assets/logo2.svg"
+          src="src/assets/logo2.svg"
           alt="big logo of the festival"
         ></img>
         <div className="currentlyCont">
