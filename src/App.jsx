@@ -33,15 +33,6 @@ function App() {
           </a>
         </div>
 
-        <div className="headlinersCont">
-          <div className="headliner">ACDC</div>
-          <div className="headliner">Perfect circle</div>
-          <div className="headliner">Tool</div>
-          <div className="headliner">Pink Floyd</div>
-          <div className="headliner">Doja Cat</div>
-          <div className="headliner">Elvis</div>
-        </div>
-
         <div className="mainNamesCont"></div>
       </div>
     </>
