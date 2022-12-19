@@ -18,7 +18,7 @@ function SingleBand(props) {
   let imageDir = props.data.logo;
   function pickImage() {
     if (!imageDir.includes("https://")) {
-      imageDir = "http://localhost:8080/logos/" + props.data.logo;
+      imageDir = "https://bitter-grass-7071.fly.dev/logos/" + props.data.logo;
     }
   }
   pickImage();

@@ -51,7 +51,7 @@ function CurrentBand(props) {
           el.logo.includes("JPG") ||
           el.logo.includes("svg")
         ) {
-          imgObj = `http://localhost:8080/logos/ + ${el.logo}`;
+          imgObj = `https://bitter-grass-7071.fly.dev/logos/ + ${el.logo}`;
         }
       }
     });
