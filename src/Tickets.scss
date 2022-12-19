@@ -4,7 +4,23 @@
     url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
     url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
 }
+
+// ! =======================================================
+// ! =======================================================
+.test3D {
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+}
+// ? ========================================================
+// ? ========================================================
 .logoCheckout {
+  position: relative;
+  z-index: 5;
   display: block;
   width: 300px;
   padding-top: 30px;
@@ -150,6 +166,7 @@
   form {
     width: 100%;
   }
+  margin-left: 5vw;
   // align-self: flex-end;
   position: relative;
   padding-left: 5%;
@@ -200,6 +217,7 @@
 }
 #basketCont {
   position: fixed;
+  z-index: 5;
   top: 170px;
   left: 65%;
   min-width: 300px;
@@ -604,6 +622,8 @@ input[type="radio"] {
   background-size: cover;
 }
 .checkoutform {
+  z-index: 5;
+  position: relative;
   gap: 30px;
   margin-right: 5vw;
   margin-left: 10vw;
@@ -611,12 +631,12 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
-  background-image: url(/src/assets/background_1.webp);
-  background-repeat: no-repeat;
-  background-color: #99caea;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+  // background-image: url(/src/assets/background_1.webp);
+  // background-repeat: no-repeat;
+  // background-color: #99caea;
+  // background-position: center;
+  // background-attachment: fixed;
+  // background-size: cover;
   align-self: center;
   .box {
     min-width: 300px;
@@ -726,6 +746,8 @@ input[type="radio"] {
   }
 }
 .box2 {
+  position: relative;
+  z-index: 5;
   width: 60%;
   min-width: 300px;
   .confirmation {
@@ -735,6 +757,7 @@ input[type="radio"] {
 @media screen and (max-width: 860px) {
   #basketCont {
     position: relative;
+    // z-index: 5;
     top: auto;
     left: auto;
     // min-width: 300px;

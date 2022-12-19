@@ -63,6 +63,8 @@ h1 {
 /* TICKETLIST */
 
 .ticketlist {
+  z-index: 5;
+  position: relative;
   gap: 30px;
   margin-right: 5vw;
   margin-left: 5vw;
