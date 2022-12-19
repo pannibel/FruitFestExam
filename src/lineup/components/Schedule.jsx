@@ -65,7 +65,7 @@ function Bandslist(props) {
     <div className="skedgeCont">
       <img
         className="logo_small"
-        src="src/assets/logo.svg"
+        src="assets/logo.svg"
         alt="big logo of the festival"
       ></img>
 
@@ -145,5 +145,3 @@ function Bandslist(props) {
 }
 
 export default Bandslist;
-
-// <div>{`${x}`}</div>
