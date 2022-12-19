@@ -6,6 +6,11 @@ import CheckoutForm from "./components/CheckoutForm";
 import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
 import ReactDOM from "react-dom";
+
+// ? weird ass react components acting gay (late 18hundreds way of perceving gays, now we know we're all cool and who know, sexuality is a spectrum right and everyone should find a cosy place on that spectrum)
+
+// import Mountain from "../src/assets/mountain_4";
+// ? end of imported components
 // npm install react-countdown --save
 import Countdown from "react-countdown";
 // ! =======================================================
@@ -43,14 +48,14 @@ function Tickets() {
     bgTexture.wrapS = THREE.MirroredRepeatWrapping;
     bgTexture.wrapT = THREE.MirroredRepeatWrapping;
 
-    // my uplaoded 3d object
+    // my uplaoded 3d o
 
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("./src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -92,7 +97,7 @@ function Tickets() {
     // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
     // scene.add(boxMesh);
 
-    // const controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
     const stats = Stats();
     document.body.appendChild(stats.dom);
 
@@ -126,7 +131,7 @@ function Tickets() {
         {" "}
         <img
           className="logo"
-          src="../src/assets/logo2.svg"
+          src="./src/assets/logo2.svg"
           alt="big logo of the festival"
         ></img>
       </a>
@@ -154,19 +159,6 @@ function Tickets() {
           />
         )}
       </main>
-
-      {/* <Canvas>
-        <Animate></Animate>
-      </Canvas> */}
-
-      {/* <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
-        <mesh>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
-      </Canvas> */}
     </div>
   );
 }

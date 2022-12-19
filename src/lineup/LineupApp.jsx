@@ -26,7 +26,7 @@ function Lineup() {
   }
   useEffect(() => {
     async function getData() {
-      const res = await fetch("http://localhost:8080/schedule");
+      const res = await fetch("https://bitter-grass-7071.fly.dev/schedule");
       const data = await res.json();
       // console.log(data);
       setCurrentBand(data);
@@ -36,7 +36,7 @@ function Lineup() {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch("http://localhost:8080/bands");
+      const res = await fetch("https://bitter-grass-7071.fly.dev/bands");
       const data = await res.json();
       setBands(data);
 

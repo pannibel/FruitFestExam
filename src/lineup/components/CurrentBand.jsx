@@ -51,7 +51,7 @@ function CurrentBand(props) {
           el.logo.includes("JPG") ||
           el.logo.includes("svg")
         ) {
-          imgObj = `http://localhost:8080/logos/ + ${el.logo}`;
+          imgObj = `https://bitter-grass-7071.fly.dev/logos/ + ${el.logo}`;
         }
       }
     });
@@ -63,7 +63,7 @@ function CurrentBand(props) {
       <div className="homeCont">
         <img
           className="logo"
-          src="../src/assets/logo2.svg"
+          src="src/assets/logo2.svg"
           alt="big logo of the festival"
         ></img>
         <div className="currentlyCont">

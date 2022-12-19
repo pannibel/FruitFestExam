@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.scss";
 import Countdown from "react-countdown";
+// import imageSrc from "./assets/logo2.svg";
+// import imageSrc2 from "../src/assets/date.svg";
 
 // import { Outlet } from "react-router-dom";
 
@@ -19,13 +21,15 @@ function App() {
         </div>
         <img
           className="logo"
-          src="../src/assets/logo2.svg"
-          alt="big logo of the festival"></img>
+          src="src/assets/logo2.svg"
+          alt="big logo of the festival"
+        ></img>
 
         <img
           className="date"
-          src="../src/assets/date.svg"
-          alt="big logo of the festival"></img>
+          src="src/assets/date.svg"
+          alt="big logo of the festival"
+        ></img>
 
         <div className="btnCont">
           <a className="appBtn" href={`lineup`}>

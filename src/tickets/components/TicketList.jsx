@@ -12,7 +12,9 @@ function TicketList(props) {
   let [count, setCount] = useState({ reg: 0, vip: 0, total: 0 });
   useEffect(() => {
     async function getData() {
-      const res = await fetch("http://localhost:8080/available-spots");
+      const res = await fetch(
+        "https://bitter-grass-7071.fly.dev/available-spots"
+      );
       const data = await res.json();
       // console.log(data);
       setCampingSpots(data);

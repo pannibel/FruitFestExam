@@ -18,9 +18,8 @@ function SingleBandSchedule(props) {
     e.target.classList.toggle("buttRed");
 
     props.bands.map((item) => {
-      if (item.name === name) 
-      item.liked = !item.liked
-    })
+      if (item.name === name) item.liked = !item.liked;
+    });
   }
   useEffect(() => {
     props.data[1].map((el) => setEnd(el.end));
@@ -42,8 +41,9 @@ function SingleBandSchedule(props) {
       return (
         <img
           alt=""
-          src={"http://localhost:8080/logos/" + x}
-          className="imgSingleBand"></img>
+          src={"https://bitter-grass-7071.fly.dev/logos/" + x}
+          className="imgSingleBand"
+        ></img>
       );
     }
   }
@@ -60,45 +60,14 @@ function SingleBandSchedule(props) {
         {props.data[1].map((el) => {
           if (el.act !== "break") {
             if (!el.cancelled) {
-            return (
-              <div className="contCont">
-                <li
-                  className="singleBand"
-                  onClick={() => props.openOneBand(el.act)}>
-                  {pickImage(`${el.logo}`)}
-
-                  <h4 className="act">{el.act}</h4>
-                  <h3
-                    className={
-                      el.stage == "Midgard"
-                        ? "stage colorMidgard"
-                        : el.stage == "Vanaheim"
-                        ? "stage colorVanaheim"
-                        : "stage colorJotunheim"
-                    }>
-                    {el.stage}
-                  </h3>
-                </li>
-                <div className="likeBtn">
-                  <button
-                    className={el.liked ? "buttRed" : "buttBlue"}
-                    onClick={(e) => {
-                      handleClick(e, el.act);
-                      el.liked = !el.liked;
-                    }}
-                    value="like"></button>
-                </div>{" "}
-              </div>
-            )} 
-            
-            
-            else {
               return (
-                <div className="cancelled_contCont" disabled={true}>
+                <div className="contCont">
                   <li
                     className="singleBand"
-                    onClick={() => props.openOneBand(el.act)}>
-                    {pickImage(`${el.logo}`)}  
+                    onClick={() => props.openOneBand(el.act)}
+                  >
+                    {pickImage(`${el.logo}`)}
+
                     <h4 className="act">{el.act}</h4>
                     <h3
                       className={
@@ -107,7 +76,41 @@ function SingleBandSchedule(props) {
                           : el.stage == "Vanaheim"
                           ? "stage colorVanaheim"
                           : "stage colorJotunheim"
-                      }>
+                      }
+                    >
+                      {el.stage}
+                    </h3>
+                  </li>
+                  <div className="likeBtn">
+                    <button
+                      className={el.liked ? "buttRed" : "buttBlue"}
+                      onClick={(e) => {
+                        handleClick(e, el.act);
+                        el.liked = !el.liked;
+                      }}
+                      value="like"
+                    ></button>
+                  </div>{" "}
+                </div>
+              );
+            } else {
+              return (
+                <div className="cancelled_contCont" disabled={true}>
+                  <li
+                    className="singleBand"
+                    onClick={() => props.openOneBand(el.act)}
+                  >
+                    {pickImage(`${el.logo}`)}
+                    <h4 className="act">{el.act}</h4>
+                    <h3
+                      className={
+                        el.stage == "Midgard"
+                          ? "stage colorMidgard"
+                          : el.stage == "Vanaheim"
+                          ? "stage colorVanaheim"
+                          : "stage colorJotunheim"
+                      }
+                    >
                       {el.cancelled ? `${el.stage} - cancelled` : el.stage}
                     </h3>
                   </li>
@@ -118,10 +121,11 @@ function SingleBandSchedule(props) {
                         handleClick(e, el.act);
                         el.liked = !el.liked;
                       }}
-                      value="like"></button>
+                      value="like"
+                    ></button>
                   </div>{" "}
                 </div>
-              )
+              );
             }
           }
         })}
