@@ -20,7 +20,7 @@ function App() {
         </div>
         <img
           className="logo"
-          src="../src/assets/logo2.svg"
+          src={imageSrc}
           alt="big logo of the festival"
         ></img>
 
