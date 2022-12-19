@@ -135,7 +135,7 @@ function Products(props) {
       <a className="linkMockup" href={`/`}>
         {" "}
         <button className="confirmation campIdle">
-          Go back to the main page
+          Go back to <br></br>the main page
         </button>
       </a>
     </div>

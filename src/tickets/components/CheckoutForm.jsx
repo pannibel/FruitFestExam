@@ -34,7 +34,7 @@ function CheckoutForm(props) {
   }
 
   return (
-    <div className="checkoutform">
+    <div className={state == 3 ? "checkoutform2" : "checkoutform"}>
       {state == 1 ? (
         <GuestInfo
           changePage={changePage}

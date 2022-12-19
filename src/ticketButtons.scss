@@ -31,8 +31,8 @@
   border: 0;
 }
 button:hover.regInc {
-  scale: 0.99;
-  filter: drop-shadow(0px 1px 2px rgba(165, 165, 165, 0.7));
+  scale: 1.05;
+  filter: drop-shadow(0px 1px 2px rgba(165, 165, 165, 0.9));
 }
 button:active.regInc {
   scale: 0.8;
@@ -45,6 +45,10 @@ button:disabled.regInc {
 .regDec {
   background-image: url("./assets/tickets/regDecON.svg");
 }
+button:hover.regDec {
+  scale: 1.05;
+  filter: drop-shadow(0px 1px 2px rgba(165, 165, 165, 0.9));
+}
 button:active.regDec {
   scale: 0.8;
 }
@@ -55,6 +59,7 @@ button:disabled.regDec {
 .vipInc {
   background-image: url("./assets/tickets/vipIncON.svg");
 }
+
 button:active.vipInc {
   scale: 0.8;
 }
@@ -62,8 +67,16 @@ button:disabled.vipInc {
   opacity: 0.3;
   scale: 1;
 }
+button:hover.vipInc {
+  scale: 1.05;
+  filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.4));
+}
 .vipDec {
   background-image: url("./assets/tickets/vipDecON.svg");
+}
+button:hover.vipDec {
+  scale: 1.05;
+  filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.4));
 }
 button:active.vipDec {
   scale: 0.8;

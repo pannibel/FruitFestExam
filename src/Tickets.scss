@@ -204,6 +204,18 @@
 }
 
 #basket {
+  .campIdle,
+  .campGrey,
+  .campPicked {
+    filter: none;
+    justify-self: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 10px;
+    border: 0;
+    // filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+  }
+
   p {
     font-size: 14px;
     /* Create the gradient. */
@@ -220,6 +232,12 @@
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+  }
+  button:hover {
+    // filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+
+    // scale: 1;
+    border: 0;
   }
   div {
     font-size: 14px;
@@ -347,7 +365,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+  // filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
   border: 0px;
   transition: 0.2s;
   p {
@@ -370,10 +388,14 @@
     -moz-text-fill-color: transparent;
   }
 }
-.campIdle:hover {
-  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+.box2 {
+  .campIdle:hover {
+    scale: 1.05;
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+  }
 }
 .campIdle:active {
+  scale: 0.95;
   background-image: url("./assets/tickets/camp_picked.svg");
   filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0));
 }
@@ -401,7 +423,7 @@ input[type="radio"] {
   background-position: center;
   background-repeat: no-repeat;
   border: 0px;
-  transition: 0.2s;
+  transition: 0.1s;
   p {
     background-color: red;
     text-align: center;
@@ -424,7 +446,7 @@ input[type="radio"] {
 }
 .campPicked:hover {
   transition: 0.2s;
-  filter: drop-shadow(0px 3px 4px rgba(242, 117, 22, 0.9));
+  filter: drop-shadow(0px 0px 0px rgba(242, 117, 22, 0.9));
 }
 .campGrey {
   min-width: 100px;
@@ -436,7 +458,8 @@ input[type="radio"] {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.3s;
+  transition: 0.1s;
+  border: 0px;
   p {
     text-align: center;
     font-size: 80%;
@@ -591,15 +614,32 @@ input[type="radio"] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
-  // background-image: url(/src/assets/background_1.webp);
-  // background-repeat: no-repeat;
-  // background-color: #99caea;
-  // background-position: center;
-  // background-attachment: fixed;
-  // background-size: cover;
+
   align-self: center;
   .box {
     min-width: 300px;
+  }
+  #basket {
+    margin-right: 10vw;
+  }
+  // padding-top: 10%;
+}
+.checkoutform2 {
+  z-index: 5;
+  position: relative;
+  gap: 30px;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  justify-content: center;
+  display: flex;
+  // justify-content: space-between;
+  // flex-wrap: wrap-reverse;
+
+  align-self: center;
+  .box {
+    min-width: 300px;
+    margin-left: 0px;
+    padding-top: 5%;
   }
   #basket {
     margin-right: 10vw;
@@ -676,8 +716,12 @@ input[type="radio"] {
 }
 .confirmation {
   button {
+    text-align: center;
+    overflow-wrap: break-word;
+    // margin-left: 0px;
+    // margin-right: 0px;
     display: block;
-    background: none;
+    // background: none;
     margin: 0 auto;
     border: 0px;
   }
@@ -770,5 +814,11 @@ input[type="radio"] {
   }
   .box2 {
     width: 70%;
+  }
+}
+.linkMockup {
+  button {
+    margin-top: 30px;
+    margin-left: 5vw;
   }
 }
