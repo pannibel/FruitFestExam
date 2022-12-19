@@ -8,7 +8,7 @@ import TicketProduct from "./TicketProduct";
 function Products(props) {
   const theForm = useRef(null);
   const [chosenSpot, setChosenSpot] = useState();
-  let [warning, setWarning] = useState({ extras: false, camping: false });
+  let [warning, setWarning] = useState({ extras: true, camping: false });
 
   const cheapprice = 799;
   const expprice = 1299;
