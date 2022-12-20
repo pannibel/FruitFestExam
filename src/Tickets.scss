@@ -541,6 +541,7 @@ input[type="radio"] {
 }
 
 .basketCheckout {
+  display: block;
   border: 0;
   margin-top: 20px;
   height: 40px;
@@ -847,7 +848,22 @@ input[type="radio"] {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 600px) {
+.appHeader {
+  justify-content: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+  .main {
+    .logo {
+      width: 90%;
+    }
+    .date {
+      width: 80%;
+    }
+  }
+
   #basketCont {
     position: relative;
     // z-index: 5;
