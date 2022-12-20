@@ -44,9 +44,9 @@ function App() {
     // ! change it in LineupApp.jsx, App.jsx and Tickets.jsx
     //? "../src/assets/mountain_4.glb"
     // ! and this one should be used for the manual build
-    //? "assets/mountain_4.glb"
+    //? "assets/mountainFin.glb"
 
-    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("../src/assets/mountainFin.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -73,7 +73,7 @@ function App() {
     document.body.appendChild(renderer.domElement);
 
     // added ambient light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     ambientLight.castShadow = true;
     scene.add(ambientLight);
 
@@ -115,8 +115,7 @@ function App() {
       <canvas id="myThreeJsCanvas" className="test3D" />
       <div className="landingCont">
         <header className="appHeader">
-          <a className="ticketsBtn" href={`tickets`}>
-          </a>
+          <a className="ticketsBtn" href={`tickets`}></a>
         </header>
 
         <div className="main">
@@ -132,8 +131,7 @@ function App() {
           <img className="date" src={ImageTest2} alt="date logo"></img>
 
           <div className="btnCont">
-            <a className="appBtn" href={`lineup`}>
-            </a>
+            <a className="appBtn" href={`lineup`}></a>
           </div>
 
           <div className="mainNamesCont"></div>
