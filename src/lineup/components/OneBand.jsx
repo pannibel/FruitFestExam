@@ -12,7 +12,6 @@ function OneBand(props) {
 
   return (
     <div className={props.singleBandState ? "oneBand" : "hidden"}>
-      {" "}
       <img
         src={imageDir}
         alt={props.data.logoCredits}
