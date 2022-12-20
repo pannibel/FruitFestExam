@@ -197,7 +197,14 @@ function Lineup() {
       <canvas id="myThreeJsCanvas" className="test3D" />
       <div className="appCont">
         {lineUpPage == 1 ? (
-          <CurrentBand currentBand={currentBand} bands={bands} />
+          <CurrentBand
+            currentBand={currentBand}
+            bands={bands}
+            openOneBand={openOneBand}
+            openedBand={openedBand}
+            singleBandState={singleBandState}
+            setSingleBandState={setSingleBandState}
+          />
         ) : (
           ""
         )}
@@ -229,20 +236,17 @@ function Lineup() {
           <button
             onClick={() => changePageApp(1)}
             className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
-            value="home"
-          ></button>
+            value="home"></button>
           <button
             onClick={() => changePageApp(2)}
             className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
-            value="bands"
-          ></button>
+            value="bands"></button>
           <button
             onClick={() => changePageApp(3)}
             className={
               lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"
             }
-            value="schedule"
-          ></button>
+            value="schedule"></button>
         </div>
         {/* <Bandslist bands={bands} /> */}
 
@@ -250,8 +254,7 @@ function Lineup() {
           <button
             onClick={() => openBurger()}
             className="burger_off"
-            button-name="openburg"
-          >
+            button-name="openburg">
             {" "}
           </button>
         )}
@@ -260,8 +263,7 @@ function Lineup() {
             <button
               onClick={() => openBurger()}
               className="burger_on"
-              button-name="klosburg"
-            >
+              button-name="klosburg">
               {" "}
             </button>
             <Burger />

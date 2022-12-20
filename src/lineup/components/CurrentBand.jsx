@@ -1,7 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ImageTest from "../../assets/logo2.svg";
+import OneBand from "./OneBand";
+
 function CurrentBand(props) {
+  let midgardPlayer, vanaheimPlayer, jotunheimPlayer;
+  let openedBand;
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let showCurrentActTime =
@@ -32,6 +36,7 @@ function CurrentBand(props) {
         });
       }
     });
+
     return returnValue;
   }
   // console.log(testForTuesday("Vanaheim"));
@@ -90,7 +95,7 @@ function CurrentBand(props) {
               testForTuesday("Midgard") == "break" ? "hidden" : "currentBandBox"
             }
           >
-            <div className="currentBandRow colorMidgard">
+            <div className="currentBandRow colorMidgard" onClick={() => props.openOneBand(`${testForTuesday("Midgard")}`)}>
               <img
                 src={pickImage(testForTuesday("Midgard"))}
                 className="imgSingleBand"
@@ -100,7 +105,7 @@ function CurrentBand(props) {
               <div className="playerStage">Midgard</div>
             </div>
 
-            <div className="currentBandRow  colorVanaheim">
+            <div className="currentBandRow  colorVanaheim" onClick={() => props.openOneBand(`${testForTuesday("Vanaheim")}`)}>
               <img
                 src={pickImage(testForTuesday("Vanaheim"))}
                 className="imgSingleBand"
@@ -109,7 +114,7 @@ function CurrentBand(props) {
               <div className="playerBand">{testForTuesday("Vanaheim")}</div>
               <div className="playerStage">Vanaheim</div>
             </div>
-            <div className="currentBandRow colorJotunheim">
+            <div className="currentBandRow colorJotunheim" onClick={() => props.openOneBand(`${testForTuesday("Jotunheim")}`)}>
               <img
                 src={pickImage(testForTuesday("Jotunheim"))}
                 className="imgSingleBand"
@@ -120,6 +125,22 @@ function CurrentBand(props) {
             </div>
           </div>
         </div>
+
+        <div
+        className={props.singleBandState ? "oneBandCont" : "hidden"}
+        onClick={props.openOneBand}
+      >
+        {!props.singleBandState}
+        {props.singleBandState && (
+          <OneBand
+            openOneBand={props.openOneBand}
+            openedBand={props.openedBand}
+            data={props.bands}
+            singleBandState={props.singleBandState}
+            setSingleBandState={props.setSingleBandState}
+          />
+        )}
+      </div>
       </div>
     </div>
   );
