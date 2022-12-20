@@ -62,7 +62,7 @@ function Tickets() {
     // ! and this one should be used for the manual build
     //? "assets/mountain_4.glb"
 
-    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
