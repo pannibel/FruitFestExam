@@ -60,8 +60,26 @@ function TicketProduct(props) {
     }
 
     console.log(props.count)
+    removeExtras();
   }
-  
+
+  function removeExtras() {
+    props.basket.map((item) => {
+      if (item.type === "extra") {
+        item.amount = props.count.total
+      }
+    })
+
+    if (props.count.total === 0) {
+      props.basket.map((product) => {
+        if (product.type === "extra") {
+          props.removeFromBasket(product.name);
+          console.log("removed extra");
+        }
+      });
+    }
+  }
+
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>

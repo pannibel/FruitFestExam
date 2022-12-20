@@ -45,8 +45,10 @@ function PaymentDetails(props) {
 
   return (
     <div id="productList" className="box">
+              <h2>Billing details</h2>
       <form ref={theForm} method="">
-        <h2>Billing details</h2>
+
+        <div>
         <h3>Personal details</h3>
         <section className="formInput">
           <label htmlFor="form-mainname" className="labelGuestList">
@@ -97,6 +99,7 @@ function PaymentDetails(props) {
             </div>
           </div>
         </section>
+        </div>
         {/* <section>
           <label htmlFor="">Full name</label>
           <input
@@ -107,6 +110,7 @@ function PaymentDetails(props) {
             placeholder="your name here"
           />
         </section> */}
+        <div>
         <h3>Billing address</h3>
         <section className="formInput">
           <label htmlFor="form-street" className="labelGuestList">
@@ -124,6 +128,7 @@ function PaymentDetails(props) {
             </div>
           </div>
         </section>
+
         <section className="formInput">
           <label htmlFor="form-street" className="labelGuestList">
             Apartment (number, floor, door, etc)
@@ -173,10 +178,11 @@ function PaymentDetails(props) {
             </div>
           </div>
         </section>
+        </div>
 
+
+        <div className="card_details">
         <h3>Card details</h3>
-
-        <div>
           <section className="formInput">
             <label htmlFor="form-fullname" className="labelGuestList">
               Name on card
@@ -237,22 +243,17 @@ function PaymentDetails(props) {
         </div>
       </form>
 
-      <button className="campIdle" onClick={props.changePage} name="back">
-        Back
-      </button>
+      <div className="checkoutBtns">
+        <button
+          className="gobackBtn"
+          onClick={props.changePage} name="back"
+        >
+        </button>
 
-      <button
-        className="campIdle"
-        onClick={(e) => {
-          saveBillingInfo(e);
-          props.changePage(e);
-        }}
-        name="next"
-      >
-        <p>
-          Complete <br></br> payment
-        </p>
-      </button>
+        <button className="complete_payment" name="next">
+        </button>
+        </div>
+
     </div>
   );
 }

@@ -32,7 +32,7 @@ function GuestInfo(props) {
   return (
     // <div>
     <div id="productList" className="box">
-      <h3>Ticket Owners:</h3>
+      <h2>Guest Information</h2>
       <form
         ref={theForm}
         className="inputForm"
@@ -73,19 +73,19 @@ function GuestInfo(props) {
             </div>
           </div>
         ))}
+        <div className="checkoutBtns">
         <button
-          className="campIdle"
+          className="gobackBtn"
           onClick={() => {
             {
               props.setShowForm(false);
             }
           }}
         >
-          Go back
         </button>
-        <button className="campIdle" name="next">
-          Next
+        <button className="nextBtn" name="next">
         </button>
+        </div>
       </form>
     </div>
     // </div>
