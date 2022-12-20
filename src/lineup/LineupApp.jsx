@@ -17,13 +17,15 @@ function Lineup() {
   const [openedBand, setOpenedband] = useState();
   const [bands, setBands] = useState([]);
 
-  if (lineUpPage == 1) {
-    document.querySelector("body").classList = "";
-    document.querySelector("body").classList.add("backClass_1");
-  } else if (lineUpPage == 2) {
-    document.querySelector("body").classList = "";
-    document.querySelector("body").classList.add("backClass_2");
-  }
+  // ? function to change the background
+  // if (lineUpPage == 1) {
+  //   document.querySelector("body").classList = "";
+  //   document.querySelector("body").classList.add("backClass_1");
+  // } else if (lineUpPage == 2) {
+  //   document.querySelector("body").classList = "";
+  //   document.querySelector("body").classList.add("backClass_2");
+  // }
+
   useEffect(() => {
     async function getData() {
       const res = await fetch("https://bitter-grass-7071.fly.dev/schedule");

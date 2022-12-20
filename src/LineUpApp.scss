@@ -140,7 +140,8 @@ button:focus-visible {
   transition: 0.3s;
 }
 .searchContCont {
-  width: 95vw;
+  min-width: 320px;
+  width: 65vw;
   max-width: 500px;
 }
 .searchbarCont {
@@ -328,7 +329,7 @@ button:focus-visible {
   }
 
   .currentlyCont {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -505,7 +506,8 @@ button:focus-visible {
     justify-self: flex-start;
   }
   #weekDaysCont {
-    width: 95vw;
+    min-width: 320px;
+    width: 65vw;
     max-width: 500px;
     overflow-x: hidden;
     ::-webkit-scrollbar {
