@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function Burger() {
   return (
     <div className="burgerMenu">
-        <button className='about'> </button>
-        <button className='merch'> </button>
-        <button className='map'> </button>
+      <a href={`tickets`}>
+        <button className="tickets"></button>
+      </a>
+      <a href={`/`}>
+        <button className="homepage"> </button>
+      </a>
     </div>
-  )
+  );
 }
 
-export default Burger
+export default Burger;

@@ -134,8 +134,8 @@
   text-align: center;
 }
 .box {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   form {
     display: flex;
     flex-direction: column;
@@ -200,13 +200,18 @@ flex-direction: column;
   min-width: 300px;
   justify-self: center;
 
-#basket {
-  display: flex;
-  flex-direction: column;
-}
+  #basket {
+    display: flex;
+    flex-direction: column;
+  }
   .total_price {
     font-family: Chopsic;
-    background: linear-gradient(180deg, rgba(249, 190, 121, 0.85) 0%, rgba(254, 91, 0, 0.85) 42.71%, rgba(208, 64, 19, 0.85) 89.06%);
+    background: linear-gradient(
+      180deg,
+      rgba(249, 190, 121, 0.85) 0%,
+      rgba(254, 91, 0, 0.85) 42.71%,
+      rgba(208, 64, 19, 0.85) 89.06%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -536,6 +541,7 @@ input[type="radio"] {
 }
 
 .basketCheckout {
+  display: block;
   border: 0;
   margin-top: 20px;
   height: 40px;
@@ -662,6 +668,7 @@ input[type="radio"] {
     min-width: 300px;
     margin-left: 0px;
     padding-top: 5%;
+    gap: 20px
   }
   #basket {
     margin-right: 10vw;
@@ -740,16 +747,18 @@ input[type="radio"] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 0px
+  margin-top: 0px;
 }
 
 .card_details {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-bottom: 30px;
 }
 
 .confirmation {
+
   button {
     text-align: center;
     overflow-wrap: break-word;
@@ -782,6 +791,15 @@ input[type="radio"] {
   }
   h2 {
     text-align: center;
+  }
+
+  .campIdle {
+    background-image: none;
+  }
+
+  .campIdle:hover {
+    filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+
   }
 }
 .box2 {
@@ -830,7 +848,22 @@ input[type="radio"] {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 600px) {
+.appHeader {
+  justify-content: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+  .main {
+    .logo {
+      width: 90%;
+    }
+    .date {
+      width: 80%;
+    }
+  }
+
   #basketCont {
     position: relative;
     // z-index: 5;
@@ -854,6 +887,28 @@ input[type="radio"] {
 .linkMockup {
   button {
     margin-top: 30px;
-    margin-left: 5vw;
   }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
 }
