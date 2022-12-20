@@ -6,7 +6,8 @@ import CheckoutForm from "./components/CheckoutForm";
 import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
 import ReactDOM from "react-dom";
-
+// import MountainTest from "../assets/mountain_4.glb";
+import ImageTest from "../assets/logo2.svg";
 // ? weird ass react components acting gay (late 18hundreds way of perceving gays, now we know we're all cool and who know, sexuality is a spectrum right and everyone should find a cosy place on that spectrum)
 
 // import Mountain from "../src/assets/mountain_4";
@@ -24,6 +25,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // ? ========================================================
 
 function Tickets() {
+  // const { nodes } = useGLTF(modelSrc);
   const [idValue, setIdValue] = useState();
   const [showForm, setShowForm] = useState(false);
   const [basket, setBasket] = useState([]);
@@ -55,7 +57,7 @@ function Tickets() {
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("./../src/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -131,7 +133,7 @@ function Tickets() {
         {" "}
         <img
           className="logo"
-          src="src/assets/logo2.svg"
+          src={ImageTest}
           alt="big logo of the festival"
         ></img>
       </a>
