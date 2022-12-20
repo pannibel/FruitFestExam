@@ -239,7 +239,6 @@ function PaymentDetails(props) {
             <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
           </section>
 
-          <svg {...getCardImageProps({ images })} />
         </div>
       </form>
 
