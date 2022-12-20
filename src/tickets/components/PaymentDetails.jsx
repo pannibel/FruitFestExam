@@ -46,7 +46,15 @@ function PaymentDetails(props) {
   return (
     <div id="productList" className="box">
       <h2>Billing details</h2>
-      <form ref={theForm} method="">
+      <form ref={theForm} onSubmit={(e) => {
+            saveBillingInfo(e);
+            props.changePage({
+              preventDefault: () => {},
+              target: {
+                name: "next",
+              },
+            });
+          }}>
         <div>
           <h3>Personal details</h3>
           <section className="formInput">
@@ -61,6 +69,7 @@ function PaymentDetails(props) {
                   name="mainname"
                   id="form-mainname"
                   placeholder="e.g. Harry Truman"
+                  required
                 />{" "}
               </div>
             </div>
@@ -77,6 +86,7 @@ function PaymentDetails(props) {
                   name="email"
                   id="form-email"
                   placeholder="example@example.com"
+                  required
                 />{" "}
               </div>
             </div>
@@ -94,6 +104,7 @@ function PaymentDetails(props) {
                   name="phone"
                   id="form-phone"
                   placeholder="e.g. +00 1234 5678"
+                  required
                 />{" "}
               </div>
             </div>
@@ -123,6 +134,7 @@ function PaymentDetails(props) {
                   name="street"
                   id="form-street"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -140,6 +152,7 @@ function PaymentDetails(props) {
                   name="apartment"
                   id="form-apartment"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -157,6 +170,7 @@ function PaymentDetails(props) {
                   name="city"
                   id="form-city"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -173,6 +187,7 @@ function PaymentDetails(props) {
                   name="country"
                   id="form-country"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -193,6 +208,7 @@ function PaymentDetails(props) {
                   name="fullname"
                   id="form-fullname"
                   placeholder=""
+                  required
                 />{" "}
               </div>
             </div>
@@ -217,7 +233,7 @@ function PaymentDetails(props) {
             </label>
             <div className="formInputShorter formInputCont">
               <div>
-                <input name="expirydate" {...getExpiryDateProps()} />{" "}
+                <input name="expirydate" {...getExpiryDateProps()} required/>{" "}
               </div>
             </div>
             <small>
@@ -231,15 +247,14 @@ function PaymentDetails(props) {
             </label>
             <div className="formInputShorter formInputCont ">
               <div>
-                <input name="cvc" {...getCVCProps()} />{" "}
+                <input name="cvc" {...getCVCProps()} required/>{" "}
               </div>
             </div>
             <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
           </section>
         </div>
-      </form>
 
-      <div className="checkoutBtns">
+        <div className="checkoutBtns">
         <button
           className="gobackBtn"
           onClick={props.changePage}
@@ -248,11 +263,11 @@ function PaymentDetails(props) {
         <button
           className="completeBtn"
           name="next"
-          onClick={(e) => {
-            saveBillingInfo(e);
-            props.changePage(e);
-          }}></button>
+          ></button>
       </div>
+      </form>
+
+
     </div>
   );
 }
