@@ -250,7 +250,7 @@ function PaymentDetails(props) {
         >
         </button>
 
-        <button className="complete_payment" name="next">
+        <button className="completeBtn" name="next">
         </button>
         </div>
 
