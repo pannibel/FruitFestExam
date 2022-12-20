@@ -629,7 +629,8 @@ button:focus-visible {
   width: 100vw;
 
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 10%;
 
   background-color: #000000a6;
   z-index: 30;
@@ -637,7 +638,7 @@ button:focus-visible {
   .oneBand {
     position: relative;
     display: flex;
-    height: 70%;
+    height: 80%;
     margin: 0 5% 0 5%;
 
     flex-direction: column;

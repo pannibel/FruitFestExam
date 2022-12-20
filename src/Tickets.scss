@@ -196,13 +196,15 @@
   position: fixed;
   z-index: 5;
   top: 170px;
-  left: 65%;
-  min-width: 300px;
+ left: 65%;
+  width: 300px;
+  height: 90vh;
   justify-self: center;
 
   #basket {
     display: flex;
     flex-direction: column;
+
   }
   .total_price {
     font-family: Chopsic;
