@@ -27,7 +27,7 @@ body {
   padding: 30px;
 
   .ticketsBtn {
-    padding: 15px 20px 15px 20px;
+    padding: 10px 20px 10px 20px;
     text-align: center;
     border-radius: 60px;
     background: linear-gradient(
@@ -65,8 +65,8 @@ body {
 }
 
 .main {
-  position: absolute;
-  width: 100vw;
+  // position: absolute;
+  // width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,7 +114,7 @@ body {
 
   .appBtn {
     padding: 15px 20px 15px 20px;
-    margin: 100px 0 0 0;
+    margin-top: 80px;
     text-align: center;
     border-radius: 60px;
     background: linear-gradient(

@@ -10,6 +10,9 @@ import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // import { Outlet } from "react-router-dom";
+import ImageTest from "./assets/logo2.svg";
+
+// import MountainTest from "./assets/mountain_4.glb";
 import { BrowserRouter } from "react-router-dom";
 function App() {
   useEffect(() => {
@@ -36,7 +39,13 @@ function App() {
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("./../src/mountain_4.glb", (gltfScene) => {
+
+    // !this one works in dev mode ,as a path for the mountain
+    //? "../src/assets/mountain_4.glb"
+    // ! and this one should be used for the manual build
+    //? "assets/mountain_4.glb"
+
+    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -116,15 +125,11 @@ function App() {
           </div>
           <img
             className="logo"
-            src="src/assets/logo2.svg"
+            src={ImageTest}
             alt="big logo of the festival"
           ></img>
 
-          <img
-            className="date"
-            src="src/assets/date.svg"
-            alt="big logo of the festival"
-          ></img>
+          <img className="date" src="src/assets/date.svg" alt="date logo"></img>
 
           <div className="btnCont">
             <a className="appBtn" href={`lineup`}>
