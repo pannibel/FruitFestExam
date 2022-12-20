@@ -217,6 +217,10 @@ flex-direction: column;
     color: #4400ff;
     margin: 0;
   }
+
+  h4 {
+    margin-bottom: 10px;
+  }
 }
 
 #basket {
@@ -322,10 +326,12 @@ flex-direction: column;
   }
 }
 .ticketItem {
+  display: flex;
+  flex-direction: row;
   p {
     margin: 0;
   }
-  padding: 10px 15px;
+  padding: 10px 20px 10px 20px;
   border-radius: 30px;
   background-color: rgba(244, 244, 244, 0.7);
   display: block;
@@ -737,7 +743,11 @@ input[type="radio"] {
   margin-top: 0px
 }
 
-
+.card_details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 
 .confirmation {
   button {
