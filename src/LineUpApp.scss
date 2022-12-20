@@ -75,7 +75,7 @@ button:focus-visible {
   color: rgb(237, 237, 237);
 
   background-color: rgba(247, 247, 247, 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   border: 3px solid #cccccc;
 
   position: fixed;
@@ -156,7 +156,7 @@ button:focus-visible {
     rgb(226, 227, 226)
   );
   opacity: 0.7;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
   border-radius: 30px;
   border: 3px solid #cccccc;
 
@@ -301,6 +301,8 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   margin: 0px 20px 0px 20px;
+  z-index: 5;
+  position: relative;
 }
 
 .anotherCont {
@@ -338,7 +340,7 @@ button:focus-visible {
     color: rgb(237, 237, 237);
 
     background-color: rgba(247, 247, 247, 0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     border-radius: 30px;
     border: 3px solid #cccccc;
 
@@ -466,7 +468,7 @@ button:focus-visible {
     color: rgb(237, 237, 237);
 
     background-color: rgba(247, 247, 247, 0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     border-radius: 30px;
     border: 3px solid #cccccc;
 
@@ -540,7 +542,7 @@ button:focus-visible {
     gap: 50px;
 
     background-color: rgba(247, 247, 247, 0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     border-radius: 30px;
     border: 3px solid #cccccc;
 

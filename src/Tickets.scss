@@ -193,16 +193,19 @@
   pointer-events: none;
 }
 #basketCont {
-  position: fixed;
+  // position: fixed;
   z-index: 5;
-  top: 170px;
-  left: 65%;
+  // top: 170px;
+  // left: 65%;
   min-width: 300px;
   justify-self: center;
 
   #basket {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0px;
+    margin-bottom: 30px;
   }
   .total_price {
     font-family: Chopsic;
@@ -392,7 +395,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  // filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+  filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
   border: 0px;
   transition: 0.2s;
   p {
@@ -417,7 +420,8 @@
 }
 .box2 {
   .campIdle:hover {
-    scale: 1.05;
+    // filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+    // scale: 1.05;
     filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
   }
 }
@@ -470,6 +474,11 @@ input[type="radio"] {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
+}
+.campPicked:active {
+  scale: 0.95;
+  // transition: 0.2s;
+  filter: drop-shadow(0px 2px 2px rgba(242, 117, 22, 0.9));
 }
 .campPicked:hover {
   transition: 0.2s;
@@ -668,10 +677,10 @@ input[type="radio"] {
     min-width: 300px;
     margin-left: 0px;
     padding-top: 5%;
-    gap: 20px
+    gap: 20px;
   }
   #basket {
-    margin-right: 10vw;
+    // margin-right: 10vw;
   }
   // padding-top: 10%;
 }
@@ -758,7 +767,6 @@ input[type="radio"] {
 }
 
 .confirmation {
-
   button {
     text-align: center;
     overflow-wrap: break-word;
@@ -799,7 +807,6 @@ input[type="radio"] {
 
   .campIdle:hover {
     filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
-
   }
 }
 .box2 {
@@ -848,12 +855,12 @@ input[type="radio"] {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 600px) {
-.appHeader {
-  justify-content: center;
-  padding-top: 20%;
-  padding-bottom: 20%;
-}
+@media screen and (max-width: 930px) {
+  .appHeader {
+    justify-content: center;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
 
   .main {
     .logo {
@@ -870,6 +877,9 @@ input[type="radio"] {
     top: auto;
     left: auto;
     // min-width: 300px;
+  }
+  #basket {
+    margin-bottom: 30px;
   }
   #basket,
   .checkoutform #basket,
