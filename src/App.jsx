@@ -10,6 +10,7 @@ import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // import { Outlet } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   useEffect(() => {
     // laoding the scene
