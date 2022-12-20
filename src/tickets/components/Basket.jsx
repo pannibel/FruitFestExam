@@ -103,11 +103,13 @@ function Basket(props) {
     <div id="basketCont">
       <div id="basket">
         <h3>Basket</h3>
-        <h4>Tickets:</h4>
+
         <div className="separateTickets">
           {props.basket.map((item) => {
             if (item.type == "ticket") {
               return (
+                <div>
+                <h4>Tickets:</h4>
                 <div
                   key={item.name}
                   className={
@@ -132,6 +134,7 @@ function Basket(props) {
                       {" "}
                     </button>
                   </div>{" "}
+                </div>
                 </div>
               );
             }

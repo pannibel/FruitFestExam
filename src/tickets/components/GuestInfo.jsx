@@ -44,8 +44,7 @@ function GuestInfo(props) {
               name: "next",
             },
           });
-        }}
-      >
+        }}>
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
             <h3 className="GuestGuest">Guest {i + 1}</h3>
@@ -59,6 +58,7 @@ function GuestInfo(props) {
                   name="fullname"
                   id={i}
                   placeholder="e.g. Harry Truman"
+                  required
                 />
               </div>
             </div>
@@ -68,23 +68,26 @@ function GuestInfo(props) {
             </label>
             <div className="formInputCont ">
               <div>
-                <input type="email" name="email" id={i} placeholder="example@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  id={i}
+                  placeholder="example@example.com"
+                  required
+                />
               </div>
             </div>
           </div>
         ))}
         <div className="checkoutBtns">
-        <button
-          className="gobackBtn"
-          onClick={() => {
-            {
-              props.setShowForm(false);
-            }
-          }}
-        >
-        </button>
-        <button className="nextBtn" name="next">
-        </button>
+          <button
+            className="gobackBtn"
+            onClick={() => {
+              {
+                props.setShowForm(false);
+              }
+            }}></button>
+          <button className="nextBtn" name="next"></button>
         </div>
       </form>
     </div>
