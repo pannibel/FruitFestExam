@@ -56,7 +56,7 @@ function Tickets() {
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("/assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;

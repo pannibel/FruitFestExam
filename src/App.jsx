@@ -11,7 +11,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // import { Outlet } from "react-router-dom";
 import ImageTest from "./assets/logo2.svg";
-
+import ImageTest2 from "./assets/date.svg";
 // import MountainTest from "./assets/mountain_4.glb";
 import { BrowserRouter } from "react-router-dom";
 function App() {
@@ -129,7 +129,7 @@ function App() {
             alt="big logo of the festival"
           ></img>
 
-          <img className="date" src="src/assets/date.svg" alt="date logo"></img>
+          <img className="date" src={ImageTest2} alt="date logo"></img>
 
           <div className="btnCont">
             <a className="appBtn" href={`lineup`}>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import ImageTest from "../../assets/logo2.svg";
 function CurrentBand(props) {
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
@@ -63,7 +63,7 @@ function CurrentBand(props) {
       <div className="homeCont">
         <img
           className="logo"
-          src="src/assets/logo2.svg"
+          src={ImageTest}
           alt="big logo of the festival"
         ></img>
         <div className="currentlyCont">

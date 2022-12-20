@@ -2,7 +2,7 @@ import React from "react";
 import SingleBand from "./SingleBandList";
 import { useRef, useState } from "react";
 import OneBand from "./OneBand";
-
+import ImageTest from "../../assets/logo2.svg";
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
   const theInput = useRef(null);
@@ -43,7 +43,7 @@ function Bandslist(props) {
     <div className="bandsCont">
       <img
         className="logo_small"
-        src="src/assets/logo2.svg"
+        src={ImageTest}
         alt="big logo of the festival"
       ></img>
       <div className="searchContCont">
@@ -85,7 +85,10 @@ function Bandslist(props) {
             ))}
       </div>
 
-      <div className={props.singleBandState ? "oneBandCont" : "hidden"} onClick={props.openOneBand}>
+      <div
+        className={props.singleBandState ? "oneBandCont" : "hidden"}
+        onClick={props.openOneBand}
+      >
         {!props.singleBandState}
         {props.singleBandState && (
           <OneBand

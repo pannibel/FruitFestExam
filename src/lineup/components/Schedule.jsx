@@ -2,7 +2,7 @@ import React from "react";
 import SingleBandSchedule from "./SingleBandSchedule";
 import OneBand from "./OneBand";
 import { useState, useEffect } from "react";
-
+import ImageTest from "../../assets/logo2.svg";
 function Bandslist(props) {
   const [schedDay, setSchedDay] = useState("mon");
 
@@ -65,7 +65,7 @@ function Bandslist(props) {
     <div className="skedgeCont">
       <img
         className="logo_small"
-        src="src/assets/logo2.svg"
+        src={ImageTest}
         alt="big logo of the festival"
       ></img>
 
@@ -128,7 +128,10 @@ function Bandslist(props) {
         })}
       </div>
 
-      <div className={props.singleBandState ? "oneBandCont" : "hidden"} onClick={props.openOneBand}>
+      <div
+        className={props.singleBandState ? "oneBandCont" : "hidden"}
+        onClick={props.openOneBand}
+      >
         {!props.singleBandState}
         {props.singleBandState && (
           <OneBand
