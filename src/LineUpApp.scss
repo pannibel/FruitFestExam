@@ -740,17 +740,6 @@ button:focus-visible {
       font-size: small;
       line-height: 20px;
       color: #ffffff;
-
-      mask: #ffffff content-box, #ffffff71;
-      mask-composite: exclude;
-      -webkit-mask: linear-gradient(
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0) 80%,
-            rgb(255, 255, 255) 100%
-          )
-          content-box,
-        linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(197, 197, 197, 1) 39%);
-      -webkit-mask-composite: xor;
     }
   }
 
