@@ -27,39 +27,19 @@ body {
   padding: 30px;
 
   .ticketsBtn {
-    padding: 10px 20px 10px 20px;
-    text-align: center;
-    border-radius: 60px;
-    background: linear-gradient(
-      180deg,
-      rgba(249, 190, 121, 0.85) 0%,
-      rgba(254, 91, 0, 0.85) 54.69%,
-      rgba(208, 64, 19, 0.85) 100%
-    );
-    display: block;
-    position: relative;
-
-    font-size: 20px;
-    color: #ffffffa7;
-    transition: 0.2s;
-  }
-
-  .ticketsBtn:active {
-    background: linear-gradient(
-      360deg,
-      rgba(249, 190, 121, 0.85) 0%,
-      rgba(254, 91, 0, 0.85) 54.69%,
-      rgba(208, 64, 19, 0.85) 100%
-    );
-    transition: 0.2s;
+    padding: 5px;
+    color: #213547;
+    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 150px;
+    height: 60px;
+    background-image: url("./assets/buttons/get_tickets.svg");
   }
   .ticketsBtn:hover {
-    background: linear-gradient(
-      360deg,
-      rgba(249, 190, 121, 0.85) 0%,
-      rgba(254, 91, 0, 0.85) 54.69%,
-      rgba(208, 64, 19, 0.85) 100%
-    );
+    scale: 1.1;
+    filter: drop-shadow(0px 2px 2px rgba(255, 161, 84, 0.7));
     transition: 0.2s;
   }
 }
@@ -105,48 +85,31 @@ body {
   .logo {
     width: 50%;
     margin: 50px 0px 50px 0px;
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7));
+   // filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7));
   }
 
-  // .date {
-
-  // }
-
-  .appBtn {
-    padding: 15px 20px 15px 20px;
-    margin-top: 80px;
-    text-align: center;
-    border-radius: 60px;
-    background: linear-gradient(
-      180deg,
-      rgba(210, 197, 248, 0.7) 0%,
-      rgba(120, 76, 214, 0.7) 42.71%,
-      rgba(46, 19, 208, 0.7) 89.06%
-    );
-    display: block;
-    position: relative;
-
-    font-size: 20px;
-    color: #ffffffa7;
-    transition: 0.2s;
+  .date {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.7));
   }
+  .btnCont {
+    display: flex;
+    margin-top: 10%;
 
-  .appBtn:active {
-    background: linear-gradient(
-      360deg,
-      rgba(210, 197, 248, 0.7) 0%,
-      rgba(120, 76, 214, 0.7) 42.71%,
-      rgba(46, 19, 208, 0.7) 89.06%
-    );
-    transition: 0.2s;
-  }
-  .appBtn:hover {
-    background: linear-gradient(
-      360deg,
-      rgba(210, 197, 248, 0.7) 0%,
-      rgba(120, 76, 214, 0.7) 42.71%,
-      rgba(46, 19, 208, 0.7) 89.06%
-    );
-    transition: 0.2s;
+    .appBtn {
+      padding: 5px;
+      color: #213547;
+      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      width: 150px;
+      height: 60px;
+      background-image: url("./assets/buttons/go_to_app.svg");
+    }
+    .appBtn:hover {
+      scale: 1.1;
+      filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+      transition: 0.2s;
+    }
   }
 }

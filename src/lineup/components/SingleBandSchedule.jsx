@@ -95,10 +95,10 @@ function SingleBandSchedule(props) {
               );
             } else {
               return (
-                <div className="cancelled_contCont" disabled={true}>
+                <div className="cancelled_contCont">
                   <li
                     className="singleBand"
-                    onClick={() => props.openOneBand(el.act)}
+                    disabled={true}
                   >
                     {pickImage(`${el.logo}`)}
                     <h4 className="act">{el.act}</h4>
@@ -117,11 +117,7 @@ function SingleBandSchedule(props) {
                   <div className="likeBtn">
                     <button
                       className={el.liked ? "buttRed" : "buttBlue"}
-                      onClick={(e) => {
-                        handleClick(e, el.act);
-                        el.liked = !el.liked;
-                      }}
-                      value="like"
+                      disabled={true}
                     ></button>
                   </div>{" "}
                 </div>

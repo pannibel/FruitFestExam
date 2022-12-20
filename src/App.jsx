@@ -10,7 +10,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // import { Outlet } from "react-router-dom";
-import ImageTest from "./assets/logo2.svg";
+import ImageTest from "./assets/logo2.png";
 import ImageTest2 from "./assets/date.svg";
 // import MountainTest from "./assets/mountain_4.glb";
 import { BrowserRouter } from "react-router-dom";
@@ -116,7 +116,6 @@ function App() {
       <div className="landingCont">
         <header className="appHeader">
           <a className="ticketsBtn" href={`tickets`}>
-            Get tickets
           </a>
         </header>
 
@@ -134,7 +133,6 @@ function App() {
 
           <div className="btnCont">
             <a className="appBtn" href={`lineup`}>
-              Go to app
             </a>
           </div>
 

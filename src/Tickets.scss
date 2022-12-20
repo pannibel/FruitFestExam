@@ -858,7 +858,7 @@ input[type="radio"] {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1110px) {
   .appHeader {
     // justify-content: center;
     padding-top: 5%;
@@ -874,7 +874,7 @@ input[type="radio"] {
     // z-index: 5;
     top: auto;
     left: auto;
-    // min-width: 300px;
+    min-width: 300px;
   }
   #basket {
     margin-bottom: 30px;
