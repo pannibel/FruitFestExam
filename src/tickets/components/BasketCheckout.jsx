@@ -5,12 +5,13 @@ function basketCheckout(props) {
   return (
     <div id="basketCont">
       <div id="basket">
-        <h3>Basket</h3>
-        <h4>Tickets:</h4>
+      <h3 className="total_price">Total: {props.totalPrice() + 99},-</h3>
         <div className="separateTickets">
           {props.basket.map((item) => {
             if (item.type == "ticket") {
               return (
+                <>
+                <h4>Tickets:</h4>
                 <div
                   key={item.name}
                   className={
@@ -26,15 +27,17 @@ function basketCheckout(props) {
                     <p>{item.amount * item.price},-</p>
                   </div>
                 </div>
+                </>
               );
             }
           })}
         </div>
-        <h4>Extras:</h4>
         <div>
           {props.basket.map((item) => {
             if (item.type == "extra") {
               return (
+                <>
+                <h4>Extras:</h4>
                 <div key={item.name} className="separateTickets ticketItem ">
                   <p>
                     {item.name} x {item.amount}
@@ -43,6 +46,7 @@ function basketCheckout(props) {
                     <p>{item.amount * item.price},-</p>
                   </div>
                 </div>
+                </>
               );
             }
           })}
@@ -58,7 +62,6 @@ function basketCheckout(props) {
         <ul>
           <li>Booking fee: 99,-</li>
         </ul>
-        <h3 className="total_price">Total: {props.totalPrice() + 99},-</h3>
       </div>
     </div>
   );
