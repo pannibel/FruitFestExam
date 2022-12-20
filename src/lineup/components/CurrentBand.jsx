@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function CurrentBand(props) {
   const showTime = new Date().getHours();
-  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
+  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2 + 2;
   let showCurrentActTime =
     hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
   let currentHour;
@@ -69,9 +69,28 @@ function CurrentBand(props) {
         <div className="currentlyCont">
           <h3>Now on stage</h3>
 
-          <div id="currentAct">{showCurrentActTime}</div>
-
-          <div className="currentBandBox">
+          <div
+            className={
+              testForTuesday("Midgard") == "break" ? "hidden" : "currentAct"
+            }
+          >
+            {showCurrentActTime}
+          </div>
+          <div
+            className={
+              testForTuesday("Midgard") == "break"
+                ? "colorVanaheim currentWidgBreak"
+                : "hidden"
+            }
+          >
+            BREAK UNTIL <br></br>
+            {hourBasedIndex + 2 + ":00"}
+          </div>
+          <div
+            className={
+              testForTuesday("Midgard") == "break" ? "hidden" : "currentBandBox"
+            }
+          >
             <div className="currentBandRow colorMidgard">
               <img
                 src={pickImage(testForTuesday("Midgard"))}
