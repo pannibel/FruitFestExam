@@ -219,7 +219,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin: 20px 0 0 0;
+    //margin: 20px 0 0 0;
   }
   h3 {
     font-family: Chopsic;
@@ -646,12 +646,12 @@ input[type="radio"] {
   z-index: 5;
   position: relative;
   gap: 30px;
-  margin-right: 5vw;
-  margin-left: 10vw;
-  // margin-right: 10vw;
+  padding-bottom: 10%;
+  margin-left: 20%;
+  margin-right: 10%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 
   align-self: center;
   .box {
@@ -680,9 +680,7 @@ input[type="radio"] {
     padding-top: 5%;
     gap: 20px;
   }
-  #basket {
-    // margin-right: 10vw;
-  }
+
   // padding-top: 10%;
 }
 .formInputShorter {
@@ -836,6 +834,10 @@ input[type="radio"] {
   // background-attachment: fixed;
   // background-size: cover;
 
+  .box {
+    padding: 10%;
+  }
+
   li {
     list-style: none;
   }
@@ -863,13 +865,8 @@ input[type="radio"] {
     padding-bottom: 20%;
   }
 
-  .main {
-    .logo {
-      width: 90%;
-    }
-    .date {
-      width: 80%;
-    }
+  .checkoutform {
+    margin: 0;
   }
 
   #basketCont {
@@ -898,6 +895,22 @@ input[type="radio"] {
 .linkMockup {
   button {
     margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .appHeader {
+    justify-content: center;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  .main {
+    .logo {
+      width: 90%;
+    }
+    .date {
+      width: 80%;
+    }
   }
 }
 
