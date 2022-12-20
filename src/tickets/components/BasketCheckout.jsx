@@ -5,7 +5,6 @@ function basketCheckout(props) {
   return (
     <div id="basketCont">
       <div id="basket">
-      <h3 className="total_price">Total: {props.totalPrice() + 99},-</h3>
         <div className="separateTickets">
           {props.basket.map((item) => {
             if (item.type == "ticket") {
@@ -62,6 +61,8 @@ function basketCheckout(props) {
         <ul>
           <li>Booking fee: 99,-</li>
         </ul>
+        <h3 className="total_price">Total: {props.totalPrice() + 99},-</h3>
+
       </div>
     </div>
   );
