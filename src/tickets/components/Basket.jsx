@@ -111,7 +111,9 @@ function Basket(props) {
                 <div
                   key={item.name}
                   className={
-                    item.name == "VIP ticket" ? "ticketItem Gold" : "ticketItem"
+                    item.name == "VIP ticket"
+                      ? "ticketItem basketGold"
+                      : "ticketItem"
                   }
                 >
                   <p>
