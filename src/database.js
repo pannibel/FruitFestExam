@@ -16,7 +16,7 @@
 // }
 export function reserveSpot(payload) {
     let testValue
-    const url = "http://localhost:8080/";
+    const url = "https://bitter-grass-7071.fly.dev/";
     fetch(url + "reserve-spot", {
         method: 'PUT',
         headers: {
@@ -30,7 +30,7 @@ export function reserveSpot(payload) {
 }
 export function confirmReservation(idValue) {
 
-    const url = "http://localhost:8080/";
+    const url = "https://bitter-grass-7071.fly.dev/";
     fetch(url + "fullfill-reservation", {
         method: 'POST',
         headers: {
