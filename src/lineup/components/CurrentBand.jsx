@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function CurrentBand(props) {
   const showTime = new Date().getHours();
-  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2 + 2;
+  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let showCurrentActTime =
     hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
   let currentHour;
@@ -83,8 +83,7 @@ function CurrentBand(props) {
                 : "hidden"
             }
           >
-            BREAK UNTIL <br></br>
-            {hourBasedIndex + 2 + ":00"}
+            break until {hourBasedIndex + 2 + ":00"}
           </div>
           <div
             className={
