@@ -69,7 +69,7 @@ function CurrentBand(props) {
         <div className="currentlyCont">
           <h3>Now on stage</h3>
 
-          <div>{showCurrentActTime}</div>
+          <div id="currentAct">{showCurrentActTime}</div>
 
           <div className="currentBandBox">
             <div className="currentBandRow colorMidgard">

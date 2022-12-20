@@ -17,6 +17,10 @@
 .hidden {
   display: none;
 }
+#currentAct {
+  text-align: center;
+  color: black;
+}
 
 button {
   display: inline-flex;
@@ -291,8 +295,11 @@ button:focus-visible {
     color: #7000ff;
     margin: 0;
     margin-bottom: 1vh;
+    text-align: center;
   }
+
   .currentlyCont {
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
