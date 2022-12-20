@@ -11,7 +11,7 @@ import Burger from "./components/Burger";
 // !===============================================
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Stats from "three/examples/jsm/libs/stats.module";
+// import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // !===============================================
@@ -49,7 +49,14 @@ function Lineup() {
     const glftLoader = new GLTFLoader();
     glftLoader.setDRACOLoader(dracoLoader);
     let loadedModel;
-    glftLoader.load("./../src/mountain_4.glb", (gltfScene) => {
+
+    // !this one works in dev mode ,as a path for the mountain.
+    // ! change it in LineupApp.jsx, App.jsx and Tickets.jsx
+    //? "../src/assets/mountain_4.glb"
+    // ! and this one should be used for the manual build
+    //? "assets/mountain_4.glb"
+
+    glftLoader.load("../src/assets/mountain_4.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -92,8 +99,8 @@ function Lineup() {
     // scene.add(boxMesh);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    const stats = Stats();
-    document.body.appendChild(stats.dom);
+    // const stats = Stats();
+    // document.body.appendChild(stats.dom);
 
     const animate = () => {
       // setTimeout(function () {
@@ -103,7 +110,7 @@ function Lineup() {
         loadedModel.scene.rotation.y += 0.01;
       }
       // boxMesh.rotation.y += 0.01;
-      stats.update();
+      // stats.update();
       renderer.render(scene, camera);
       // renderer.render(scene, camera);
       window.requestAnimationFrame(animate);

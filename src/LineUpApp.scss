@@ -117,7 +117,7 @@ button:focus-visible {
 .burger_off {
   position: fixed;
   top: 30px;
-  right: 30px;
+  right: 8vw;
   background-image: url("./assets/buttons/burger_off.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -168,7 +168,9 @@ button:focus-visible {
     border: none;
     background-color: transparent;
   }
-
+  input::placeholder {
+    color: #393939;
+  }
   .searchBtn {
     border: none;
     margin: 5px;

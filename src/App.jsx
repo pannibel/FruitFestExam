@@ -6,7 +6,7 @@ import Countdown from "react-countdown";
 import { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Stats from "three/examples/jsm/libs/stats.module";
+// import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // import { Outlet } from "react-router-dom";
@@ -41,6 +41,7 @@ function App() {
     let loadedModel;
 
     // !this one works in dev mode ,as a path for the mountain
+    // ! change it in LineupApp.jsx, App.jsx and Tickets.jsx
     //? "../src/assets/mountain_4.glb"
     // ! and this one should be used for the manual build
     //? "assets/mountain_4.glb"
@@ -88,8 +89,8 @@ function App() {
     // scene.add(boxMesh);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    const stats = Stats();
-    document.body.appendChild(stats.dom);
+    // const stats = Stats();
+    // document.body.appendChild(stats.dom);
 
     const animate = () => {
       // setTimeout(function () {
@@ -99,7 +100,7 @@ function App() {
         loadedModel.scene.rotation.y += 0.01;
       }
       // boxMesh.rotation.y += 0.01;
-      stats.update();
+      // stats.update();
       renderer.render(scene, camera);
       // renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
