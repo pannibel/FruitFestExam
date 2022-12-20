@@ -16,7 +16,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
+.landingCont {
+  z-index: 5;
+  position: relative;
+}
 .appHeader {
   display: flex;
   flex-direction: row;
