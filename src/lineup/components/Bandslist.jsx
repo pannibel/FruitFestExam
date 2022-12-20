@@ -85,7 +85,7 @@ function Bandslist(props) {
             ))}
       </div>
 
-      <div className={props.singleBandState ? "oneBandCont" : "hidden"}>
+      <div className={props.singleBandState ? "oneBandCont" : "hidden"} onClick={props.openOneBand}>
         {!props.singleBandState}
         {props.singleBandState && (
           <OneBand

@@ -11,7 +11,7 @@
   color: #2e01ff;
 }
 .colorMidgard {
-  color: #2effbc;
+  color: #e62897;
 }
 
 .hidden {
@@ -32,11 +32,11 @@
   /* Create the gradient. */
   background-image: linear-gradient(
     171deg,
-    rgba(143, 143, 143, 1) 0%,
+    rgb(214, 212, 212) 0%,
     rgba(255, 255, 255, 1) 17%,
-    rgba(204, 204, 204, 1) 27%,
+    rgb(227, 226, 226) 27%,
     rgba(255, 255, 255, 1) 56%,
-    rgba(192, 192, 192, 1) 76%,
+    rgb(237, 233, 233) 76%,
     rgba(255, 254, 254, 1) 90%
   );
 
@@ -101,12 +101,12 @@ button:focus-visible {
     width: 150px;
     height: 60px;
   }
-  .about {
-    background-image: url("./assets/buttons/about.svg");
+  .tickets {
+    background-image: url("./assets/buttons/burger_get_tickets.svg");
   }
 
-  .merch {
-    background-image: url("./assets/buttons/merch.svg");
+  .homepage {
+    background-image: url("./assets/buttons/burger_homepage.svg");
   }
 
   .map {
@@ -143,6 +143,7 @@ button:focus-visible {
   min-width: 320px;
   width: 65vw;
   max-width: 500px;
+  margin-top: 5%;
 }
 .searchbarCont {
   display: flex;
@@ -510,6 +511,7 @@ button:focus-visible {
     width: 65vw;
     max-width: 500px;
     overflow-x: hidden;
+    margin-top: 5%;
     ::-webkit-scrollbar {
       display: none;
     }
@@ -644,9 +646,9 @@ button:focus-visible {
 
     background: linear-gradient(
       0deg,
-      rgba(164, 163, 163, 0.457) 0%,
-      rgba(199, 199, 199, 0.604) 20%,
-      rgba(117, 116, 116, 0.564) 60%
+      rgba(217, 215, 215, 0.741) 0%,
+      rgba(242, 242, 242, 0.776) 20%,
+      rgba(168, 168, 168, 0.785) 60%
     );
 
     ::before {
