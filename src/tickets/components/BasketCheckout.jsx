@@ -58,7 +58,7 @@ function basketCheckout(props) {
         <ul>
           <li>Booking fee: 99,-</li>
         </ul>
-        <h3>Total: {props.totalPrice() + 99},-</h3>
+        <h3 className="total_price">Total: {props.totalPrice() + 99},-</h3>
       </div>
     </div>
   );

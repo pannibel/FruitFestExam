@@ -144,10 +144,10 @@ function Basket(props) {
                   <h4>Extras:</h4>
                   <div key={item.name} className="separateTickets ticketItem ">
                     <p>
-                      {item.name} x {props.count.total}
+                      {item.name} x {item.amount}
                     </p>
                     <div className="ticketBasket">
-                      <p>{item.price * props.count.total},-</p>
+                      <p>{item.price * item.amount},-</p>
                       <button
                         onClick={() => props.removeFromBasket(item.name)}
                         className="basketBtnRmv"
@@ -192,7 +192,7 @@ function Basket(props) {
 
         {/*       <h3>Subtotal: {totalPrice()},-</h3>
       <h3>Booking fee: 99,-</h3> */}
-        <h3>Total: {totalPrice()},-</h3>
+        <h3 className="total_price">Total: {totalPrice()},-</h3>
 
         <button
           onClick={() => {
