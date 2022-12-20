@@ -171,6 +171,10 @@ button:hover.extraBtnADD {
   transition: 0.2s;
 }
 
+.completeBtn:hover {
+  filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
+}
+
 button:hover.gobackBtn {
   filter: drop-shadow(0px 2px 2px rgba(173, 84, 255, 0.7));
   scale: 1.05;

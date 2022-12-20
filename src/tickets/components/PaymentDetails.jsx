@@ -45,60 +45,59 @@ function PaymentDetails(props) {
 
   return (
     <div id="productList" className="box">
-              <h2>Billing details</h2>
+      <h2>Billing details</h2>
       <form ref={theForm} method="">
-
         <div>
-        <h3>Personal details</h3>
-        <section className="formInput">
-          <label htmlFor="form-mainname" className="labelGuestList">
-            Full Name
-          </label>
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="text"
-                name="mainname"
-                id="form-mainname"
-                placeholder="e.g. Harry Truman"
-              />{" "}
+          <h3>Personal details</h3>
+          <section className="formInput">
+            <label htmlFor="form-mainname" className="labelGuestList">
+              Full Name
+            </label>
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="mainname"
+                  id="form-mainname"
+                  placeholder="e.g. Harry Truman"
+                />{" "}
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="formInput">
-          <label htmlFor="form-email" className="labelGuestList">
-            Email address
-          </label>{" "}
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="email"
-                name="email"
-                id="form-email"
-                placeholder="example@example.com"
-              />{" "}
+          </section>
+          <section className="formInput">
+            <label htmlFor="form-email" className="labelGuestList">
+              Email address
+            </label>{" "}
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="email"
+                  name="email"
+                  id="form-email"
+                  placeholder="example@example.com"
+                />{" "}
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="formInput">
-          {" "}
-          <label htmlFor="form-phone" className="labelGuestList">
-            Phone number
-          </label>{" "}
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="number"
-                name="phone"
-                id="form-phone"
-                placeholder="e.g. +00 1234 5678"
-              />{" "}
+          </section>
+          <section className="formInput">
+            {" "}
+            <label htmlFor="form-phone" className="labelGuestList">
+              Phone number
+            </label>{" "}
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="number"
+                  name="phone"
+                  id="form-phone"
+                  placeholder="e.g. +00 1234 5678"
+                />{" "}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         </div>
         {/* <section>
           <label htmlFor="">Full name</label>
@@ -111,78 +110,77 @@ function PaymentDetails(props) {
           />
         </section> */}
         <div>
-        <h3>Billing address</h3>
-        <section className="formInput">
-          <label htmlFor="form-street" className="labelGuestList">
-            Street name
-          </label>{" "}
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="text"
-                name="street"
-                id="form-street"
-                placeholder=""
-              />
+          <h3>Billing address</h3>
+          <section className="formInput">
+            <label htmlFor="form-street" className="labelGuestList">
+              Street name
+            </label>{" "}
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="street"
+                  id="form-street"
+                  placeholder=""
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="formInput">
-          <label htmlFor="form-street" className="labelGuestList">
-            Apartment (number, floor, door, etc)
-          </label>
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="text"
-                name="apartment"
-                id="form-apartment"
-                placeholder=""
-              />
+          <section className="formInput">
+            <label htmlFor="form-street" className="labelGuestList">
+              Apartment (number, floor, door, etc)
+            </label>
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="apartment"
+                  id="form-apartment"
+                  placeholder=""
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="formInput">
-          <label htmlFor="form-city" className="labelGuestList">
-            City
-          </label>
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="text"
-                name="city"
-                id="form-city"
-                placeholder=""
-              />
+          <section className="formInput">
+            <label htmlFor="form-city" className="labelGuestList">
+              City
+            </label>
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="city"
+                  id="form-city"
+                  placeholder=""
+                />
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="formInput">
-          <label htmlFor="form-country" className="labelGuestList">
-            Country
-          </label>
-          <div className="formInputCont ">
-            <div>
-              <input
-                defaultValue={""}
-                type="text"
-                name="country"
-                id="form-country"
-                placeholder=""
-              />
+          </section>
+          <section className="formInput">
+            <label htmlFor="form-country" className="labelGuestList">
+              Country
+            </label>
+            <div className="formInputCont ">
+              <div>
+                <input
+                  defaultValue={""}
+                  type="text"
+                  name="country"
+                  id="form-country"
+                  placeholder=""
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         </div>
 
-
         <div className="card_details">
-        <h3>Card details</h3>
+          <h3>Card details</h3>
           <section className="formInput">
             <label htmlFor="form-fullname" className="labelGuestList">
               Name on card
@@ -238,21 +236,23 @@ function PaymentDetails(props) {
             </div>
             <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
           </section>
-
         </div>
       </form>
 
       <div className="checkoutBtns">
         <button
           className="gobackBtn"
-          onClick={props.changePage} name="back"
-        >
-        </button>
+          onClick={props.changePage}
+          name="back"></button>
 
-        <button className="completeBtn" name="next">
-        </button>
-        </div>
-
+        <button
+          className="completeBtn"
+          name="next"
+          onClick={(e) => {
+            saveBillingInfo(e);
+            props.changePage(e);
+          }}></button>
+      </div>
     </div>
   );
 }
