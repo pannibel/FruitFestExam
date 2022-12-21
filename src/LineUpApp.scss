@@ -71,6 +71,7 @@ button:focus-visible {
 }
 
 .burgerMenu {
+  z-index: 5;
   align-items: center;
   color: rgb(237, 237, 237);
 
@@ -115,6 +116,7 @@ button:focus-visible {
 }
 
 .burger_off {
+  z-index: 5;
   position: fixed;
   top: 30px;
   right: 8vw;
@@ -128,6 +130,7 @@ button:focus-visible {
 }
 
 .burger_on {
+  z-index: 5;
   position: fixed;
   top: 30px;
   right: 30px;
