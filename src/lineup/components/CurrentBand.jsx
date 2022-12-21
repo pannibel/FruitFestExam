@@ -7,7 +7,7 @@ function CurrentBand(props) {
   let midgardPlayer, vanaheimPlayer, jotunheimPlayer;
   let openedBand;
   const showTime = new Date().getHours();
-  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
+  const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 8;
   let showCurrentActTime =
     hourBasedIndex + ":00" + "-" + (hourBasedIndex + 2) + ":00";
   let currentHour;
@@ -17,7 +17,7 @@ function CurrentBand(props) {
     currentHour = hourBasedIndex + ":00";
   }
 
-  // chekcing current day of the week
+  // checking current day of the week
   const dayOfWeekName = new Date().toLocaleString("default", {
     weekday: "short",
   });
@@ -95,7 +95,10 @@ function CurrentBand(props) {
               testForTuesday("Midgard") == "break" ? "hidden" : "currentBandBox"
             }
           >
-            <div className="currentBandRow colorMidgard" onClick={() => props.openOneBand(`${testForTuesday("Midgard")}`)}>
+            <div
+              className="currentBandRow colorMidgard"
+              onClick={() => props.openOneBand(`${testForTuesday("Midgard")}`)}
+            >
               <img
                 src={pickImage(testForTuesday("Midgard"))}
                 className="imgSingleBand"
@@ -105,7 +108,10 @@ function CurrentBand(props) {
               <div className="playerStage">Midgard</div>
             </div>
 
-            <div className="currentBandRow  colorVanaheim" onClick={() => props.openOneBand(`${testForTuesday("Vanaheim")}`)}>
+            <div
+              className="currentBandRow  colorVanaheim"
+              onClick={() => props.openOneBand(`${testForTuesday("Vanaheim")}`)}
+            >
               <img
                 src={pickImage(testForTuesday("Vanaheim"))}
                 className="imgSingleBand"
@@ -114,7 +120,12 @@ function CurrentBand(props) {
               <div className="playerBand">{testForTuesday("Vanaheim")}</div>
               <div className="playerStage">Vanaheim</div>
             </div>
-            <div className="currentBandRow colorJotunheim" onClick={() => props.openOneBand(`${testForTuesday("Jotunheim")}`)}>
+            <div
+              className="currentBandRow colorJotunheim"
+              onClick={() =>
+                props.openOneBand(`${testForTuesday("Jotunheim")}`)
+              }
+            >
               <img
                 src={pickImage(testForTuesday("Jotunheim"))}
                 className="imgSingleBand"
@@ -127,20 +138,20 @@ function CurrentBand(props) {
         </div>
 
         <div
-        className={props.singleBandState ? "oneBandCont" : "hidden"}
-        onClick={props.openOneBand}
-      >
-        {!props.singleBandState}
-        {props.singleBandState && (
-          <OneBand
-            openOneBand={props.openOneBand}
-            openedBand={props.openedBand}
-            data={props.bands}
-            singleBandState={props.singleBandState}
-            setSingleBandState={props.setSingleBandState}
-          />
-        )}
-      </div>
+          className={props.singleBandState ? "oneBandCont" : "hidden"}
+          onClick={props.openOneBand}
+        >
+          {!props.singleBandState}
+          {props.singleBandState && (
+            <OneBand
+              openOneBand={props.openOneBand}
+              openedBand={props.openedBand}
+              data={props.bands}
+              singleBandState={props.singleBandState}
+              setSingleBandState={props.setSingleBandState}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

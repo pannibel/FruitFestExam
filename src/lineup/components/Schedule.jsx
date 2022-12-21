@@ -69,17 +69,6 @@ function Bandslist(props) {
         alt="big logo of the festival"
       ></img>
 
-      {/* <div className="searchbarCont">
-        <input
-          type="text"
-          name="searchbar"
-          placeholder="search..."/>
-        <button
-          className="searchBtn"
-          button-name="search"
-        ></button>
-      </div> */}
-
       <div id="weekDaysCont">
         <div className="weekDays">
           <button

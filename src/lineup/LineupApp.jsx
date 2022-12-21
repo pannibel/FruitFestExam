@@ -52,11 +52,11 @@ function Lineup() {
 
     // !this one works in dev mode ,as a path for the mountain.
     // ! change it in LineupApp.jsx, App.jsx and Tickets.jsx
-    //? "../src/assets/mountain_4.glb"
+    //? "../src/assets/mountainFin.glb"
     // ! and this one should be used for the manual build
-    //? "assets/mountain_4.glb"
+    //? "assets/mountainFin.glb"
 
-    glftLoader.load("assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("../src/assets/mountainFin.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -83,7 +83,7 @@ function Lineup() {
     document.body.appendChild(renderer.domElement);
 
     // added ambient light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     ambientLight.castShadow = true;
     scene.add(ambientLight);
 
@@ -236,17 +236,20 @@ function Lineup() {
           <button
             onClick={() => changePageApp(1)}
             className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
-            value="home"></button>
+            value="home"
+          ></button>
           <button
             onClick={() => changePageApp(2)}
             className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
-            value="bands"></button>
+            value="bands"
+          ></button>
           <button
             onClick={() => changePageApp(3)}
             className={
               lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"
             }
-            value="schedule"></button>
+            value="schedule"
+          ></button>
         </div>
         {/* <Bandslist bands={bands} /> */}
 
@@ -254,7 +257,8 @@ function Lineup() {
           <button
             onClick={() => openBurger()}
             className="burger_off"
-            button-name="openburg">
+            button-name="openburg"
+          >
             {" "}
           </button>
         )}
@@ -263,7 +267,8 @@ function Lineup() {
             <button
               onClick={() => openBurger()}
               className="burger_on"
-              button-name="klosburg">
+              button-name="klosburg"
+            >
               {" "}
             </button>
             <Burger />
