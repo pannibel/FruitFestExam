@@ -4,8 +4,6 @@ import ImageTest from "../../assets/logo2.svg";
 import OneBand from "./OneBand";
 
 function CurrentBand(props) {
-  let midgardPlayer, vanaheimPlayer, jotunheimPlayer;
-  let openedBand;
   const showTime = new Date().getHours();
   const hourBasedIndex = Math.floor(Math.floor(showTime) / 2) * 2;
   let showCurrentActTime =
