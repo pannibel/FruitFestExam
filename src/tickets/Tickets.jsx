@@ -53,7 +53,7 @@ function Tickets() {
 
   const handleClosePopup = () => {
     setIsPopupOpen(false);
-    console.log("popup closed")
+    console.log("popup closed");
   };
 
   // ! =======================================================
@@ -86,9 +86,9 @@ function Tickets() {
     // ! change it in LineupApp.jsx, App.jsx and Tickets.jsx
     //? "../src/assets/mountain_4.glb"
     // ! and this one should be used for the manual build
-    //? "assets/mountain_4.glb"
+    //? "assets/mountainFin.glb"
 
-    glftLoader.load("assets/mountain_4.glb", (gltfScene) => {
+    glftLoader.load("assets/mountainFin.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -115,7 +115,7 @@ function Tickets() {
     document.body.appendChild(renderer.domElement);
 
     // added ambient light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2);
     ambientLight.castShadow = true;
     scene.add(ambientLight);
 
@@ -165,7 +165,8 @@ function Tickets() {
         <img
           className="logo"
           src={ImageTest}
-          alt="big logo of the festival"></img>
+          alt="big logo of the festival"
+        ></img>
       </a>
       <main>
         {!showForm && (
@@ -201,7 +202,7 @@ function Tickets() {
                 <p>
                   You reached the limit of how long you can reserve tickets.
                 </p>
-                <a className="linkMockup" href={`/`}  onClick={handleClosePopup}>
+                <a className="linkMockup" href={`/`} onClick={handleClosePopup}>
                   {" "}
                   <button className="confirmation">
                     Go back to the main page

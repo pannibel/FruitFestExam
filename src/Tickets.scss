@@ -899,6 +899,16 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 600px) {
+  .weekDays {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: center;
+  }
   .appHeader {
     // justify-content: center;
     padding-top: 5%;
@@ -937,15 +947,14 @@ input:focus {
   outline: none;
 }
 
-
 /* timer popup */
 .timeupMain {
   position: fixed;
   width: 100vw;
   height: 100vh;
   top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #2135477e;
   justify-content: center;
   align-items: center;
@@ -960,7 +969,6 @@ transform: translate(-50%, -50%);
   justify-content: center;
   align-items: center;
   z-index: 100;
-
 
   .timeUp {
     position: fixed;
@@ -985,10 +993,10 @@ transform: translate(-50%, -50%);
     background-position: center;
     background-repeat: no-repeat;
     border: 0px;
-    transition: 0.2s;}
+    transition: 0.2s;
+  }
 
-    .confirmation:hover {
-      filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
-
-    }
+  .confirmation:hover {
+    filter: drop-shadow(0px 0px 0px rgba(173, 84, 255, 0.7));
+  }
 }

@@ -504,7 +504,19 @@ button:focus-visible {
     }
   }
 }
+.weekDays {
+  // overflow: auto;
+  // white-space: nowrap;
+  // width: 100%;
 
+  display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  button {
+    margin-right: 15px;
+  }
+}
 .skedgeCont {
   z-index: 5;
   display: flex;
@@ -525,20 +537,6 @@ button:focus-visible {
     margin-top: 5%;
     ::-webkit-scrollbar {
       display: none;
-    }
-  }
-
-  .weekDays {
-    overflow: auto;
-    white-space: nowrap;
-    width: 100%;
-
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    justify-content: center;
-    button {
-      margin-right: 15px;
     }
   }
 
@@ -781,4 +779,16 @@ button:focus-visible {
   border: 0;
   height: 100%;
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .weekDays {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: center;
+  }
 }
