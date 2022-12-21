@@ -762,6 +762,12 @@ button:focus-visible {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .oneBandCont {
+    height: 70%
+  }
+}
+
 .btn_side_off {
   color: #213547;
   background-image: url("./assets/nav_side_2.0.svg");
