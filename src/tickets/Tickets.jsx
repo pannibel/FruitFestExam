@@ -30,6 +30,32 @@ function Tickets() {
   const [basket, setBasket] = useState([]);
   const [guestNumber, setGuestNumber] = useState(0);
 
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+
+  useEffect(() => {
+    if (!isTimerRunning) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setIsPopupOpen(true);
+      setIsTimerRunning(false);
+    }, 300000); // 5 minutes in milliseconds -- change to 10000 (10sec) to see
+
+    return () => clearTimeout(timer);
+  }, [isTimerRunning]);
+
+  const handleStartTimer = () => {
+    setIsTimerRunning(true);
+    console.log("timer started");
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    console.log("popup closed")
+  };
+
   // ! =======================================================
   // ! =======================================================
   useEffect(() => {
@@ -139,8 +165,7 @@ function Tickets() {
         <img
           className="logo"
           src={ImageTest}
-          alt="big logo of the festival"
-        ></img>
+          alt="big logo of the festival"></img>
       </a>
       <main>
         {!showForm && (
@@ -153,6 +178,8 @@ function Tickets() {
             setBasket={setBasket}
             setGuestNumber={setGuestNumber}
             guestNumber={guestNumber}
+            handleStartTimer={handleStartTimer}
+            isTimerRunning={isTimerRunning}
           />
         )}
         {showForm && (
@@ -164,6 +191,25 @@ function Tickets() {
             basket={basket}
             guestNumber={guestNumber}
           />
+        )}
+
+        {isPopupOpen && (
+          <div className="timeupMain">
+            <div className="timeupCont">
+              <div className="timeUp">
+                <h3>Oh no! The session has timed out.</h3>
+                <p>
+                  You reached the limit of how long you can reserve tickets.
+                </p>
+                <a className="linkMockup" href={`/`}  onClick={handleClosePopup}>
+                  {" "}
+                  <button className="confirmation">
+                    Go back to the main page
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
         )}
       </main>
     </div>

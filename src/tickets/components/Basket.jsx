@@ -204,6 +204,7 @@ function Basket(props) {
             {
               props.setShowForm(true);
               totalGuests();
+              props.handleStartTimer();
             }
           }}
           className={
@@ -214,7 +215,7 @@ function Basket(props) {
           }
           disabled={
             props.basket.find((items) => items.type === "ticket") &&
-            props.spotAdded
+            props.spotAdded && !props.isTimerRunning
               ? false
               : true
           }

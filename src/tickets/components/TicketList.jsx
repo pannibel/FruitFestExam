@@ -103,6 +103,8 @@ function TicketList(props) {
           guestNumber={props.guestNumber}
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
+          handleStartTimer={props.handleStartTimer}
+          isTimerRunning={props.isTimerRunning}
         />{" "}
         {/* </div> */}
       </div>
