@@ -28,9 +28,13 @@ function Bandslist(props) {
   console.log(bettered);
 
   function searchList() {
+    let test6 = theInput.current.value;
     if (theInput.current.value != "") {
       setSearchedBands(
-        sortedBands.filter((band) => band.name.includes(theInput.current.value))
+        sortedBands.filter(
+          (band) =>
+            band.name.includes(test6) || band.name.includes(test6.toUpperCase())
+        )
       );
 
       console.log(searchedBands);
