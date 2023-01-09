@@ -443,6 +443,12 @@ button:focus-visible {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  margin-bottom: 5px;
+  border-bottom: 1.5px solid #cccccc;
+/*   border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.451); */
 }
 .cancelled_contCont {
   filter: grayscale(100%);
@@ -763,7 +769,7 @@ button:focus-visible {
 
 @media screen and (max-width: 600px) {
   .oneBandCont .oneBand {
-    height: 85%
+    height: 85%;
   }
 }
 
