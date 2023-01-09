@@ -409,6 +409,7 @@ button:focus-visible {
   border: rgba(255, 255, 255, 0.6) 2px solid;
 }
 .likeBtn {
+  display: flex;
   text-align: right;
   z-index: 10;
 
@@ -444,7 +445,6 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 5px;
   border-bottom: 1.5px solid #cccccc;
 /*   border-radius: 10px;
   padding: 5px;
@@ -653,12 +653,11 @@ button:focus-visible {
   .oneBand {
     position: relative;
     display: flex;
-    height: 80%;
+    max-height: 80%;
     margin: 0 5% 0 5%;
 
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     color: rgba(255, 255, 255, 0.879);
 
     background: linear-gradient(
@@ -769,7 +768,7 @@ button:focus-visible {
 
 @media screen and (max-width: 600px) {
   .oneBandCont .oneBand {
-    height: 85%;
+    max-height: 83%;
   }
 }
 
