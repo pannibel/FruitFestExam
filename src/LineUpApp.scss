@@ -652,6 +652,7 @@ button:focus-visible {
 
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     color: rgba(255, 255, 255, 0.879);
 
     background: linear-gradient(
@@ -761,8 +762,8 @@ button:focus-visible {
 }
 
 @media screen and (max-width: 600px) {
-  .oneBandCont {
-    height: 70%
+  .oneBandCont .oneBand {
+    height: 85%
   }
 }
 
