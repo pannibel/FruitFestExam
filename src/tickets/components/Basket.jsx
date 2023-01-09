@@ -199,7 +199,8 @@ function Basket(props) {
       <h3>Booking fee: 99,-</h3> */}
         <h3 className="total_price">Total: {totalPrice()},-</h3>
 
-        <button
+      </div>
+      <button
           onClick={() => {
             {
               props.setShowForm(true);
@@ -222,7 +223,6 @@ function Basket(props) {
         >
           {" "}
         </button>
-      </div>
     </div>
   );
 }
