@@ -452,7 +452,7 @@ button:focus-visible {
   justify-content: center;
 
   border-bottom: 1.5px solid #cccccc;
-/*   border-radius: 10px;
+  /*   border-radius: 10px;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.451); */
 }
@@ -473,11 +473,6 @@ button:focus-visible {
   gap: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
-
-  .logo_small {
-    width: 30vw;
-    justify-self: flex-start;
-  }
 
   .bandListBox {
     margin-top: 30px;
@@ -529,6 +524,11 @@ button:focus-visible {
     margin-right: 15px;
   }
 }
+.logo_small {
+  cursor: pointer;
+  width: 30vw;
+  justify-self: flex-start;
+}
 .skedgeCont {
   z-index: 5;
   display: flex;
@@ -537,10 +537,6 @@ button:focus-visible {
   padding-top: 30px;
   padding-bottom: 30px;
 
-  .logo_small {
-    width: 30vw;
-    justify-self: flex-start;
-  }
   #weekDaysCont {
     min-width: 320px;
     width: 65vw;

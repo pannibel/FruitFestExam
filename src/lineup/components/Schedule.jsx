@@ -61,9 +61,13 @@ function Bandslist(props) {
     }
   }
 
+  function changePageApp(value) {
+    props.setLineUpPage(value);
+  }
   return (
     <div className="skedgeCont">
       <img
+        onClick={() => changePageApp(1)}
         className="logo_small"
         src={ImageTest}
         alt="big logo of the festival"

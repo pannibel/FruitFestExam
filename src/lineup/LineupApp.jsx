@@ -122,13 +122,6 @@ function Lineup() {
   // !==================================
 
   // ? function to change the background
-  // if (lineUpPage == 1) {
-  //   document.querySelector("body").classList = "";
-  //   document.querySelector("body").classList.add("backClass_1");
-  // } else if (lineUpPage == 2) {
-  //   document.querySelector("body").classList = "";
-  //   document.querySelector("body").classList.add("backClass_2");
-  // }
 
   useEffect(() => {
     async function getData() {
@@ -210,6 +203,8 @@ function Lineup() {
         )}
         {lineUpPage == 2 ? (
           <Bandslist
+            setLineUpPage={setLineUpPage}
+            lineUpPage={lineUpPage}
             bands={bands}
             openOneBand={openOneBand}
             openedBand={openedBand}
@@ -221,6 +216,8 @@ function Lineup() {
         )}
         {lineUpPage == 3 ? (
           <Schedule
+            setLineUpPage={setLineUpPage}
+            lineUpPage={lineUpPage}
             currentBand={currentBand}
             bands={bands}
             openOneBand={openOneBand}
