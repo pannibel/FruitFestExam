@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "../LineUpApp.scss";
 import "../dayButtons.scss";
 import { useState, useEffect } from "react";
@@ -228,7 +229,6 @@ function Lineup() {
         ) : (
           ""
         )}
-
         <div className="NavBarCont">
           <button
             onClick={() => changePageApp(1)}
@@ -249,28 +249,25 @@ function Lineup() {
           ></button>
         </div>
         {/* <Bandslist bands={bands} /> */}
-
         {!burgerState && (
           <button
             onClick={() => openBurger()}
             className="burger_off"
             button-name="openburg"
-          >
-            {" "}
-          </button>
-        )}
-        {burgerState && (
-          <>
-            <button
-              onClick={() => openBurger()}
-              className="burger_on"
-              button-name="klosburg"
-            >
-              {" "}
-            </button>
-            <Burger />
-          </>
-        )}
+          ></button>
+        )}{" "}
+        <AnimatePresence>
+          {burgerState && (
+            <>
+              <button
+                onClick={() => openBurger()}
+                className="burger_on"
+                button-name="klosburg"
+              ></button>{" "}
+              <Burger />
+            </>
+          )}{" "}
+        </AnimatePresence>
       </div>
     </>
   );
