@@ -123,6 +123,7 @@ button:focus-visible {
   background-image: url("./assets/buttons/burger_off.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   border: 0;
   height: 5%;
   width: 10%;
@@ -137,6 +138,7 @@ button:focus-visible {
   background-image: url("./assets/buttons/burger_on.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   border: 0;
   height: 5%;
   width: 10%;
@@ -183,6 +185,10 @@ button:focus-visible {
     min-width: 18px;
     min-height: 18px;
   }
+}
+#noBands {
+  color: black;
+  text-align: center;
 }
 
 .NavBarCont {

@@ -5,6 +5,7 @@ import OneBand from "./OneBand";
 import ImageTest from "../../assets/logo2.svg";
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
+  const [searchFull, setSearchFull] = useState(false);
   const theInput = useRef(null);
 
   let sortedBands = props.bands.sort((a, b) => {
@@ -25,11 +26,12 @@ function Bandslist(props) {
       bettered.push(sortedBands[i]);
     }
   }
-  console.log(bettered);
+  // console.log(bettered);
 
   function searchList() {
     let test6 = theInput.current.value;
     if (theInput.current.value != "") {
+      setSearchFull(true);
       setSearchedBands(
         sortedBands.filter(
           (band) =>
@@ -38,11 +40,14 @@ function Bandslist(props) {
       );
 
       console.log(searchedBands);
+      // console.log(test6);
     } else {
+      setSearchFull(false);
       setSearchedBands([]);
     }
+    console.log(searchedBands);
   }
-
+  console.log(searchFull);
   return (
     <div className="bandsCont">
       <img
@@ -68,25 +73,29 @@ function Bandslist(props) {
       </div>
 
       <div className="bandListBox">
-        {!searchedBands.length
-          ? bettered.map((band, i) => (
-              <SingleBand
-                data={band}
-                key={i}
-                singleBandState={props.singleBandState}
-                setSingleBandState={props.setSingleBandState}
-                openOneBand={props.openOneBand}
-              />
-            ))
-          : searchedBands.map((band, i) => (
-              <SingleBand
-                data={band}
-                key={i}
-                singleBandState={props.singleBandState}
-                setSingleBandState={props.setSingleBandState}
-                openOneBand={props.openOneBand}
-              />
-            ))}
+        {searchFull == false ? (
+          bettered.map((band, i) => (
+            <SingleBand
+              data={band}
+              key={i}
+              singleBandState={props.singleBandState}
+              setSingleBandState={props.setSingleBandState}
+              openOneBand={props.openOneBand}
+            />
+          ))
+        ) : searchFull == true && searchedBands.length ? (
+          searchedBands.map((band, i) => (
+            <SingleBand
+              data={band}
+              key={i}
+              singleBandState={props.singleBandState}
+              setSingleBandState={props.setSingleBandState}
+              openOneBand={props.openOneBand}
+            />
+          ))
+        ) : (
+          <div id="noBands">no bitches</div>
+        )}
       </div>
 
       <div

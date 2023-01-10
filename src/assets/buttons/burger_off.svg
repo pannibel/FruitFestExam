@@ -1,7 +1,7 @@
-<svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="2.4" y1="12.6" x2="26.6" y2="12.6" stroke="url(#paint0_linear_477_97)" stroke-opacity="0.85" stroke-width="4.8" stroke-linecap="round"/>
-<line x1="2.4" y1="21.6" x2="26.6" y2="21.6" stroke="url(#paint1_linear_477_97)" stroke-opacity="0.85" stroke-width="4.8" stroke-linecap="round"/>
-<line x1="2.4" y1="2.6" x2="26.6" y2="2.6" stroke="url(#paint2_linear_477_97)" stroke-opacity="0.85" stroke-width="4.8" stroke-linecap="round"/>
+<svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="2.25" y1="12.75" x2="26.75" y2="12.75" stroke="url(#paint0_linear_477_97)" stroke-opacity="0.85" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="2.25" y1="22.75" x2="26.75" y2="22.75" stroke="url(#paint1_linear_477_97)" stroke-opacity="0.85" stroke-width="4.5" stroke-linecap="round"/>
+<line x1="2.25" y1="2.75" x2="26.75" y2="2.75" stroke="url(#paint2_linear_477_97)" stroke-opacity="0.85" stroke-width="4.5" stroke-linecap="round"/>
 <defs>
 <linearGradient id="paint0_linear_477_97" x1="14.5" y1="15" x2="14.5" y2="16" gradientUnits="userSpaceOnUse">
 <stop offset="0.15625" stop-color="#FE5B00"/>
@@ -10,7 +10,7 @@
 <stop offset="0.71875" stop-color="#F9BE79"/>
 <stop offset="0.890625" stop-color="#E66000"/>
 </linearGradient>
-<linearGradient id="paint1_linear_477_97" x1="14.5" y1="24" x2="14.5" y2="25" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_477_97" x1="14.5" y1="25" x2="14.5" y2="26" gradientUnits="userSpaceOnUse">
 <stop offset="0.15625" stop-color="#FE5B00"/>
 <stop offset="0.317708" stop-color="#FFCC81"/>
 <stop offset="0.510417" stop-color="#F76C08"/>

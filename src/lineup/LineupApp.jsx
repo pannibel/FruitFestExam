@@ -150,7 +150,7 @@ function Lineup() {
         element.liked = false;
         element.key = i;
       });
-      console.log(data);
+      // console.log(data);
     }
     getData();
   }, []);

@@ -26,7 +26,7 @@ function CurrentBand(props) {
       if (item[0] === test) {
         Object.entries(item[1]).map((weekDays) => {
           if (weekDays[0] == dayOfWeekName.toLowerCase()) {
-            console.log(currentHour);
+            // console.log(currentHour);
             let result = weekDays[1].find((item) => item.start == currentHour);
             let currentAct = result.act;
             returnValue = currentAct;
@@ -43,9 +43,9 @@ function CurrentBand(props) {
     let imgObj;
     props.bands.map((el) => {
       if (el.name == x) {
-        console.log(el.logo);
+        // console.log(el.logo);
         if (el.logo.includes("https://")) {
-          console.log(el.logo);
+          // console.log(el.logo);
           imgObj = el.logo;
           // return <img src={el.logo} className="imgSingleBand" alt=""></img>;
         } else if (
@@ -54,11 +54,11 @@ function CurrentBand(props) {
           el.logo.includes("JPG") ||
           el.logo.includes("svg")
         ) {
-          imgObj = `https://bitter-grass-7071.fly.dev/logos/ + ${el.logo}`;
+          imgObj = `https://bitter-grass-7071.fly.dev/logos/${el.logo}`;
         }
       }
     });
-    console.log(imgObj);
+    // console.log(imgObj);
     return imgObj;
   }
   return (
