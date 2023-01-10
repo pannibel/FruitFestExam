@@ -151,6 +151,7 @@ function Lineup() {
 
   function changePageApp(value) {
     setLineUpPage(value);
+    setBurgerState(false);
     // console.log("change the state to " + lineUpPage);
   }
 
@@ -190,45 +191,63 @@ function Lineup() {
       {" "}
       <canvas id="myThreeJsCanvas" className="test3D" />
       <div className="appCont">
-        {lineUpPage == 1 ? (
-          <CurrentBand
-            currentBand={currentBand}
-            bands={bands}
-            openOneBand={openOneBand}
-            openedBand={openedBand}
-            singleBandState={singleBandState}
-            setSingleBandState={setSingleBandState}
-          />
-        ) : (
-          ""
-        )}
-        {lineUpPage == 2 ? (
-          <Bandslist
-            setLineUpPage={setLineUpPage}
-            lineUpPage={lineUpPage}
-            bands={bands}
-            openOneBand={openOneBand}
-            openedBand={openedBand}
-            singleBandState={singleBandState}
-            setSingleBandState={setSingleBandState}
-          />
-        ) : (
-          ""
-        )}
-        {lineUpPage == 3 ? (
-          <Schedule
-            setLineUpPage={setLineUpPage}
-            lineUpPage={lineUpPage}
-            currentBand={currentBand}
-            bands={bands}
-            openOneBand={openOneBand}
-            openedBand={openedBand}
-            singleBandState={singleBandState}
-            setSingleBandState={setSingleBandState}
-          />
-        ) : (
-          ""
-        )}
+        <AnimatePresence initial={false}>
+          {lineUpPage == 1 ? (
+            <motion.div
+              key="burgidfekr"
+              initial={{ x: "-40vw", y: -500, scale: 0.1 }}
+              animate={{ x: 0, y: 0, scale: 1 }}
+              exit={{ x: "-300vw", y: 500, scale: 0.1 }}
+              transition={{ duration: 1 }}
+            >
+              <CurrentBand
+                currentBand={currentBand}
+                bands={bands}
+                openOneBand={openOneBand}
+                openedBand={openedBand}
+                singleBandState={singleBandState}
+                setSingleBandState={setSingleBandState}
+              />{" "}
+            </motion.div>
+          ) : (
+            ""
+          )}
+          {lineUpPage == 2 ? (
+            <motion.div
+              key="burgiekr"
+              initial={{ x: "-40vw", y: -500, scale: 0.1 }}
+              animate={{ x: 0, y: 0, scale: 1 }}
+              exit={{ x: "-300vw", y: 500, scale: 0.1 }}
+              transition={{ duration: 1 }}
+            >
+              <Bandslist
+                setLineUpPage={setLineUpPage}
+                lineUpPage={lineUpPage}
+                bands={bands}
+                openOneBand={openOneBand}
+                openedBand={openedBand}
+                singleBandState={singleBandState}
+                setSingleBandState={setSingleBandState}
+              />
+            </motion.div>
+          ) : (
+            ""
+          )}
+          {lineUpPage == 3 ? (
+            <Schedule
+              setLineUpPage={setLineUpPage}
+              lineUpPage={lineUpPage}
+              currentBand={currentBand}
+              bands={bands}
+              openOneBand={openOneBand}
+              openedBand={openedBand}
+              singleBandState={singleBandState}
+              setSingleBandState={setSingleBandState}
+            />
+          ) : (
+            ""
+          )}{" "}
+        </AnimatePresence>
         <div className="NavBarCont">
           <button
             onClick={() => changePageApp(1)}

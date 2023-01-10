@@ -3,6 +3,8 @@ import SingleBand from "./SingleBandList";
 import { useRef, useState } from "react";
 import OneBand from "./OneBand";
 import ImageTest from "../../assets/logo2.svg";
+import { motion, AnimatePresence } from "framer-motion";
+
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
   const [searchFull, setSearchFull] = useState(false);
@@ -60,6 +62,7 @@ function Bandslist(props) {
         src={ImageTest}
         alt="big logo of the festival"
       ></img>
+
       <div className="searchContCont">
         <div className="searchbarCont">
           <input
