@@ -188,17 +188,16 @@ function Lineup() {
 
   return (
     <>
-      {" "}
       <canvas id="myThreeJsCanvas" className="test3D" />
       <div className="appCont">
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} mode="wait">
           {lineUpPage == 1 ? (
             <motion.div
-              key="burgidfekr"
-              initial={{ x: "-40vw", y: -500, scale: 0.1 }}
-              animate={{ x: 0, y: 0, scale: 1 }}
-              exit={{ x: "-300vw", y: 500, scale: 0.1 }}
-              transition={{ duration: 1 }}
+              key="biekr"
+              initial={{ x: "100vw", zIndex: 10 }}
+              animate={{ x: 0, zIndex: 10 }}
+              exit={{ x: "-100vw", zIndex: 10 }}
+              transition={{ duration: 0.1 }}
             >
               <CurrentBand
                 currentBand={currentBand}
@@ -215,10 +214,10 @@ function Lineup() {
           {lineUpPage == 2 ? (
             <motion.div
               key="burgiekr"
-              initial={{ x: "-40vw", y: -500, scale: 0.1 }}
-              animate={{ x: 0, y: 0, scale: 1 }}
-              exit={{ x: "-300vw", y: 500, scale: 0.1 }}
-              transition={{ duration: 1 }}
+              initial={{ x: "-100vw", zIndex: 10 }}
+              animate={{ x: 0, zIndex: 10 }}
+              exit={{ x: "-100vw", zIndex: 10 }}
+              transition={{ duration: 0.1 }}
             >
               <Bandslist
                 setLineUpPage={setLineUpPage}
@@ -234,19 +233,27 @@ function Lineup() {
             ""
           )}
           {lineUpPage == 3 ? (
-            <Schedule
-              setLineUpPage={setLineUpPage}
-              lineUpPage={lineUpPage}
-              currentBand={currentBand}
-              bands={bands}
-              openOneBand={openOneBand}
-              openedBand={openedBand}
-              singleBandState={singleBandState}
-              setSingleBandState={setSingleBandState}
-            />
+            <motion.div
+              key="biekr"
+              initial={{ x: "100vw", zIndex: 10 }}
+              animate={{ x: 0, zIndex: 10 }}
+              exit={{ x: "100vw", zIndex: 10 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Schedule
+                setLineUpPage={setLineUpPage}
+                lineUpPage={lineUpPage}
+                currentBand={currentBand}
+                bands={bands}
+                openOneBand={openOneBand}
+                openedBand={openedBand}
+                singleBandState={singleBandState}
+                setSingleBandState={setSingleBandState}
+              />{" "}
+            </motion.div>
           ) : (
             ""
-          )}{" "}
+          )}
         </AnimatePresence>
         <div className="NavBarCont">
           <button

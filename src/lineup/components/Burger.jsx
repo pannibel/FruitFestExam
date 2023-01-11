@@ -5,10 +5,10 @@ function Burger() {
     <motion.div
       className="burgerMenu"
       key="burgier"
-      initial={{ x: "-40vw", y: -500, scale: 0.1 }}
-      animate={{ x: 0, y: 0, scale: 1 }}
-      exit={{ x: "-300vw", y: 500, scale: 0.1 }}
-      transition={{ duration: 0.1 }}
+      initial={{ x: "-40vw" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-300vw" }}
+      transition={{ duration: 0 }}
     >
       <a href={`tickets`}>
         <button className="tickets"></button>
