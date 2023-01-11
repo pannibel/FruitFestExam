@@ -82,10 +82,14 @@ function TicketList(props) {
           setSpotAdded={setSpotAdded}
           spotAdded={spotAdded}
           guestNumber={props.guestNumber}
+          setGuestNumber={props.setGuestNumber}
           campingSpots={campingSpots}
           basket={props.basket}
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
+          setShowForm={props.setShowForm}
+          handleStartTimer={props.handleStartTimer}
+          isTimerRunning={props.isTimerRunning}
         />{" "}
         {/* <div className="fixedBasket"> */}
         <Basket

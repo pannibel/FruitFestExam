@@ -96,6 +96,30 @@ function Products(props) {
     props.setSpotAdded(true);
   }
 
+  function totalGuests() {
+    let i = 0;
+    let area;
+    props.basket.forEach((item) => {
+      if (item.type === "ticket") {
+        i = i + item.amount;
+      }
+      props.setGuestNumber(i);
+    });
+
+    props.basket.map((item) => {
+      if (item.name === "campingSpot") {
+        area = item.type;
+      }
+    });
+
+    reserveSpot({
+      area: area,
+      amount: i,
+    });
+    console.log(area);
+    console.log(i);
+  }
+
   return (
     <div id="ticketlist" className="box2">
       <div className="box">
@@ -154,6 +178,31 @@ function Products(props) {
           />
         </form>
       </div>
+
+      <button
+          onClick={() => {
+            {
+              props.setShowForm(true);
+              totalGuests();
+              props.handleStartTimer();
+            }
+          }}
+          className={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded
+              ? "basketCheckout"
+              : "disabledCheckout"
+          }
+          disabled={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded && !props.isTimerRunning
+              ? false
+              : true
+          }
+        >
+          {" "}
+        </button>
+
       <a className="linkMockup" href={`/`}>
         {" "}
         <button className="confirmation campIdle">
