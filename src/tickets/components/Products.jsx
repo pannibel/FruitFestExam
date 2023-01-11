@@ -4,6 +4,7 @@ import { useState } from "react";
 import CampingProduct from "./CampingProduct";
 import ExtraProduct from "./ExtraProduct";
 import TicketProduct from "./TicketProduct";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Products(props) {
   const theForm = useRef(null);
@@ -99,24 +100,45 @@ function Products(props) {
     <div id="ticketlist" className="box2">
       <div className="box">
         <form ref={theForm} className="products">
-          <TicketProduct
-            count={props.count}
-            setCount={props.setCount}
-            addTicket={addTicket}
-            cheapprice={cheapprice}
-            expprice={expprice}
-            removeFromBasket={props.removeFromBasket}
-            basket={props.basket}
-          />
-          <ExtraProduct
-            addExtras={addExtras}
-            warning={warning}
-            extra1price={extra1price}
-            extra2price={extra2price}
-            extra3price={extra3price}
-            count={props.count}
-            setCount={props.setCount}
-          />
+          <motion.div
+            key="bkr"
+            initial={{ x: "100vw", zIndex: 10 }}
+            animate={{ x: 0, zIndex: 10 }}
+            exit={{ x: "-100vw", zIndex: 10 }}
+            transition={{ duration: 1 }}
+          >
+            <TicketProduct
+              count={props.count}
+              setCount={props.setCount}
+              addTicket={addTicket}
+              cheapprice={cheapprice}
+              expprice={expprice}
+              removeFromBasket={props.removeFromBasket}
+              basket={props.basket}
+            />
+          </motion.div>
+          {props.count.reg > 0 || props.count.vip > 0 ? (
+            <motion.div
+              key="bkr"
+              initial={{ x: "100vw", zIndex: 10 }}
+              animate={{ x: 0, zIndex: 10 }}
+              exit={{ x: "-100vw", zIndex: 10 }}
+              transition={{ duration: 1 }}
+            >
+              <ExtraProduct
+                addExtras={addExtras}
+                warning={warning}
+                extra1price={extra1price}
+                extra2price={extra2price}
+                extra3price={extra3price}
+                count={props.count}
+                setCount={props.setCount}
+              />
+            </motion.div>
+          ) : (
+            ""
+          )}
+
           <CampingProduct
             addSpot={addSpot}
             warning={warning}
