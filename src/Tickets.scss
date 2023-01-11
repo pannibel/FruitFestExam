@@ -194,7 +194,6 @@
 }
 #basketCont {
   // position: fixed;
-  position: sticky;
 
   z-index: 5;
   // top: 170px;
@@ -204,6 +203,7 @@
   justify-self: center;
 
   #basket {
+    position: sticky;
     display: flex;
     flex-direction: column;
     top: 30px;
