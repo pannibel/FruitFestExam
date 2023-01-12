@@ -124,84 +124,98 @@ function Products(props) {
     <div id="ticketlist" className="box2">
       <div className="box">
         <form ref={theForm} className="products">
-          <motion.div
-            key="bkr"
-            initial={{ x: "100vw", zIndex: 10 }}
-            animate={{ x: 0, zIndex: 10 }}
-            exit={{ x: "-100vw", zIndex: 10 }}
-            transition={{ duration: 1 }}
-          >
-            <TicketProduct
-              count={props.count}
-              setCount={props.setCount}
-              addTicket={addTicket}
-              cheapprice={cheapprice}
-              expprice={expprice}
-              removeFromBasket={props.removeFromBasket}
-              basket={props.basket}
-            />
-          </motion.div>
-          {props.count.reg > 0 || props.count.vip > 0 ? (
+          <AnimatePresence mode="wait">
             <motion.div
               key="bkr"
               initial={{ x: "100vw", zIndex: 10 }}
               animate={{ x: 0, zIndex: 10 }}
               exit={{ x: "-100vw", zIndex: 10 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.2 }}
             >
-              <ExtraProduct
-                addExtras={addExtras}
-                warning={warning}
-                extra1price={extra1price}
-                extra2price={extra2price}
-                extra3price={extra3price}
+              <TicketProduct
                 count={props.count}
                 setCount={props.setCount}
+                addTicket={addTicket}
+                cheapprice={cheapprice}
+                expprice={expprice}
+                removeFromBasket={props.removeFromBasket}
+                basket={props.basket}
               />
             </motion.div>
-          ) : (
-            ""
-          )}
-
-          <CampingProduct
-            addSpot={addSpot}
-            warning={warning}
-            setWarning={setWarning}
-            count={props.count}
-            onChangeValue={onChangeValue}
-            campingSpots={props.campingSpots}
-            spotAdded={props.spotAdded}
-            guestNumber={props.guestNumber}
-            basket={props.basket}
-            curCampBtn={props.curCampBtn}
-            setCurCampBtn={props.setCurCampBtn}
-          />
+            {props.count.reg > 0 || props.count.vip > 0 ? (
+              <motion.div
+                key="bkr"
+                initial={{ x: "100vw", zIndex: 10 }}
+                animate={{ x: 0, zIndex: 10 }}
+                exit={{ x: "-100vw", zIndex: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ExtraProduct
+                  addExtras={addExtras}
+                  warning={warning}
+                  extra1price={extra1price}
+                  extra2price={extra2price}
+                  extra3price={extra3price}
+                  count={props.count}
+                  setCount={props.setCount}
+                />
+              </motion.div>
+            ) : (
+              ""
+            )}
+            {props.count.total > 0 ? (
+              <motion.div
+                key="bkr"
+                initial={{ x: "100vw", zIndex: 10 }}
+                animate={{ x: 0, zIndex: 10 }}
+                exit={{ x: "-100vw", zIndex: 10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <CampingProduct
+                  addSpot={addSpot}
+                  warning={warning}
+                  setWarning={setWarning}
+                  count={props.count}
+                  onChangeValue={onChangeValue}
+                  campingSpots={props.campingSpots}
+                  spotAdded={props.spotAdded}
+                  guestNumber={props.guestNumber}
+                  basket={props.basket}
+                  curCampBtn={props.curCampBtn}
+                  setCurCampBtn={props.setCurCampBtn}
+                />{" "}
+              </motion.div>
+            ) : (
+              ""
+            )}
+          </AnimatePresence>
         </form>
       </div>
 
       <button
-          onClick={() => {
-            {
-              props.setShowForm(true);
-              totalGuests();
-              props.handleStartTimer();
-            }
-          }}
-          className={
-            props.basket.find((items) => items.type === "ticket") &&
-            props.spotAdded
-              ? "basketCheckout"
-              : "disabledCheckout"
+        onClick={() => {
+          {
+            props.setShowForm(true);
+            totalGuests();
+            props.handleStartTimer();
           }
-          disabled={
-            props.basket.find((items) => items.type === "ticket") &&
-            props.spotAdded && !props.isTimerRunning
-              ? false
-              : true
-          }
-        >
-          {" "}
-        </button>
+        }}
+        className={
+          props.basket.find((items) => items.type === "ticket") &&
+          props.spotAdded
+            ? "basketCheckout"
+            : "disabledCheckout"
+        }
+        disabled={
+          props.basket.find((items) => items.type === "ticket") &&
+          props.spotAdded &&
+          !props.isTimerRunning
+            ? false
+            : true
+        }
+      >
+        {" "}
+      </button>
 
       <a className="linkMockup" href={`/`}>
         {" "}

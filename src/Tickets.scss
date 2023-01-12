@@ -134,6 +134,7 @@
   text-align: center;
 }
 .box {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   form {
