@@ -4,6 +4,19 @@ import { useCreditCardValidator, images } from "react-creditcard-validator";
 import { confirmReservation, insertOrder } from "../../database";
 
 function PaymentDetails(props) {
+  const [formPart, setFormPart] = useState();
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+
+    if (event.target.value === "") {
+      setFormPart(true);
+      console.log("yellow");
+    } else {
+      setFormPart(false);
+      console.log("brown");
+    }
+  };
+
   const theForm = useRef(null);
   // console.log(props.guestInfo[0].name);
   const {
@@ -46,15 +59,18 @@ function PaymentDetails(props) {
   return (
     <div id="productList" className="box">
       <h2>Billing details</h2>
-      <form ref={theForm} onSubmit={(e) => {
-            saveBillingInfo(e);
-            props.changePage({
-              preventDefault: () => {},
-              target: {
-                name: "next",
-              },
-            });
-          }}>
+      <form
+        ref={theForm}
+        onSubmit={(e) => {
+          saveBillingInfo(e);
+          props.changePage({
+            preventDefault: () => {},
+            target: {
+              name: "next",
+            },
+          });
+        }}
+      >
         <div>
           <h3>Personal details</h3>
           <section className="formInput">
@@ -99,13 +115,14 @@ function PaymentDetails(props) {
             <div className="formInputCont ">
               <div>
                 <input
+                  onChange={handleChange}
                   defaultValue={""}
                   type="number"
                   name="phone"
                   id="form-phone"
                   placeholder="e.g. +00 1234 5678"
                   required
-                />{" "}
+                />
               </div>
             </div>
           </section>
@@ -233,7 +250,7 @@ function PaymentDetails(props) {
             </label>
             <div className="formInputShorter formInputCont">
               <div>
-                <input name="expirydate" {...getExpiryDateProps()} required/>{" "}
+                <input name="expirydate" {...getExpiryDateProps()} required />{" "}
               </div>
             </div>
             <small>
@@ -247,7 +264,7 @@ function PaymentDetails(props) {
             </label>
             <div className="formInputShorter formInputCont ">
               <div>
-                <input name="cvc" {...getCVCProps()} required/>{" "}
+                <input name="cvc" {...getCVCProps()} required />{" "}
               </div>
             </div>
             <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
@@ -255,19 +272,15 @@ function PaymentDetails(props) {
         </div>
 
         <div className="checkoutBtns">
-        <button
-          className="gobackBtn"
-          onClick={props.changePage}
-          name="back"></button>
-
-        <button
-          className="completeBtn"
-          name="next"
+          <button
+            className="gobackBtn"
+            onClick={props.changePage}
+            name="back"
           ></button>
-      </div>
+
+          <button className="completeBtn" name="next"></button>
+        </div>
       </form>
-
-
     </div>
   );
 }

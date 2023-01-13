@@ -33,7 +33,7 @@ function ExtraProduct(props) {
             {props.count.total < 2 ? "" : "s"}
           </label>
           <p>
-            <span>{props.extra2price}</span>,- (each)
+            <span>{props.extra2price} (each)</span>,-
           </p>
           <button
             onClick={props.addExtras}
@@ -53,7 +53,7 @@ function ExtraProduct(props) {
             {props.count.total < 2 ? "" : "s"}
           </label>
           <p>
-            <span>{props.extra3price}</span>,- (each)
+            <span>{props.extra3price}</span>,-
           </p>
           <button
             onClick={props.addExtras}
