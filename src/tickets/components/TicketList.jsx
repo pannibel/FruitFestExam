@@ -109,7 +109,8 @@ function TicketList(props) {
           setCurCampBtn={setCurCampBtn}
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
-        />{" "}
+        />
+        {" "}
         {/* </div> */}
       </div>
     </>
