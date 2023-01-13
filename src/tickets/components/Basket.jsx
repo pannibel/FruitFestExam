@@ -108,8 +108,8 @@ function Basket(props) {
   return (
     <>
       {!basketState && (
-        <div id="basketContMobile">
-          <div id="basketMobile">
+        <div id="basketCont">
+          <div id="basket">
             <div id="bmDiv">
             <h3 className="total_price">Total: {totalPrice()},-</h3>
             <button
