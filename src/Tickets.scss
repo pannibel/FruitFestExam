@@ -871,16 +871,39 @@ input[type="radio"] {
     margin: 0;
   }
 
-  #basketCont {
-    position: relative;
-    // z-index: 5;
-    top: auto;
-    left: auto;
-    min-width: 300px;
+  .mobileBasket {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+
+    #basketCont {
+      position: sticky;
+      z-index: 5;
+      top: auto;
+      left: auto;
+      min-width: 300px;
+      justify-self: center;
+    }
+    #basket {
+      position: sticky;
+      top: 30px;
+    }
   }
-  #basket {
-    margin-bottom: 30px;
+
+  .ticketlist {
+    position: fixed;
+    top: 40%;
+
+    overflow: hidden;
+
+    .box {
+      position: relative;
+    }
   }
+
   #basket,
   .checkoutform #basket,
   .box {

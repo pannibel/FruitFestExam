@@ -5,22 +5,17 @@ import Products from "./Products";
 import { confirmReservation } from "../../database";
 
 function TicketList(props) {
+
   /* different view for desktop and mobile(from 1100px) */
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
+  const [windowSize, setWindowSize] = useState(window.innerWidth > 1110);
+
+  const updateMedia = () => {
+    setWindowSize(window.innerWidth > 1110);
+  };
 
   useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-    };
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
   });
 
   const [spotAdded, setSpotAdded] = useState(false);
@@ -90,28 +85,28 @@ function TicketList(props) {
 
   return (
     <>
-      {windowSize <= "1110" && (
-        <div className="mobileBasket">
-          <Basket
-            setIdValue={props.setIdValue}
-            idValue={props.idValue}
-            campingSpots={campingSpots}
-            count={count}
-            setCount={setCount}
-            setShowForm={props.setShowForm}
-            basket={props.basket}
-            removeFromBasket={removeFromBasket}
-            setSpotAdded={setSpotAdded}
-            spotAdded={spotAdded}
-            setGuestNumber={props.setGuestNumber}
-            guestNumber={props.guestNumber}
-            curCampBtn={curCampBtn}
-            setCurCampBtn={setCurCampBtn}
-            handleStartTimer={props.handleStartTimer}
-            isTimerRunning={props.isTimerRunning}
-          />
-        </div>
-      )}
+    {!windowSize && (
+    <div className="mobileBasket">
+    <Basket
+          setIdValue={props.setIdValue}
+          idValue={props.idValue}
+          campingSpots={campingSpots}
+          count={count}
+          setCount={setCount}
+          setShowForm={props.setShowForm}
+          basket={props.basket}
+          removeFromBasket={removeFromBasket}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          setGuestNumber={props.setGuestNumber}
+          guestNumber={props.guestNumber}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
+          handleStartTimer={props.handleStartTimer}
+          isTimerRunning={props.isTimerRunning}
+        />
+    </div>
+    )}
       <div className="ticketlist">
         <Products
           addToBasket={addToBasket}
@@ -130,7 +125,7 @@ function TicketList(props) {
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
         />
-        {windowSize >= "1110" && (
+        {windowSize && (
           <Basket
             setIdValue={props.setIdValue}
             idValue={props.idValue}

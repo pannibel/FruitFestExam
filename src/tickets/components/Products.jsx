@@ -121,7 +121,7 @@ function Products(props) {
   }
 
   return (
-    <div id="ticketlist" className="box2">
+    <div className="box2">
       <div className="box">
         <form ref={theForm} className="products">
           <AnimatePresence mode="wait">
