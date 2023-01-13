@@ -5,6 +5,25 @@ import Products from "./Products";
 import { confirmReservation } from "../../database";
 
 function TicketList(props) {
+
+  /* different view for desktop and mobile(from 1100px) */
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
+
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
   const [curCampBtn, setCurCampBtn] = useState();
@@ -72,27 +91,9 @@ function TicketList(props) {
 
   return (
     <>
-      {" "}
-      <div className="ticketlist">
-        <Products
-          addToBasket={addToBasket}
-          removeFromBasket={removeFromBasket}
-          count={count}
-          setCount={setCount}
-          setSpotAdded={setSpotAdded}
-          spotAdded={spotAdded}
-          guestNumber={props.guestNumber}
-          setGuestNumber={props.setGuestNumber}
-          campingSpots={campingSpots}
-          basket={props.basket}
-          curCampBtn={curCampBtn}
-          setCurCampBtn={setCurCampBtn}
-          setShowForm={props.setShowForm}
-          handleStartTimer={props.handleStartTimer}
-          isTimerRunning={props.isTimerRunning}
-        />{" "}
-        {/* <div className="fixedBasket"> */}
-        <Basket
+    {windowSize <= '1110' && (
+    <div className="mobileBasket">
+    <Basket
           setIdValue={props.setIdValue}
           idValue={props.idValue}
           campingSpots={campingSpots}
@@ -110,8 +111,46 @@ function TicketList(props) {
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
         />
-        {" "}
-        {/* </div> */}
+    </div>
+    )}
+      <div className="ticketlist">
+        <Products
+          addToBasket={addToBasket}
+          removeFromBasket={removeFromBasket}
+          count={count}
+          setCount={setCount}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          guestNumber={props.guestNumber}
+          setGuestNumber={props.setGuestNumber}
+          campingSpots={campingSpots}
+          basket={props.basket}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
+          setShowForm={props.setShowForm}
+          handleStartTimer={props.handleStartTimer}
+          isTimerRunning={props.isTimerRunning}
+        />
+        {windowSize >= '1110' && (
+          <Basket
+            setIdValue={props.setIdValue}
+            idValue={props.idValue}
+            campingSpots={campingSpots}
+            count={count}
+            setCount={setCount}
+            setShowForm={props.setShowForm}
+            basket={props.basket}
+            removeFromBasket={removeFromBasket}
+            setSpotAdded={setSpotAdded}
+            spotAdded={spotAdded}
+            setGuestNumber={props.setGuestNumber}
+            guestNumber={props.guestNumber}
+            curCampBtn={curCampBtn}
+            setCurCampBtn={setCurCampBtn}
+            handleStartTimer={props.handleStartTimer}
+            isTimerRunning={props.isTimerRunning}
+          />
+        )}
       </div>
     </>
   );
