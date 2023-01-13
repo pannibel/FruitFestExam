@@ -126,7 +126,7 @@ function Products(props) {
         <form ref={theForm} className="products">
           <AnimatePresence mode="wait">
             <motion.div
-              key="bkr"
+              key="bkk"
               initial={{ x: "100vw", zIndex: 10 }}
               animate={{ x: 0, zIndex: 10 }}
               exit={{ x: "-100vw", zIndex: 10 }}
@@ -165,7 +165,7 @@ function Products(props) {
             )}
             {props.count.total > 0 ? (
               <motion.div
-                key="bkr"
+                key="kjk"
                 initial={{ x: "100vw", zIndex: 10 }}
                 animate={{ x: 0, zIndex: 10 }}
                 exit={{ x: "-100vw", zIndex: 10 }}

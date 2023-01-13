@@ -837,7 +837,10 @@ input[type="radio"] {
   // background-size: cover;
 
   .box {
-    padding: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-top: 0;
   }
 
   li {

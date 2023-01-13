@@ -2,20 +2,10 @@ import React from "react";
 import { useRef, useState } from "react";
 import { useCreditCardValidator, images } from "react-creditcard-validator";
 import { confirmReservation, insertOrder } from "../../database";
+import { motion, AnimatePresence } from "framer-motion";
 
 function PaymentDetails(props) {
-  const [formPart, setFormPart] = useState();
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
-
-    if (event.target.value === "") {
-      setFormPart(true);
-      console.log("yellow");
-    } else {
-      setFormPart(false);
-      console.log("brown");
-    }
-  };
+  const [formPart, setFormPart] = useState(1);
 
   const theForm = useRef(null);
   // console.log(props.guestInfo[0].name);
@@ -54,6 +44,14 @@ function PaymentDetails(props) {
     // console.log(props.billing);
     // console.log(props.idValue);
     confirmReservation({ id: props.idValue });
+  }
+  function popNumber2() {
+    setFormPart(2);
+    console.log("pump up the button");
+  }
+  function popNumber3() {
+    setFormPart(3);
+    console.log("pump up the button");
   }
 
   return (
@@ -115,7 +113,7 @@ function PaymentDetails(props) {
             <div className="formInputCont ">
               <div>
                 <input
-                  onChange={handleChange}
+                  onInput={popNumber2}
                   defaultValue={""}
                   type="number"
                   name="phone"
@@ -137,139 +135,165 @@ function PaymentDetails(props) {
             placeholder="your name here"
           />
         </section> */}
-        <div>
-          <h3>Billing address</h3>
-          <section className="formInput">
-            <label htmlFor="form-street" className="labelGuestList">
-              Street name
-            </label>{" "}
-            <div className="formInputCont ">
-              <div>
-                <input
-                  defaultValue={""}
-                  type="text"
-                  name="street"
-                  id="form-street"
-                  placeholder=""
-                  required
-                />
+        {formPart != 1 ? (
+          <motion.div
+            key="bkr"
+            initial={{ x: "100vw", zIndex: 10 }}
+            animate={{ x: 0, zIndex: 10 }}
+            exit={{ x: "-100vw", zIndex: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3>Billing address</h3>
+            <section className="formInput">
+              <label htmlFor="form-street" className="labelGuestList">
+                Street name
+              </label>{" "}
+              <div className="formInputCont ">
+                <div>
+                  <input
+                    defaultValue={""}
+                    type="text"
+                    name="street"
+                    id="form-street"
+                    placeholder=""
+                    required
+                  />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="formInput">
-            <label htmlFor="form-street" className="labelGuestList">
-              Apartment (number, floor, door, etc)
-            </label>
-            <div className="formInputCont ">
-              <div>
-                <input
-                  defaultValue={""}
-                  type="text"
-                  name="apartment"
-                  id="form-apartment"
-                  placeholder=""
-                  required
-                />
+            <section className="formInput">
+              <label htmlFor="form-street" className="labelGuestList">
+                Apartment (number, floor, door, etc)
+              </label>
+              <div className="formInputCont ">
+                <div>
+                  <input
+                    defaultValue={""}
+                    type="text"
+                    name="apartment"
+                    id="form-apartment"
+                    placeholder=""
+                    required
+                  />
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="formInput">
-            <label htmlFor="form-city" className="labelGuestList">
-              City
-            </label>
-            <div className="formInputCont ">
-              <div>
-                <input
-                  defaultValue={""}
-                  type="text"
-                  name="city"
-                  id="form-city"
-                  placeholder=""
-                  required
-                />
+            <section className="formInput">
+              <label htmlFor="form-city" className="labelGuestList">
+                City
+              </label>
+              <div className="formInputCont ">
+                <div>
+                  <input
+                    defaultValue={""}
+                    type="text"
+                    name="city"
+                    id="form-city"
+                    placeholder=""
+                    required
+                  />
+                </div>
               </div>
-            </div>
-          </section>
-          <section className="formInput">
-            <label htmlFor="form-country" className="labelGuestList">
-              Country
-            </label>
-            <div className="formInputCont ">
-              <div>
-                <input
-                  defaultValue={""}
-                  type="text"
-                  name="country"
-                  id="form-country"
-                  placeholder=""
-                  required
-                />
+            </section>
+            <section className="formInput">
+              <label htmlFor="form-country" className="labelGuestList">
+                Country
+              </label>
+              <div className="formInputCont ">
+                <div>
+                  <input
+                    onInput={popNumber3}
+                    defaultValue={""}
+                    type="text"
+                    name="country"
+                    id="form-country"
+                    placeholder=""
+                    required
+                  />
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+          </motion.div>
+        ) : (
+          ""
+        )}
+        {formPart == 3 ? (
+          <motion.div
+            key="bkr"
+            initial={{ x: "100vw", zIndex: 10 }}
+            animate={{ x: 0, zIndex: 10 }}
+            exit={{ x: "-100vw", zIndex: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="card_details">
+              <h3>Card details</h3>
+              <section className="formInput">
+                <label htmlFor="form-fullname" className="labelGuestList">
+                  Name on card
+                </label>{" "}
+                <div className="formInputCont ">
+                  <div>
+                    <input
+                      defaultValue={""}
+                      type="text"
+                      name="fullname"
+                      id="form-fullname"
+                      placeholder=""
+                      required
+                    />{" "}
+                  </div>
+                </div>
+              </section>
+              <section className="formInput">
+                <label htmlFor="" className="labelGuestList">
+                  Card number
+                </label>
+                <div className="formInputCont ">
+                  <div>
+                    <input name="cardnumber" {...getCardNumberProps()} />{" "}
+                  </div>
+                </div>
+                <small>
+                  {erroredInputs.cardNumber && erroredInputs.cardNumber}
+                </small>
+              </section>
 
-        <div className="card_details">
-          <h3>Card details</h3>
-          <section className="formInput">
-            <label htmlFor="form-fullname" className="labelGuestList">
-              Name on card
-            </label>{" "}
-            <div className="formInputCont ">
-              <div>
-                <input
-                  defaultValue={""}
-                  type="text"
-                  name="fullname"
-                  id="form-fullname"
-                  placeholder=""
-                  required
-                />{" "}
-              </div>
-            </div>
-          </section>
-          <section className="formInput">
-            <label htmlFor="" className="labelGuestList">
-              Card number
-            </label>
-            <div className="formInputCont ">
-              <div>
-                <input name="cardnumber" {...getCardNumberProps()} />{" "}
-              </div>
-            </div>
-            <small>
-              {erroredInputs.cardNumber && erroredInputs.cardNumber}
-            </small>
-          </section>
+              <section className="formInput">
+                <label htmlFor="" className="labelGuestList">
+                  Expiry date
+                </label>
+                <div className="formInputShorter formInputCont">
+                  <div>
+                    <input
+                      name="expirydate"
+                      {...getExpiryDateProps()}
+                      required
+                    />{" "}
+                  </div>
+                </div>
+                <small>
+                  {erroredInputs.expiryDate && erroredInputs.expiryDate}
+                </small>
+              </section>
 
-          <section className="formInput">
-            <label htmlFor="" className="labelGuestList">
-              Expiry date
-            </label>
-            <div className="formInputShorter formInputCont">
-              <div>
-                <input name="expirydate" {...getExpiryDateProps()} required />{" "}
-              </div>
+              <section className="formInput">
+                <label htmlFor="" className="labelGuestList">
+                  Security code
+                </label>
+                <div className="formInputShorter formInputCont ">
+                  <div>
+                    <input name="cvc" {...getCVCProps()} required />{" "}
+                  </div>
+                </div>
+                <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
+              </section>
             </div>
-            <small>
-              {erroredInputs.expiryDate && erroredInputs.expiryDate}
-            </small>
-          </section>
-
-          <section className="formInput">
-            <label htmlFor="" className="labelGuestList">
-              Security code
-            </label>
-            <div className="formInputShorter formInputCont ">
-              <div>
-                <input name="cvc" {...getCVCProps()} required />{" "}
-              </div>
-            </div>
-            <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
-          </section>
-        </div>
+          </motion.div>
+        ) : (
+          ""
+        )}
 
         <div className="checkoutBtns">
           <button
