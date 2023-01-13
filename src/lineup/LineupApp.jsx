@@ -193,10 +193,11 @@ function Lineup() {
         <AnimatePresence initial={false} mode="wait">
           {lineUpPage == 1 ? (
             <motion.div
+              style={{ zIndex: 10 }}
               key="biekr"
-              initial={{ x: "100vw", zIndex: 10 }}
-              animate={{ x: 0, zIndex: 10 }}
-              exit={{ x: "-100vw", zIndex: 10 }}
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100vw" }}
               transition={{ duration: 0.1 }}
             >
               <CurrentBand
@@ -213,10 +214,13 @@ function Lineup() {
           )}
           {lineUpPage == 2 ? (
             <motion.div
+              style={{ zIndex: 10 }}
               key="burgiekr"
-              initial={{ x: "-100vw", zIndex: 10 }}
-              animate={{ x: 0, zIndex: 10 }}
-              exit={{ x: "-100vw", zIndex: 10 }}
+              // ! this line messes up the popup (but also makes the animation better 🥹)
+              initial={{ x: -200 }}
+              // ? end of the line
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
               transition={{ duration: 0.1 }}
             >
               <Bandslist
@@ -234,10 +238,11 @@ function Lineup() {
           )}
           {lineUpPage == 3 ? (
             <motion.div
+              style={{ zIndex: 10 }}
               key="biekr"
-              initial={{ x: "100vw", zIndex: 10 }}
-              animate={{ x: 0, zIndex: 10 }}
-              exit={{ x: "100vw", zIndex: 10 }}
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100vw" }}
               transition={{ duration: 0.2 }}
             >
               <Schedule
