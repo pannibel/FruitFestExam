@@ -5,7 +5,6 @@ import Products from "./Products";
 import { confirmReservation } from "../../database";
 
 function TicketList(props) {
-
   /* different view for desktop and mobile(from 1100px) */
   const [windowSize, setWindowSize] = useState(window.innerWidth > 1110);
 
@@ -17,7 +16,6 @@ function TicketList(props) {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   });
-
   const [spotAdded, setSpotAdded] = useState(false);
   const [campingSpots, setCampingSpots] = useState([]);
   const [curCampBtn, setCurCampBtn] = useState();
@@ -85,29 +83,7 @@ function TicketList(props) {
 
   return (
     <>
-    {!windowSize && (
-    <div className="mobileBasket">
-    <Basket
-          setIdValue={props.setIdValue}
-          idValue={props.idValue}
-          campingSpots={campingSpots}
-          count={count}
-          setCount={setCount}
-          setShowForm={props.setShowForm}
-          basket={props.basket}
-          removeFromBasket={removeFromBasket}
-          setSpotAdded={setSpotAdded}
-          spotAdded={spotAdded}
-          setGuestNumber={props.setGuestNumber}
-          guestNumber={props.guestNumber}
-          curCampBtn={curCampBtn}
-          setCurCampBtn={setCurCampBtn}
-          handleStartTimer={props.handleStartTimer}
-          isTimerRunning={props.isTimerRunning}
-          windowSize={windowSize}
-        />
-    </div>
-    )}
+      {" "}
       <div className="ticketlist">
         <Products
           addToBasket={addToBasket}
@@ -123,6 +99,26 @@ function TicketList(props) {
           curCampBtn={curCampBtn}
           setCurCampBtn={setCurCampBtn}
           setShowForm={props.setShowForm}
+          handleStartTimer={props.handleStartTimer}
+          isTimerRunning={props.isTimerRunning}
+          windowSize={windowSize}
+        />
+
+        <Basket
+          setIdValue={props.setIdValue}
+          idValue={props.idValue}
+          campingSpots={campingSpots}
+          count={count}
+          setCount={setCount}
+          setShowForm={props.setShowForm}
+          basket={props.basket}
+          removeFromBasket={removeFromBasket}
+          setSpotAdded={setSpotAdded}
+          spotAdded={spotAdded}
+          setGuestNumber={props.setGuestNumber}
+          guestNumber={props.guestNumber}
+          curCampBtn={curCampBtn}
+          setCurCampBtn={setCurCampBtn}
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
           windowSize={windowSize}
