@@ -110,8 +110,29 @@ function TicketList(props) {
           setCurCampBtn={setCurCampBtn}
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
-        />{" "}
-        {/* </div> */}
+          windowSize={windowSize}
+        />
+        {windowSize && (
+          <Basket
+            setIdValue={props.setIdValue}
+            idValue={props.idValue}
+            campingSpots={campingSpots}
+            count={count}
+            setCount={setCount}
+            setShowForm={props.setShowForm}
+            basket={props.basket}
+            removeFromBasket={removeFromBasket}
+            setSpotAdded={setSpotAdded}
+            spotAdded={spotAdded}
+            setGuestNumber={props.setGuestNumber}
+            guestNumber={props.guestNumber}
+            curCampBtn={curCampBtn}
+            setCurCampBtn={setCurCampBtn}
+            handleStartTimer={props.handleStartTimer}
+            isTimerRunning={props.isTimerRunning}
+            windowSize={windowSize}
+          />
+        )}
       </div>
     </>
   );

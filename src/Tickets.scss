@@ -910,12 +910,19 @@ input[type="radio"] {
       left: auto;
       min-width: 300px;
       justify-self: center;
+
+      #basket {
+        position: sticky;
+        gap: 1rem;
+        top: 30px;
+
+          button {
+            margin: 0
+          }
+        
+      }
     }
-    #basket {
-      flex-direction: row;
-      position: sticky;
-      top: 30px;
-    }
+   
   }
 
   .ticketlist {
