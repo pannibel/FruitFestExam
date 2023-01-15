@@ -193,6 +193,13 @@
 
   pointer-events: none;
 }
+#basket {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 30px;
+  margin-bottom: 30px;
+}
 #basketCont {
   // position: fixed;
 
@@ -203,13 +210,6 @@
   // height: 90vh;
   justify-self: center;
 
-  #basket {
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    top: 30px;
-    margin-bottom: 30px;
-  }
   .total_price {
     font-family: Chopsic;
     background: linear-gradient(
