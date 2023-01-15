@@ -871,16 +871,21 @@ input[type="radio"] {
     margin: 0;
   }
 
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
   .mobileBasket {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
-    z-index: 20;
+   // height: 100vh;
+    z-index: 14;
 
     #basketCont {
-      position: sticky;
+      position: relative;
       z-index: 5;
       top: auto;
       left: auto;
@@ -888,19 +893,19 @@ input[type="radio"] {
       justify-self: center;
     }
     #basket {
+      flex-direction: row;
       position: sticky;
       top: 30px;
     }
   }
 
   .ticketlist {
-    position: fixed;
-    top: 40%;
-
-    overflow: hidden;
+    position: relative;
+    z-index: 10;
 
     .box {
-      position: relative;
+      display: flex;
+      overflow: auto;
     }
   }
 

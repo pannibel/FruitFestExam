@@ -217,12 +217,12 @@ function Products(props) {
         {" "}
       </button>
 
-      <a className="linkMockup" href={`/`}>
+     {/*  <a className="linkMockup" href={`/`}>
         {" "}
         <button className="confirmation campIdle">
           Go back to <br></br>the main page
         </button>
-      </a>
+      </a> */}
     </div>
   );
 }
