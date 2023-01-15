@@ -100,15 +100,15 @@ function Basket(props) {
   }
 
   return (
-    <div id="basketCont">
-      <div id="basket">
-        <h3>Basket</h3>
+    // <div id="basketCont">
+    <div id="basket">
+      <h3>Basket</h3>
 
-        <div className="separateTickets">
-          {props.basket.map((item) => {
-            if (item.type == "ticket") {
-              return (
-                <div>
+      <div className="separateTickets">
+        {props.basket.map((item) => {
+          if (item.type == "ticket") {
+            return (
+              <div>
                 <h4>Tickets:</h4>
                 <div
                   key={item.name}
@@ -135,51 +135,51 @@ function Basket(props) {
                     </button>
                   </div>{" "}
                 </div>
-                </div>
-              );
-            }
-          })}
-        </div>
+              </div>
+            );
+          }
+        })}
+      </div>
 
-        <div>
-          {props.basket.map((item) => {
-            if (item.type == "extra") {
-              return (
-                <div>
-                  <h4>Extras:</h4>
-                  <div key={item.name} className="separateTickets ticketItem ">
-                    <p>
-                      {item.name} x {item.amount}
-                    </p>
-                    <div className="ticketBasket">
-                      <p>{item.price * item.amount},-</p>
-                      <button
-                        onClick={() => props.removeFromBasket(item.name)}
-                        className="basketBtnRmv"
-                      >
-                        {" "}
-                      </button>
-                    </div>
+      <div>
+        {props.basket.map((item) => {
+          if (item.type == "extra") {
+            return (
+              <div>
+                <h4>Extras:</h4>
+                <div key={item.name} className="separateTickets ticketItem ">
+                  <p>
+                    {item.name} x {item.amount}
+                  </p>
+                  <div className="ticketBasket">
+                    <p>{item.price * item.amount},-</p>
+                    <button
+                      onClick={() => props.removeFromBasket(item.name)}
+                      className="basketBtnRmv"
+                    >
+                      {" "}
+                    </button>
                   </div>
                 </div>
-              );
-            }
-          })}
-        </div>
+              </div>
+            );
+          }
+        })}
+      </div>
 
-        <div>
-          {props.basket.map((item) => {
-            if (item.name == "campingSpot") {
-              return (
-                <div>
-                  <h4>Camping spot:</h4>
-                  <div
-                    key={item.type}
-                    className={controlCamping(item.type)}
-                    onChange={removeSetCurBtn(item.type)}
-                  >
-                    <p>{item.type}</p>
-                    {/*  <button
+      <div>
+        {props.basket.map((item) => {
+          if (item.name == "campingSpot") {
+            return (
+              <div>
+                <h4>Camping spot:</h4>
+                <div
+                  key={item.type}
+                  className={controlCamping(item.type)}
+                  onChange={removeSetCurBtn(item.type)}
+                >
+                  <p>{item.type}</p>
+                  {/*  <button
                     onClick={() => {
                       props.removeFromBasket(item.type);
                       props.setSpotAdded(false);
@@ -188,44 +188,43 @@ function Basket(props) {
                   >
                     {" "}
                   </button> */}
-                  </div>
                 </div>
-              );
-            }
-          })}
-        </div>
-
-        {/*       <h3>Subtotal: {totalPrice()},-</h3>
-      <h3>Booking fee: 99,-</h3> */}
-        <h3 className="total_price">Total: {totalPrice()},-</h3>
-
-        <button
-          onClick={() => {
-            {
-              props.setShowForm(true);
-              totalGuests();
-              props.handleStartTimer();
-            }
-          }}
-          className={
-            props.basket.find((items) => items.type === "ticket") &&
-            props.spotAdded
-              ? "basketCheckout"
-              : "disabledCheckout"
+              </div>
+            );
           }
-          disabled={
-            props.basket.find((items) => items.type === "ticket") &&
-            props.spotAdded && !props.isTimerRunning
-              ? false
-              : true
-          }
-        >
-          {" "}
-        </button>
-
+        })}
       </div>
-      
+
+      {/*       <h3>Subtotal: {totalPrice()},-</h3>
+      <h3>Booking fee: 99,-</h3> */}
+      <h3 className="total_price">Total: {totalPrice()},-</h3>
+
+      <button
+        onClick={() => {
+          {
+            props.setShowForm(true);
+            totalGuests();
+            props.handleStartTimer();
+          }
+        }}
+        className={
+          props.basket.find((items) => items.type === "ticket") &&
+          props.spotAdded
+            ? "basketCheckout"
+            : "disabledCheckout"
+        }
+        disabled={
+          props.basket.find((items) => items.type === "ticket") &&
+          props.spotAdded &&
+          !props.isTimerRunning
+            ? false
+            : true
+        }
+      >
+        {" "}
+      </button>
     </div>
+    // </div>
   );
 }
 
