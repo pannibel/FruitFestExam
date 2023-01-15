@@ -230,8 +230,8 @@ function Basket(props) {
       {!props.windowSize && !basketState && (
         <div id="basketCont">
           <div id="basket">
-            <div id="bmDiv">
               <h3 className="total_price">Total: {totalPrice()},-</h3>
+
               <button
                 onClick={() => {
                   {
@@ -255,16 +255,15 @@ function Basket(props) {
                 }>
                 {" "}
               </button>
-            </div>
 
-            <button
+              <button
               onClick={() => openBasket()}
               className="basket_off"
               button-name="openbasket">
               view items
             </button>
+            </div>
           </div>
-        </div>
       )}
       {!props.windowSize && basketState && (
         <div id="basketCont">
@@ -275,7 +274,7 @@ function Basket(props) {
               button-name="closebasket">
               close basket
             </button>{" "}
-            <h3>Basket</h3>
+
             <div className="separateTickets">
               {props.basket.map((item) => {
                 if (item.type == "ticket") {

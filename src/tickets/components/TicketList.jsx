@@ -126,7 +126,6 @@ function TicketList(props) {
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
           windowSize={windowSize}
-
         />
         {windowSize && (
           <Basket
