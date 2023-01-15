@@ -56,6 +56,12 @@ function PaymentDetails(props) {
 
   return (
     <div id="productList" className="box">
+                <button
+            className="gobackBtn"
+            onClick={props.changePage}
+            name="back"
+          ></button>
+          
       <h2>Billing details</h2>
       <form
         ref={theForm}
@@ -296,12 +302,6 @@ function PaymentDetails(props) {
         )}
 
         <div className="checkoutBtns">
-          <button
-            className="gobackBtn"
-            onClick={props.changePage}
-            name="back"
-          ></button>
-
           <button className="completeBtn" name="next"></button>
         </div>
       </form>
