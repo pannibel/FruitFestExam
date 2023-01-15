@@ -193,7 +193,7 @@ function Lineup() {
         <AnimatePresence initial={false} mode="wait">
           {lineUpPage == 1 ? (
             <motion.div
-              style={{ zIndex: 10 }}
+              // style={{ zIndex: 10 }}
               key="biekr"
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
@@ -216,7 +216,6 @@ function Lineup() {
             <motion.div
               style={{ zIndex: 10 }}
               key="burgiekr"
-              // ! this line messes up the popup (but also makes the animation better 🥹)
               initial={{ x: -200 }}
               // ? end of the line
               animate={{ x: 0 }}
@@ -260,7 +259,11 @@ function Lineup() {
             ""
           )}
         </AnimatePresence>
-        <div className="NavBarCont">
+        <div
+          className={
+            !singleBandState ? "NavBarCont navBar1" : "NavBarCont navBar2"
+          }
+        >
           <button
             onClick={() => changePageApp(1)}
             className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}

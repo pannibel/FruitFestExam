@@ -19,6 +19,8 @@ export default defineConfig({
     outDir: 'dist',
   },
   publicDir: 'assets',
-
+  server: {
+    host: true
+  }
 
 })
