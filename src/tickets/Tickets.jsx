@@ -3,10 +3,8 @@ import { useState } from "react";
 import "../Tickets.scss";
 import "../ticketButtons.scss";
 import CheckoutForm from "./components/CheckoutForm";
-import TicketHeader from "./components/TicketHeader";
 import TicketList from "./components/TicketList";
 import ReactDOM from "react-dom";
-// import MountainTest from "../assets/mountain_4.glb";
 import ImageTest from "../assets/logo2.svg";
 
 // import Mountain from "../src/assets/mountain_4";
@@ -126,26 +124,13 @@ function Tickets() {
     spotLight.position.set(10, 64, 32);
     scene.add(spotLight);
 
-    // const boxGeometry = new THREE.BoxGeometry(16, 16, 16);
-    // const boxMaterial = new THREE.MeshNormalMaterial();
-    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    // scene.add(boxMesh);
-
     const controls = new OrbitControls(camera, renderer.domElement);
-    // const stats = Stats();
-    // document.body.appendChild(stats.dom);
 
     const animate = () => {
-      // setTimeout(function () {
-      //   requestAnimationFrame(animate);
-      // }, 1000 / 30);
       if (loadedModel) {
         loadedModel.scene.rotation.y += 0.01;
       }
-      // boxMesh.rotation.y += 0.01;
-      // stats.update();
       renderer.render(scene, camera);
-      // renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
     animate();
@@ -157,10 +142,7 @@ function Tickets() {
 
   return (
     <div>
-      {/* <div > */}
       <canvas id="myThreeJsCanvas" className="test3D" />
-      {/* </div> */}
-      {/* <canvas id="myThreeJsCanvas" /> */}
       <a className="logoCheckout" href={`/`}>
         {" "}
         <img
@@ -204,7 +186,6 @@ function Tickets() {
                   You reached the limit of how long you can reserve tickets.
                 </p>
                 <a className="linkMockup" href={`/`} onClick={handleClosePopup}>
-                  {" "}
                   <button className="confirmation">
                     Go back to the main page
                   </button>

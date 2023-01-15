@@ -10,22 +10,8 @@ function ExtraProduct(props) {
     <div className="form-control">
       <h3>2. Add extras</h3>
       <h4>The tent(s) you choose will also be set up before your arrival.</h4>
-      {/*       <p className={props.warning.extras === false ? "hidden" : "warning"}>
-        {" "}
-        Please select a ticket first
-      </p> */}
+
       <div id="ticketExtras">
-        {/*         <div className="extra">
-          <label htmlFor="form-extras">Green camping option</label>
-          <p>
-            <span>{props.extra1price}</span>,-
-          </p>
-          <button
-            onClick={props.addExtras}
-            name="Green camping"
-            className="extraBtnADD"
-          > </button>
-        </div> */}
 
         <div className="extra">
           <label htmlFor="form-extras" className="gradient-text">
@@ -33,7 +19,7 @@ function ExtraProduct(props) {
             {props.count.total < 2 ? "" : "s"}
           </label>
           <p>
-            <span>{props.extra2price} (each)</span>,-
+            <span>{props.extra2price}</span>,-  (each)
           </p>
           <button
             onClick={props.addExtras}
@@ -53,7 +39,7 @@ function ExtraProduct(props) {
             {props.count.total < 2 ? "" : "s"}
           </label>
           <p>
-            <span>{props.extra3price}</span>,-
+            <span>{props.extra3price}</span>,-  (each)
           </p>
           <button
             onClick={props.addExtras}

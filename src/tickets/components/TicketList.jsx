@@ -7,7 +7,6 @@ import { confirmReservation } from "../../database";
 function TicketList(props) {
   /* different view for desktop and mobile(from 1100px) */
   const [windowSize, setWindowSize] = useState(window.innerWidth > 1110);
-
   const updateMedia = () => {
     setWindowSize(window.innerWidth > 1110);
   };
@@ -28,7 +27,6 @@ function TicketList(props) {
         "https://bitter-grass-7071.fly.dev/available-spots"
       );
       const data = await res.json();
-      // console.log(data);
       setCampingSpots(data);
     }
     getData();
@@ -49,12 +47,6 @@ function TicketList(props) {
           if (entry.name === "VIP ticket") {
             copy.amount = count.vip;
           }
-          /*           if (entry.name === "Medium size tent") {
-            copy.amount++
-          }
-          if (entry.name === "Large size tent") {
-            copy.amount++
-          } */
           if (entry.name === "campingSpot") {
             copy.name = data.name;
             copy.type = data.type;
