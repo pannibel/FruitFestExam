@@ -232,6 +232,10 @@
   h4 {
     margin-bottom: 10px;
   }
+
+  button {
+    border: none;
+  }
 }
 
 #basket {
@@ -658,6 +662,11 @@ input[type="radio"] {
   align-self: center;
   .box {
     min-width: 300px;
+    align-items: flex-start;
+
+    .gobackBtn {
+      margin-bottom: 2rem;
+    }
   }
   #basket {
     margin-right: 10vw;
@@ -756,7 +765,7 @@ input[type="radio"] {
 .checkoutBtns {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 0px;
 }
 
@@ -815,6 +824,8 @@ input[type="radio"] {
   z-index: 5;
   width: 60%;
   min-width: 300px;
+  padding-bottom: 5rem;
+
   .confirmation {
     margin-bottom: 30px;
   }
@@ -869,6 +880,10 @@ input[type="radio"] {
 
   .checkoutform {
     margin: 0;
+
+    .box {
+      padding: 10%;
+    }
   }
 
   main {
@@ -906,6 +921,10 @@ input[type="radio"] {
     .box {
       display: flex;
       overflow: auto;
+    }
+
+    .box2 {
+      padding-bottom: 5rem;
     }
   }
 
@@ -951,6 +970,10 @@ input[type="radio"] {
     .date {
       width: 80%;
     }
+  }
+
+  .checkoutform #basketCont {
+    display: none;
   }
 }
 

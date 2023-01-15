@@ -104,6 +104,7 @@ function TicketList(props) {
           setCurCampBtn={setCurCampBtn}
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
+          windowSize={windowSize}
         />
     </div>
     )}
@@ -124,6 +125,8 @@ function TicketList(props) {
           setShowForm={props.setShowForm}
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
+          windowSize={windowSize}
+
         />
         {windowSize && (
           <Basket
@@ -143,6 +146,7 @@ function TicketList(props) {
             setCurCampBtn={setCurCampBtn}
             handleStartTimer={props.handleStartTimer}
             isTimerRunning={props.isTimerRunning}
+            windowSize={windowSize}
           />
         )}
       </div>
