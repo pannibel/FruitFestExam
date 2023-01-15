@@ -1,17 +1,4 @@
 import React from "react";
-// import { Canvas } from "react-three-fiber";
-// import { OrbitControls } from "@react-three/drei";
-// function Box() {
-//   return (
-//     <mesh>
-//       <boxBufferGeometry attach="geometry" />
-//       <meshLambertMaterial attach="material" color="hotpink" />
-//     </mesh>
-//   );
-// }
-// ? threeJS
-
-// loader.load("./test_mountain_1.glb", function (gltf) {});
 
 function Confirmation(props) {
   return (
@@ -28,9 +15,6 @@ function Confirmation(props) {
           </button>
         </a>
       </div>{" "}
-      {/* <Canvas>
-        <Box />
-      </Canvas> */}
     </div>
   );
 }

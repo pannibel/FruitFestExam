@@ -3,7 +3,6 @@ import SingleBand from "./SingleBandList";
 import { useRef, useState } from "react";
 import OneBand from "./OneBand";
 import ImageTest from "../../assets/logo2.svg";
-import { motion, AnimatePresence } from "framer-motion";
 
 function Bandslist(props) {
   const [searchedBands, setSearchedBands] = useState([]);
@@ -28,7 +27,6 @@ function Bandslist(props) {
       bettered.push(sortedBands[i]);
     }
   }
-  // console.log(bettered);
 
   function searchList() {
     let test6 = theInput.current.value;
@@ -42,7 +40,6 @@ function Bandslist(props) {
       );
 
       console.log(searchedBands);
-      // console.log(test6);
     } else {
       setSearchFull(false);
       setSearchedBands([]);
@@ -75,8 +72,7 @@ function Bandslist(props) {
           <button
             className="searchBtn"
             button-name="search"
-            // onClick={searchList}
-          ></button>
+          >{""}</button>
         </div>
       </div>
 
@@ -102,7 +98,7 @@ function Bandslist(props) {
             />
           ))
         ) : (
-          <div id="noBands">no bitches</div>
+          <div id="noBands">no matches</div>
         )}
       </div>
 

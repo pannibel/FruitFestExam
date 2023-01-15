@@ -4,18 +4,14 @@ import "../Tickets.scss";
 import "../ticketButtons.scss";
 import CheckoutForm from "./components/CheckoutForm";
 import TicketList from "./components/TicketList";
-import ReactDOM from "react-dom";
 import ImageTest from "../assets/logo2.svg";
 
-// import Mountain from "../src/assets/mountain_4";
 // ? end of imported components
 // npm install react-countdown --save
-import Countdown from "react-countdown";
 // ! =======================================================
 import { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 

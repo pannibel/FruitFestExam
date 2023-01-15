@@ -30,7 +30,6 @@ function GuestInfo(props) {
   }
 
   return (
-    // <div>
     <div id="productList" className="box">
        <button
             className="gobackBtn"
@@ -38,7 +37,7 @@ function GuestInfo(props) {
               {
                 props.setShowForm(false);
               }
-            }}></button>
+            }}>{""}</button>
       <h2>Guest Information</h2>
       <form
         ref={theForm}
@@ -87,11 +86,10 @@ function GuestInfo(props) {
           </div>
         ))}
         <div className="checkoutBtns">
-          <button className="nextBtn" name="next"></button>
+          <button className="nextBtn" name="next">{""}</button>
         </div>
       </form>
     </div>
-    // </div>
   );
 }
 

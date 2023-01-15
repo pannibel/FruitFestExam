@@ -3,7 +3,6 @@ import { useState } from "react";
 import GuestInfo from "./GuestInfo";
 import BasketCheckout from "./BasketCheckout";
 import PaymentDetails from "./PaymentDetails";
-import Pay from "./Pay";
 import Confirmation from "./Confirmation";
 
 function CheckoutForm(props) {
@@ -41,8 +40,6 @@ function CheckoutForm(props) {
           guestNumber={props.guestNumber}
           guestInfo={guestInfo}
           setGuestInfo={setGuestInfo}
-          // formValues={formValues}
-          // setFormValues={setFormValues}
           basket={props.basket}
           totalPrice={totalPrice}
           setShowForm={props.setShowForm}
@@ -52,8 +49,6 @@ function CheckoutForm(props) {
       )}
       {state == 2 ? (
         <PaymentDetails
-          // formValues={formValues}
-          // setFormValues={setFormValues}
           changePage={changePage}
           billing={billing}
           setBilling={setBilling}
@@ -65,7 +60,6 @@ function CheckoutForm(props) {
       ) : (
         ""
       )}
-      {/* {state == 3 ? <Pay changePage={changePage} /> : ""} */}
       {state == 3 ? (
         <Confirmation
           changePage={changePage}
@@ -81,8 +75,6 @@ function CheckoutForm(props) {
           guestNumber={props.guestNumber}
           guestInfo={guestInfo}
           setGuestInfo={setGuestInfo}
-          // formValues={formValues}
-          // setFormValues={setFormValues}
           basket={props.basket}
           totalPrice={totalPrice}
         />

@@ -1,12 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import "../LineUpApp.scss";
 
 function SingleBandSchedule(props) {
-  // const [likedBand, setLikedBand] = useState(true);
   const [isBreak, setBreak] = useState(true);
   const [end, setEnd] = useState();
-  // console.log(props.data);
   useEffect(() => {
     props.data[1].map((el) => {
       if (el.act !== "break") {
@@ -24,10 +21,6 @@ function SingleBandSchedule(props) {
   useEffect(() => {
     props.data[1].map((el) => setEnd(el.end));
   }, []);
-
-  // function likeBand() {
-  //   setLikedBand(!likedBand);
-  // }
 
   function pickImage(x) {
     if (x.includes("https://")) {
@@ -47,7 +40,6 @@ function SingleBandSchedule(props) {
       );
     }
   }
-  // console.log(props.data[1]);
 
   return (
     <div className="timeSlot">
@@ -89,7 +81,7 @@ function SingleBandSchedule(props) {
                         el.liked = !el.liked;
                       }}
                       value="like"
-                    ></button>
+                    >{""}</button>
                   </div>{" "}
                 </div>
               );
@@ -118,7 +110,7 @@ function SingleBandSchedule(props) {
                     <button
                       className={el.liked ? "buttRed" : "buttBlue"}
                       disabled={true}
-                    ></button>
+                    >{""}</button>
                   </div>{" "}
                 </div>
               );

@@ -7,12 +7,10 @@ import Bandslist from "./components/Bandslist";
 import Schedule from "./components/Schedule";
 import CurrentBand from "./components/CurrentBand";
 import Burger from "./components/Burger";
-//npm i react-creditcard-validator
-//npm i react-burger-menu
+
 // !===============================================
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // !===============================================
@@ -94,31 +92,17 @@ function Lineup() {
     spotLight.position.set(10, 64, 32);
     scene.add(spotLight);
 
-    // const boxGeometry = new THREE.BoxGeometry(16, 16, 16);
-    // const boxMaterial = new THREE.MeshNormalMaterial();
-    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    // scene.add(boxMesh);
-
     const controls = new OrbitControls(camera, renderer.domElement);
-    // const stats = Stats();
-    // document.body.appendChild(stats.dom);
 
     const animate = () => {
-      // setTimeout(function () {
-      //   requestAnimationFrame(animate);
-      // }, 1000 / 30);
       if (loadedModel) {
         loadedModel.scene.rotation.y += 0.01;
       }
-      // boxMesh.rotation.y += 0.01;
-      // stats.update();
       renderer.render(scene, camera);
-      // renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
     animate();
 
-    // scene.add(boxMesh);
   }, []);
   // !==================================
 
@@ -128,7 +112,6 @@ function Lineup() {
     async function getData() {
       const res = await fetch("https://bitter-grass-7071.fly.dev/schedule");
       const data = await res.json();
-      // console.log(data);
       setCurrentBand(data);
     }
     getData();
@@ -144,7 +127,6 @@ function Lineup() {
         element.liked = false;
         element.key = i;
       });
-      // console.log(data);
     }
     getData();
   }, []);
@@ -152,7 +134,6 @@ function Lineup() {
   function changePageApp(value) {
     setLineUpPage(value);
     setBurgerState(false);
-    // console.log("change the state to " + lineUpPage);
   }
 
   function checkPageApp(value) {
@@ -173,11 +154,6 @@ function Lineup() {
   function openOneBand(band) {
     setSingleBandState(!singleBandState);
     console.log(band);
-
-    //get the band name and find the same thing in the original array and get the data from that object
-    // band name is under different keys:
-    // in SingleBandList it's name
-    // in SingleBandSchedule it's act
 
     bands.map((item) => {
       if (item.name === band) setOpenedband(item);
@@ -265,19 +241,19 @@ function Lineup() {
             onClick={() => changePageApp(1)}
             className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
             value="home"
-          ></button>
+          >{""}</button>
           <button
             onClick={() => changePageApp(2)}
             className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
             value="bands"
-          ></button>
+          >{""}</button>
           <button
             onClick={() => changePageApp(3)}
             className={
               lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"
             }
             value="schedule"
-          ></button>
+          >{""}</button>
         </div>
         {/* <Bandslist bands={bands} /> */}
         {!burgerState && (
@@ -285,7 +261,7 @@ function Lineup() {
             onClick={() => openBurger()}
             className="burger_off"
             button-name="openburg"
-          ></button>
+          >{""}</button>
         )}{" "}
         <AnimatePresence>
           {burgerState && (
@@ -294,7 +270,7 @@ function Lineup() {
                 onClick={() => openBurger()}
                 className="burger_on"
                 button-name="klosburg"
-              ></button>{" "}
+              >{""}</button>
               <Burger />
             </>
           )}{" "}

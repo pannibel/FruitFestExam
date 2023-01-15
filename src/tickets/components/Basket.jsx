@@ -187,23 +187,12 @@ function Basket(props) {
                         onChange={removeSetCurBtn(item.type)}
                       >
                         <p>{item.type}</p>
-                        {/*  <button
-               onClick={() => {
-                 props.removeFromBasket(item.type);
-                 props.setSpotAdded(false);
-               }}
-               className="basketBtnRmv"
-             >
-               {" "}
-             </button> */}
                       </div>
                     </div>
                   );
                 }
               })}
             </div>
-            {/*       <h3>Subtotal: {totalPrice()},-</h3>
-   <h3>Booking fee: 99,-</h3> */}
             <h3 className="total_price">Total: {totalPrice()},-</h3>
             <button
               onClick={() => {
@@ -356,23 +345,12 @@ function Basket(props) {
                         onChange={removeSetCurBtn(item.type)}
                       >
                         <p>{item.type}</p>
-                        {/*  <button
-            onClick={() => {
-              props.removeFromBasket(item.type);
-              props.setSpotAdded(false);
-            }}
-            className="basketBtnRmv"
-          >
-            {" "}
-          </button> */}
                       </div>
                     </div>
                   );
                 }
               })}
             </div>
-            {/*       <h3>Subtotal: {totalPrice()},-</h3>
-<h3>Booking fee: 99,-</h3> */}
             <h3 className="total_price">Total: {totalPrice()},-</h3>
             <button
               onClick={() => {

@@ -19,8 +19,6 @@ function CampingProduct(props) {
         return newObj;
       });
     });
-
-    // console.log(spotsAvailable);
   }, [props.campingSpots]);
 
   function checkAvailSpots(item) {

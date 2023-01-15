@@ -1,7 +1,7 @@
 import React from "react";
 import SingleBandSchedule from "./SingleBandSchedule";
 import OneBand from "./OneBand";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ImageTest from "../../assets/logo2.svg";
 function Bandslist(props) {
   const [schedDay, setSchedDay] = useState("mon");
@@ -12,10 +12,8 @@ function Bandslist(props) {
   function playingMidgard() {
     Object.entries(props.currentBand).map((item) => {
       Object.entries(item[1]).map((weekDays) => {
-        // console.log(weekDays);
         if (weekDays[0] === schedDay) {
           weekDays[1].forEach((el) => {
-            // console.log(props.bands);
             props.bands.forEach((y) => {
               if (y.name === el.act) {
                 el.logo = y.logo;
@@ -70,39 +68,45 @@ function Bandslist(props) {
         onClick={() => changePageApp(1)}
         className="logo_small"
         src={ImageTest}
-        alt="big logo of the festival"
-      ></img>
+        alt="big logo of the festival"></img>
 
       <div id="weekDaysCont">
         <div className="weekDays">
           <button
             onClick={() => setSchedDay("mon")}
-            className={schedDay === "mon" ? checkDay("mon") : "mon_off"}
-          ></button>
+            className={
+              schedDay === "mon" ? checkDay("mon") : "mon_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("tue")}
-            className={schedDay === "tue" ? checkDay("tue") : "tue_off"}
-          ></button>
+            className={
+              schedDay === "tue" ? checkDay("tue") : "tue_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("wed")}
-            className={schedDay === "wed" ? checkDay("wed") : "wed_off"}
-          ></button>
+            className={
+              schedDay === "wed" ? checkDay("wed") : "wed_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("thu")}
-            className={schedDay === "thu" ? checkDay("thu") : "thu_off"}
-          ></button>
+            className={
+              schedDay === "thu" ? checkDay("thu") : "thu_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("fri")}
-            className={schedDay === "fri" ? checkDay("fri") : "fri_off"}
-          ></button>
+            className={
+              schedDay === "fri" ? checkDay("fri") : "fri_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("sat")}
-            className={schedDay === "sat" ? checkDay("sat") : "sat_off"}
-          ></button>
+            className={
+              schedDay === "sat" ? checkDay("sat") : "sat_off"
+            }>{""}</button>
           <button
             onClick={() => setSchedDay("sun")}
-            className={schedDay === "sun" ? checkDay("sun") : "sun_off"}
-          ></button>
+            className={
+              schedDay === "sun" ? checkDay("sun") : "sun_off"
+            }>{""}</button>
         </div>
       </div>
 
@@ -123,8 +127,7 @@ function Bandslist(props) {
 
       <div
         className={props.singleBandState ? "oneBandCont" : "hidden"}
-        onClick={props.openOneBand}
-      >
+        onClick={props.openOneBand}>
         {!props.singleBandState}
         {props.singleBandState && (
           <OneBand
