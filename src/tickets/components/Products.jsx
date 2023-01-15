@@ -121,7 +121,7 @@ function Products(props) {
   }
 
   return (
-    <div id="ticketlist" className="box2">
+    <div className="box2">
       <div className="box">
         <form ref={theForm} className="products">
           <AnimatePresence mode="wait">
@@ -130,8 +130,7 @@ function Products(props) {
               initial={{ x: "100vw", zIndex: 10 }}
               animate={{ x: 0, zIndex: 10 }}
               exit={{ x: "-100vw", zIndex: 10 }}
-              transition={{ duration: 0.2 }}
-            >
+              transition={{ duration: 0.2 }}>
               <TicketProduct
                 count={props.count}
                 setCount={props.setCount}
@@ -148,8 +147,7 @@ function Products(props) {
                 initial={{ x: "100vw", zIndex: 10 }}
                 animate={{ x: 0, zIndex: 10 }}
                 exit={{ x: "-100vw", zIndex: 10 }}
-                transition={{ duration: 0.3 }}
-              >
+                transition={{ duration: 0.3 }}>
                 <ExtraProduct
                   addExtras={addExtras}
                   warning={warning}
@@ -169,8 +167,7 @@ function Products(props) {
                 initial={{ x: "100vw", zIndex: 10 }}
                 animate={{ x: 0, zIndex: 10 }}
                 exit={{ x: "-100vw", zIndex: 10 }}
-                transition={{ duration: 0.3 }}
-              >
+                transition={{ duration: 0.3 }}>
                 <CampingProduct
                   addSpot={addSpot}
                   warning={warning}
@@ -192,37 +189,38 @@ function Products(props) {
         </form>
       </div>
 
-      <button
-        onClick={() => {
-          {
-            props.setShowForm(true);
-            totalGuests();
-            props.handleStartTimer();
+      {!props.windowSize && (
+        <button
+          onClick={() => {
+            {
+              props.setShowForm(true);
+              totalGuests();
+              props.handleStartTimer();
+            }
+          }}
+          className={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded
+              ? "basketCheckout"
+              : "disabledCheckout"
           }
-        }}
-        className={
-          props.basket.find((items) => items.type === "ticket") &&
-          props.spotAdded
-            ? "basketCheckout"
-            : "disabledCheckout"
-        }
-        disabled={
-          props.basket.find((items) => items.type === "ticket") &&
-          props.spotAdded &&
-          !props.isTimerRunning
-            ? false
-            : true
-        }
-      >
-        {" "}
-      </button>
+          disabled={
+            props.basket.find((items) => items.type === "ticket") &&
+            props.spotAdded &&
+            !props.isTimerRunning
+              ? false
+              : true
+          }>
+          {" "}
+        </button>
+      )}
 
-      <a className="linkMockup" href={`/`}>
+      {/*  <a className="linkMockup" href={`/`}>
         {" "}
         <button className="confirmation campIdle">
           Go back to <br></br>the main page
         </button>
-      </a>
+      </a> */}
     </div>
   );
 }
