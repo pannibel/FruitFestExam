@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Basket from "./Basket";
 import Products from "./Products";
-import { confirmReservation } from "../../database";
 
 function TicketList(props) {
   /* different view for desktop and mobile(from 1100px) */
