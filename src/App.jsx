@@ -1,19 +1,15 @@
 import { useState } from "react";
 import "./App.scss";
 import Countdown from "react-countdown";
-// import imageSrc from "./assets/logo2.svg";
-// import imageSrc2 from "../src/assets/date.svg";
 import { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import Stats from "three/examples/jsm/libs/stats.module";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
-// import { Outlet } from "react-router-dom";
 import ImageTest from "./assets/logo2.png";
 import ImageTest2 from "./assets/date.svg";
-// import MountainTest from "./assets/mountain_4.glb";
 import { BrowserRouter } from "react-router-dom";
+
 function App() {
   useEffect(() => {
     // laoding the scene
@@ -48,7 +44,6 @@ function App() {
 
     glftLoader.load("../src/assets/mountainFin.glb", (gltfScene) => {
       loadedModel = gltfScene;
-      // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
       gltfScene.scene.position.y = -10;
       gltfScene.scene.scale.set(5, 5, 5);
@@ -83,31 +78,16 @@ function App() {
     spotLight.position.set(10, 64, 32);
     scene.add(spotLight);
 
-    // const boxGeometry = new THREE.BoxGeometry(16, 16, 16);
-    // const boxMaterial = new THREE.MeshNormalMaterial();
-    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    // scene.add(boxMesh);
-
     const controls = new OrbitControls(camera, renderer.domElement);
-    // const stats = Stats();
-    // document.body.appendChild(stats.dom);
 
     const animate = () => {
-      // setTimeout(function () {
-      //   requestAnimationFrame(animate);
-      // }, 1000 / 30);
       if (loadedModel) {
         loadedModel.scene.rotation.y += 0.01;
       }
-      // boxMesh.rotation.y += 0.01;
-      // stats.update();
       renderer.render(scene, camera);
-      // renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
     animate();
-
-    // scene.add(boxMesh);
   }, []);
 
   return (

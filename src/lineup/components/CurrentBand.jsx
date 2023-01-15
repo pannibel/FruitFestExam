@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import ImageTest from "../../assets/logo2.svg";
 import OneBand from "./OneBand";
 
@@ -37,17 +36,13 @@ function CurrentBand(props) {
 
     return returnValue;
   }
-  // console.log(testForTuesday("Vanaheim"));
 
   function pickImage(x) {
     let imgObj;
     props.bands.map((el) => {
       if (el.name == x) {
-        // console.log(el.logo);
         if (el.logo.includes("https://")) {
-          // console.log(el.logo);
           imgObj = el.logo;
-          // return <img src={el.logo} className="imgSingleBand" alt=""></img>;
         } else if (
           el.logo.includes("png") ||
           el.logo.includes("jpg") ||
@@ -58,7 +53,6 @@ function CurrentBand(props) {
         }
       }
     });
-    // console.log(imgObj);
     return imgObj;
   }
   return (

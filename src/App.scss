@@ -1,11 +1,4 @@
-@font-face {
-  font-family: "Chopsic";
-  src: url("./assets/font_Chopsic/chopsic-webfont.woff") format("woff"),
-    url("./assets/font_Chopsic/Chopsic.otf") format("opentype"),
-    url("./assets/font_Chopsic/chopsic-webfont.woff2") format("woff2");
-}
 body {
-  // overflow-y: hidden; /* Hide vertical scrollbar */
   background-image: url("./assets/background5.webp");
 
   background-color: #99caea;
@@ -45,8 +38,6 @@ body {
 }
 
 .main {
-  // position: absolute;
-  // width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +76,15 @@ body {
   .logo {
     width: 50%;
     margin: 50px 0px 50px 0px;
-   // filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.7));
+  }
+
+  .logoBig {
+    display: block;
+    color: #9e00ff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    opacity: 0.9;
   }
 
   .date {

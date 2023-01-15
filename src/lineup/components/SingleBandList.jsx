@@ -1,14 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import OneBand from "./OneBand";
 
 function SingleBand(props) {
-  // console.log(props.data.name[0]);
-  // props.data[1].map((el) => {
-  //   if (el.act !== "break") {
-  //     setBreak(!isBreak);
-  //   }
-  // });
 
   function handleClick(e) {
     e.target.classList.toggle("buttRed");
@@ -38,7 +30,6 @@ function SingleBand(props) {
             {" "}
             <img
               src={imageDir}
-              // alt={props.data.logoCredits}
               className="imgSingleBand"
               alt="img_singleband"
             ></img>
@@ -49,7 +40,7 @@ function SingleBand(props) {
               className={props.data.liked ? "buttRed" : "buttBlue"}
               onClick={(e) => handleClick(e)}
               value="like"
-            ></button>
+            >{""}</button>
           </div>
         </div>
       )}

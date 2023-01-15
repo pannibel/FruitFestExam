@@ -90,7 +90,6 @@ function TicketProduct(props) {
           <p>
             <span>{props.cheapprice}</span>,-
           </p>
-          {/* <label htmlFor="ticketamount">Amount: </label> */}
 
           <div className="ticketOptionBtn">
             <button
@@ -119,7 +118,6 @@ function TicketProduct(props) {
           <p>
             <span>{props.expprice}</span>,-
           </p>
-          {/* <label htmlFor="ticketamount">Amount: </label> */}
 
           <div className="ticketOptionBtn">
             <button

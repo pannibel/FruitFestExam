@@ -1,6 +1,3 @@
-// import * as THREE from 'three'
-// import { useMemo } from 'react'
-// import { applyProps } from '@react-three/fiber'
 import { useGLTF } from "@react-three/drei";
 
 export function Mountain(props) {
@@ -10,4 +7,3 @@ export function Mountain(props) {
 
   return <primitive object={scene} {...props} />;
 }
-// export default Mountain;

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 function Burger() {
   return (
     <motion.div
@@ -11,10 +11,10 @@ function Burger() {
       transition={{ duration: 0 }}
     >
       <a href={`tickets`}>
-        <button className="tickets"></button>
+        <button className="tickets">{""}</button>
       </a>
       <a href={`/`}>
-        <button className="homepage"> </button>
+        <button className="homepage">{""}</button>
       </a>
     </motion.div>
   );

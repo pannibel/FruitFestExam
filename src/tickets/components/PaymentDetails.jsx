@@ -8,12 +8,10 @@ function PaymentDetails(props) {
   const [formPart, setFormPart] = useState(1);
 
   const theForm = useRef(null);
-  // console.log(props.guestInfo[0].name);
   const {
     getCardNumberProps,
     getExpiryDateProps,
     getCVCProps,
-    getCardImageProps,
     meta: { erroredInputs },
   } = useCreditCardValidator();
 
@@ -22,15 +20,10 @@ function PaymentDetails(props) {
     const address = [];
 
     address.push({
-      // name: theForm.current.elements.fullname.value,
-      // email: theForm.current.elements.email.value,
-      // phonenumber: theForm.current.elements.phone.value,
-
       streetname: theForm.current.elements.street.value,
       apartment: theForm.current.elements.apartment.value,
       city: theForm.current.elements.city.value,
       country: theForm.current.elements.country.value,
-      // basket: props.
     });
     props.setBilling(address);
     insertOrder({
@@ -41,8 +34,6 @@ function PaymentDetails(props) {
       ticketOwners: props.guestInfo,
       basketContent: props.basket,
     });
-    // console.log(props.billing);
-    // console.log(props.idValue);
     confirmReservation({ id: props.idValue });
   }
   function popNumber2() {
@@ -56,12 +47,10 @@ function PaymentDetails(props) {
 
   return (
     <div id="productList" className="box">
-                <button
-            className="gobackBtn"
-            onClick={props.changePage}
-            name="back"
-          ></button>
-          
+      <button className="gobackBtn" onClick={props.changePage} name="back">
+        {""}
+      </button>
+
       <h2>Billing details</h2>
       <form
         ref={theForm}
@@ -73,8 +62,7 @@ function PaymentDetails(props) {
               name: "next",
             },
           });
-        }}
-      >
+        }}>
         <div>
           <h3>Personal details</h3>
           <section className="formInput">
@@ -131,24 +119,14 @@ function PaymentDetails(props) {
             </div>
           </section>
         </div>
-        {/* <section>
-          <label htmlFor="">Full name</label>
-          <input
-            defaultValue={""}
-            type="text"
-            name="fullname"
-            id="form-fullname"
-            placeholder="your name here"
-          />
-        </section> */}
+
         {formPart != 1 ? (
           <motion.div
             key="bkr"
             initial={{ x: "100vw", zIndex: 10 }}
             animate={{ x: 0, zIndex: 10 }}
             exit={{ x: "-100vw", zIndex: 10 }}
-            transition={{ duration: 0.3 }}
-          >
+            transition={{ duration: 0.3 }}>
             <h3>Billing address</h3>
             <section className="formInput">
               <label htmlFor="form-street" className="labelGuestList">
@@ -231,8 +209,7 @@ function PaymentDetails(props) {
             initial={{ x: "100vw", zIndex: 10 }}
             animate={{ x: 0, zIndex: 10 }}
             exit={{ x: "-100vw", zIndex: 10 }}
-            transition={{ duration: 0.3 }}
-          >
+            transition={{ duration: 0.3 }}>
             <div className="card_details">
               <h3>Card details</h3>
               <section className="formInput">
@@ -302,7 +279,9 @@ function PaymentDetails(props) {
         )}
 
         <div className="checkoutBtns">
-          <button className="completeBtn" name="next"></button>
+          <button className="completeBtn" name="next">
+            {""}
+          </button>
         </div>
       </form>
     </div>

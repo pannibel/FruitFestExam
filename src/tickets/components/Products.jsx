@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function Products(props) {
   const theForm = useRef(null);
-  const [chosenSpot, setChosenSpot] = useState();
   let [warning, setWarning] = useState({ extras: true, camping: false });
 
   const cheapprice = 799;
@@ -81,7 +80,6 @@ function Products(props) {
   }
 
   function onChangeValue(e) {
-    setChosenSpot(e.target.value);
     addSpot(e.target.value);
   }
 
@@ -180,7 +178,7 @@ function Products(props) {
                   basket={props.basket}
                   curCampBtn={props.curCampBtn}
                   setCurCampBtn={props.setCurCampBtn}
-                />{" "}
+                />
               </motion.div>
             ) : (
               ""
