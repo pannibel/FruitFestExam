@@ -84,29 +84,6 @@ function TicketList(props) {
 
   return (
     <>
-      {!windowSize && (
-        <div className="mobileBasket">
-          <Basket
-            setIdValue={props.setIdValue}
-            idValue={props.idValue}
-            campingSpots={campingSpots}
-            count={count}
-            setCount={setCount}
-            setShowForm={props.setShowForm}
-            basket={props.basket}
-            removeFromBasket={removeFromBasket}
-            setSpotAdded={setSpotAdded}
-            spotAdded={spotAdded}
-            setGuestNumber={props.setGuestNumber}
-            guestNumber={props.guestNumber}
-            curCampBtn={curCampBtn}
-            setCurCampBtn={setCurCampBtn}
-            handleStartTimer={props.handleStartTimer}
-            isTimerRunning={props.isTimerRunning}
-            windowSize={windowSize}
-          />
-        </div>
-      )}
       <div className="ticketlist">
         <Products
           addToBasket={addToBasket}
@@ -125,7 +102,30 @@ function TicketList(props) {
           handleStartTimer={props.handleStartTimer}
           isTimerRunning={props.isTimerRunning}
           windowSize={windowSize}
-        />
+        />{" "}
+        {!windowSize && (
+          <div className="mobileBasket">
+            <Basket
+              setIdValue={props.setIdValue}
+              idValue={props.idValue}
+              campingSpots={campingSpots}
+              count={count}
+              setCount={setCount}
+              setShowForm={props.setShowForm}
+              basket={props.basket}
+              removeFromBasket={removeFromBasket}
+              setSpotAdded={setSpotAdded}
+              spotAdded={spotAdded}
+              setGuestNumber={props.setGuestNumber}
+              guestNumber={props.guestNumber}
+              curCampBtn={curCampBtn}
+              setCurCampBtn={setCurCampBtn}
+              handleStartTimer={props.handleStartTimer}
+              isTimerRunning={props.isTimerRunning}
+              windowSize={windowSize}
+            />
+          </div>
+        )}
         {windowSize && (
           <Basket
             setIdValue={props.setIdValue}

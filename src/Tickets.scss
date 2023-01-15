@@ -896,7 +896,8 @@ input[type="radio"] {
   }
 
   .mobileBasket {
-    position: relative;
+    top: 30px;
+    position: sticky;
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -916,13 +917,11 @@ input[type="radio"] {
         gap: 1rem;
         top: 30px;
 
-          button {
-            margin: 0
-          }
-        
+        button {
+          margin: 0;
+        }
       }
     }
-   
   }
 
   .ticketlist {

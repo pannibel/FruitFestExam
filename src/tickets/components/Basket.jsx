@@ -233,44 +233,42 @@ function Basket(props) {
         </div>
       )}
       {!props.windowSize && !basketState && (
-        <div id="basketCont">
-          <div id="basket">
-              <h3 className="total_price">Total: {totalPrice()},-</h3>
+        <div id="basket">
+          <h3 className="total_price">Total: {totalPrice()},-</h3>
 
-              <button
-                onClick={() => {
-                  {
-                    props.setShowForm(true);
-                    totalGuests();
-                    props.handleStartTimer();
-                  }
-                }}
-                className={
-                  props.basket.find((items) => items.type === "ticket") &&
-                  props.spotAdded
-                    ? "basketCheckout"
-                    : "disabledCheckout"
-                }
-                disabled={
-                  props.basket.find((items) => items.type === "ticket") &&
-                  props.spotAdded &&
-                  !props.isTimerRunning
-                    ? false
-                    : true
-                }
-              >
-                {" "}
-              </button>
+          <button
+            onClick={() => {
+              {
+                props.setShowForm(true);
+                totalGuests();
+                props.handleStartTimer();
+              }
+            }}
+            className={
+              props.basket.find((items) => items.type === "ticket") &&
+              props.spotAdded
+                ? "basketCheckout"
+                : "disabledCheckout"
+            }
+            disabled={
+              props.basket.find((items) => items.type === "ticket") &&
+              props.spotAdded &&
+              !props.isTimerRunning
+                ? false
+                : true
+            }
+          >
+            {" "}
+          </button>
 
-              <button
-              onClick={() => openBasket()}
-              className="basket_off"
-              button-name="openbasket"
-            >
-              view items
-            </button>
-            </div>
-          </div>
+          <button
+            onClick={() => openBasket()}
+            className="basket_off"
+            button-name="openbasket"
+          >
+            view items
+          </button>
+        </div>
       )}
       {!props.windowSize && basketState && (
         <div id="basketCont">
@@ -282,7 +280,6 @@ function Basket(props) {
             >
               close basket
             </button>{" "}
-
             <div className="separateTickets">
               {props.basket.map((item) => {
                 if (item.type == "ticket") {
