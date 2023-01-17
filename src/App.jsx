@@ -8,7 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import ImageTest from "./assets/logo2.png";
 import ImageTest2 from "./assets/date.svg";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 
 function App() {
   useEffect(() => {

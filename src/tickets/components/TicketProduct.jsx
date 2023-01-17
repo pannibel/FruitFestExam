@@ -59,16 +59,16 @@ function TicketProduct(props) {
       }
     }
 
-    console.log(props.count)
+    console.log(props.count);
     removeExtras();
   }
 
   function removeExtras() {
     props.basket.map((item) => {
       if (item.type === "extra") {
-        item.amount = props.count.total
+        item.amount = props.count.total;
       }
-    })
+    });
 
     if (props.count.total === 0) {
       props.basket.map((product) => {
@@ -80,6 +80,11 @@ function TicketProduct(props) {
     }
   }
 
+  // function test1() {
+  //   console.log
+  //   return `props.count.reg`;
+
+  // }
   return (
     <div className="form-control">
       <h3>1. Choose ticket type</h3>
@@ -97,17 +102,22 @@ function TicketProduct(props) {
               name="regDec"
               onClick={changeCount}
               disabled={props.count.reg == 0 ? true : false}
-              className="regDec">
+              className="regDec"
+            >
               {" "}
             </button>
-            <div>
-              {props.count.reg}</div>
+            <div>{props.count.reg}</div>
             <button
               ref={regInc}
               name="regInc"
               onClick={changeCount}
-              disabled={props.count.reg > 3 || props.count.reg + props.count.vip === 4 ? true : false}
-              className="regInc">
+              disabled={
+                props.count.reg > 3 || props.count.reg + props.count.vip === 4
+                  ? true
+                  : false
+              }
+              className="regInc"
+            >
               {" "}
             </button>
           </div>
@@ -125,18 +135,22 @@ function TicketProduct(props) {
               name="vipDec"
               onClick={changeCount}
               disabled={props.count.vip == 0 ? true : false}
-              className="vipDec">
+              className="vipDec"
+            >
               {" "}
             </button>
-            <div>
-              {props.count.vip}
-              </div>
+            <div>{props.count.vip}</div>
             <button
               ref={vipInc}
               name="vipInc"
               onClick={changeCount}
-              disabled={props.count.vip > 3 || props.count.reg + props.count.vip === 4 ? true : false}
-              className="vipInc">
+              disabled={
+                props.count.vip > 3 || props.count.reg + props.count.vip === 4
+                  ? true
+                  : false
+              }
+              className="vipInc"
+            >
               {" "}
             </button>
           </div>

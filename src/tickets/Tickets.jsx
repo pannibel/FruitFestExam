@@ -18,7 +18,6 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 // ? ========================================================
 
 function Tickets() {
-  
   // const { nodes } = useGLTF(modelSrc);
   const [idValue, setIdValue] = useState();
   const [showForm, setShowForm] = useState(false);
