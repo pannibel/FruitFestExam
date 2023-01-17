@@ -14,20 +14,7 @@
 //     })
 
 // }
-export function reserveSpot(payload) {
-    let testValue
-    const url = "https://bitter-grass-7071.fly.dev/";
-    fetch(url + "reserve-spot", {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-    })
-        .then((response) => response.json())
-        .then((response) => console.log(response, response.id, JSON.stringify(payload))).then((response) => testValue = response.id)
-        .catch((err) => console.error(err))
-}
+
 export function confirmReservation(idValue) {
 
     const url = "https://bitter-grass-7071.fly.dev/";

@@ -38,7 +38,7 @@ function GuestInfo(props) {
                 props.setShowForm(false);
               }
             }}>{""}</button>
-      <h2>Guest Information</h2>
+      <h2>Ticket owners</h2>
       <form
         ref={theForm}
         className="inputForm"
@@ -53,7 +53,7 @@ function GuestInfo(props) {
         }}>
         {[...Array(props.guestNumber)].map(() => (
           <div key={i++}>
-            <h3 className="GuestGuest">Guest {i + 1}</h3>
+            <h3 className="GuestGuest">Ticket owner {i + 1}</h3>
             <label htmlFor="fullname" className="labelGuestList">
               Full Name:
             </label>

@@ -35,6 +35,7 @@ function PaymentDetails(props) {
       basketContent: props.basket,
     });
     confirmReservation({ id: props.idValue });
+    console.log(props.idValue)
   }
   function popNumber2() {
     setFormPart(2);

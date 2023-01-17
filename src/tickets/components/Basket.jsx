@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { reserveSpot } from "../../database";
+//import { reserveSpot } from "../../database";
 import { useEffect } from "react";
 
 function Basket(props) {
@@ -31,6 +31,20 @@ function Basket(props) {
     return total;
   }
 
+  function reserveSpot(payload) {
+    let testValue;
+    const url = "https://bitter-grass-7071.fly.dev/";
+    fetch(url + "reserve-spot", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+    })
+        .then((response) => response.json())
+        .then((response) => (console.log(response, response.id, JSON.stringify(payload)), props.setIdValue(response.id), console.log("testValue ", props.idValue)))
+        .catch((err) => console.error(err))
+}
   function totalGuests() {
     let i = 0;
     let area;
@@ -53,6 +67,7 @@ function Basket(props) {
     });
     console.log(area);
     console.log(i);
+    // console.log(props.testValue)
   }
 
   function controlCamping(item) {
@@ -112,11 +127,11 @@ function Basket(props) {
           <div id="basket">
             <h3>Basket</h3>
             <div className="separateTickets">
+            <h4>Tickets:</h4>
               {props.basket.map((item) => {
                 if (item.type == "ticket") {
                   return (
                     <div>
-                      <h4>Tickets:</h4>
                       <div
                         key={item.name}
                         className={
@@ -276,11 +291,11 @@ function Basket(props) {
               close basket
             </button>{" "}
             <div className="separateTickets">
+            <h4>Tickets:</h4>
               {props.basket.map((item) => {
                 if (item.type == "ticket") {
                   return (
                     <div>
-                      <h4>Tickets:</h4>
                       <div
                         key={item.name}
                         className={
