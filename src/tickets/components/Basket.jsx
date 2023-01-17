@@ -30,6 +30,7 @@ function Basket(props) {
     });
     return total;
   }
+  á
 
   function reserveSpot(payload) {
     const url = "https://bitter-grass-7071.fly.dev/";
