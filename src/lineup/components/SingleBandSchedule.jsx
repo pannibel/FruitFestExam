@@ -90,7 +90,6 @@ function SingleBandSchedule(props) {
                 <div className="cancelled_contCont">
                   <li
                     className="singleBand"
-                    disabled={true}
                   >
                     {pickImage(`${el.logo}`)}
                     <h4 className="act">{el.act}</h4>
