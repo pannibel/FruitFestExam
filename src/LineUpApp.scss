@@ -521,12 +521,7 @@ button:focus-visible {
   }
 }
 .weekDays {
-  // overflow: auto;
-  // white-space: nowrap;
-  // width: 100%;
-
   display: flex;
-  // flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   button {
@@ -537,6 +532,7 @@ button:focus-visible {
   cursor: pointer;
   width: 30vw;
   justify-self: flex-start;
+  max-width: 40%;
 }
 .skedgeCont {
   z-index: 5;

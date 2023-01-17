@@ -123,8 +123,7 @@ function Basket(props) {
                           item.name == "VIP ticket"
                             ? "ticketItem basketGold"
                             : "ticketItem"
-                        }
-                      >
+                        }>
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -136,8 +135,7 @@ function Basket(props) {
                               resetAmount(item.name);
                               removeExtras();
                             }}
-                            className="basketBtnRmv"
-                          >
+                            className="basketBtnRmv">
                             {" "}
                           </button>
                         </div>{" "}
@@ -155,8 +153,7 @@ function Basket(props) {
                       <h4>Extras:</h4>
                       <div
                         key={item.name}
-                        className="separateTickets ticketItem "
-                      >
+                        className="separateTickets ticketItem ">
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -164,8 +161,7 @@ function Basket(props) {
                           <p>{item.price * item.amount},-</p>
                           <button
                             onClick={() => props.removeFromBasket(item.name)}
-                            className="basketBtnRmv"
-                          >
+                            className="basketBtnRmv">
                             {" "}
                           </button>
                         </div>
@@ -184,8 +180,7 @@ function Basket(props) {
                       <div
                         key={item.type}
                         className={controlCamping(item.type)}
-                        onChange={removeSetCurBtn(item.type)}
-                      >
+                        onChange={removeSetCurBtn(item.type)}>
                         <p>{item.type}</p>
                       </div>
                     </div>
@@ -214,8 +209,7 @@ function Basket(props) {
                 !props.isTimerRunning
                   ? false
                   : true
-              }
-            >
+              }>
               {" "}
             </button>
           </div>
@@ -225,38 +219,43 @@ function Basket(props) {
         <div id="basket">
           <h3 className="total_price">Total: {totalPrice()},-</h3>
 
-          <button
-            onClick={() => {
-              {
-                props.setShowForm(true);
-                totalGuests();
-                props.handleStartTimer();
-              }
-            }}
+          <div
             className={
-              props.basket.find((items) => items.type === "ticket") &&
-              props.spotAdded
-                ? "basketCheckout"
-                : "disabledCheckout"
-            }
-            disabled={
-              props.basket.find((items) => items.type === "ticket") &&
-              props.spotAdded &&
-              !props.isTimerRunning
-                ? false
-                : true
-            }
-          >
-            {" "}
-          </button>
+              props.basket.length > 0
+                ? "buttonCont"
+                : "buttonContHidden"
+            }>
+            <button
+              onClick={() => {
+                {
+                  props.setShowForm(true);
+                  totalGuests();
+                  props.handleStartTimer();
+                }
+              }}
+              className={
+                props.basket.find((items) => items.type === "ticket") &&
+                props.spotAdded
+                  ? "basketCheckout"
+                  : "disabledCheckout"
+              }
+              disabled={
+                props.basket.find((items) => items.type === "ticket") &&
+                props.spotAdded &&
+                !props.isTimerRunning
+                  ? false
+                  : true
+              }>
+              {" "}
+            </button>
 
-          <button
-            onClick={() => openBasket()}
-            className="basket_off"
-            button-name="openbasket"
-          >
-            view items
-          </button>
+            <button
+              onClick={() => openBasket()}
+              className="basket_off"
+              button-name="openbasket">
+              view items
+            </button>
+          </div>
         </div>
       )}
       {!props.windowSize && basketState && (
@@ -265,8 +264,7 @@ function Basket(props) {
             <button
               onClick={() => openBasket()}
               className="basket_on"
-              button-name="closebasket"
-            >
+              button-name="closebasket">
               close basket
             </button>{" "}
             <div className="separateTickets">
@@ -281,8 +279,7 @@ function Basket(props) {
                           item.name == "VIP ticket"
                             ? "ticketItem basketGold"
                             : "ticketItem"
-                        }
-                      >
+                        }>
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -294,8 +291,7 @@ function Basket(props) {
                               resetAmount(item.name);
                               removeExtras();
                             }}
-                            className="basketBtnRmv"
-                          >
+                            className="basketBtnRmv">
                             {" "}
                           </button>
                         </div>{" "}
@@ -313,8 +309,7 @@ function Basket(props) {
                       <h4>Extras:</h4>
                       <div
                         key={item.name}
-                        className="separateTickets ticketItem "
-                      >
+                        className="separateTickets ticketItem ">
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -322,8 +317,7 @@ function Basket(props) {
                           <p>{item.price * item.amount},-</p>
                           <button
                             onClick={() => props.removeFromBasket(item.name)}
-                            className="basketBtnRmv"
-                          >
+                            className="basketBtnRmv">
                             {" "}
                           </button>
                         </div>
@@ -342,8 +336,7 @@ function Basket(props) {
                       <div
                         key={item.type}
                         className={controlCamping(item.type)}
-                        onChange={removeSetCurBtn(item.type)}
-                      >
+                        onChange={removeSetCurBtn(item.type)}>
                         <p>{item.type}</p>
                       </div>
                     </div>
@@ -372,8 +365,7 @@ function Basket(props) {
                 !props.isTimerRunning
                   ? false
                   : true
-              }
-            >
+              }>
               {" "}
             </button>
           </div>
