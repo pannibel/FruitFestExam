@@ -53,6 +53,8 @@ function PaymentDetails(props) {
       </button>
 
       <h2>Billing details</h2>
+      <p>Please, provide us with the following <br />information to finish your purchase.</p>
+
       <form
         ref={theForm}
         onSubmit={(e) => {
@@ -273,17 +275,17 @@ function PaymentDetails(props) {
                 </div>
                 <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
               </section>
+
+              <div className="checkoutBtns">
+          <button className="completeBtn" name="next">
+            {""}
+          </button>
+        </div>
             </div>
           </motion.div>
         ) : (
           ""
         )}
-
-        <div className="checkoutBtns">
-          <button className="completeBtn" name="next">
-            {""}
-          </button>
-        </div>
       </form>
     </div>
   );
