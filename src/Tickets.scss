@@ -851,6 +851,17 @@ input[type="radio"] {
     width: 100vw;
     z-index: 14;
 
+    .buttonCont {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .buttonContHidden {
+      display: none;
+    }
+
     #basketCont {
       position: relative;
       z-index: 5;
@@ -863,17 +874,6 @@ input[type="radio"] {
         position: sticky;
         gap: 1rem;
         top: 30px;
-
-        .buttonCont {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .buttonContHidden {
-          display: none;
-        }
 
         button {
           margin: 0;
