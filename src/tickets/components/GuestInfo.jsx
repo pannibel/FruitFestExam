@@ -39,6 +39,7 @@ function GuestInfo(props) {
               }
             }}>{""}</button>
       <h2>Ticket owners</h2>
+      <p>Please, provide us with the name <br />and email address for the owner <br />of each ticket.</p>
       <form
         ref={theForm}
         className="inputForm"

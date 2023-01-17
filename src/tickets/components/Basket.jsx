@@ -32,7 +32,6 @@ function Basket(props) {
   }
 
   function reserveSpot(payload) {
-    let testValue;
     const url = "https://bitter-grass-7071.fly.dev/";
     fetch(url + "reserve-spot", {
         method: 'PUT',

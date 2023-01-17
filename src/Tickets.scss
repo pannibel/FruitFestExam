@@ -611,6 +611,13 @@ input[type="radio"] {
   background-attachment: fixed;
   background-size: cover;
 }
+
+#productList p {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 14px;
+}
+
 #paymentDetails {
   display: flex;
   justify-content: center;
