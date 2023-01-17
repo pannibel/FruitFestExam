@@ -242,7 +242,7 @@ function Basket(props) {
                 // props.basket.find((items) => items.type === "ticket")
                 props.basket.length > 0 && props.spotAdded
                   ? "basketCheckout"
-                  : "disabledCheckout"
+                  : "hidden"
               }
               disabled={
                 props.basket.find((items) => items.type === "ticket")
