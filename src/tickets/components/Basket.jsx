@@ -123,7 +123,8 @@ function Basket(props) {
                           item.name == "VIP ticket"
                             ? "ticketItem basketGold"
                             : "ticketItem"
-                        }>
+                        }
+                      >
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -135,7 +136,8 @@ function Basket(props) {
                               resetAmount(item.name);
                               removeExtras();
                             }}
-                            className="basketBtnRmv">
+                            className="basketBtnRmv"
+                          >
                             {" "}
                           </button>
                         </div>{" "}
@@ -153,7 +155,8 @@ function Basket(props) {
                       <h4>Extras:</h4>
                       <div
                         key={item.name}
-                        className="separateTickets ticketItem ">
+                        className="separateTickets ticketItem "
+                      >
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -161,7 +164,8 @@ function Basket(props) {
                           <p>{item.price * item.amount},-</p>
                           <button
                             onClick={() => props.removeFromBasket(item.name)}
-                            className="basketBtnRmv">
+                            className="basketBtnRmv"
+                          >
                             {" "}
                           </button>
                         </div>
@@ -180,7 +184,8 @@ function Basket(props) {
                       <div
                         key={item.type}
                         className={controlCamping(item.type)}
-                        onChange={removeSetCurBtn(item.type)}>
+                        onChange={removeSetCurBtn(item.type)}
+                      >
                         <p>{item.type}</p>
                       </div>
                     </div>
@@ -198,18 +203,19 @@ function Basket(props) {
                 }
               }}
               className={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded
+                // props.basket.find((items) => items.type === "ticket")
+                props.basket.length > 0 && props.spotAdded
                   ? "basketCheckout"
                   : "disabledCheckout"
               }
               disabled={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded &&
-                !props.isTimerRunning
-                  ? false
+                props.basket.find((items) => items.type === "ticket")
+                  ? // props.spotAdded &&
+                    // !props.isTimerRunning
+                    false
                   : true
-              }>
+              }
+            >
               {" "}
             </button>
           </div>
@@ -221,10 +227,9 @@ function Basket(props) {
 
           <div
             className={
-              props.basket.length > 0
-                ? "buttonCont"
-                : "buttonContHidden"
-            }>
+              props.basket.length > 0 ? "buttonCont" : "buttonContHidden"
+            }
+          >
             <button
               onClick={() => {
                 {
@@ -234,25 +239,27 @@ function Basket(props) {
                 }
               }}
               className={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded
+                // props.basket.find((items) => items.type === "ticket")
+                props.basket.length > 0 && props.spotAdded
                   ? "basketCheckout"
                   : "disabledCheckout"
               }
               disabled={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded &&
-                !props.isTimerRunning
-                  ? false
+                props.basket.find((items) => items.type === "ticket")
+                  ? // props.spotAdded &&
+                    // !props.isTimerRunning
+                    false
                   : true
-              }>
+              }
+            >
               {" "}
             </button>
 
             <button
               onClick={() => openBasket()}
               className="basket_off"
-              button-name="openbasket">
+              button-name="openbasket"
+            >
               view items
             </button>
           </div>
@@ -264,7 +271,8 @@ function Basket(props) {
             <button
               onClick={() => openBasket()}
               className="basket_on"
-              button-name="closebasket">
+              button-name="closebasket"
+            >
               close basket
             </button>{" "}
             <div className="separateTickets">
@@ -279,7 +287,8 @@ function Basket(props) {
                           item.name == "VIP ticket"
                             ? "ticketItem basketGold"
                             : "ticketItem"
-                        }>
+                        }
+                      >
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -291,7 +300,8 @@ function Basket(props) {
                               resetAmount(item.name);
                               removeExtras();
                             }}
-                            className="basketBtnRmv">
+                            className="basketBtnRmv"
+                          >
                             {" "}
                           </button>
                         </div>{" "}
@@ -309,7 +319,8 @@ function Basket(props) {
                       <h4>Extras:</h4>
                       <div
                         key={item.name}
-                        className="separateTickets ticketItem ">
+                        className="separateTickets ticketItem "
+                      >
                         <p>
                           {item.name} x {item.amount}
                         </p>
@@ -317,7 +328,8 @@ function Basket(props) {
                           <p>{item.price * item.amount},-</p>
                           <button
                             onClick={() => props.removeFromBasket(item.name)}
-                            className="basketBtnRmv">
+                            className="basketBtnRmv"
+                          >
                             {" "}
                           </button>
                         </div>
@@ -336,7 +348,8 @@ function Basket(props) {
                       <div
                         key={item.type}
                         className={controlCamping(item.type)}
-                        onChange={removeSetCurBtn(item.type)}>
+                        onChange={removeSetCurBtn(item.type)}
+                      >
                         <p>{item.type}</p>
                       </div>
                     </div>
@@ -354,18 +367,19 @@ function Basket(props) {
                 }
               }}
               className={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded
+                // props.basket.find((items) => items.type === "ticket")
+                props.basket.length > 0 && props.spotAdded
                   ? "basketCheckout"
                   : "disabledCheckout"
               }
               disabled={
-                props.basket.find((items) => items.type === "ticket") &&
-                props.spotAdded &&
-                !props.isTimerRunning
-                  ? false
+                props.basket.find((items) => items.type === "ticket")
+                  ? // props.spotAdded &&
+                    // !props.isTimerRunning
+                    false
                   : true
-              }>
+              }
+            >
               {" "}
             </button>
           </div>
