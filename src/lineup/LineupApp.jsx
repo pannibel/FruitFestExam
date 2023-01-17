@@ -102,7 +102,6 @@ function Lineup() {
       window.requestAnimationFrame(animate);
     };
     animate();
-
   }, []);
   // !==================================
 
@@ -169,11 +168,11 @@ function Lineup() {
         <AnimatePresence initial={false} mode="wait">
           {lineUpPage == 1 ? (
             <motion.div
-              // style={{ zIndex: 10 }}
+              // style={{ zIndex: 5 }}
               key="biekr"
-              initial={{ x: "100vw" }}
+              initial={{ x: -200 }}
               animate={{ x: 0 }}
-              exit={{ x: "-100vw" }}
+              exit={{ x: "-100%" }}
               transition={{ duration: 0.1 }}
             >
               <CurrentBand
@@ -192,11 +191,10 @@ function Lineup() {
             <motion.div
               style={{ zIndex: 10 }}
               key="burgiekr"
-              initial={{ x: -200 }}
-              // ? end of the line
+              initial={{ x: -400 }}
               animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.1 }}
+              exit={{ x: "-300%" }}
+              transition={{ duration: 0.2 }}
             >
               <Bandslist
                 setLineUpPage={setLineUpPage}
@@ -215,9 +213,9 @@ function Lineup() {
             <motion.div
               style={{ zIndex: 10 }}
               key="biekr"
-              initial={{ x: "100vw" }}
+              initial={{ x: 400 }}
               animate={{ x: 0 }}
-              exit={{ x: "100vw" }}
+              exit={{ x: "300%" }}
               transition={{ duration: 0.2 }}
             >
               <Schedule
@@ -244,19 +242,25 @@ function Lineup() {
             onClick={() => changePageApp(1)}
             className={lineUpPage === 1 ? checkPageApp("home") : "homeOff"}
             value="home"
-          >{""}</button>
+          >
+            {""}
+          </button>
           <button
             onClick={() => changePageApp(2)}
             className={lineUpPage === 2 ? checkPageApp("bands") : "bandsOff"}
             value="bands"
-          >{""}</button>
+          >
+            {""}
+          </button>
           <button
             onClick={() => changePageApp(3)}
             className={
               lineUpPage === 3 ? checkPageApp("schedule") : "scheduleOff"
             }
             value="schedule"
-          >{""}</button>
+          >
+            {""}
+          </button>
         </div>
         {/* <Bandslist bands={bands} /> */}
         {!burgerState && (
@@ -264,7 +268,9 @@ function Lineup() {
             onClick={() => openBurger()}
             className="burger_off"
             button-name="openburg"
-          >{""}</button>
+          >
+            {""}
+          </button>
         )}{" "}
         <AnimatePresence>
           {burgerState && (
@@ -273,7 +279,9 @@ function Lineup() {
                 onClick={() => openBurger()}
                 className="burger_on"
                 button-name="klosburg"
-              >{""}</button>
+              >
+                {""}
+              </button>
               <Burger />
             </>
           )}{" "}
