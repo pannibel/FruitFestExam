@@ -122,13 +122,14 @@ function Products(props) {
     <div className="box2">
       <div className="box">
         <form ref={theForm} className="products">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key="bkk"
               initial={{ x: "100vw", zIndex: 10 }}
               animate={{ x: 0, zIndex: 10 }}
               exit={{ x: "-100vw", zIndex: 10 }}
-              transition={{ duration: 0.2 }}>
+              transition={{ duration: 0.2 }}
+            >
               <TicketProduct
                 count={props.count}
                 setCount={props.setCount}
@@ -145,7 +146,8 @@ function Products(props) {
                 initial={{ x: "100vw", zIndex: 10 }}
                 animate={{ x: 0, zIndex: 10 }}
                 exit={{ x: "-100vw", zIndex: 10 }}
-                transition={{ duration: 0.3 }}>
+                transition={{ duration: 0.3 }}
+              >
                 <ExtraProduct
                   addExtras={addExtras}
                   warning={warning}
@@ -165,7 +167,8 @@ function Products(props) {
                 initial={{ x: "100vw", zIndex: 10 }}
                 animate={{ x: 0, zIndex: 10 }}
                 exit={{ x: "-100vw", zIndex: 10 }}
-                transition={{ duration: 0.3 }}>
+                transition={{ duration: 0.3 }}
+              >
                 <CampingProduct
                   addSpot={addSpot}
                   warning={warning}
@@ -208,7 +211,8 @@ function Products(props) {
             !props.isTimerRunning
               ? false
               : true
-          }>
+          }
+        >
           {" "}
         </button>
       )}
