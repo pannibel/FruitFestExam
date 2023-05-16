@@ -55,7 +55,7 @@ function Lineup() {
     // ! and this one should be used for the manual build
     //? "assets/mountainFin.glb"
 
-    glftLoader.load("../src/assets/mountainFin.glb", (gltfScene) => {
+    glftLoader.load("assets/mountainFin.glb", (gltfScene) => {
       loadedModel = gltfScene;
       // console.log(loadedModel);
       gltfScene.scene.rotation.x = Math.PI / 8;
@@ -166,7 +166,7 @@ function Lineup() {
       <canvas id="myThreeJsCanvas" className="test3D" />
       <div className="appCont">
         <AnimatePresence initial={false} mode="wait">
-          {lineUpPage == 1 ? (
+          {lineUpPage !== 1 ? (
             <motion.div
               // style={{ zIndex: 5 }}
               key="biekr"
